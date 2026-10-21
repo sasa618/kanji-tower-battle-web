@@ -1,9 +1,9 @@
 # 合体！漢字タワーバトル
 
-漢字を積み，合体させて総画数・高さ・字数を伸ばす，スマホ向けの物理パズルである．ゲーム本体は静的ファイルで動き，全国ランキングと画像付きのX共有だけがCloudflare Workers + D1のサーバーを使う．
+漢字を積み，合体させて総画数・高さ・字数を伸ばす，スマホ向けの物理パズルである．ゲーム本体は静的ファイルで動き，全国ランキング・画像付きのX共有・匿名の利用状況だけがCloudflare Workers + D1のサーバーを使う．
 
-公開URL：（公開後に記入する．2026-10-21時点では未公開であり，候補は `https://sasa618.github.io/kanji-tower-battle-web/` である）
-Worker URL：`https://kanji-tower-battle-ranking.kanji-tower-battle-web.workers.dev`（2026-10-21 配布済み）
+遊べるURL：<https://sasa618.github.io/kanji-tower-battle-web/>（GitHub Pages，2026-10-21 公開）
+Worker URL：`https://kanji-tower-battle-ranking.kanji-tower-battle-web.workers.dev`（Cloudflare Workers + D1，2026-10-21 配布）
 
 公開作業の実施状況と確認できた項目は[docs/release-record.md](docs/release-record.md)，制作の経過は[docs/progress.md](docs/progress.md)にある．
 
@@ -74,9 +74,11 @@ npm run deploy:worker -- --game-url https://<公開するゲームのURL>/
 
 ### 2．GitHub Pages（ゲーム本体）
 
-1. `web/` の内容をルートにした公開リポジトリを作り，pushする（`web/` は `git init` 済みである）．
-2. リポジトリの Settings → Pages で Source を「GitHub Actions」にする．
-3. Settings → Secrets and variables → Actions → Variables に `RANKING_API`（Worker URL，末尾のスラッシュなし）を設定する．`PUBLIC_URL` を省略するとPagesのURLが使われる．
+公開リポジトリは [sasa618/kanji-tower-battle-web](https://github.com/sasa618/kanji-tower-battle-web) で，`web/` の内容がルートにある．初回に行った設定は次のとおりである．
+
+1. 公開リポジトリを作り，`web/` を push した．
+2. Pages の Source を「GitHub Actions」にした（`gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow`）．
+3. Settings → Secrets and variables → Actions → Variables に `RANKING_API`（Worker URL，末尾のスラッシュなし）と `PUBLIC_URL`（ゲームURL）を設定した．`PUBLIC_URL` を省略するとPagesのURLが使われる．
 4. mainへのpushでビルド・テスト・配信が実行される．`VITE_PUBLIC_URL` と `index.html` のOGPも同じ公開URLに揃う．
 
 ### 3．公開後の確認

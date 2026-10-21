@@ -6,7 +6,7 @@
 
 | 項目 | 状態 |
 |---|---|
-| ゲームURL | 未公開（候補は `https://sasa618.github.io/kanji-tower-battle-web/`．リポジトリ `kanji-tower-battle-web` は未作成で，公開先の確定待ち） |
+| ゲームURL | **本番に公開済み・公開先で動作確認済み**．`https://sasa618.github.io/kanji-tower-battle-web/`（公開リポジトリ [sasa618/kanji-tower-battle-web](https://github.com/sasa618/kanji-tower-battle-web)，GitHub Pages・GitHub Actions 配信，2026-10-21） |
 | Worker URL | **本番に公開済み・公開先で動作確認済み**．`https://kanji-tower-battle-ranking.kanji-tower-battle-web.workers.dev`（Cloudflareアカウント hata.developer@gmail.com，2026-10-21 配布） |
 | D1 | 作成済み（`kanji-tower-ranking`，ID `857a6159-1624-416d-8f0c-d3bb422e9b05`）．移行 0001〜0003 を適用済み |
 | 共有ページ・画像のサンプルURL | 本番で発行済み（試験用）．`https://kanji-tower-battle-ranking.kanji-tower-battle-web.workers.dev/s/592195fa-b3dd-4f6d-b5cc-04bde7eecc87` と同 `/image.png` |
@@ -52,11 +52,21 @@ npx wrangler deploy --dry-run --outdir dist-worker --env dev # 開発環境
 
 本人が `npx wrangler login` を済ませた後，`npm run deploy:worker -- --game-url https://sasa618.github.io/kanji-tower-battle-web/` を実行した．D1 `kanji-tower-ranking` を新規作成し，移行 0001・0002・0003 を適用し，Workerを配布した．配布直後は約1分間DNSが引けず，その後 `node tools/check-release.mjs --api <Worker URL> --share` を実行して14件すべて成功した．内容はローカルでの確認と同じで，`/health`，CORS，3種目の取得，403・404・405，試験用の共有の発行，共有ページの生HTMLのカード情報，PNGの配信とHEAD，同じ記録の再利用である．試験用の共有は本番DBに1件残っている（上の表のURL）．ゲーム本体が未公開のため，`--game` の確認項目と，許可オリジンからの実際のセッション作成・スコア送信・集計送信は未実施である．
 
+## 公開先で確認した項目（2026-10-21）
+
+本人の了承を得て公開リポジトリ `sasa618/kanji-tower-battle-web` を作成し，`web/` の内容をルートとして push した．Pagesは `build_type: workflow` で有効化し，変数 `RANKING_API`（Worker URL）と `PUBLIC_URL`（ゲームURL）を設定した．最初のワークフロー（npm ci・テスト・ビルド・配信）は成功し，公開URLは直後から200を返した．
+
+`node tools/check-release.mjs --api <Worker URL> --game https://sasa618.github.io/kanji-tower-battle-web/` は13件すべて成功した．ゲームのHTML・JS・CSS・フォント・アイコンがサブパスから読めること，固定カードの `og:url`・`og:image`・`twitter:image` が公開URLを指すこと，ビルドにWorker URLが埋め込まれていること（ランキング・共有が接続状態で配信されている）を含む．
+
+公開オリジン（`https://sasa618.github.io`）を名乗る要求で，セッション作成（201），スコア送信（201，3種目の順位を返す），同じセッションの再送信（409），利用状況の送信（204，再送は409），`/stats` への反映を本番で確認した．試験用のスコアは `wrangler d1 execute --remote` で削除した．1回だけ，送信直後の一覧取得が空で返り，次の試行では直後に反映された．再現しないため原因は特定していない．端末側は種目ごとに5分間キャッシュするので，利用上の影響は小さい．
+
+実機のブラウザーからの操作（スマホ・PC），Xの投稿画面への遷移，X上のカード実表示は未確認である．
+
 ## 残件と，必要な操作
 
 1. **Cloudflareへのログイン**は完了し，Workerは配布済みである．Workerの更新は `npm run deploy:worker` を再実行する．
-2. **公開先の確定（本人の判断）**．既存案は公開リポジトリ `sasa618/kanji-tower-battle-web` に `web/` の内容をルートとして置き，GitHub Pages（GitHub Actions）で配信する．リポジトリ名・公開範囲が決まり次第，`git init` 済みの `web/` を push し，Pagesの Source を GitHub Actions にして，変数 `RANKING_API` に Worker URL を設定する．
-3. 公開後に `npm run check:release -- --api <Worker URL> --game <ゲームURL> --share` を実行し，結果を本書に追記する．`--share` は本番DBに試験用の共有を1件残す．
+2. **公開先**は確定し，ゲーム本体はmainへのpushで再公開される．
+3. 公開後の疎通確認は完了した．再確認は `npm run check:release -- --api <Worker URL> --game <ゲームURL>` を実行する（`--share` は本番DBに試験用の共有を1件残す）．
 4. Xの投稿画面で本文・URLを確認し，カードの実表示とクリック先を確認する（公開投稿の確定は本人が行う）．
 5. iPhone Safari・Android Chrome で操作・画像保存・X投稿画面への遷移を確認する．
 6. 図鑑の読み・意味・熟語・画数の辞書照合（公開関連の作業とは別に残っている）．
