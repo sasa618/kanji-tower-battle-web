@@ -1,6 +1,6 @@
 # 合体！漢字タワーバトル
 
-漢字を積み，合体させて総画数・高さ・字数を伸ばす，スマホ向けの物理パズルである．ゲーム本体は静的ファイルで動き，全国ランキング・画像付きのX共有・匿名の利用状況だけがCloudflare Workers + D1のサーバーを使う．
+漢字を積み，合体させて総画数・高さ・字数を伸ばす，スマホ向けの物理パズルである．ゲーム本体と図鑑の漢字画像付き共有は静的ファイルで動き，全国ランキング・結果画像付きのX共有・匿名の利用状況がCloudflare Workers + D1のサーバーを使う．
 
 遊べるURL：<https://sasa618.github.io/kanji-tower-battle-web/>（GitHub Pages，2026-10-21 公開）
 Worker URL：`https://kanji-tower-battle-ranking.kanji-tower-battle-web.workers.dev`（Cloudflare Workers + D1，2026-10-21 配布）
@@ -107,6 +107,10 @@ npm run check:release -- --api https://<Worker URL> --game https://<ゲームURL
 選んだ種目のみ取得し，各種目で5分間キャッシュする．定期取得は行わない．通信できなくてもゲームと自己記録は使える．サーバー側の種目別キャッシュ（Cache API）は `*.workers.dev` では無効なため，その場合は毎回D1から読む．
 
 ## 結果画像付きのX共有
+
+図鑑の「Xでシェア」は，完成した漢字を大きく描いた専用画像を使う．合体で作れる40字それぞれに `discovered/<文字コード>/` の静的ページと `kanji-cards/<文字コード>.png` の1200×630画像を用意する．画像には画数と合体の組み合わせも載せる．カードを開くと公開ゲームの先頭へ移動し，新しいゲームを開始する．共有時の画像アップロードやD1への保存・読み込みは不要である．
+
+PNGは `tools/build-discovery-cards.ts` で生成し，`public/kanji-cards/` に追跡する．再生成には `assets/fonts/README.md` の元フォントと `@napi-rs/canvas` が必要で，`KANJI_CANVAS_MODULE` でそのローカルモジュールのパスを指定して `node --import tsx tools/build-discovery-cards.ts` を実行する．HTMLは `VITE_PUBLIC_URL` が設定されたビルドでViteが生成する．CIでは全共有対象のPNG・寸法・専用リンク・公開メタ情報を検査する．
 
 結果画面・ランキングの自己ベストから「Xでシェア」を押すと，最高到達時の塔と得点を1200×630のPNGにする．WorkerのPOST /sharesで画像と記録を保存し，/s/共有ID の専用リンクを作る．このページは最初のHTMLにXカード・OGPメタ情報を含み，画像URLは /s/共有ID/image.png で返す．リンクを開いた利用者はGAME_URLへ移動して新しいゲームを開始し，JavaScriptが無効でも「遊ぶ」リンクを使える．投稿本文はURL分を含めてXの文字数に収まるよう，作った字の列挙を必要に応じて省略する．Xの投稿確定は利用者が行う．
 

@@ -1,8 +1,28 @@
 import {GLYPH_SIZE,STAGE_Y,STAGE_WIDTH,STAGE_THICKNESS,WORLD_WIDTH,type TowerSnapshot} from './physics';
 import {drawGlyph,drawStage} from './render';
 import type {RecordEntry} from './storage';
+import {byChar,recipes} from './data';
 export const RESULT_IMAGE_WIDTH=1080,RESULT_IMAGE_HEIGHT=1350;
 export const SHARE_IMAGE_WIDTH=1200,SHARE_IMAGE_HEIGHT=630;
+/** A completed character is the focus of the discovery card, with its actual game outline. */
+export function drawDiscoveryImage(c:CanvasRenderingContext2D,char:string){
+  const entry=byChar.get(char),recipe=recipes.find(r=>r.result===char);
+  if(!entry||!recipe)throw Error('合体できる漢字を指定してください。');
+  c.save();c.fillStyle='#fffefa';c.fillRect(0,0,SHARE_IMAGE_WIDTH,SHARE_IMAGE_HEIGHT);
+  c.fillStyle='#fff';c.beginPath();c.roundRect(490,24,686,582,32);c.fill();
+  c.fillStyle='#df3655';c.beginPath();c.roundRect(40,35,208,73,12);c.fill();
+  c.textAlign='left';c.font='48px TowerImpact';c.fillStyle=c.strokeStyle='#fff';c.lineWidth=3;c.strokeText('合体！',54,89);c.fillText('合体！',54,89);
+  c.fillStyle='#293757';c.font='34px TowerDisplay';c.fillText('漢字タワーバトル',40,161,420);
+  c.font='700 38px Biz';c.fillText(`「${char}」を作った！`,40,293,420);
+  c.font='700 22px Biz';c.fillStyle='#607394';c.fillText('合体した組み合わせ',42,359);
+  drawGlyph(c,recipe.a,83,427,0,.86);drawGlyph(c,recipe.b,227,427,0,.86);drawGlyph(c,char,371,427,0,.86);
+  c.strokeStyle='#8390a8';c.lineWidth=2.8;c.lineCap='round';c.lineJoin='round';c.beginPath();
+  c.moveTo(147,427);c.lineTo(163,427);c.moveTo(155,419);c.lineTo(155,435);
+  c.moveTo(288,427);c.lineTo(310,427);c.moveTo(302,420);c.lineTo(310,427);c.lineTo(302,434);c.stroke();
+  drawGlyph(c,char,833,300,0,4.8);
+  c.textAlign='center';c.font='700 28px Biz';c.fillStyle='#607394';c.fillText(`${entry.strokes}画`,833,550);
+  c.textAlign='left';c.font='700 22px Biz';c.fillText('#漢字タワーバトル',42,558);c.restore();
+}
 export function towerFrame(tower:TowerSnapshot|null,box:{x:number;y:number;width:number;height:number}){
   const left=Math.min((WORLD_WIDTH-STAGE_WIDTH)/2,tower?.bounds.minX??Infinity)-20;
   const right=Math.max((WORLD_WIDTH+STAGE_WIDTH)/2,tower?.bounds.maxX??-Infinity)+20;

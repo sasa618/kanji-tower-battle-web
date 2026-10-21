@@ -11,7 +11,7 @@
 | D1 | 作成済み（`kanji-tower-ranking`，ID `857a6159-1624-416d-8f0c-d3bb422e9b05`）．移行 0001〜0003 を適用済み |
 | 共有ページ・画像のサンプルURL | 本番で発行済み（試験用）．`https://kanji-tower-battle-ranking.kanji-tower-battle-web.workers.dev/s/592195fa-b3dd-4f6d-b5cc-04bde7eecc87` と同 `/image.png` |
 | 利用状況の集計 | 実装済み（`POST /events`，`GET /stats`）．Cloudflare Web Analytics と Search Console のタグは token の設定待ち |
-| X上のカード実表示 | 未検証（公開URLが無いため） |
+| X上のカード実表示 | 未検証（公開URLとカード情報の配信は確認済み） |
 | iPhone Safari・Android Chrome の実機 | 未検証 |
 
 検証環境は Windows 11，Node.js 22.23.1，npm 10.9.8，wrangler 4.151.1，Vite 7.3.7，Planck.js 1.4.2 である．
@@ -63,6 +63,12 @@ npx wrangler deploy --dry-run --outdir dist-worker --env dev # 開発環境
 実機のブラウザーからの操作（スマホ・PC），Xの投稿画面への遷移，X上のカード実表示は未確認である．
 
 ## 残件と，必要な操作
+
+### 漢字ごとの共有画像の更新（2026-10-21）
+
+図鑑の共有を，完成した漢字を主役にした1200×630のPNGと専用ページへ変更した．合体でできる40字を対象とし，ゲーム書体・画数別の色・合体の組み合わせを画像に使う．`discovered/<文字コード>/` のHTMLは公開URL付きのビルドで生成し，カードを開いた利用者はゲームの先頭へ移動する．この共有には画像アップロードもWorker・D1の呼び出しも要らない．結果・ハイスコアの共有は既存の仕組みを継続する．
+
+公開前の検証では78件のテストが成功した．追加検査は全40字の専用URL，X用の画像URL・メタ情報，新しいゲームへのリンク，PNGの実在・寸法・容量を含む．背景と漢字の重なりを避けた配置，木が林へ落ちるアイコン，森・想の共有画像は生成ファイルで目視確認した．X上のカード実表示とスマホブラウザーでの操作は別途確認する．
 
 1. **Cloudflareへのログイン**は完了し，Workerは配布済みである．Workerの更新は `npm run deploy:worker` を再実行する．
 2. **公開先**は確定し，ゲーム本体はmainへのpushで再公開される．
