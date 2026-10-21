@@ -1,0 +1,370 @@
+
+> kanji-tower-battle-web@0.1.0 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: without a tower partner all twenty characters remain balanced across long runs
+ok 1 - without a tower partner all twenty characters remain balanced across long runs
+  ---
+  duration_ms: 93.6931
+  type: 'test'
+  ...
+# Subtest: a lone woman gets zero or one partner, without forcing a repeated pair
+ok 2 - a lone woman gets zero or one partner, without forcing a repeated pair
+  ---
+  duration_ms: 38.4106
+  type: 'test'
+  ...
+# Subtest: zero, one and two actionable choices all occur, with one most common
+ok 3 - zero, one and two actionable choices all occur, with one most common
+  ---
+  duration_ms: 64.9098
+  type: 'test'
+  ...
+# Subtest: changing towers respect the requested match count whenever enough choices exist
+ok 4 - changing towers respect the requested match count whenever enough choices exist
+  ---
+  duration_ms: 20.7673
+  type: 'test'
+  ...
+# Subtest: a tower compatible with every basic character still produces three distinct choices
+ok 5 - a tower compatible with every basic character still produces three distinct choices
+  ---
+  duration_ms: 1.945
+  type: 'test'
+  ...
+# Subtest: game rerolls retain appearance history and restarting clears it
+ok 6 - game rerolls retain appearance history and restarting clears it
+  ---
+  duration_ms: 11.4277
+  type: 'test'
+  ...
+# Subtest: all characters reachable; no isolated base; no ambiguous recipe
+ok 7 - all characters reachable; no isolated base; no ambiguous recipe
+  ---
+  duration_ms: 1.9198
+  type: 'test'
+  ...
+# Subtest: floor width is exactly four enlarged 96-pixel character cells
+ok 8 - floor width is exactly four enlarged 96-pixel character cells
+  ---
+  duration_ms: 2.7697
+  type: 'test'
+  ...
+# Subtest: candidates stay distinct and legal for every tower character
+ok 9 - candidates stay distinct and legal for every tower character
+  ---
+  duration_ms: 44.7998
+  type: 'test'
+  ...
+# Subtest: font fixtures valid, convex, at most 8 vertices; enclosed mouth counter filled
+ok 10 - font fixtures valid, convex, at most 8 vertices; enclosed mouth counter filled
+  ---
+  duration_ms: 71.862
+  type: 'test'
+  ...
+# Subtest: every merge takes the falling character position and angle, in either argument order
+ok 11 - every merge takes the falling character position and angle, in either argument order
+  ---
+  duration_ms: 101.8955
+  type: 'test'
+  ...
+# Subtest: more strokes give greater mass and stronger resistance to rotation
+ok 12 - more strokes give greater mass and stronger resistance to rotation
+  ---
+  duration_ms: 0.5653
+  type: 'test'
+  ...
+# Subtest: four successive merges: mouth → sun → eye → look → thought
+ok 13 - four successive merges: mouth → sun → eye → look → thought
+  ---
+  duration_ms: 1.7502
+  type: 'test'
+  ...
+# Subtest: airborne excluded; game over excludes fallen and freezes stats while physics continues
+ok 14 - airborne excluded; game over excludes fallen and freezes stats while physics continues
+  ---
+  duration_ms: 23.5924
+  type: 'test'
+  ...
+# Subtest: select keeps position and angle; pause stops simulation
+ok 15 - select keeps position and angle; pause stops simulation
+  ---
+  duration_ms: 1.1995
+  type: 'test'
+  ...
+# Subtest: finger positioning is continuous while keyboard nudges retain their step
+ok 16 - finger positioning is continuous while keyboard nudges retain their step
+  ---
+  duration_ms: 0.6488
+  type: 'test'
+  ...
+# Subtest: ranking breaks ties by exact height then count
+ok 17 - ranking breaks ties by exact height then count
+  ---
+  duration_ms: 0.6694
+  type: 'test'
+  ...
+# Subtest: LAN HTTP preview generates valid unique IDs without randomUUID
+ok 18 - LAN HTTP preview generates valid unique IDs without randomUUID
+  ---
+  duration_ms: 3.8803
+  type: 'test'
+  ...
+# Subtest: touch follows the finger and drops exactly once at the release position
+ok 19 - touch follows the finger and drops exactly once at the release position
+  ---
+  duration_ms: 1.9986
+  type: 'test'
+  ...
+# Subtest: cancellation, lost capture and paused play never cause a drop
+ok 20 - cancellation, lost capture and paused play never cause a drop
+  ---
+  duration_ms: 0.9938
+  type: 'test'
+  ...
+# Subtest: a second finger cannot move or release the first finger tile
+ok 21 - a second finger cannot move or release the first finger tile
+  ---
+  duration_ms: 0.4183
+  type: 'test'
+  ...
+# Subtest: mouse and pen both drop on release without a separate drop button
+ok 22 - mouse and pen both drop on release without a separate drop button
+  ---
+  duration_ms: 0.6032
+  type: 'test'
+  ...
+# Subtest: finger coordinates stay aligned when the playfield has horizontal letterboxing
+ok 23 - finger coordinates stay aligned when the playfield has horizontal letterboxing
+  ---
+  duration_ms: 0.4009
+  type: 'test'
+  ...
+# Subtest: phone touches stay aligned when the enlarged playfield crops the side margins
+ok 24 - phone touches stay aligned when the enlarged playfield crops the side margins
+  ---
+  duration_ms: 0.3547
+  type: 'test'
+  ...
+# Subtest: first-contact preview touches the floor with the actual rotated outline
+ok 25 - first-contact preview touches the floor with the actual rotated outline
+  ---
+  duration_ms: 26.9477
+  type: 'test'
+  ...
+# Subtest: a high piece away from the fall line does not lift the preview into empty space
+ok 26 - a high piece away from the fall line does not lift the preview into empty space
+  ---
+  duration_ms: 9.8208
+  type: 'test'
+  ...
+# Subtest: rotated detailed glyphs predict the first real physics contact within a few pixels
+ok 27 - rotated detailed glyphs predict the first real physics contact within a few pixels
+  ---
+  duration_ms: 79.2195
+  type: 'test'
+  ...
+# Subtest: choosing a different candidate immediately changes all compatible targets
+ok 28 - choosing a different candidate immediately changes all compatible targets
+  ---
+  duration_ms: 23.0393
+  type: 'test'
+  ...
+# Subtest: hints follow new combined pieces and disappear outside the selection phase
+ok 29 - hints follow new combined pieces and disappear outside the selection phase
+  ---
+  duration_ms: 6.8165
+  type: 'test'
+  ...
+# Subtest: inactive and fallen pieces are never offered as merge targets
+ok 30 - inactive and fallen pieces are never offered as merge targets
+  ---
+  duration_ms: 6.6941
+  type: 'test'
+  ...
+# Subtest: guidance starts visible, hides on interaction, and returns only after five idle seconds
+ok 31 - guidance starts visible, hides on interaction, and returns only after five idle seconds
+  ---
+  duration_ms: 1.2767
+  type: 'test'
+  ...
+# Subtest: held gestures and pauses suppress guidance; a new ready phase gets a fresh idle period
+ok 32 - held gestures and pauses suppress guidance; a new ready phase gets a fresh idle period
+  ---
+  duration_ms: 0.4201
+  type: 'test'
+  ...
+# Subtest: height and character bests survive outside the old score top ten and reload
+ok 33 - height and character bests survive outside the old score top ten and reload
+  ---
+  duration_ms: 2.2957
+  type: 'test'
+  ...
+# Subtest: old saves migrate their available records into three bests and reject corrupt bests
+ok 34 - old saves migrate their available records into three bests and reject corrupt bests
+  ---
+  duration_ms: 0.4563
+  type: 'test'
+  ...
+# Subtest: a personal best retains its tower and existing share link after reload
+ok 35 - a personal best retains its tower and existing share link after reload
+  ---
+  duration_ms: 1.2534
+  type: 'test'
+  ...
+# Subtest: ranking tab changes reuse per-metric snapshots and cannot mix late responses
+ok 36 - ranking tab changes reuse per-metric snapshots and cannot mix late responses
+  ---
+  duration_ms: 0.9257
+  type: 'test'
+  ...
+# Subtest: one failing metric is cooled down without blocking another metric
+ok 37 - one failing metric is cooled down without blocking another metric
+  ---
+  duration_ms: 0.5425
+  type: 'test'
+  ...
+# (node:50404) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: ranking rejects impossible scores, timings, names and counts
+ok 38 - ranking rejects impossible scores, timings, names and counts
+  ---
+  duration_ms: 4.5396
+  type: 'test'
+  ...
+# Subtest: API issues sessions, limits starts, stores one result and sorts leaderboard
+ok 39 - API issues sessions, limits starts, stores one result and sorts leaderboard
+  ---
+  duration_ms: 54.1158
+  type: 'test'
+  ...
+# Subtest: API rejects future-duration, missing session and oversized bodies
+ok 40 - API rejects future-duration, missing session and oversized bodies
+  ---
+  duration_ms: 9.294
+  type: 'test'
+  ...
+# Subtest: database outage leaves a controlled unavailable response
+ok 41 - database outage leaves a controlled unavailable response
+  ---
+  duration_ms: 3.2187
+  type: 'test'
+  ...
+# Subtest: edge snapshot avoids repeat database reads and keeps allowed origins separate
+ok 42 - edge snapshot avoids repeat database reads and keeps allowed origins separate
+  ---
+  duration_ms: 7.2042
+  type: 'test'
+  ...
+# Subtest: three rankings use their own order and cache key, with old records excluded
+ok 43 - three rankings use their own order and cache key, with old records excluded
+  ---
+  duration_ms: 10.4609
+  type: 'test'
+  ...
+# Subtest: share cards serve public metadata and PNG, link to a fresh game, and reuse records
+ok 44 - share cards serve public metadata and PNG, link to a fresh game, and reuse records
+  ---
+  duration_ms: 10.6713
+  type: 'test'
+  ...
+# Subtest: sharing rejects oversized, malformed, unconfigured and over-limit uploads
+ok 45 - sharing rejects oversized, malformed, unconfigured and over-limit uploads
+  ---
+  duration_ms: 19.9573
+  type: 'test'
+  ...
+# Subtest: discovery posts include a playable public URL and Japanese text
+ok 46 - discovery posts include a playable public URL and Japanese text
+  ---
+  duration_ms: 1.5486
+  type: 'test'
+  ...
+# Subtest: ranking openings, concurrent requests, and empty results reuse one fetch for five minutes
+ok 47 - ranking openings, concurrent requests, and empty results reuse one fetch for five minutes
+  ---
+  duration_ms: 0.4424
+  type: 'test'
+  ...
+# Subtest: ranking failures do not trigger automatic retry storms
+ok 48 - ranking failures do not trigger automatic retry storms
+  ---
+  duration_ms: 0.5491
+  type: 'test'
+  ...
+# Subtest: highest tower keeps positions and angles after collapse, and clears on replay
+ok 49 - highest tower keeps positions and angles after collapse, and clears on replay
+  ---
+  duration_ms: 49.8765
+  type: 'test'
+  ...
+# Subtest: unlanded drops are excluded; a genuinely higher landed tower replaces the snapshot
+ok 50 - unlanded drops are excluded; a genuinely higher landed tower replaces the snapshot
+  ---
+  duration_ms: 6.3878
+  type: 'test'
+  ...
+# Subtest: bounds cache follows translation and rotation without altering the geometry
+ok 51 - bounds cache follows translation and rotation without altering the geometry
+  ---
+  duration_ms: 1.8035
+  type: 'test'
+  ...
+# Subtest: export fits very tall and wide towers including the full four-character platform
+ok 52 - export fits very tall and wide towers including the full four-character platform
+  ---
+  duration_ms: 0.4936
+  type: 'test'
+  ...
+# Subtest: all starting pieces and rotations sit entirely above the fifth initial ruler mark
+ok 53 - all starting pieces and rotations sit entirely above the fifth initial ruler mark
+  ---
+  duration_ms: 5.7821
+  type: 'test'
+  ...
+# Subtest: the floor remains near the bottom on tall, short and landscape canvases
+ok 54 - the floor remains near the bottom on tall, short and landscape canvases
+  ---
+  duration_ms: 0.2657
+  type: 'test'
+  ...
+# Subtest: phone playfields use eighty percent of available width for the four-character stage when height permits
+ok 55 - phone playfields use eighty percent of available width for the four-character stage when height permits
+  ---
+  duration_ms: 0.1972
+  type: 'test'
+  ...
+# Subtest: the camera keeps a newly selected piece visible as the tower rises
+ok 56 - the camera keeps a newly selected piece visible as the tower rises
+  ---
+  duration_ms: 5.4977
+  type: 'test'
+  ...
+# Subtest: opening the ready-to-play game does not count idle time before the first drop
+ok 57 - opening the ready-to-play game does not count idle time before the first drop
+  ---
+  duration_ms: 5.2816
+  type: 'test'
+  ...
+# Subtest: pieces released from the higher start still land and allow the next choice
+ok 58 - pieces released from the higher start still land and allow the next choice
+  ---
+  duration_ms: 305.1976
+  type: 'test'
+  ...
+# Subtest: ruler starts at five and gains six, seven and higher as the camera rises
+ok 59 - ruler starts at five and gains six, seven and higher as the camera rises
+  ---
+  duration_ms: 0.9091
+  type: 'test'
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 969.5878

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-18T00:59:50.836Z",
+  "scope": "PC, CPU only, detailed glyphs and moving aim; not smartphone frame time",
+  "rows": [
+    {
+      "count": 15,
+      "p95ms": 0.577,
+      "maxMs": 2.729
+    },
+    {
+      "count": 30,
+      "p95ms": 0.536,
+      "maxMs": 3.419
+    },
+    {
+      "count": 100,
+      "p95ms": 0.201,
+      "maxMs": 1.793
+    }
+  ]
+}

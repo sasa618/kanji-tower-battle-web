@@ -1,0 +1,1769 @@
+{
+  "date": "2026-10-18T00:59:19.465Z",
+  "stability": [
+    {
+      "char": "木",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.292,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.294,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.298,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.292,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.298,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.293,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.298,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        }
+      ]
+    },
+    {
+      "char": "日",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.022,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.014,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.014,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.016,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.008,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.02,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "月",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.001,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": -0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.001,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": -0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": -0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.588,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        }
+      ]
+    },
+    {
+      "char": "人",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.005,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.005,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.003,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.007,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.009,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.001,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "口",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.041,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.038,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.039,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.029,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.039,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.028,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.043,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "水",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.212,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.211,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.206,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.208,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.207,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.21,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.21,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "火",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": -0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": -0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": -0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "一",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": -0.003,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.003,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": -0.005,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": -0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "土",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.002,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": -0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.005,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": -0.001,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": -0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "田",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.011,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.019,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.007,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.02,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.008,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.018,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "子",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.772,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.779,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.777,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": -0.691,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.778,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": -0.691,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.784,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        }
+      ]
+    },
+    {
+      "char": "女",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.007,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.009,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.011,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.007,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.009,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.006,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "力",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.013,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.008,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.014,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.016,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 1.388,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        }
+      ]
+    },
+    {
+      "char": "心",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": -0.001,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": -0.013,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": -0.013,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": -0.016,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": -0.013,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": -0.6,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": -0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "目",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.019,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.016,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.019,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.022,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.02,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.02,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.017,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "言",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.021,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.022,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.021,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.021,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.024,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.024,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "寸",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 1.165,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": -1.025,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 1.17,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": -1.021,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 1.171,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": -1.017,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 1.169,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": false
+        }
+      ]
+    },
+    {
+      "char": "立",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.004,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.01,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.003,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.003,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.007,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "山",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.02,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.022,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.019,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.021,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.023,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.015,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.02,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    },
+    {
+      "char": "石",
+      "trials": [
+        {
+          "initialAngle": 0,
+          "finalAngle": 0.019,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.2,
+          "finalAngle": 0.013,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.2,
+          "finalAngle": 0.016,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.4,
+          "finalAngle": 0.013,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.4,
+          "finalAngle": 0.014,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": -0.6,
+          "finalAngle": 0.006,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        },
+        {
+          "initialAngle": 0.6,
+          "finalAngle": 0.018,
+          "speed": 0,
+          "asleep": true,
+          "fallen": false,
+          "upright": true
+        }
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "a": "木",
+      "b": "木",
+      "result": "林",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "木",
+      "result": "林",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "林",
+      "result": "森",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "木",
+      "result": "森",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "月",
+      "result": "明",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "日",
+      "result": "明",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "月",
+      "result": "朋",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "月",
+      "result": "朋",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "日",
+      "result": "昌",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "日",
+      "result": "昌",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "木",
+      "result": "休",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "人",
+      "result": "休",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "口",
+      "result": "回",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "口",
+      "result": "回",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "木",
+      "result": "困",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "口",
+      "result": "困",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "日",
+      "result": "沓",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "水",
+      "result": "沓",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "火",
+      "result": "炎",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "火",
+      "result": "炎",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "回",
+      "result": "徊",
+      "merged": true
+    },
+    {
+      "a": "回",
+      "b": "人",
+      "result": "徊",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "木",
+      "result": "沐",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "水",
+      "result": "沐",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "昌",
+      "result": "唱",
+      "merged": true
+    },
+    {
+      "a": "昌",
+      "b": "口",
+      "result": "唱",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "木",
+      "result": "東",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "日",
+      "result": "東",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "昌",
+      "result": "晶",
+      "merged": true
+    },
+    {
+      "a": "昌",
+      "b": "日",
+      "result": "晶",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "火",
+      "result": "焚",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "林",
+      "result": "焚",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "口",
+      "result": "囚",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "人",
+      "result": "囚",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "子",
+      "result": "好",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "女",
+      "result": "好",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "力",
+      "result": "男",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "田",
+      "result": "男",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "石",
+      "result": "岩",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "山",
+      "result": "岩",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "目",
+      "result": "相",
+      "merged": true
+    },
+    {
+      "a": "目",
+      "b": "木",
+      "result": "相",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "言",
+      "result": "信",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "人",
+      "result": "信",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "田",
+      "result": "畑",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "火",
+      "result": "畑",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "口",
+      "result": "加",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "力",
+      "result": "加",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "心",
+      "result": "思",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "田",
+      "result": "思",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "日",
+      "result": "音",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "立",
+      "result": "音",
+      "merged": true
+    },
+    {
+      "a": "音",
+      "b": "心",
+      "result": "意",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "音",
+      "result": "意",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "寸",
+      "result": "村",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "木",
+      "result": "村",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "寸",
+      "result": "寺",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "土",
+      "result": "寺",
+      "merged": true
+    },
+    {
+      "a": "寺",
+      "b": "日",
+      "result": "時",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "寺",
+      "result": "時",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "寺",
+      "result": "詩",
+      "merged": true
+    },
+    {
+      "a": "寺",
+      "b": "言",
+      "result": "詩",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "寺",
+      "result": "侍",
+      "merged": true
+    },
+    {
+      "a": "寺",
+      "b": "人",
+      "result": "侍",
+      "merged": true
+    },
+    {
+      "a": "相",
+      "b": "心",
+      "result": "想",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "相",
+      "result": "想",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "一",
+      "result": "二",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "一",
+      "result": "二",
+      "merged": true
+    },
+    {
+      "a": "二",
+      "b": "一",
+      "result": "三",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "二",
+      "result": "三",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "一",
+      "result": "日",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "口",
+      "result": "日",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "一",
+      "result": "目",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "日",
+      "result": "目",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "一",
+      "result": "本",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "木",
+      "result": "本",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "一",
+      "result": "大",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "人",
+      "result": "大",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "一",
+      "result": "天",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "大",
+      "result": "天",
+      "merged": true
+    }
+  ],
+  "stacks": [
+    {
+      "count": 15,
+      "characters": "口",
+      "activeP95ms": 0.211,
+      "settledP95ms": 0.004,
+      "asleep": 15,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 15,
+      "characters": "目日田回",
+      "activeP95ms": 0.256,
+      "settledP95ms": 0.009,
+      "asleep": 15,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 15,
+      "characters": "森詩想晶",
+      "activeP95ms": 2.503,
+      "settledP95ms": 0.049,
+      "asleep": 15,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 30,
+      "characters": "口",
+      "activeP95ms": 0.619,
+      "settledP95ms": 0.012,
+      "asleep": 30,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 30,
+      "characters": "目日田回",
+      "activeP95ms": 0.872,
+      "settledP95ms": 0.019,
+      "asleep": 30,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 30,
+      "characters": "森詩想晶",
+      "activeP95ms": 8.166,
+      "settledP95ms": 7.357,
+      "asleep": 0,
+      "maxSpeedPx": 890.8975816588052,
+      "fallen": 16,
+      "finite": true
+    }
+  ]
+}

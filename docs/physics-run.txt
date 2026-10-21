@@ -1,0 +1,251 @@
+
+> kanji-tower-battle-web@0.1.0 verify:physics
+> tsx tools/verify-physics.ts
+
+{
+  "uprightAtZero": [
+    {
+      "char": "木",
+      "initialAngle": 0,
+      "finalAngle": 0.292,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": false
+    },
+    {
+      "char": "日",
+      "initialAngle": 0,
+      "finalAngle": 0.022,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "月",
+      "initialAngle": 0,
+      "finalAngle": 0.001,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "人",
+      "initialAngle": 0,
+      "finalAngle": 0.005,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "口",
+      "initialAngle": 0,
+      "finalAngle": 0.041,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "水",
+      "initialAngle": 0,
+      "finalAngle": 0.212,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "火",
+      "initialAngle": 0,
+      "finalAngle": 0,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "一",
+      "initialAngle": 0,
+      "finalAngle": 0,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "土",
+      "initialAngle": 0,
+      "finalAngle": 0,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "田",
+      "initialAngle": 0,
+      "finalAngle": 0.011,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "子",
+      "initialAngle": 0,
+      "finalAngle": 0.772,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": false
+    },
+    {
+      "char": "女",
+      "initialAngle": 0,
+      "finalAngle": 0.004,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "力",
+      "initialAngle": 0,
+      "finalAngle": 0.015,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "心",
+      "initialAngle": 0,
+      "finalAngle": -0.001,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "目",
+      "initialAngle": 0,
+      "finalAngle": 0.019,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "言",
+      "initialAngle": 0,
+      "finalAngle": 0.021,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "寸",
+      "initialAngle": 0,
+      "finalAngle": 1.165,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": false
+    },
+    {
+      "char": "立",
+      "initialAngle": 0,
+      "finalAngle": 0.004,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "山",
+      "initialAngle": 0,
+      "finalAngle": 0.02,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    },
+    {
+      "char": "石",
+      "initialAngle": 0,
+      "finalAngle": 0.019,
+      "speed": 0,
+      "asleep": true,
+      "fallen": false,
+      "upright": true
+    }
+  ],
+  "failedContacts": [],
+  "stacks": [
+    {
+      "count": 15,
+      "characters": "口",
+      "activeP95ms": 0.211,
+      "settledP95ms": 0.004,
+      "asleep": 15,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 15,
+      "characters": "目日田回",
+      "activeP95ms": 0.256,
+      "settledP95ms": 0.009,
+      "asleep": 15,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 15,
+      "characters": "森詩想晶",
+      "activeP95ms": 2.503,
+      "settledP95ms": 0.049,
+      "asleep": 15,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 30,
+      "characters": "口",
+      "activeP95ms": 0.619,
+      "settledP95ms": 0.012,
+      "asleep": 30,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 30,
+      "characters": "目日田回",
+      "activeP95ms": 0.872,
+      "settledP95ms": 0.019,
+      "asleep": 30,
+      "maxSpeedPx": 0,
+      "fallen": 0,
+      "finite": true
+    },
+    {
+      "count": 30,
+      "characters": "森詩想晶",
+      "activeP95ms": 8.166,
+      "settledP95ms": 7.357,
+      "asleep": 0,
+      "maxSpeedPx": 890.8975816588052,
+      "fallen": 16,
+      "finite": true
+    }
+  ]
+}

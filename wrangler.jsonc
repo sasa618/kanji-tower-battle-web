@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kanji-tower-battle-ranking",
+  "main": "server/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  // 本番の値．ALLOWED_ORIGINS はゲームを配信するオリジンだけ（リポジトリのパスは含めない）．
+  // GAME_URL は共有ページから遊びに行く先で，HTTPS の完全な URL にする．
+  // SHARE_STORAGE_LIMIT_BYTES は共有画像の累積容量の上限（D1 Free は 1 データベース 500MB）．
+  // 開発用のオリジンは下の env.dev にあり，本番には含めない．
+  "vars": {
+    "ALLOWED_ORIGINS": "https://sasa618.github.io",
+    "GAME_URL": "https://sasa618.github.io/kanji-tower-battle-web/",
+    "SHARE_STORAGE_LIMIT_BYTES": "350000000"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "kanji-tower-ranking",
+    // tools/deploy-worker.mjs が実際の ID に置き換える（ゼロ埋めは未作成の印）．
+    "database_id": "00000000-0000-0000-0000-000000000000",
+    "migrations_dir": "server/migrations"
+  }],
+  "observability": { "enabled": false },
+  "env": {
+    "dev": {
+      "vars": {
+        "ALLOWED_ORIGINS": "http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:5174,http://localhost:5174",
+        "GAME_URL": "https://sasa618.github.io/kanji-tower-battle-web/",
+        "SHARE_STORAGE_LIMIT_BYTES": "350000000"
+      },
+      "d1_databases": [{
+        "binding": "DB",
+        "database_name": "kanji-tower-ranking",
+        "database_id": "00000000-0000-0000-0000-000000000000",
+        "migrations_dir": "server/migrations"
+      }]
+    }
+  }
+}

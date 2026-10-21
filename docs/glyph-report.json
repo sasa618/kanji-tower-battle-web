@@ -1,0 +1,350 @@
+[
+  {
+    "char": "木",
+    "fixtures": 15,
+    "vertices": 65,
+    "area": 1586.67
+  },
+  {
+    "char": "日",
+    "fixtures": 7,
+    "vertices": 28,
+    "area": 3193.84
+  },
+  {
+    "char": "月",
+    "fixtures": 16,
+    "vertices": 64,
+    "area": 2337.79
+  },
+  {
+    "char": "人",
+    "fixtures": 19,
+    "vertices": 74,
+    "area": 1112.99
+  },
+  {
+    "char": "口",
+    "fixtures": 5,
+    "vertices": 24,
+    "area": 3097.18
+  },
+  {
+    "char": "水",
+    "fixtures": 24,
+    "vertices": 102,
+    "area": 1690.87
+  },
+  {
+    "char": "火",
+    "fixtures": 28,
+    "vertices": 116,
+    "area": 1568.59
+  },
+  {
+    "char": "林",
+    "fixtures": 28,
+    "vertices": 122,
+    "area": 2249.4
+  },
+  {
+    "char": "森",
+    "fixtures": 43,
+    "vertices": 183,
+    "area": 2298.84
+  },
+  {
+    "char": "明",
+    "fixtures": 24,
+    "vertices": 93,
+    "area": 3214.93
+  },
+  {
+    "char": "朋",
+    "fixtures": 24,
+    "vertices": 100,
+    "area": 3152.42
+  },
+  {
+    "char": "昌",
+    "fixtures": 13,
+    "vertices": 52,
+    "area": 3242.05
+  },
+  {
+    "char": "休",
+    "fixtures": 23,
+    "vertices": 101,
+    "area": 2107.75
+  },
+  {
+    "char": "回",
+    "fixtures": 6,
+    "vertices": 26,
+    "area": 3986.73
+  },
+  {
+    "char": "困",
+    "fixtures": 7,
+    "vertices": 28,
+    "area": 4348.01
+  },
+  {
+    "char": "沓",
+    "fixtures": 31,
+    "vertices": 125,
+    "area": 2440.23
+  },
+  {
+    "char": "炎",
+    "fixtures": 42,
+    "vertices": 186,
+    "area": 1894.54
+  },
+  {
+    "char": "徊",
+    "fixtures": 17,
+    "vertices": 73,
+    "area": 3625.69
+  },
+  {
+    "char": "沐",
+    "fixtures": 29,
+    "vertices": 136,
+    "area": 1996.75
+  },
+  {
+    "char": "唱",
+    "fixtures": 21,
+    "vertices": 81,
+    "area": 3462.8
+  },
+  {
+    "char": "東",
+    "fixtures": 25,
+    "vertices": 104,
+    "area": 2562.52
+  },
+  {
+    "char": "晶",
+    "fixtures": 20,
+    "vertices": 77,
+    "area": 3200.82
+  },
+  {
+    "char": "焚",
+    "fixtures": 51,
+    "vertices": 220,
+    "area": 2247.82
+  },
+  {
+    "char": "囚",
+    "fixtures": 7,
+    "vertices": 27,
+    "area": 4298.44
+  },
+  {
+    "char": "一",
+    "fixtures": 2,
+    "vertices": 9,
+    "area": 268.3
+  },
+  {
+    "char": "土",
+    "fixtures": 7,
+    "vertices": 30,
+    "area": 1089.18
+  },
+  {
+    "char": "田",
+    "fixtures": 6,
+    "vertices": 26,
+    "area": 3821.33
+  },
+  {
+    "char": "子",
+    "fixtures": 18,
+    "vertices": 72,
+    "area": 1064.66
+  },
+  {
+    "char": "女",
+    "fixtures": 15,
+    "vertices": 71,
+    "area": 2104.43
+  },
+  {
+    "char": "力",
+    "fixtures": 22,
+    "vertices": 87,
+    "area": 1415.31
+  },
+  {
+    "char": "心",
+    "fixtures": 20,
+    "vertices": 102,
+    "area": 1533.12
+  },
+  {
+    "char": "目",
+    "fixtures": 7,
+    "vertices": 28,
+    "area": 3377.54
+  },
+  {
+    "char": "言",
+    "fixtures": 14,
+    "vertices": 61,
+    "area": 1739.76
+  },
+  {
+    "char": "寸",
+    "fixtures": 15,
+    "vertices": 67,
+    "area": 1197.44
+  },
+  {
+    "char": "立",
+    "fixtures": 12,
+    "vertices": 54,
+    "area": 1210.57
+  },
+  {
+    "char": "山",
+    "fixtures": 7,
+    "vertices": 31,
+    "area": 1768.29
+  },
+  {
+    "char": "石",
+    "fixtures": 12,
+    "vertices": 53,
+    "area": 2311.64
+  },
+  {
+    "char": "好",
+    "fixtures": 32,
+    "vertices": 136,
+    "area": 2136.8
+  },
+  {
+    "char": "男",
+    "fixtures": 26,
+    "vertices": 101,
+    "area": 2584.89
+  },
+  {
+    "char": "岩",
+    "fixtures": 19,
+    "vertices": 85,
+    "area": 2351.68
+  },
+  {
+    "char": "相",
+    "fixtures": 19,
+    "vertices": 80,
+    "area": 3330.7
+  },
+  {
+    "char": "信",
+    "fixtures": 21,
+    "vertices": 91,
+    "area": 2203.31
+  },
+  {
+    "char": "畑",
+    "fixtures": 18,
+    "vertices": 87,
+    "area": 3722.49
+  },
+  {
+    "char": "加",
+    "fixtures": 26,
+    "vertices": 106,
+    "area": 2829.24
+  },
+  {
+    "char": "思",
+    "fixtures": 26,
+    "vertices": 125,
+    "area": 2944.13
+  },
+  {
+    "char": "音",
+    "fixtures": 18,
+    "vertices": 79,
+    "area": 2245.91
+  },
+  {
+    "char": "意",
+    "fixtures": 35,
+    "vertices": 164,
+    "area": 2654.78
+  },
+  {
+    "char": "村",
+    "fixtures": 24,
+    "vertices": 113,
+    "area": 2014.16
+  },
+  {
+    "char": "寺",
+    "fixtures": 22,
+    "vertices": 97,
+    "area": 1461.7
+  },
+  {
+    "char": "時",
+    "fixtures": 28,
+    "vertices": 119,
+    "area": 2591.14
+  },
+  {
+    "char": "詩",
+    "fixtures": 35,
+    "vertices": 152,
+    "area": 2129.93
+  },
+  {
+    "char": "侍",
+    "fixtures": 28,
+    "vertices": 125,
+    "area": 2052.16
+  },
+  {
+    "char": "想",
+    "fixtures": 36,
+    "vertices": 168,
+    "area": 2916.83
+  },
+  {
+    "char": "二",
+    "fixtures": 4,
+    "vertices": 18,
+    "area": 420.94
+  },
+  {
+    "char": "三",
+    "fixtures": 6,
+    "vertices": 27,
+    "area": 612.37
+  },
+  {
+    "char": "本",
+    "fixtures": 18,
+    "vertices": 79,
+    "area": 1663.51
+  },
+  {
+    "char": "大",
+    "fixtures": 23,
+    "vertices": 89,
+    "area": 1264.26
+  },
+  {
+    "char": "天",
+    "fixtures": 23,
+    "vertices": 93,
+    "area": 1316.18
+  }
+]
