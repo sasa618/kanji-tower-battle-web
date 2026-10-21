@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import fs from 'node:fs';
-import worker from '../server/worker';
+import worker,{jstDay} from '../server/worker';
 import { validateSubmission } from '../server/validation';
 import { MAX_SHARE_BYTES } from '../server/shares';
 import type { Env } from '../server/worker';
@@ -148,4 +148,22 @@ test('cumulative share storage is tracked without scanning images and stops new 
   health=await (await worker.fetch(req('/health'),e)).json() as typeof health;assert.deepEqual(health.shares,{count:0,bytes:0,limit:100,accepting:false});
   const roomy=env();assert.equal((await (await worker.fetch(req('/health'),roomy)).json() as typeof health).shares.accepting,true);
   assert.ok(MAX_SHARE_BYTES<=(await (await worker.fetch(req('/health'),roomy)).json() as typeof health).shares.limit);
+});
+test('anonymous usage is counted once per session into Japanese-day aggregates and exposed without names',async()=>{
+  const e=env(),client=crypto.randomUUID();
+  const {session}=await (await worker.fetch(req('/sessions',{client}),e)).json() as {session:string};
+  assert.equal((await worker.fetch(req('/events',{session,duration:42.5,moves:9}),e)).status,204);
+  assert.equal((await worker.fetch(req('/events',{session,duration:42.5,moves:9}),e)).status,409);
+  assert.equal((await worker.fetch(req('/events',{session:crypto.randomUUID(),duration:10,moves:1}),e)).status,409);
+  assert.equal((await worker.fetch(req('/events',{session,duration:-1,moves:1}),e)).status,400);
+  assert.equal((await worker.fetch(req('/events',{session,duration:5,moves:1},'https://evil.invalid'),e)).status,403);
+  const other=crypto.randomUUID();await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(other,'x',Date.now()).run();
+  assert.equal((await worker.fetch(req('/events',{session:other,duration:7.5,moves:2}),e)).status,204);
+  const stats=await (await worker.fetch(req('/stats'),e)).json() as {days:{day:string;games:number;seconds:number;drops:number}[];total:{days:number;games:number;seconds:number;drops:number}};
+  assert.equal(stats.days.length,1);assert.deepEqual(stats.days[0],{day:jstDay(Date.now()),games:2,seconds:50,drops:11});
+  assert.deepEqual(stats.total,{days:1,games:2,seconds:50,drops:11});
+  assert.doesNotMatch(JSON.stringify(stats),/name|score|client/);
+});
+test('Japanese day boundary is nine hours ahead of UTC',()=>{
+  assert.equal(jstDay(Date.UTC(2026,9,21,14,59)),'2026-10-21');assert.equal(jstDay(Date.UTC(2026,9,21,15,0)),'2026-10-22');
 });

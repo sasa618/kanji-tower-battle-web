@@ -17,6 +17,11 @@ async function call<T>(path:string,body?:unknown,timeout=6000):Promise<T>{
 export async function beginSession(){try{return (await call<{session:string}>('/sessions',{client:clientId()})).session;}catch{return null;}}
 export const getScores=(metric:RankingMetric='score')=>call<{scores:OnlineScore[]}>(`/scores?metric=${metric}`);
 export const submitScore=(session:string,name:string,result:RecordEntry,moves:number)=>call<SubmitResult>('/scores',{session,name,score:result.score,height:result.height,count:result.count,duration:result.duration,moves});
+// One anonymous usage report per play: session, play seconds and drops. No name, score or device ID.
+export async function reportGame(session:string,duration:number,moves:number){
+  if(!API)return;
+  try{await fetch(API+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});}catch{/* statistics never affect play */}
+}
 // Uploads carry about 200KB, so a slow mobile connection gets more time than a ranking read.
 export const createResultShare=(result:RecordEntry,image:string)=>call<{url:string}>('/shares',{client:clientId(),record:result.id,score:result.score,height:result.height,count:result.count,image},20000);
 // Links issued by another server (for example a LAN preview) are not reused against the public API.

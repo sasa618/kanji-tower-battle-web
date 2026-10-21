@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {applyPublicURL,normalizePublicURL} from '../tools/public-meta';
+import {applyMeasurement,applyPublicURL,normalizePublicURL} from '../tools/public-meta';
 test('public URL is normalized to https with a trailing slash and rejects local or invalid values',()=>{
   assert.equal(normalizePublicURL('https://example.github.io/game?x=1#y'),'https://example.github.io/game/');
   assert.equal(normalizePublicURL('https://example.github.io/game/'),'https://example.github.io/game/');
@@ -19,4 +19,12 @@ test('index.html carries absolute card URLs only when a public URL is configured
   const local=applyPublicURL(html,undefined);
   assert.doesNotMatch(local,/__PUBLIC_URL__|og:url|og:image|twitter:image"/);
   assert.match(local,/twitter:card/);assert.match(local,/og:title/);assert.match(local,/twitter:image:alt/);
+});
+test('measurement tags appear only for well-formed public tokens',()=>{
+  const html=fs.readFileSync('index.html','utf8');
+  const tagged=applyMeasurement(html,{beaconToken:'0123456789abcdef0123456789abcdef',googleVerification:'AbC-123_xyz'});
+  assert.match(tagged,/<meta name="google-site-verification" content="AbC-123_xyz" \/>\n/);
+  assert.match(tagged,/static\.cloudflareinsights\.com\/beacon\.min\.js" data-cf-beacon='\{"token": "0123456789abcdef0123456789abcdef"\}'><\/script>\n\s*<\/head>/);
+  assert.equal(applyMeasurement(html,{}),html);
+  assert.equal(applyMeasurement(html,{beaconToken:'"><script>alert(1)</script>',googleVerification:'<x>'}),html);
 });

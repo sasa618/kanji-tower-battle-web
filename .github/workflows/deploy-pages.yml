@@ -1,7 +1,8 @@
 # GitHub Pages への公開．このファイルは web/ の内容をルートに置いた公開リポジトリ用である．
 # 親リポジトリの KanjiBlocks/web/ 配下にあるあいだは GitHub に認識されず，何も起きない．
 # RANKING_API と PUBLIC_URL はリポジトリの変数（Settings → Secrets and variables → Actions → Variables）で，
-# どちらも公開値としてビルド成果物に埋め込まれる．PUBLIC_URL が無いときは Pages の URL を使う．
+# いずれも公開値としてビルド成果物に埋め込まれる．PUBLIC_URL が無いときは Pages の URL を使う．
+# CF_BEACON_TOKEN（Cloudflare Web Analytics）と GOOGLE_SITE_VERIFICATION（Search Console）は任意である．
 name: Deploy to GitHub Pages
 on:
   push:
@@ -31,6 +32,8 @@ jobs:
         env:
           VITE_RANKING_API: ${{ vars.RANKING_API }}
           VITE_PUBLIC_URL: ${{ vars.PUBLIC_URL || format('{0}/', steps.pages.outputs.base_url) }}
+          VITE_CF_BEACON_TOKEN: ${{ vars.CF_BEACON_TOKEN }}
+          VITE_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

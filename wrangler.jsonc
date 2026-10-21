@@ -17,7 +17,7 @@
     "binding": "DB",
     "database_name": "kanji-tower-ranking",
     // tools/deploy-worker.mjs が実際の ID に置き換える（ゼロ埋めは未作成の印）．
-    "database_id": "00000000-0000-0000-0000-000000000000",
+    "database_id": "857a6159-1624-416d-8f0c-d3bb422e9b05",
     "migrations_dir": "server/migrations"
   }],
   "observability": { "enabled": false },
@@ -31,7 +31,7 @@
       "d1_databases": [{
         "binding": "DB",
         "database_name": "kanji-tower-ranking",
-        "database_id": "00000000-0000-0000-0000-000000000000",
+        "database_id": "857a6159-1624-416d-8f0c-d3bb422e9b05",
         "migrations_dir": "server/migrations"
       }]
     }

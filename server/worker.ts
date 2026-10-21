@@ -6,6 +6,8 @@ export interface Env {DB:D1Database;ALLOWED_ORIGINS:string;GAME_URL?:string;SHAR
 const DAY=86400000,RANKING_DAYS=90;
 // The same order decides the published list, its ties, and the rank returned right after a submission.
 const metricOrder:Record<RankingMetric,[string,string,string]>={score:['score','height','count'],height:['height','score','count'],count:['count','score','height']};
+// Usage statistics are grouped by the Japanese calendar day (UTC+9).
+export const jstDay=(ms:number)=>new Date(ms+9*3600000).toISOString().slice(0,10);
 export const orderBy=(metric:RankingMetric)=>metricOrder[metric].map(c=>`${c} DESC`).join(',')+',created ASC';
 export async function rankOf(db:D1Database,metric:RankingMetric,row:{score:number;height:number;count:number;created:number},since:number){
   const [a,b,c]=metricOrder[metric],v=(name:string)=>row[name as 'score'|'height'|'count'];
@@ -25,6 +27,13 @@ export default {
     try{
       if(path.startsWith('/s/')&&['GET','HEAD'].includes(request.method))return await serveShare(request,env);
       if(path==='/health'&&request.method==='GET')return json({ok:true,shares:await shareUsage(env)});
+      if(path==='/stats'&&request.method==='GET'){
+        // Anonymous daily aggregates only: finished games, summed play seconds, drops. No names or scores.
+        const days=await env.DB.prepare('SELECT day,games,seconds,drops FROM daily_stats WHERE day>=? ORDER BY day DESC').bind(jstDay(now-DAY*30)).all<{day:string;games:number;seconds:number;drops:number}>();
+        const total=await env.DB.prepare('SELECT COUNT(*) AS days,COALESCE(SUM(games),0) AS games,COALESCE(SUM(seconds),0) AS seconds,COALESCE(SUM(drops),0) AS drops FROM daily_stats').first();
+        headers['Cache-Control']='public, max-age=300';
+        return json({days:days.results,total});
+      }
       if(path==='/scores'&&request.method==='GET'){
         const metric=url.searchParams.get('metric')||'score';
         if(!isRankingMetric(metric))return json({error:'ランキングの種類を確認してください。'},400);
@@ -50,6 +59,16 @@ export default {
       let data:Record<string,unknown>;try{data=JSON.parse(new TextDecoder().decode(merged));}catch{return json({error:'送信内容を読み取れません。'},400);}
       if(!data||typeof data!=='object'||Array.isArray(data))return json({error:'送信内容を確認してください。'},400);
       if(path==='/shares'){const result=await saveShare(data,env,url.origin);return json(result.body,result.status);}
+      if(path==='/events'){
+        const {session,duration,moves}=data as {session?:unknown;duration?:unknown;moves?:unknown};
+        if(typeof session!=='string'||!/^[0-9a-f-]{36}$/.test(session)||typeof duration!=='number'||!Number.isFinite(duration)||duration<0||duration>86400||!Number.isInteger(moves)||Number(moves)<0||Number(moves)>10000)return json({error:'集計の内容を確認できません。'},400);
+        // Each play session is counted once; the flag flips in the same statement that authorizes the count.
+        const marked=await env.DB.prepare('UPDATE sessions SET reported=1 WHERE id=? AND reported=0 AND created>?').bind(session,now-DAY).run();
+        if(!marked.meta.changes)return json({error:'この記録は集計済みです。'},409);
+        await env.DB.prepare(`INSERT INTO daily_stats(day,games,seconds,drops) VALUES(?,1,?,?)
+          ON CONFLICT(day) DO UPDATE SET games=games+1,seconds=seconds+excluded.seconds,drops=drops+excluded.drops`).bind(jstDay(now),duration,moves).run();
+        return new Response(null,{status:204,headers});
+      }
       if(path==='/sessions'){
         if(typeof data?.client!=='string'||!/^[0-9a-f-]{36}$/.test(data.client))return json({error:'端末情報を確認できません。'},400);
         const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(data.client));const tag=Array.from(new Uint8Array(digest),n=>n.toString(16).padStart(2,'0')).join('');

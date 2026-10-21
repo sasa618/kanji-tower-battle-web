@@ -1,4 +1,4 @@
-import { beginSession, getScores, onlineEnabled, submitScore, type OnlineScore } from './online';
+import { beginSession, getScores, onlineEnabled, reportGame, submitScore, type OnlineScore } from './online';
 import type { RecordEntry } from './storage';
 import { MetricRankings } from './ranking-cache';
 import {metricLabels,metricUnits,metricValue,rankingMetrics,type RankingMetric} from './ranking';
@@ -12,7 +12,7 @@ export class OnlineUI {
   reset(){this.run++;this.moves=0;this.session=null;this.result=null;this.rank=0;this.ranks={};this.error='';this.pending=false;this.sending=false;}
   start(){this.reset();const id=this.run;this.pending=onlineEnabled;
     void beginSession().then(session=>{if(id!==this.run)return;this.session=session;this.pending=false;this.changed();});}
-  finish(result:RecordEntry){this.result=result;}
+  finish(result:RecordEntry){this.result=result;if(this.session)void reportGame(this.session,result.duration,this.moves);}
   async load(){if(onlineEnabled)await this.rankings.load();}
   async submit(){if(!this.session||!this.result||this.sending||this.rank)return;this.sending=true;this.error='';this.changed();try{const r=await submitScore(this.session,this.name,this.result,this.moves);this.rank=r.rank;this.ranks=r.ranks||{score:r.rank};}catch(e){this.error=(e as Error).message;}finally{this.sending=false;this.changed();}}
   resultHTML(){if(!onlineEnabled)return '<p>全国ランキングは接続準備中です。</p>';
