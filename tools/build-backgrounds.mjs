@@ -24,26 +24,32 @@ const page=`<svg xmlns="http://www.w3.org/2000/svg" width="640" height="720" vie
     <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="16" cy="16" r=".85" fill="#b7c2d5" opacity=".24"/></pattern>
   </defs>
   <path fill="url(#dots)" d="M0 0h640v720H0z"/>
-  <g stroke="#6351ca" opacity=".09"><circle cx="615" cy="234" r="64" stroke-width="9"/><circle cx="615" cy="234" r="81" stroke-width="1.3"/></g>
-  <rect x="28" y="430" width="78" height="78" rx="18" transform="rotate(-12 67 469)" stroke="#087f83" stroke-width="1.5" opacity=".12"/>
+  <g stroke="#6351ca" opacity=".12"><circle cx="615" cy="234" r="64" stroke-width="9"/><circle cx="615" cy="234" r="81" stroke-width="1.3"/></g>
+  <circle cx="-22" cy="390" r="71" fill="#087f83" opacity=".025"/>
+  <g stroke="#087f83" opacity=".12"><circle cx="-22" cy="390" r="86" stroke-width="10"/><circle cx="-22" cy="390" r="105" stroke-width="1.3"/></g>
+  <g stroke="#df3655" opacity=".12"><circle cx="654" cy="704" r="84" stroke-width="12"/><circle cx="654" cy="704" r="106" stroke-width="1.3"/></g>
+  <circle cx="388" cy="344" r="21" stroke="#df3655" stroke-width="2.5" opacity=".13"/>
+  <rect x="349" y="594" width="50" height="50" rx="13" transform="rotate(14 374 619)" stroke="#087f83" stroke-width="1.5" opacity=".12"/>
   <path d="M398 92v12m-6-6h12" stroke="#6351ca" stroke-width="1.5" stroke-linecap="round" opacity=".16"/>
   <circle cx="280" cy="326" r="6" stroke="#ca951f" stroke-width="1.7" opacity=".18"/>
   ${glyph('木','translate(102 141) rotate(-8) scale(.96)','coral')}
   ${glyph('森','translate(497 503) rotate(7) scale(1.03)','teal')}
   ${glyph('日','translate(260 643) rotate(-7) scale(.78)','violet')}
 </svg>\n`;
-// Separate, proportion-preserving edge viewports keep the earlier placement
-// on phones without stretching the kanji or putting them across the tower.
+// Three large cropped circles lead the eye from upper right to middle left to
+// lower right. Keep them clear of the kanji, using proportion-preserving edge
+// viewports so phone layouts never stretch the circles or cover the tower.
 const board=`<svg xmlns="http://www.w3.org/2000/svg" width="560" height="700" fill="none">
   <defs>${gradients}</defs>
   <svg x="0" y="15%" width="20%" height="23%" viewBox="0 0 112 160" preserveAspectRatio="xMinYMid meet">
     ${glyph('木','translate(46 80) rotate(-7) scale(.94)','coral')}
   </svg>
   <svg x="80%" y="8%" width="20%" height="24%" viewBox="0 0 112 168" preserveAspectRatio="xMaxYMid meet">
-    <g stroke="#6351ca" opacity=".09"><circle cx="140" cy="84" r="64" stroke-width="9"/><circle cx="140" cy="84" r="82" stroke-width="1.3"/></g>
+    <g stroke="#6351ca" opacity=".12"><circle cx="140" cy="84" r="64" stroke-width="9"/><circle cx="140" cy="84" r="82" stroke-width="1.3"/></g>
   </svg>
-  <svg x="0" y="42%" width="14%" height="17%" viewBox="0 0 80 120" preserveAspectRatio="xMinYMid meet">
-    <rect x="-23" y="29" width="62" height="62" rx="15" transform="rotate(-12 8 60)" stroke="#087f83" stroke-width="1.3" opacity=".13"/>
+  <svg x="0" y="34%" width="23%" height="28%" viewBox="0 0 130 210" preserveAspectRatio="xMinYMid meet">
+    <circle cx="-12" cy="105" r="63" fill="#087f83" opacity=".025"/>
+    <g stroke="#087f83" opacity=".12"><circle cx="-12" cy="105" r="78" stroke-width="10"/><circle cx="-12" cy="105" r="97" stroke-width="1.3"/></g>
   </svg>
   <svg x="80%" y="44%" width="20%" height="24%" viewBox="0 0 112 168" preserveAspectRatio="xMaxYMid meet">
     ${glyph('林','translate(64 84) rotate(7) scale(.96)','violet')}
@@ -51,9 +57,14 @@ const board=`<svg xmlns="http://www.w3.org/2000/svg" width="560" height="700" fi
   <svg x="0" y="67%" width="22%" height="23%" viewBox="0 0 123 161" preserveAspectRatio="xMinYMid meet">
     ${glyph('森','translate(54 80) rotate(-6) scale(1.02)','teal')}
   </svg>
-  <svg x="88%" y="79%" width="8%" height="8%" viewBox="0 0 45 56">
+  <svg x="78%" y="82%" width="22%" height="18%" viewBox="0 0 123 126" preserveAspectRatio="xMaxYMax meet">
+    <g stroke="#df3655" opacity=".12"><circle cx="144" cy="115" r="76" stroke-width="12"/><circle cx="144" cy="115" r="96" stroke-width="1.3"/></g>
+  </svg>
+  <svg x="88%" y="35%" width="8%" height="8%" viewBox="0 0 45 56">
     <path d="M22 22v12m-6-6h12" stroke="#6351ca" stroke-width="1.5" stroke-linecap="round" opacity=".17"/>
   </svg>
+  <circle cx="93%" cy="73%" r="8" stroke="#ca951f" stroke-width="2" opacity=".18"/>
+  <circle cx="8%" cy="9%" r="6" stroke="#df3655" stroke-width="1.5" opacity=".14"/>
   <circle cx="5%" cy="94%" r="4" stroke="#ca951f" stroke-width="1.5" opacity=".19"/>
 </svg>\n`;
 fs.writeFileSync(new URL('public/ui-background.svg',root),page);
