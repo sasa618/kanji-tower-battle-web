@@ -112,6 +112,8 @@ npm run check:release -- --api https://<Worker URL> --game https://<ゲームURL
 
 PNGは `tools/build-discovery-cards.ts` で生成し，`public/kanji-cards/` に追跡する．再生成には `assets/fonts/README.md` の元フォントと `@napi-rs/canvas` が必要で，`KANJI_CANVAS_MODULE` でそのローカルモジュールのパスを指定して `node --import tsx tools/build-discovery-cards.ts` を実行する．HTMLは `VITE_PUBLIC_URL` が設定されたビルドでViteが生成する．CIでは全共有対象のPNG・寸法・専用リンク・公開メタ情報を検査する．
 
+背景の漢字模様は，同じ `KANJI_CANVAS_MODULE` を指定して `node tools/build-backgrounds.mjs` で再生成する．ゲームの輪郭データから筆画の重なりを統合し，`public/*-background.svg` とPC・スマホ幅の背景単体プレビューを出力する．公開サイトでは静的SVGだけを読み込み，描画用の追加ライブラリや通信は使わない．
+
 結果画面・ランキングの自己ベストから「Xでシェア」を押すと，最高到達時の塔と得点を1200×630のPNGにする．WorkerのPOST /sharesで画像と記録を保存し，/s/共有ID の専用リンクを作る．このページは最初のHTMLにXカード・OGPメタ情報を含み，画像URLは /s/共有ID/image.png で返す．リンクを開いた利用者はGAME_URLへ移動して新しいゲームを開始し，JavaScriptが無効でも「遊ぶ」リンクを使える．投稿本文はURL分を含めてXの文字数に収まるよう，作った字の列挙を必要に応じて省略する．Xの投稿確定は利用者が行う．
 
 画像の自動アップロードや定期取得は行わない（自動で送るのはゲーム終了時の匿名の利用状況1回だけである）．同じ端末・同じ記録は専用リンクを再利用し，別のサーバーが発行したリンクは再利用しない．画像はPNGのBase64で260,000文字以下（復号後は最大約195KB），サーバーで署名・IHDR・寸法・IENDを検査する．新規作成は直近24時間で1端末10件・全体200件までである．画像と記録の公開はリンクを持つ人が対象で，リンクを保つため自動削除はしない．画像の配信は長期キャッシュのヘッダーを付け，既存のカード画像を別の記録で上書きしない．ランキング送信とは別で，名前は共有リンクに含めない．
