@@ -8,7 +8,7 @@
   --green:var(--accent);--muted:#687187;--line:#e8eaf1;
   --coral:var(--accent);--paper:#fff;
 }
-body{background:#fffefa url('/ui-background.svg?v=kanji-print') repeat;background-size:288px 480px}
+body{background:#fffefa url('/ui-background.svg?v=pastel-edges') repeat;background-size:640px 720px}
 #app{position:relative;z-index:1}
 button{font-weight:750}
 button:focus-visible,a:focus-visible,input:focus-visible{outline-color:#5369ef}
@@ -64,7 +64,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 .stat:last-child strong{color:#00a56c}
 .minor-stats{gap:26px}
 .mobile-pause{background:#f6f6f7;border:1px solid #e5e7ec;color:#526078;display:grid;place-items:center}
-.board{background:#fff url('/board-background.svg?v=kanji-print') center / 100% 100% no-repeat;border-radius:0 0 14px 14px;margin:0 -10px;border-bottom:1px solid #ecedf5}
+.board{background:#fff url('/board-background.svg?v=pastel-edges') center / 100% 100% no-repeat;border-radius:0 0 14px 14px;margin:0 -10px;border-bottom:1px solid #ecedf5}
 .board-status{color:#65718b;font-weight:700;font-size:14px;top:18px;right:18px}
 .gesture-cue{position:absolute;top:12px;bottom:auto;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;color:#5c6f9f;pointer-events:none;white-space:nowrap}.gesture-cue span{font-size:13px;font-weight:750}
 .gesture-cue svg{width:132px;height:34px;display:block}.swipe-hand{animation:swipe-demo 2.4s ease-in-out infinite}

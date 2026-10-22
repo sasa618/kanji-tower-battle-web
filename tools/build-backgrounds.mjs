@@ -2,48 +2,59 @@
 import fs from 'node:fs';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
-const {Path2D,createCanvas,loadImage}=require(process.env.KANJI_CANVAS_MODULE||'@napi-rs/canvas');
+const {createCanvas,loadImage}=require(process.env.KANJI_CANVAS_MODULE||'@napi-rs/canvas');
 const root=new URL('../',import.meta.url);
 const glyphs=JSON.parse(fs.readFileSync(new URL('src/data/glyphs.json',root),'utf8'));
 const coordinates={M:['x','y'],L:['x','y'],Q:['x1','y1','x','y'],C:['x1','y1','x2','y2','x','y'],Z:[]};
-const letters=[['木',48,40],['林',192,120],['森',48,200],['日',192,280],['月',48,360],['明',192,440]];
-const paths=letters.map(([char,x,y])=>{
+function glyph(char,transform,ink){
   const commands=glyphs[char].commands.map(c=>c.type+coordinates[c.type].map(key=>c[key]).join(' ')).join(' ');
-  // Merge overlapping font strokes before outlining, so intersections don't
-  // leave distracting construction lines inside each decorative character.
-  const outline=new Path2D(commands).simplify().toSVGString();
-  return `<path data-kanji="${char}" d="${outline}" transform="translate(${x} ${y}) scale(.58)"/>`;
-}).join('\n');
-// One upright, evenly spaced print replaces independently colored decorations.
-const motif=`<pattern id="kanji-print" width="288" height="480" patternUnits="userSpaceOnUse">
-  <g fill="none" stroke="#b4a4a4" stroke-width="1.8" stroke-linejoin="round">${paths}</g>
-</pattern>`;
-const page=`<svg xmlns="http://www.w3.org/2000/svg" width="288" height="480" viewBox="0 0 288 480" fill="none">
-  <defs>${motif}</defs>
-  <path fill="url(#kanji-print)" opacity=".4" d="M0 0h288v480H0z"/>
-</svg>\n`;
-// No viewBox: the print keeps its proportions instead of stretching to fit a
-// phone's aspect ratio. Percentage masks clear the centre, top controls and base.
-const board=`<svg xmlns="http://www.w3.org/2000/svg" width="560" height="700" fill="none">
-  <defs>${motif}
-    <linearGradient id="edges">
-      <stop stop-color="white"/>
-      <stop offset=".12" stop-color="white" stop-opacity=".65"/>
-      <stop offset=".3" stop-color="white" stop-opacity="0"/>
-      <stop offset=".7" stop-color="white" stop-opacity="0"/>
-      <stop offset=".88" stop-color="white" stop-opacity=".65"/>
-      <stop offset="1" stop-color="white"/>
-    </linearGradient>
-    <linearGradient id="ends" x2="0" y2="1">
-      <stop stop-color="white" stop-opacity="0"/>
-      <stop offset=".18" stop-color="white"/>
-      <stop offset=".88" stop-color="white"/>
-      <stop offset="1" stop-color="white" stop-opacity="0"/>
-    </linearGradient>
-    <mask id="edge-print"><rect fill="url(#edges)" width="100%" height="100%"/></mask>
-    <mask id="end-print"><rect fill="url(#ends)" width="100%" height="100%"/></mask>
+  return `<path data-kanji="${char}" d="${commands}" transform="${transform}" fill="url(#${ink}-ink)"/>`;
+}
+// Retain the original coral / violet / teal composition, with the ink fading
+// inward so the kanji sit softly on the same white surface as the line motifs.
+const inks=[['coral','#df3655',false],['violet','#6351ca',true],['teal','#087f83',false]];
+const gradients=inks.map(([name,color,reverse])=>`
+  <linearGradient id="${name}-ink" x1="${reverse?1:0}" x2="${reverse?0:1}" y2=".25">
+    <stop offset="0" stop-color="${color}" stop-opacity=".105"/>
+    <stop offset=".55" stop-color="${color}" stop-opacity=".075"/>
+    <stop offset="1" stop-color="${color}" stop-opacity=".035"/>
+  </linearGradient>`).join('');
+const page=`<svg xmlns="http://www.w3.org/2000/svg" width="640" height="720" viewBox="0 0 640 720" fill="none">
+  <defs>${gradients}
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="16" cy="16" r=".85" fill="#b7c2d5" opacity=".24"/></pattern>
   </defs>
-  <g mask="url(#edge-print)"><rect mask="url(#end-print)" fill="url(#kanji-print)" opacity=".38" width="100%" height="100%"/></g>
+  <path fill="url(#dots)" d="M0 0h640v720H0z"/>
+  <g stroke="#6351ca" opacity=".09"><circle cx="615" cy="234" r="64" stroke-width="9"/><circle cx="615" cy="234" r="81" stroke-width="1.3"/></g>
+  <rect x="28" y="430" width="78" height="78" rx="18" transform="rotate(-12 67 469)" stroke="#087f83" stroke-width="1.5" opacity=".12"/>
+  <path d="M398 92v12m-6-6h12" stroke="#6351ca" stroke-width="1.5" stroke-linecap="round" opacity=".16"/>
+  <circle cx="280" cy="326" r="6" stroke="#ca951f" stroke-width="1.7" opacity=".18"/>
+  ${glyph('木','translate(102 141) rotate(-8) scale(.96)','coral')}
+  ${glyph('森','translate(497 503) rotate(7) scale(1.03)','teal')}
+  ${glyph('日','translate(260 643) rotate(-7) scale(.78)','violet')}
+</svg>\n`;
+// Separate, proportion-preserving edge viewports keep the earlier placement
+// on phones without stretching the kanji or putting them across the tower.
+const board=`<svg xmlns="http://www.w3.org/2000/svg" width="560" height="700" fill="none">
+  <defs>${gradients}</defs>
+  <svg x="0" y="15%" width="20%" height="23%" viewBox="0 0 112 160" preserveAspectRatio="xMinYMid meet">
+    ${glyph('木','translate(46 80) rotate(-7) scale(.94)','coral')}
+  </svg>
+  <svg x="80%" y="8%" width="20%" height="24%" viewBox="0 0 112 168" preserveAspectRatio="xMaxYMid meet">
+    <g stroke="#6351ca" opacity=".09"><circle cx="140" cy="84" r="64" stroke-width="9"/><circle cx="140" cy="84" r="82" stroke-width="1.3"/></g>
+  </svg>
+  <svg x="0" y="42%" width="14%" height="17%" viewBox="0 0 80 120" preserveAspectRatio="xMinYMid meet">
+    <rect x="-23" y="29" width="62" height="62" rx="15" transform="rotate(-12 8 60)" stroke="#087f83" stroke-width="1.3" opacity=".13"/>
+  </svg>
+  <svg x="80%" y="44%" width="20%" height="24%" viewBox="0 0 112 168" preserveAspectRatio="xMaxYMid meet">
+    ${glyph('林','translate(64 84) rotate(7) scale(.96)','violet')}
+  </svg>
+  <svg x="0" y="67%" width="22%" height="23%" viewBox="0 0 123 161" preserveAspectRatio="xMinYMid meet">
+    ${glyph('森','translate(54 80) rotate(-6) scale(1.02)','teal')}
+  </svg>
+  <svg x="88%" y="79%" width="8%" height="8%" viewBox="0 0 45 56">
+    <path d="M22 22v12m-6-6h12" stroke="#6351ca" stroke-width="1.5" stroke-linecap="round" opacity=".17"/>
+  </svg>
+  <circle cx="5%" cy="94%" r="4" stroke="#ca951f" stroke-width="1.5" opacity=".19"/>
 </svg>\n`;
 fs.writeFileSync(new URL('public/ui-background.svg',root),page);
 fs.writeFileSync(new URL('public/board-background.svg',root),board);
