@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-18T00:59:19.465Z",
+  "date": "2026-10-31T16:29:31.579Z",
   "stability": [
     {
       "char": "木",
@@ -1702,14 +1702,602 @@
       "b": "大",
       "result": "天",
       "merged": true
+    },
+    {
+      "a": "人",
+      "b": "二",
+      "result": "仁",
+      "merged": true
+    },
+    {
+      "a": "二",
+      "b": "人",
+      "result": "仁",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "一",
+      "result": "王",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "土",
+      "result": "王",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "一",
+      "result": "且",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "月",
+      "result": "且",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "寸",
+      "result": "付",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "人",
+      "result": "付",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "山",
+      "result": "仙",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "人",
+      "result": "仙",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "土",
+      "result": "吐",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "口",
+      "result": "吐",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "大",
+      "result": "因",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "口",
+      "result": "因",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "寸",
+      "result": "団",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "口",
+      "result": "団",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "口",
+      "result": "如",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "女",
+      "result": "如",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "立",
+      "result": "位",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "人",
+      "result": "位",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "本",
+      "result": "体",
+      "merged": true
+    },
+    {
+      "a": "本",
+      "b": "人",
+      "result": "体",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "寸",
+      "result": "肘",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "月",
+      "result": "肘",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "土",
+      "result": "里",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "日",
+      "result": "里",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "石",
+      "result": "妬",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "女",
+      "result": "妬",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "立",
+      "result": "泣",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "水",
+      "result": "泣",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "目",
+      "result": "冒",
+      "merged": true
+    },
+    {
+      "a": "目",
+      "b": "日",
+      "result": "冒",
+      "merged": true
+    },
+    {
+      "a": "回",
+      "b": "口",
+      "result": "品",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "回",
+      "result": "品",
+      "merged": true
+    },
+    {
+      "a": "侍",
+      "b": "一",
+      "result": "待",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "侍",
+      "result": "待",
+      "merged": true
+    },
+    {
+      "a": "加",
+      "b": "木",
+      "result": "架",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "加",
+      "result": "架",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "月",
+      "result": "胃",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "田",
+      "result": "胃",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "寸",
+      "result": "討",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "言",
+      "result": "討",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "朋",
+      "result": "崩",
+      "merged": true
+    },
+    {
+      "a": "朋",
+      "b": "山",
+      "result": "崩",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "炎",
+      "result": "淡",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "水",
+      "result": "淡",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "朋",
+      "result": "棚",
+      "merged": true
+    },
+    {
+      "a": "朋",
+      "b": "木",
+      "result": "棚",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "東",
+      "result": "棟",
+      "merged": true
+    },
+    {
+      "a": "東",
+      "b": "木",
+      "result": "棟",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "音",
+      "result": "暗",
+      "merged": true
+    },
+    {
+      "a": "音",
+      "b": "日",
+      "result": "暗",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "意",
+      "result": "億",
+      "merged": true
+    },
+    {
+      "a": "意",
+      "b": "人",
+      "result": "億",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "炎",
+      "result": "談",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "言",
+      "result": "談",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "意",
+      "result": "憶",
+      "merged": true
+    },
+    {
+      "a": "意",
+      "b": "心",
+      "result": "憶",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "意",
+      "result": "臆",
+      "merged": true
+    },
+    {
+      "a": "意",
+      "b": "月",
+      "result": "臆",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "女",
+      "result": "奻",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "女",
+      "result": "奻",
+      "merged": true
+    },
+    {
+      "a": "奻",
+      "b": "女",
+      "result": "姦",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "奻",
+      "result": "姦",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "王",
+      "result": "全",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "人",
+      "result": "全",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "力",
+      "result": "助",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "且",
+      "result": "助",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "王",
+      "result": "呈",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "口",
+      "result": "呈",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "王",
+      "result": "旺",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "日",
+      "result": "旺",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "因",
+      "result": "咽",
+      "merged": true
+    },
+    {
+      "a": "因",
+      "b": "口",
+      "result": "咽",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "因",
+      "result": "姻",
+      "merged": true
+    },
+    {
+      "a": "因",
+      "b": "女",
+      "result": "姻",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "且",
+      "result": "査",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "木",
+      "result": "査",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "里",
+      "result": "埋",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "土",
+      "result": "埋",
+      "merged": true
+    },
+    {
+      "a": "因",
+      "b": "心",
+      "result": "恩",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "因",
+      "result": "恩",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "里",
+      "result": "理",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "王",
+      "result": "理",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "火",
+      "result": "黒",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "里",
+      "result": "黒",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "里",
+      "result": "童",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "立",
+      "result": "童",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "全",
+      "result": "栓",
+      "merged": true
+    },
+    {
+      "a": "全",
+      "b": "木",
+      "result": "栓",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "全",
+      "result": "詮",
+      "merged": true
+    },
+    {
+      "a": "全",
+      "b": "言",
+      "result": "詮",
+      "merged": true
+    },
+    {
+      "a": "黒",
+      "b": "土",
+      "result": "墨",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "黒",
+      "result": "墨",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "童",
+      "result": "憧",
+      "merged": true
+    },
+    {
+      "a": "童",
+      "b": "心",
+      "result": "憧",
+      "merged": true
+    },
+    {
+      "a": "目",
+      "b": "童",
+      "result": "瞳",
+      "merged": true
+    },
+    {
+      "a": "童",
+      "b": "目",
+      "result": "瞳",
+      "merged": true
     }
   ],
   "stacks": [
     {
       "count": 15,
       "characters": "口",
-      "activeP95ms": 0.211,
-      "settledP95ms": 0.004,
+      "activeP95ms": 0.255,
+      "settledP95ms": 0.005,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -1718,8 +2306,8 @@
     {
       "count": 15,
       "characters": "目日田回",
-      "activeP95ms": 0.256,
-      "settledP95ms": 0.009,
+      "activeP95ms": 0.247,
+      "settledP95ms": 0.01,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -1728,8 +2316,8 @@
     {
       "count": 15,
       "characters": "森詩想晶",
-      "activeP95ms": 2.503,
-      "settledP95ms": 0.049,
+      "activeP95ms": 3.348,
+      "settledP95ms": 0.051,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -1738,7 +2326,7 @@
     {
       "count": 30,
       "characters": "口",
-      "activeP95ms": 0.619,
+      "activeP95ms": 0.954,
       "settledP95ms": 0.012,
       "asleep": 30,
       "maxSpeedPx": 0,
@@ -1748,8 +2336,8 @@
     {
       "count": 30,
       "characters": "目日田回",
-      "activeP95ms": 0.872,
-      "settledP95ms": 0.019,
+      "activeP95ms": 1.044,
+      "settledP95ms": 0.023,
       "asleep": 30,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -1758,8 +2346,8 @@
     {
       "count": 30,
       "characters": "森詩想晶",
-      "activeP95ms": 8.166,
-      "settledP95ms": 7.357,
+      "activeP95ms": 10.634,
+      "settledP95ms": 10.665,
       "asleep": 0,
       "maxSpeedPx": 890.8975816588052,
       "fallen": 16,

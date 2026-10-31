@@ -12,6 +12,13 @@ test('ranking rejects impossible scores, timings, names and counts',()=>{
   assert.equal(validateSubmission(payload).name,'木のひと');
   for(const patch of [{score:99999},{height:NaN},{duration:0},{duration:2,moves:100},{name:'<script>'},{name:'死ね'},{name:'1234567890'},{name:'あ'.repeat(13)},{count:2,score:1},{count:0,score:1}])assert.throws(()=>validateSubmission({...payload,...patch}));
 });
+test('ranking accepts new 17-stroke characters and still bounds points per tile',()=>{
+  assert.equal(validateSubmission({...payload,score:17}).score,17);
+  assert.throws(()=>validateSubmission({...payload,score:18}));
+  const fullTower={...payload,score:2720,count:160,moves:1000,duration:500};
+  assert.equal(validateSubmission(fullTower).score,2720);
+  assert.throws(()=>validateSubmission({...fullTower,score:2721}));
+});
 // Tests apply the real migration files in order, exactly as wrangler does for a new or existing database.
 export function env(extra:Partial<Env>={}):Env{
   const sqlite=new DatabaseSync(':memory:');

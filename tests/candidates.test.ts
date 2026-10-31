@@ -16,25 +16,28 @@ test('without a tower partner all twenty characters remain balanced across long 
     assert.equal(Math.max(...counts)-Math.min(...counts),0);
   }
 });
-test('a lone woman gets zero or one partner, without forcing a repeated pair',()=>{
+test('a lone child gets zero or one partner, without forcing a repeated pair',()=>{
   const history=createCandidateHistory(),random=seeded(20261018);let pair=0,withPartner=0;
   for(let turn=0;turn<2000;turn++){
-    const hand=chooseCandidates(['女'],random,history);if(hand.includes('子'))withPartner++;
-    if(hand.includes('女'))pair++;
+    const hand=chooseCandidates(['子'],random,history);if(hand.includes('女'))withPartner++;
+    if(hand.includes('子'))pair++;
   }
   assert.ok(pair<250,`woman/child pair appeared in ${pair}/2000 hands`);
   assert.ok(withPartner>1400&&withPartner<1600);
-  const other=baseChars.filter(char=>char!=='子').map(char=>history.shown.get(char)||0);
+  const other=baseChars.filter(char=>char!=='女').map(char=>history.shown.get(char)||0);
   assert.ok(Math.max(...other)-Math.min(...other)<=1);
 });
 test('zero, one and two actionable choices all occur, with one most common',()=>{
   const history=createCandidateHistory(),random=seeded(20261018),counts=[0,0,0];
+  const tower=['女','子','好','村','岩'];
+  const partners=baseChars.filter(char=>tower.some(tile=>recipeFor(char,tile)));
   for(let turn=0;turn<2000;turn++){
-    const hand=chooseCandidates(['女','子','好','村','岩'],random,history);
-    const matches=hand.filter(char=>char==='女'||char==='子').length;counts[matches]++;
+    const hand=chooseCandidates(tower,random,history);
+    const matches=hand.filter(char=>partners.includes(char)).length;counts[matches]++;
   }
   assert.ok(counts[0]>400&&counts[0]<600);assert.ok(counts[1]>900&&counts[1]<1100);assert.ok(counts[2]>400&&counts[2]<600);
-  assert.ok(Math.abs(history.shown.get('女')!-history.shown.get('子')!)<=1);
+  const appearances=partners.map(char=>history.shown.get(char)||0);
+  assert.ok(Math.max(...appearances)-Math.min(...appearances)<=1);
   for(const char of baseChars)assert.ok((history.shown.get(char)||0)>200,`${char} was starved`);
 });
 test('changing towers respect the requested match count whenever enough choices exist',()=>{

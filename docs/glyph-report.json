@@ -346,5 +346,299 @@
     "fixtures": 23,
     "vertices": 93,
     "area": 1316.18
+  },
+  {
+    "char": "仁",
+    "fixtures": 11,
+    "vertices": 49,
+    "area": 1134.51
+  },
+  {
+    "char": "王",
+    "fixtures": 8,
+    "vertices": 35,
+    "area": 1198.91
+  },
+  {
+    "char": "且",
+    "fixtures": 6,
+    "vertices": 24,
+    "area": 2957.26
+  },
+  {
+    "char": "付",
+    "fixtures": 21,
+    "vertices": 94,
+    "area": 1850.21
+  },
+  {
+    "char": "仙",
+    "fixtures": 14,
+    "vertices": 62,
+    "area": 2370.1
+  },
+  {
+    "char": "吐",
+    "fixtures": 14,
+    "vertices": 57,
+    "area": 2144.79
+  },
+  {
+    "char": "因",
+    "fixtures": 7,
+    "vertices": 27,
+    "area": 4259.89
+  },
+  {
+    "char": "団",
+    "fixtures": 7,
+    "vertices": 27,
+    "area": 4306.28
+  },
+  {
+    "char": "如",
+    "fixtures": 20,
+    "vertices": 88,
+    "area": 3237.21
+  },
+  {
+    "char": "位",
+    "fixtures": 20,
+    "vertices": 90,
+    "area": 1856.01
+  },
+  {
+    "char": "体",
+    "fixtures": 25,
+    "vertices": 108,
+    "area": 2202.31
+  },
+  {
+    "char": "肘",
+    "fixtures": 26,
+    "vertices": 111,
+    "area": 2498.91
+  },
+  {
+    "char": "里",
+    "fixtures": 12,
+    "vertices": 51,
+    "area": 2720.03
+  },
+  {
+    "char": "妬",
+    "fixtures": 25,
+    "vertices": 112,
+    "area": 2844.78
+  },
+  {
+    "char": "泣",
+    "fixtures": 26,
+    "vertices": 124,
+    "area": 1625.89
+  },
+  {
+    "char": "冒",
+    "fixtures": 10,
+    "vertices": 49,
+    "area": 3080.95
+  },
+  {
+    "char": "品",
+    "fixtures": 19,
+    "vertices": 74,
+    "area": 2989.14
+  },
+  {
+    "char": "待",
+    "fixtures": 30,
+    "vertices": 131,
+    "area": 2028.45
+  },
+  {
+    "char": "架",
+    "fixtures": 42,
+    "vertices": 171,
+    "area": 2471.96
+  },
+  {
+    "char": "胃",
+    "fixtures": 15,
+    "vertices": 66,
+    "area": 2953.78
+  },
+  {
+    "char": "討",
+    "fixtures": 26,
+    "vertices": 115,
+    "area": 2030.76
+  },
+  {
+    "char": "崩",
+    "fixtures": 31,
+    "vertices": 132,
+    "area": 2926.96
+  },
+  {
+    "char": "淡",
+    "fixtures": 54,
+    "vertices": 242,
+    "area": 2149.67
+  },
+  {
+    "char": "棚",
+    "fixtures": 37,
+    "vertices": 151,
+    "area": 3469.51
+  },
+  {
+    "char": "棟",
+    "fixtures": 33,
+    "vertices": 141,
+    "area": 3013.76
+  },
+  {
+    "char": "暗",
+    "fixtures": 24,
+    "vertices": 103,
+    "area": 3044.18
+  },
+  {
+    "char": "億",
+    "fixtures": 44,
+    "vertices": 197,
+    "area": 2577.74
+  },
+  {
+    "char": "談",
+    "fixtures": 53,
+    "vertices": 226,
+    "area": 2375.3
+  },
+  {
+    "char": "憶",
+    "fixtures": 41,
+    "vertices": 193,
+    "area": 2548.79
+  },
+  {
+    "char": "臆",
+    "fixtures": 51,
+    "vertices": 215,
+    "area": 2982.78
+  },
+  {
+    "char": "奻",
+    "fixtures": 28,
+    "vertices": 127,
+    "area": 2872.72
+  },
+  {
+    "char": "姦",
+    "fixtures": 41,
+    "vertices": 188,
+    "area": 2629.18
+  },
+  {
+    "char": "全",
+    "fixtures": 18,
+    "vertices": 79,
+    "area": 1481.48
+  },
+  {
+    "char": "助",
+    "fixtures": 26,
+    "vertices": 106,
+    "area": 2825.11
+  },
+  {
+    "char": "呈",
+    "fixtures": 14,
+    "vertices": 59,
+    "area": 2109.74
+  },
+  {
+    "char": "旺",
+    "fixtures": 15,
+    "vertices": 62,
+    "area": 2340.01
+  },
+  {
+    "char": "咽",
+    "fixtures": 14,
+    "vertices": 54,
+    "area": 3841.56
+  },
+  {
+    "char": "姻",
+    "fixtures": 20,
+    "vertices": 90,
+    "area": 3770.49
+  },
+  {
+    "char": "査",
+    "fixtures": 21,
+    "vertices": 89,
+    "area": 2681.71
+  },
+  {
+    "char": "埋",
+    "fixtures": 20,
+    "vertices": 82,
+    "area": 3070.7
+  },
+  {
+    "char": "恩",
+    "fixtures": 25,
+    "vertices": 122,
+    "area": 3175.96
+  },
+  {
+    "char": "理",
+    "fixtures": 21,
+    "vertices": 90,
+    "area": 3079.85
+  },
+  {
+    "char": "黒",
+    "fixtures": 21,
+    "vertices": 110,
+    "area": 2822.13
+  },
+  {
+    "char": "童",
+    "fixtures": 26,
+    "vertices": 105,
+    "area": 2589.06
+  },
+  {
+    "char": "栓",
+    "fixtures": 31,
+    "vertices": 130,
+    "area": 2082.06
+  },
+  {
+    "char": "詮",
+    "fixtures": 36,
+    "vertices": 153,
+    "area": 2072.77
+  },
+  {
+    "char": "墨",
+    "fixtures": 29,
+    "vertices": 138,
+    "area": 2604.53
+  },
+  {
+    "char": "憧",
+    "fixtures": 31,
+    "vertices": 139,
+    "area": 2846.42
+  },
+  {
+    "char": "瞳",
+    "fixtures": 29,
+    "vertices": 123,
+    "area": 3366.69
   }
 ]

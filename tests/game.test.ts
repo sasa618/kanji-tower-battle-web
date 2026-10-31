@@ -52,6 +52,27 @@ test('four successive merges: mouth → sun → eye → look → thought',()=>{
   for(const [ingredient,result] of [['一','日'],['一','目'],['木','相'],['心','想']]){const b=g.createTile(ingredient,280,400);current=g.merge(current,b)!;assert.equal(current.char,result);}
   assert.equal(current.depth,4);
 });
+test('fixed recipes preserve existing branches and new multi-step discoveries',()=>{
+  for(const [a,b,result] of [['木','一','本'],['日','一','目'],['木','日','東'],['木','口','困'],['人','寺','侍'],['大','一','天'],['人','二','仁']]){
+    assert.equal(recipeFor(a,b)?.result,result);
+    assert.equal(recipeFor(b,a)?.result,result);
+  }
+  for(const [start,steps] of [
+    ['人',[['寺','侍'],['一','待']]],
+    ['女',[['女','奻'],['女','姦']]],
+    ['日',[['土','里'],['立','童'],['目','瞳']]],
+    ['口',[['大','因'],['心','恩']]],
+    ['月',[['一','且'],['力','助']]],
+    ['土',[['一','王'],['人','全'],['言','詮']]],
+  ] as const){
+    const g=new Game();let current=g.createTile(start,280,460);
+    for(const [ingredient,result] of steps){
+      current=g.merge(current,g.createTile(ingredient,280,400))!;
+      assert.equal(current.char,result);assert.ok(g.made.has(result));
+    }
+    assert.equal(current.depth,steps.length);
+  }
+});
 test('airborne excluded; game over excludes fallen and freezes stats while physics continues',()=>{
   const g=new Game();g.reset();const safe=g.createTile('口',200,STAGE_Y-40);safe.landed=true;
   const falling=g.createTile('木',520,STAGE_Y+30);assert.equal(g.stats().score,3);g.step();assert.equal(g.mode,'over');const final=g.stats(),y=falling.body.getPosition().y;for(let i=0;i<60;i++)g.step();assert.deepEqual(g.stats(),final);assert.ok(falling.body.getPosition().y>y);g.reset();assert.equal(g.mode,'playing');assert.equal(g.stats().score,0);assert.equal(g.tiles.length,0);

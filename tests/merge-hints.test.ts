@@ -11,6 +11,8 @@ test('choosing a different candidate immediately changes all compatible targets'
   game.select(1);
   assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[wood.id,moon.id]);
   game.select(2);
+  assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[stone.id]);
+  game.candidates[2]='言';
   assert.deepEqual(mergeHintTargets(game),[]);
   assert.ok(!mergeHintTargets(game).includes(stone));
 });
