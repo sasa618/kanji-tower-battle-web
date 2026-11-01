@@ -1,0 +1,7196 @@
+{
+ "date": "2026-11-01",
+ "baseCommit": "a5276d1f0a4d489b66d7c24e0ee3272b583e60af",
+ "totals": {
+  "addedCharacters": 215,
+  "addedRecipes": 217,
+  "characters": 322,
+  "recipes": 306,
+  "mergeResults": 304,
+  "baseCharacters": 20
+ },
+ "adopted": [
+  {
+   "char": "仂",
+   "recipes": [
+    "人＋力"
+   ],
+   "level": 1,
+   "strokes": 4,
+   "reading": "リョク・ロク／つとめる",
+   "meaning": "つとめる。はげむ。",
+   "words": "「力」と同じ意味",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3068",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "350",
+     "日本語漢字辞典": "204",
+     "新大字典": "288",
+     "大字源": "139",
+     "大漢語林": "171"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "从",
+   "recipes": [
+    "人＋人"
+   ],
+   "level": 1,
+   "strokes": 4,
+   "reading": "ジュウ・ショウ／したがう",
+   "meaning": "したがう。ついて行く。",
+   "words": "「従」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5740",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "362",
+     "日本語漢字辞典": "3362",
+     "新大字典": "297",
+     "大字源": "133",
+     "大漢語林": "160"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "仔",
+   "recipes": [
+    "人＋子"
+   ],
+   "level": 1,
+   "strokes": 5,
+   "reading": "シ／こ",
+   "meaning": "こども。動物の子。こまかい。",
+   "words": "仔細・仔牛",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2461",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "367",
+     "日本語漢字辞典": "210",
+     "新大字典": "302",
+     "大字源": "144",
+     "大漢語林": "180"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "忇",
+   "recipes": [
+    "力＋心"
+   ],
+   "level": 1,
+   "strokes": 5,
+   "reading": "ロク",
+   "meaning": "思う。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiw/11025",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "10301",
+     "日本語漢字辞典": "3404",
+     "大漢語林": "3440"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "亘",
+   "recipes": [
+    "二＋日"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "セン・コウ／わたる",
+   "meaning": "端から端までわたる。めぐる。",
+   "words": "亘理町",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2391",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "262",
+     "日本語漢字辞典": "147",
+     "新大字典": "226",
+     "大字源": "92",
+     "大漢語林": "129"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "圭",
+   "recipes": [
+    "土＋土"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "ケイ／たま",
+   "meaning": "上がとがった玉。かど。",
+   "words": "圭角・刀圭",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2350",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "4887",
+     "日本語漢字辞典": "1846",
+     "新大字典": "2527",
+     "大字源": "1496",
+     "大漢語林": "1789"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "圸",
+   "recipes": [
+    "土＋山"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "まま",
+   "meaning": "がけ。地名に用いる字。",
+   "words": "圸の上（山形県の地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5789",
+    "standard": "国字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "補79",
+     "日本語漢字辞典": "1853",
+     "新大字典": "2533",
+     "大漢語林": "1797"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "孖",
+   "recipes": [
+    "子＋子"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "シ・ジ",
+   "meaning": "ふたご。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/14272",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "6941",
+     "日本語漢字辞典": "2491",
+     "新大字典": "3395",
+     "大漢語林": "2446"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "忖",
+   "recipes": [
+    "寸＋心"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "ソン／はかる・おしはかる",
+   "meaning": "人の気持ちをおしはかる。",
+   "words": "忖度",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3538",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10326",
+     "日本語漢字辞典": "3413",
+     "新大字典": "4739",
+     "大字源": "2740",
+     "大漢語林": "3445"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "朸",
+   "recipes": [
+    "力＋木"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "リョク・ロク／おうご",
+   "meaning": "てんびん棒。木目。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4001",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "14433",
+     "日本語漢字辞典": "4821",
+     "新大字典": "6723",
+     "大字源": "4035",
+     "大漢語林": "4908"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "汕",
+   "recipes": [
+    "山＋水"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "サン／すくう",
+   "meaning": "魚が泳ぐさま。すくい網。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4322",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17128",
+     "日本語漢字辞典": "5839",
+     "新大字典": "8215",
+     "大字源": "4811",
+     "大漢語林": "5801"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "汝",
+   "recipes": [
+    "女＋水"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "ジョ／なんじ",
+   "meaning": "おまえ。あなた。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2550",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "17138",
+     "日本語漢字辞典": "5841",
+     "新大字典": "8223",
+     "大字源": "4815",
+     "大漢語林": "5804"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "汢",
+   "recipes": [
+    "土＋水"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "ぬた",
+   "meaning": "泥の多い田。地名に用いる字。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5929",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "補299",
+     "日本語漢字辞典": "5845",
+     "新大字典": "8228",
+     "大漢語林": "5811"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "肋",
+   "recipes": [
+    "力＋月"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "ロク／あばら",
+   "meaning": "あばら骨。",
+   "words": "肋骨・肋膜",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3021",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "29239",
+     "日本語漢字辞典": "9498",
+     "新大字典": "13018",
+     "大字源": "7829",
+     "大漢語林": "4641"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "𡚴",
+   "recipes": [
+    "女＋山"
+   ],
+   "level": 1,
+   "strokes": 6,
+   "reading": "あけん",
+   "meaning": "地名に用いる字。",
+   "words": "𡚴原（滋賀県の地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/27701",
+    "standard": "国字・JIS第3水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "2737"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "㫗",
+   "recipes": [
+    "子＋日"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "コウ／あつい",
+   "meaning": "あつい。厚みがある。",
+   "words": "「厚」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/19962",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "14285",
+     "日本語漢字辞典": "4735"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "伽",
+   "recipes": [
+    "人＋加"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "カ・ガ・キャ／とぎ",
+   "meaning": "話し相手になって退屈を慰めること。",
+   "words": "御伽噺・閼伽・伽藍",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2203",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "486",
+     "日本語漢字辞典": "262",
+     "新大字典": "382",
+     "大字源": "186",
+     "大漢語林": "237"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "佃",
+   "recipes": [
+    "人＋田"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "デン・テン／つくだ",
+   "meaning": "新しく切りひらいた田畑。田を耕す。",
+   "words": "佃煮・佃（地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2766",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "492",
+     "日本語漢字辞典": "291",
+     "新大字典": "385",
+     "大字源": "209",
+     "大漢語林": "267"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "佞",
+   "recipes": [
+    "仁＋女"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "ネイ／おもねる・へつらう",
+   "meaning": "口先でこびへつらう。",
+   "words": "佞臣・奸佞",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3080",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "521",
+     "日本語漢字辞典": "293",
+     "新大字典": "415",
+     "大字源": "210",
+     "大漢語林": "270"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "劯",
+   "recipes": [
+    "力＋石"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "ショ",
+   "meaning": "つよい。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12826",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "2322",
+     "日本語漢字辞典": "973",
+     "大漢語林": "958"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "吴",
+   "recipes": [
+    "口＋天"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "ゴ／くれ",
+   "meaning": "中国古代の国名。くれ。",
+   "words": "「呉」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13250",
+    "standard": "JIS外",
+    "indexNumbers": {
+     "大漢和辞典": "3366",
+     "日本語漢字辞典": "1333",
+     "新大字典": "1814",
+     "大字源": "1097",
+     "大漢語林": "1295"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": false
+  },
+  {
+   "char": "妟",
+   "recipes": [
+    "女＋日"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "アン・エン",
+   "meaning": "やすらか。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13964",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "6099",
+     "日本語漢字辞典": "2260",
+     "新大字典": "3090",
+     "大漢語林": "2199"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "旲",
+   "recipes": [
+    "大＋日"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "エイ・タイ",
+   "meaning": "日の光。大きい。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11622",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "13753",
+     "日本語漢字辞典": "4534",
+     "大漢語林": "4428"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "李",
+   "recipes": [
+    "木＋子"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "リ／すもも",
+   "meaning": "すもも。",
+   "words": "李下・桃李・行李",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2967",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "14459",
+     "日本語漢字辞典": "4860",
+     "新大字典": "6743",
+     "大字源": "4055",
+     "大漢語林": "4934"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "杜",
+   "recipes": [
+    "木＋土"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "ト・ズ／もり・ふさぐ",
+   "meaning": "神社の森。ふさぐ。",
+   "words": "杜撰・杜若",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2614",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "14477",
+     "日本語漢字辞典": "4852",
+     "新大字典": "6757",
+     "大字源": "4052",
+     "大漢語林": "4929"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "杣",
+   "recipes": [
+    "山＋木"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "そま",
+   "meaning": "材木を切り出す山。",
+   "words": "杣（名字・地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4004",
+    "standard": "国字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "14488",
+     "日本語漢字辞典": "4845",
+     "新大字典": "6763",
+     "大字源": "4056",
+     "大漢語林": "4936"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "汪",
+   "recipes": [
+    "水＋王"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "オウ／ひろい",
+   "meaning": "水が深く広い。",
+   "words": "汪（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4323",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17154",
+     "日本語漢字辞典": "5851",
+     "新大字典": "8233",
+     "大字源": "4826",
+     "大漢語林": "5816"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "沁",
+   "recipes": [
+    "心＋水"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "シン／しみる",
+   "meaning": "しみこむ。",
+   "words": "沁みる",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4326",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17182",
+     "日本語漢字辞典": "5864",
+     "新大字典": "8248",
+     "大字源": "4838",
+     "大漢語林": "5831"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "灶",
+   "recipes": [
+    "土＋火"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "ソウ／かまど",
+   "meaning": "かまど。",
+   "words": "「竈」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10936",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "18869",
+     "日本語漢字辞典": "8399",
+     "大字源": "5417",
+     "大漢語林": "6448"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "肙",
+   "recipes": [
+    "口＋月"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "エン",
+   "meaning": "ぼうふら。",
+   "words": "涓・娟・悁の部品",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11755",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "29269",
+     "日本語漢字辞典": "9499",
+     "新大字典": "13031"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "肚",
+   "recipes": [
+    "月＋土"
+   ],
+   "level": 1,
+   "strokes": 7,
+   "reading": "ト／はら",
+   "meaning": "はら。腹の中。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4213",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "29270",
+     "日本語漢字辞典": "9507",
+     "新大字典": "13032",
+     "大字源": "7838",
+     "大漢語林": "4650"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "㚙",
+   "recipes": [
+    "加＋大"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "カ",
+   "meaning": "地名に用いる字。",
+   "words": "伊㚙留我（三重県の地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/19117",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "5906",
+     "日本語漢字辞典": "2194"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "佺",
+   "recipes": [
+    "人＋全"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "セン",
+   "meaning": "仙人の名「偓佺」に用いる字。",
+   "words": "偓佺",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12453",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "568",
+     "日本語漢字辞典": "337",
+     "新大字典": "443",
+     "大漢語林": "321"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "咀",
+   "recipes": [
+    "且＋口"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ソ・ショ／かむ・あじわう",
+   "meaning": "かみくだいて味わう。",
+   "words": "咀嚼",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3240",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "3476",
+     "日本語漢字辞典": "1384",
+     "新大字典": "1875",
+     "大字源": "1148",
+     "大漢語林": "1355"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "咅",
+   "recipes": [
+    "立＋口"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ホウ・トウ",
+   "meaning": "つばを吐いて拒む。",
+   "words": "倍・培・焙の部品",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/23898",
+    "standard": "JIS外",
+    "indexNumbers": {
+     "大漢和辞典": "3483",
+     "日本語漢字辞典": "1392",
+     "新大字典": "1879",
+     "大字源": "1157",
+     "大漢語林": "1363"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "note": "仕様書の確認済み資料：漢字の知識（https://kanjitisiki.com/kanji1/0069.html）"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "咐",
+   "recipes": [
+    "付＋口"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "フ／いいつける",
+   "meaning": "言いつける。息をふく。",
+   "words": "吩咐",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3243",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "3497",
+     "日本語漢字辞典": "1390",
+     "新大字典": "1894",
+     "大漢語林": "1367"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "坿",
+   "recipes": [
+    "付＋土"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "フ・ブ／ます",
+   "meaning": "つけ加える。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3336",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5009",
+     "日本語漢字辞典": "1891",
+     "新大字典": "2584",
+     "大字源": "1528",
+     "大漢語林": "1843"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "妾",
+   "recipes": [
+    "立＋女"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ショウ／めかけ・わらわ",
+   "meaning": "正妻以外の妻。女性の自称。",
+   "words": "妻妾・愛妾・妾宅",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2554",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "6147",
+     "日本語漢字辞典": "2285",
+     "新大字典": "3112",
+     "大字源": "1834",
+     "大漢語林": "2230"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "姐",
+   "recipes": [
+    "且＋女"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "シャ・ソ／あね・あねご",
+   "meaning": "あね。ねえさん。",
+   "words": "姐さん",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2489",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "6172",
+     "日本語漢字辞典": "2284",
+     "新大字典": "3124",
+     "大字源": "1836",
+     "大漢語林": "2233"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "岦",
+   "recipes": [
+    "山＋立"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "リュウ",
+   "meaning": "山が高くそびえるさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/14408",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "7977",
+     "日本語漢字辞典": "2783",
+     "大漢語林": "2736"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "岨",
+   "recipes": [
+    "且＋山"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ソ・ショ／そば",
+   "meaning": "けわしい山。がけ。",
+   "words": "山岨",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2652",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "7984",
+     "日本語漢字辞典": "2772",
+     "新大字典": "3798",
+     "大字源": "2238",
+     "大漢語林": "2729"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "徂",
+   "recipes": [
+    "且＋人"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ソ／ゆく",
+   "meaning": "去っていく。",
+   "words": "荻生徂徠",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3528",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10078",
+     "日本語漢字辞典": "3346",
+     "新大字典": "4653",
+     "大字源": "2685",
+     "大漢語林": "3233"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "忝",
+   "recipes": [
+    "天＋心"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "テン／かたじけない",
+   "meaning": "ありがたく恐れ多い。",
+   "words": "忝い",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3543",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10348",
+     "日本語漢字辞典": "3435",
+     "新大字典": "4747",
+     "大字源": "2770",
+     "大漢語林": "3303"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "昊",
+   "recipes": [
+    "天＋日"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "コウ／そら",
+   "meaning": "広々とした空。",
+   "words": "昊澄（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3905",
+    "standard": "人名用漢字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "13799",
+     "日本語漢字辞典": "4543",
+     "新大字典": "6406",
+     "大字源": "3814",
+     "大漢語林": "4440"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "杰",
+   "recipes": [
+    "木＋火"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ケツ",
+   "meaning": "すぐれる。「傑」と同じ意味。",
+   "words": "「傑」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5918",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "14498",
+     "日本語漢字辞典": "536",
+     "新大字典": "9170",
+     "大字源": "4062",
+     "大漢語林": "4944"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "枉",
+   "recipes": [
+    "木＋王"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "オウ／まげる・まがる",
+   "meaning": "道理をまげる。",
+   "words": "冤枉・枉げて",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4010",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "14530",
+     "日本語漢字辞典": "4861",
+     "新大字典": "6797",
+     "大字源": "4059",
+     "大漢語林": "4939"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "沮",
+   "recipes": [
+    "且＋水"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ソ・ショ／はばむ",
+   "meaning": "さまたげる。くじける。",
+   "words": "沮喪・愧沮",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4335",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17238",
+     "日本語漢字辞典": "5919",
+     "新大字典": "8288",
+     "大字源": "4888",
+     "大漢語林": "5881"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "沺",
+   "recipes": [
+    "水＋田"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "テン・デン",
+   "meaning": "水が果てしなく広がるさま。",
+   "words": "沺沺",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5690",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17254",
+     "日本語漢字辞典": "5932",
+     "新大字典": "8299",
+     "大漢語林": "5893"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "泅",
+   "recipes": [
+    "囚＋水"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "シュウ／およぐ",
+   "meaning": "水にうかんで泳ぐ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4338",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17270",
+     "日本語漢字辞典": "5913",
+     "新大字典": "8310",
+     "大字源": "4879",
+     "大漢語林": "5878"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "泪",
+   "recipes": [
+    "水＋目"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ルイ／なみだ",
+   "meaning": "なみだ。",
+   "words": "「涙」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4340",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17318",
+     "日本語漢字辞典": "6066",
+     "新大字典": "8340",
+     "大字源": "4914",
+     "大漢語林": "5910"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "泭",
+   "recipes": [
+    "付＋水"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "フ",
+   "meaning": "いかだ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15505",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "17321",
+     "日本語漢字辞典": "5940",
+     "新大字典": "8343",
+     "大字源": "4905"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "炅",
+   "recipes": [
+    "日＋火"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ケイ",
+   "meaning": "光る。輝く。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/16009",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "18896",
+     "日本語漢字辞典": "6575",
+     "新大字典": "9158",
+     "大漢語林": "6453"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "note": "仕様書の確認済み資料：漢字辞典オンライン"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "炙",
+   "recipes": [
+    "月＋火"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "シャ・セキ／あぶる",
+   "meaning": "火であぶる。",
+   "words": "炙る・炙り出す",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4900",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "18922",
+     "日本語漢字辞典": "6577",
+     "新大字典": "9168",
+     "大字源": "5425",
+     "大漢語林": "6458"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "玥",
+   "recipes": [
+    "月＋王"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "ゲツ",
+   "meaning": "伝説の玉。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiu/10121",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "20867",
+     "日本語漢字辞典": "7061",
+     "新大字典": "9822",
+     "大漢語林": "6908"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "玨",
+   "recipes": [
+    "王＋王"
+   ],
+   "level": 1,
+   "strokes": 8,
+   "reading": "カク",
+   "meaning": "二つ並んだ玉。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiu/10117",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "20871",
+     "日本語漢字辞典": "7071",
+     "大字源": "5834"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "俚",
+   "recipes": [
+    "人＋里"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "リ／いやしい・ひな",
+   "meaning": "いなかびている。民間の。",
+   "words": "俚言・俚諺",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3097",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "699",
+     "日本語漢字辞典": "395",
+     "新大字典": "530",
+     "大字源": "301",
+     "大漢語林": "389"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "保",
+   "recipes": [
+    "休＋口"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "ホ・ホウ／たもつ",
+   "meaning": "たもつ。守る。引き受ける。",
+   "words": "保存・確保・保証",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjib/806",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "702",
+     "日本語漢字辞典": "389",
+     "新大字典": "533",
+     "大字源": "298",
+     "大漢語林": "384"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "峙",
+   "recipes": [
+    "山＋寺"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "ジ・チ／そばだつ",
+   "meaning": "高くそびえ立つ。",
+   "words": "対峙",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3454",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "8053",
+     "日本語漢字辞典": "2793",
+     "新大字典": "3836",
+     "大字源": "2247",
+     "大漢語林": "2747"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "怤",
+   "recipes": [
+    "付＋心"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "フ",
+   "meaning": "喜び楽しむ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10963",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "10474",
+     "日本語漢字辞典": "3480",
+     "大字源": "2806",
+     "大漢語林": "3317"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "恃",
+   "recipes": [
+    "寺＋心"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "ジ・シ／たのむ",
+   "meaning": "たよりにする。",
+   "words": "怙恃",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3562",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10521",
+     "日本語漢字辞典": "3516",
+     "新大字典": "4837",
+     "大字源": "2841",
+     "大漢語林": "3515"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "柆",
+   "recipes": [
+    "木＋立"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "ロウ",
+   "meaning": "木を折る。木の柵。",
+   "words": "柆田（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6108",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "14606",
+     "日本語漢字辞典": "4993",
+     "新大字典": "6857",
+     "大漢語林": "5058"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "柎",
+   "recipes": [
+    "付＋木"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "フ・ブ／うてな",
+   "meaning": "花のがく。いかだ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4026",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "14616",
+     "日本語漢字辞典": "4978",
+     "新大字典": "6862",
+     "大字源": "4153",
+     "大漢語林": "5048"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "柘",
+   "recipes": [
+    "木＋石"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "シャ／つげ・やまぐわ",
+   "meaning": "ツゲやヤマグワの木。",
+   "words": "柘植・柘榴",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2490",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "14626",
+     "日本語漢字辞典": "4954",
+     "新大字典": "6872",
+     "大字源": "4131",
+     "大漢語林": "5025"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "沗",
+   "recipes": [
+    "天＋水"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "テン",
+   "meaning": "そえる。",
+   "words": "「添」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/24009",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "5903",
+     "日本語漢字辞典": "6139",
+     "新大字典": "8272",
+     "大漢語林": "5774"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "洄",
+   "recipes": [
+    "回＋水"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "カイ",
+   "meaning": "流れをさかのぼる。うずまく。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15514",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "17353",
+     "日本語漢字辞典": "5961",
+     "新大字典": "8360",
+     "大字源": "4923",
+     "大漢語林": "5920"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "洤",
+   "recipes": [
+    "全＋水"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "セン／いずみ",
+   "meaning": "いずみ。",
+   "words": "「泉」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15538",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "17395",
+     "日本語漢字辞典": "5918"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "洳",
+   "recipes": [
+    "如＋水"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "ジョ・ニョ",
+   "meaning": "水にひたる。湿地。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5896",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17414",
+     "日本語漢字辞典": "5985",
+     "新大字典": "8394",
+     "大字源": "4940",
+     "大漢語林": "5940"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "炻",
+   "recipes": [
+    "火＋石"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "セキ",
+   "meaning": "堅く焼きしめた焼き物。",
+   "words": "炻器",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/16044",
+    "standard": "国字・JIS第4水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "6595"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "珈",
+   "recipes": [
+    "加＋王"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "カ",
+   "meaning": "玉を垂らしたかんざし。",
+   "words": "珈琲",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4612",
+    "standard": "人名用漢字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "20915",
+     "日本語漢字辞典": "7069",
+     "新大字典": "9839",
+     "大字源": "5843",
+     "大漢語林": "6917"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "砅",
+   "recipes": [
+    "水＋石"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "レイ",
+   "meaning": "石を踏んで水を渡る。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10648",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "24050",
+     "日本語漢字辞典": "7910",
+     "新大字典": "10925",
+     "大漢語林": "7692"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "胕",
+   "recipes": [
+    "付＋月"
+   ],
+   "level": 1,
+   "strokes": 9,
+   "reading": "フ",
+   "meaning": "はらわた。はれる。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11792",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "29380",
+     "日本語漢字辞典": "9553",
+     "新大字典": "13091",
+     "大字源": "7882",
+     "大漢語林": "4703"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "倍",
+   "recipes": [
+    "位＋口"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "バイ／ます",
+   "meaning": "同じ数を重ねて増やす。",
+   "words": "二倍・倍率・公倍数",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanji/388",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "760",
+     "日本語漢字辞典": "448",
+     "新大字典": "572",
+     "大字源": "343",
+     "大漢語林": "443"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "倓",
+   "recipes": [
+    "人＋炎"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "タン",
+   "meaning": "やすらか。しずか。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12515",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "768",
+     "日本語漢字辞典": "439",
+     "新大字典": "577",
+     "大字源": "337",
+     "大漢語林": "433"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "倡",
+   "recipes": [
+    "人＋昌"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "ショウ／となえる",
+   "meaning": "先に言い出す。歌や踊りの芸人。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3109",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "783",
+     "日本語漢字辞典": "433",
+     "新大字典": "591",
+     "大字源": "328",
+     "大漢語林": "424"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "哩",
+   "recipes": [
+    "口＋里"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "リ／マイル",
+   "meaning": "長さの単位のマイル。",
+   "words": "マイルの当て字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2966",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "3649",
+     "日本語漢字辞典": "1482",
+     "新大字典": "1972",
+     "大字源": "1223",
+     "大漢語林": "1457"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "唁",
+   "recipes": [
+    "口＋言"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "ゲン",
+   "meaning": "不幸にあった人を見舞う。",
+   "words": "慰唁",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13350",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "3690",
+     "日本語漢字辞典": "1456",
+     "新大字典": "1989",
+     "大字源": "1204",
+     "大漢語林": "1432"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "娌",
+   "recipes": [
+    "女＋里"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "リ",
+   "meaning": "兄弟の妻どうし。",
+   "words": "娌谷（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/14030",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "6287",
+     "日本語漢字辞典": "2353",
+     "新大字典": "3171",
+     "大漢語林": "2305"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "娚",
+   "recipes": [
+    "女＋男"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "ナン・ダン／めおと",
+   "meaning": "人名・地名に用いる字。",
+   "words": "娚杉（地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5706",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "6306",
+     "日本語漢字辞典": "2348",
+     "新大字典": "3181",
+     "大漢語林": "2300"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "恕",
+   "recipes": [
+    "如＋心"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "ジョ・ショ／ゆるす",
+   "meaning": "思いやる。ゆるす。",
+   "words": "寛恕",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2539",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "10560",
+     "日本語漢字辞典": "3522",
+     "新大字典": "4858",
+     "大字源": "2845",
+     "大漢語林": "3332"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "恷",
+   "recipes": [
+    "休＋心"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "キュウ／やす・よし",
+   "meaning": "人名に用いる字。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5961",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "3533",
+     "新大字典": "4889",
+     "大漢語林": "3339"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "悃",
+   "recipes": [
+    "困＋心"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "コン／まごころ・まこと",
+   "meaning": "まごころ。誠意。",
+   "words": "悃願・悃悃",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3570",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10625",
+     "日本語漢字辞典": "3548",
+     "新大字典": "4901",
+     "大字源": "2866",
+     "大漢語林": "3536"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "悝",
+   "recipes": [
+    "心＋里"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "リ・カイ",
+   "meaning": "あざける。うれえる。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiw/11095",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "10678",
+     "日本語漢字辞典": "3541",
+     "新大字典": "4923",
+     "大字源": "2860",
+     "大漢語林": "3529"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "浬",
+   "recipes": [
+    "水＋里"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "リ／かいり・ノット",
+   "meaning": "海上の距離の単位。",
+   "words": "海里の当て字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2969",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "17485",
+     "日本語漢字辞典": "6060",
+     "新大字典": "8434",
+     "大字源": "5003",
+     "大漢語林": "6002"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "烋",
+   "recipes": [
+    "休＋火"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "キュウ・コウ",
+   "meaning": "めでたい。よい。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4908",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "18991",
+     "日本語漢字辞典": "6610",
+     "新大字典": "9203",
+     "大字源": "5447",
+     "大漢語林": "6622"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "烟",
+   "recipes": [
+    "因＋火"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "エン／けむり・けむる",
+   "meaning": "けむり。",
+   "words": "「煙」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3040",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "19022",
+     "日本語漢字辞典": "6667",
+     "新大字典": "9218",
+     "大字源": "5444",
+     "大漢語林": "6479"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "砠",
+   "recipes": [
+    "且＋石"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "ソ・ショ／いしやま",
+   "meaning": "土をかぶった石山。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4658",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "24084",
+     "日本語漢字辞典": "7915",
+     "新大字典": "10940",
+     "大字源": "6564",
+     "大漢語林": "7698"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "砬",
+   "recipes": [
+    "石＋立"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "リュウ・ロウ",
+   "meaning": "薬にする石。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10662",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "24108",
+     "日本語漢字辞典": "7925",
+     "新大字典": "10954"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "竝",
+   "recipes": [
+    "立＋立"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "ヘイ／ならぶ・なみ",
+   "meaning": "ならぶ。ならびに。",
+   "words": "「並」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6015",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "25752",
+     "日本語漢字辞典": "50",
+     "新大字典": "11558",
+     "大字源": "6956",
+     "大漢語林": "42"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "訕",
+   "recipes": [
+    "山＋言"
+   ],
+   "level": 1,
+   "strokes": 10,
+   "reading": "サン／そしる",
+   "meaning": "悪口を言う。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiq/8089",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "35241",
+     "日本語漢字辞典": "11853",
+     "新大字典": "15627",
+     "大字源": "9255",
+     "大漢語林": "10602"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": false
+  },
+  {
+   "char": "㖦",
+   "recipes": [
+    "口＋東"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "トウ・ツ",
+   "meaning": "口数が多い。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/18937",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "3797",
+     "日本語漢字辞典": "1533"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "㭷",
+   "recipes": [
+    "木＋男"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "おおこ",
+   "meaning": "地名に用いる字。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12049",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "5067"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "偣",
+   "recipes": [
+    "人＋音"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "エン",
+   "meaning": "けがれているさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12531",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "873",
+     "日本語漢字辞典": "466",
+     "大漢語林": "464"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "偲",
+   "recipes": [
+    "人＋思"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "シ・サイ／しのぶ",
+   "meaning": "なつかしく思い慕う。",
+   "words": "偲ぶ",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2462",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "895",
+     "日本語漢字辞典": "480",
+     "新大字典": "657",
+     "大字源": "373",
+     "大漢語林": "477"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "勖",
+   "recipes": [
+    "冒＋力"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "キョク・コク／つとめる",
+   "meaning": "つとめはげむ。",
+   "words": "「勗」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6485",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "2391",
+     "日本語漢字辞典": "1010",
+     "新大字典": "1342",
+     "大字源": "818",
+     "大漢語林": "997"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "勗",
+   "recipes": [
+    "助＋日"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "キョク・コク／つとめる・はげます",
+   "meaning": "つとめはげむ。はげます。",
+   "words": "「勖」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3191",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "2392",
+     "日本語漢字辞典": "1008",
+     "新大字典": "1343",
+     "大字源": "819",
+     "大漢語林": "998"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "啖",
+   "recipes": [
+    "口＋炎"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "タン／くう・くらう",
+   "meaning": "むさぼり食う。",
+   "words": "啖呵",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3270",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "3824",
+     "日本語漢字辞典": "1526",
+     "新大字典": "2066",
+     "大字源": "1249",
+     "大漢語林": "1489"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "埜",
+   "recipes": [
+    "土＋林"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "ヤ・ショ／の",
+   "meaning": "のはら。いなか。",
+   "words": "「野」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3028",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "5154",
+     "日本語漢字辞典": "13170",
+     "新大字典": "2650",
+     "大字源": "1583",
+     "大漢語林": "1930"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "堋",
+   "recipes": [
+    "土＋朋"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "ホウ・ボウ／あずち",
+   "meaning": "弓の的を置く盛り土。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3344",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5217",
+     "日本語漢字辞典": "1972",
+     "新大字典": "2685",
+     "大字源": "1582",
+     "大漢語林": "1929"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "奛",
+   "recipes": [
+    "大＋明"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "コウ",
+   "meaning": "明るい。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13924",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "5939",
+     "日本語漢字辞典": "2220",
+     "大漢語林": "2161"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "奟",
+   "recipes": [
+    "大＋朋"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "コウ・ホウ",
+   "meaning": "強く大きいさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13928",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "5951",
+     "日本語漢字辞典": "2221",
+     "大漢語林": "2164"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "娼",
+   "recipes": [
+    "女＋昌"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "ショウ／あそびめ",
+   "meaning": "芸で客をもてなす女性。",
+   "words": "娼婦・公娼",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2555",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "6376",
+     "日本語漢字辞典": "2367",
+     "新大字典": "3208",
+     "大字源": "1901",
+     "大漢語林": "2322"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "婪",
+   "recipes": [
+    "女＋林"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "ラン／むさぼる",
+   "meaning": "むさぼる。",
+   "words": "貪婪",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3396",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "6436",
+     "日本語漢字辞典": "2377",
+     "新大字典": "3237",
+     "大字源": "1910",
+     "大漢語林": "2331"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "崠",
+   "recipes": [
+    "山＋東"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "トウ",
+   "meaning": "山の尾根。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/14474",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "8200",
+     "日本語漢字辞典": "2843"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "惔",
+   "recipes": [
+    "心＋炎"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "タン",
+   "meaning": "心配で思い悩む。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiw/11109",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "10800",
+     "日本語漢字辞典": "3597",
+     "新大字典": "4973",
+     "大字源": "2914",
+     "大漢語林": "3574"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "梱",
+   "recipes": [
+    "困＋木"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "コン／こり・こうり",
+   "meaning": "しばって荷造りする。荷物。",
+   "words": "梱包・同梱",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2428",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "14883",
+     "日本語漢字辞典": "5084",
+     "新大字典": "7051",
+     "大字源": "4231",
+     "大漢語林": "5143"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "淋",
+   "recipes": [
+    "沐＋木",
+    "水＋林"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "リン／さびしい・そそぐ",
+   "meaning": "水がしたたる。さびしい。",
+   "words": "淋しい・淋漓",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2990",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "17626",
+     "日本語漢字辞典": "6163",
+     "新大字典": "8518",
+     "大字源": "5072",
+     "大漢語林": "6080"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "畤",
+   "recipes": [
+    "寺＋田"
+   ],
+   "level": 1,
+   "strokes": 11,
+   "reading": "ジ・シ",
+   "meaning": "神を祭る場所。",
+   "words": "畤地（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjik/5450",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "21837",
+     "日本語漢字辞典": "7389",
+     "新大字典": "10195",
+     "大字源": "6087",
+     "大漢語林": "7205"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "喑",
+   "recipes": [
+    "口＋音"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "イン",
+   "meaning": "声が出ない。だまる。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12337",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "3934",
+     "日本語漢字辞典": "1545",
+     "新大字典": "2119",
+     "大字源": "1260",
+     "大漢語林": "1512"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "喟",
+   "recipes": [
+    "口＋胃"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "キ／なげく",
+   "meaning": "ため息をついてなげく。",
+   "words": "慷喟",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3277",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "3963",
+     "日本語漢字辞典": "1563",
+     "新大字典": "2137",
+     "大字源": "1272",
+     "大漢語林": "1521"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "媢",
+   "recipes": [
+    "冒＋女"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "ボウ・モウ",
+   "meaning": "ねたむ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/23951",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "6527",
+     "日本語漢字辞典": "2401",
+     "新大字典": "3271",
+     "大字源": "1933",
+     "大漢語林": "2364"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "嵒",
+   "recipes": [
+    "品＋山"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "ガン／いわ・いわお",
+   "meaning": "ごつごつした大きな岩。",
+   "words": "俎嵒（山の名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3466",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "8294",
+     "日本語漢字辞典": "2856",
+     "新大字典": "3946",
+     "大字源": "2300",
+     "大漢語林": "2800"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "椙",
+   "recipes": [
+    "昌＋木"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "すぎ",
+   "meaning": "杉の木。",
+   "words": "上椙（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2624",
+    "standard": "国字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "15063",
+     "日本語漢字辞典": "5181",
+     "新大字典": "7162",
+     "大字源": "4325",
+     "大漢語林": "5265"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "渣",
+   "recipes": [
+    "査＋水"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "サ／かす・おり",
+   "meaning": "かす。沈んだもの。",
+   "words": "残渣",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4389",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17767",
+     "日本語漢字辞典": "6193",
+     "新大字典": "8606",
+     "大字源": "5096",
+     "大漢語林": "6108"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "渭",
+   "recipes": [
+    "水＋胃"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "イ",
+   "meaning": "中国の川の名。",
+   "words": "渭川（名字）・渭浜（地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4391",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17781",
+     "日本語漢字辞典": "6167",
+     "新大字典": "8617",
+     "大字源": "5077",
+     "大漢語林": "6087"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "湘",
+   "recipes": [
+    "水＋相"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "ショウ",
+   "meaning": "中国の川の名。",
+   "words": "湘南",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2566",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "17842",
+     "日本語漢字辞典": "6205",
+     "新大字典": "8656",
+     "大字源": "5105",
+     "大漢語林": "6119"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "焱",
+   "recipes": [
+    "火＋炎"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "エン／ほのお",
+   "meaning": "火が盛んに燃えるさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/16119",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "19142",
+     "日本語漢字辞典": "6643",
+     "新大字典": "9264",
+     "大字源": "5467",
+     "大漢語林": "6503"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "琰",
+   "recipes": [
+    "炎＋王"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "エン",
+   "meaning": "美しい玉。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiu/10164",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "21073",
+     "日本語漢字辞典": "7133",
+     "新大字典": "9900",
+     "大字源": "5882",
+     "大漢語林": "6979"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "琳",
+   "recipes": [
+    "林＋王"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "リン",
+   "meaning": "美しい玉。",
+   "words": "光琳蒔絵",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2992",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "21077",
+     "日本語漢字辞典": "7157",
+     "新大字典": "9903",
+     "大字源": "5905",
+     "大漢語林": "7000"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "詛",
+   "recipes": [
+    "且＋言"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "ソ・ショ／のろう",
+   "meaning": "のろう。",
+   "words": "呪詛",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4952",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "35390",
+     "日本語漢字辞典": "11896",
+     "新大字典": "15703",
+     "大字源": "9295",
+     "大漢語林": "10646"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "𣇵",
+   "recipes": [
+    "日＋明"
+   ],
+   "level": 1,
+   "strokes": 12,
+   "reading": "さやか",
+   "meaning": "月の光が明るいさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/27846",
+    "standard": "国字・JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "補237",
+     "日本語漢字辞典": "4638",
+     "大漢語林": "4562"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "喿",
+   "recipes": [
+    "品＋木"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "ソウ・ショウ",
+   "meaning": "鳥が群がって鳴きさわぐ。",
+   "words": "燥・噪・澡の部品",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13443",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "4029",
+     "日本語漢字辞典": "1633",
+     "新大字典": "2175",
+     "大字源": "1320",
+     "大漢語林": "1575"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "note": "仕様書の確認済み資料：漢字辞典オンライン"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "塒",
+   "recipes": [
+    "土＋時"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "ジ・シ／ねぐら・とや",
+   "meaning": "鳥の寝る所。",
+   "words": "塒（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3349",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5329",
+     "日本語漢字辞典": "2030",
+     "新大字典": "2739",
+     "大字源": "1622",
+     "大漢語林": "1981"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "楂",
+   "recipes": [
+    "木＋査"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "サ",
+   "meaning": "いかだ。",
+   "words": "山楂子",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12138",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "15094",
+     "日本語漢字辞典": "5241",
+     "新大字典": "7197",
+     "大字源": "4341",
+     "大漢語林": "5288"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "煉",
+   "recipes": [
+    "東＋火"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "レン／ねる",
+   "meaning": "金属や薬をねる。",
+   "words": "煉り・煉谷（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3006",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "19178",
+     "日本語漢字辞典": "6691",
+     "新大字典": "9272",
+     "大字源": "5512",
+     "大漢語林": "6541"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "瑁",
+   "recipes": [
+    "冒＋王"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "ボウ・マイ",
+   "meaning": "玉の名。",
+   "words": "玳瑁",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4626",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "21096",
+     "日本語漢字辞典": "7177",
+     "新大字典": "9915",
+     "大字源": "5924",
+     "大漢語林": "7020"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "硼",
+   "recipes": [
+    "朋＋石"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "ホウ",
+   "meaning": "元素の硼素。",
+   "words": "硼酸・硼砂",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4661",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "24254",
+     "日本語漢字辞典": "7968",
+     "新大字典": "11005",
+     "大字源": "6608",
+     "大漢語林": "7750"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "腮",
+   "recipes": [
+    "思＋月"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "サイ／あご・えら",
+   "meaning": "あご。魚のえら。",
+   "words": "腮尾（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4236",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "29702",
+     "日本語漢字辞典": "14181",
+     "新大字典": "13240",
+     "大字源": "7947",
+     "大漢語林": "4796"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "𥓙",
+   "recipes": [
+    "林＋石"
+   ],
+   "level": 1,
+   "strokes": 13,
+   "reading": "うす",
+   "meaning": "地名に用いる字。",
+   "words": "茶𥓙山（京都府の地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/27939",
+    "standard": "国字・JIS第4水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "7950"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "僮",
+   "recipes": [
+    "人＋童"
+   ],
+   "level": 1,
+   "strokes": 14,
+   "reading": "ドウ・トウ／しもべ・わらべ",
+   "meaning": "召し使い。こども。",
+   "words": "三僮（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3135",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "1132",
+     "日本語漢字辞典": "582",
+     "新大字典": "760",
+     "大字源": "457",
+     "大漢語林": "597"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "碞",
+   "recipes": [
+    "品＋石"
+   ],
+   "level": 1,
+   "strokes": 14,
+   "reading": "ガン",
+   "meaning": "けわしい岩。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10702",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "24315",
+     "日本語漢字辞典": "2858",
+     "新大字典": "11035",
+     "大字源": "6611",
+     "大漢語林": "7756"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "噇",
+   "recipes": [
+    "口＋童"
+   ],
+   "level": 1,
+   "strokes": 15,
+   "reading": "トウ・ドウ",
+   "meaning": "むさぼり食う。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/23915",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "4297",
+     "日本語漢字辞典": "1703",
+     "新大字典": "2304"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "諌",
+   "recipes": [
+    "東＋言"
+   ],
+   "level": 1,
+   "strokes": 15,
+   "reading": "カン／いさめる",
+   "meaning": "目上の人の過ちをいさめる。",
+   "words": "諌める・諌田（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2265",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "35642",
+     "日本語漢字辞典": "12018",
+     "新大字典": "15828",
+     "大漢語林": "10736"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "𣘸",
+   "recipes": [
+    "木＋黒"
+   ],
+   "level": 1,
+   "strokes": 15,
+   "reading": "べんど・べんどう",
+   "meaning": "名字に用いる字。",
+   "words": "𣘸（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/27866",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "5499"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "噫",
+   "recipes": [
+    "口＋意"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "アイ・イ／ああ・おくび",
+   "meaning": "なげく声。げっぷ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3303",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "4381",
+     "日本語漢字辞典": "1709",
+     "新大字典": "2336",
+     "大字源": "1381",
+     "大漢語林": "1648"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "曈",
+   "recipes": [
+    "日＋童"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "トウ・ツ",
+   "meaning": "夜明けに日が差すさま。",
+   "words": "曈曨",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11726",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "14175",
+     "日本語漢字辞典": "4703",
+     "新大字典": "6581",
+     "大字源": "3941",
+     "大漢語林": "4608"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "橦",
+   "recipes": [
+    "木＋童"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "トウ・ショウ／はたざお",
+   "meaning": "柱。はたざお。",
+   "words": "橦木町（地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4188",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "15578",
+     "日本語漢字辞典": "5492",
+     "新大字典": "7502",
+     "大字源": "4515",
+     "大漢語林": "5471"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "橸",
+   "recipes": [
+    "晶＋木"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "まさ",
+   "meaning": "まっすぐに通った木目。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6221",
+    "standard": "国字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "補278",
+     "日本語漢字辞典": "5508",
+     "新大字典": "7519",
+     "大漢語林": "5488"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "諰",
+   "recipes": [
+    "言＋思"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "シ",
+   "meaning": "おそれる。心配する。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiq/8174",
+    "standard": "JIS外",
+    "indexNumbers": {
+     "大漢和辞典": "35731",
+     "日本語漢字辞典": "12039",
+     "新大字典": "15868",
+     "大字源": "9420",
+     "大漢語林": "10791"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "note": "仕様書の確認済み資料：漢字辞典オンライン（日本語漢字辞典等の検字番号）"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "諳",
+   "recipes": [
+    "言＋音"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "アン／そらんじる",
+   "meaning": "そらで覚える。",
+   "words": "諳んじる",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4985",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "35736",
+     "日本語漢字辞典": "12011",
+     "新大字典": "15871",
+     "大字源": "9401",
+     "大漢語林": "10775"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "謂",
+   "recipes": [
+    "胃＋言"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "イ／いう・いわれ",
+   "meaning": "言う。いわれ。",
+   "words": "所謂・謂れ",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2154",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "35759",
+     "日本語漢字辞典": "12013",
+     "新大字典": "15888",
+     "大字源": "9402",
+     "大漢語林": "10776"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "𧪄",
+   "recipes": [
+    "信＋言"
+   ],
+   "level": 1,
+   "strokes": 16,
+   "reading": "キ／しるす",
+   "meaning": "書きしるす。",
+   "words": "「記」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/28008",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "35767",
+     "日本語漢字辞典": "11843"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "檍",
+   "recipes": [
+    "意＋木"
+   ],
+   "level": 1,
+   "strokes": 17,
+   "reading": "ヨク・オク／もちのき",
+   "meaning": "モチノキ。",
+   "words": "檍（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6223",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "15656",
+     "日本語漢字辞典": "5514",
+     "新大字典": "7539",
+     "大字源": "4524",
+     "大漢語林": "5491"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "濹",
+   "recipes": [
+    "墨＋水"
+   ],
+   "level": 1,
+   "strokes": 18,
+   "reading": "ボク",
+   "meaning": "隅田川の呼び名に用いる字。",
+   "words": "濹水",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/24036",
+    "standard": "国字・JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "補320",
+     "日本語漢字辞典": "6497",
+     "大漢語林": "6394"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "譩",
+   "recipes": [
+    "意＋言"
+   ],
+   "level": 1,
+   "strokes": 20,
+   "reading": "イ",
+   "meaning": "なげく声。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiq/8206",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "36013",
+     "日本語漢字辞典": "12117",
+     "新大字典": "16022",
+     "大字源": "9499"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "坐",
+   "recipes": [
+    "从＋土"
+   ],
+   "level": 2,
+   "strokes": 7,
+   "reading": "ザ／すわる・います",
+   "meaning": "すわる。",
+   "words": "胡坐",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2439",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "4931",
+     "日本語漢字辞典": "1862",
+     "新大字典": "2555",
+     "大字源": "1505",
+     "大漢語林": "1807"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "夾",
+   "recipes": [
+    "从＋大"
+   ],
+   "level": 2,
+   "strokes": 7,
+   "reading": "キョウ／はさむ",
+   "meaning": "はさむ。",
+   "words": "夾雑物・夾竹桃",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3365",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5867",
+     "日本語漢字辞典": "2190",
+     "新大字典": "2980",
+     "大字源": "1765",
+     "大漢語林": "2138"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "佳",
+   "recipes": [
+    "圭＋人"
+   ],
+   "level": 2,
+   "strokes": 8,
+   "reading": "カ／よい",
+   "meaning": "よい。美しい。",
+   "words": "佳境・佳句",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjic/1333",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "557",
+     "日本語漢字辞典": "311",
+     "新大字典": "435",
+     "大字源": "226",
+     "大漢語林": "290"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "來",
+   "recipes": [
+    "从＋木"
+   ],
+   "level": 2,
+   "strokes": 8,
+   "reading": "ライ／くる・きたる",
+   "meaning": "くる。",
+   "words": "「来」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5661",
+    "standard": "人名用漢字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "581",
+     "日本語漢字辞典": "4858",
+     "新大字典": "454",
+     "大字源": "262",
+     "大漢語林": "4933"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "俣",
+   "recipes": [
+    "人＋吴"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "また",
+   "meaning": "川や道が分かれる所。",
+   "words": "水俣病・川俣",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjif/2929",
+    "standard": "人名用漢字・国字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "718",
+     "日本語漢字辞典": "390",
+     "新大字典": "539",
+     "大字源": "307",
+     "大漢語林": "395"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": false
+  },
+  {
+   "char": "咺",
+   "recipes": [
+    "亘＋口"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "ケン・カン",
+   "meaning": "子どもが泣き続ける。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13319",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "3569",
+     "日本語漢字辞典": "1415",
+     "新大字典": "1928",
+     "大字源": "1177",
+     "大漢語林": "1394"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "哇",
+   "recipes": [
+    "口＋圭"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "ア・ワ／はく",
+   "meaning": "吐く。笑い声。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3245",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "3593",
+     "日本語漢字辞典": "1401",
+     "新大字典": "1945",
+     "大字源": "1165",
+     "大漢語林": "1376"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "垚",
+   "recipes": [
+    "土＋圭"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "ギョウ",
+   "meaning": "土を高く盛るさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13709",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "5047",
+     "日本語漢字辞典": "1904",
+     "新大字典": "2607",
+     "大漢語林": "1854"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "垣",
+   "recipes": [
+    "亘＋土"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "エン／かき",
+   "meaning": "かきね。囲い。",
+   "words": "垣根・石垣",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjid/1626",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "5060",
+     "日本語漢字辞典": "1898",
+     "新大字典": "2616",
+     "大字源": "1531",
+     "大漢語林": "1851"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "奎",
+   "recipes": [
+    "圭＋大"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "ケイ",
+   "meaning": "星宿の名。またぐら。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3368",
+    "standard": "人名用漢字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5911",
+     "日本語漢字辞典": "2206",
+     "新大字典": "3000",
+     "大字源": "1775",
+     "大漢語林": "2153"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "姮",
+   "recipes": [
+    "亘＋女"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "コウ",
+   "meaning": "月に住む美女の名「姮娥」。",
+   "words": "姮娥",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6487",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "6232",
+     "日本語漢字辞典": "2317",
+     "新大字典": "3150",
+     "大字源": "1859",
+     "大漢語林": "2262"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "娃",
+   "recipes": [
+    "圭＋女"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "ア・アイ／うつくしい",
+   "meaning": "美しい女性。",
+   "words": "頴娃（地名）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2138",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "6262",
+     "日本語漢字辞典": "2299",
+     "新大字典": "3165",
+     "大字源": "1844",
+     "大漢語林": "2248"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "孨",
+   "recipes": [
+    "子＋孖"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "セン",
+   "meaning": "つつしむ。弱い。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/14275",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "6976",
+     "日本語漢字辞典": "2510",
+     "新大字典": "3412",
+     "大漢語林": "2462"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "封",
+   "recipes": [
+    "圭＋寸"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "フウ・ホウ／とじる",
+   "meaning": "閉じる。領地を与える。",
+   "words": "開封・完封・帯封",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjid/1544",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "7426",
+     "日本語漢字辞典": "2647",
+     "新大字典": "3595",
+     "大字源": "2131",
+     "大漢語林": "2597"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "恒",
+   "recipes": [
+    "亘＋心"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "コウ／つね",
+   "meaning": "いつも変わらない。",
+   "words": "恒温・恒久",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjic/1100",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "10527",
+     "日本語漢字辞典": "3509",
+     "新大字典": "4840",
+     "大字源": "2830",
+     "大漢語林": "3508"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "洹",
+   "recipes": [
+    "亘＋水"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "エン・カン",
+   "meaning": "水が流れるさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15549",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "17421",
+     "日本語漢字辞典": "5959",
+     "新大字典": "8399",
+     "大字源": "4920",
+     "大漢語林": "5918"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "洼",
+   "recipes": [
+    "圭＋水"
+   ],
+   "level": 2,
+   "strokes": 9,
+   "reading": "ワ・アイ",
+   "meaning": "くぼみ。深い池。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15551",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "17425",
+     "日本語漢字辞典": "6005",
+     "新大字典": "8401",
+     "大字源": "4959",
+     "大漢語林": "5962"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "娟",
+   "recipes": [
+    "女＋肙"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "エン・ケン／うつくしい",
+   "meaning": "姿が美しい。",
+   "words": "嬋娟",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3386",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "6321",
+     "日本語漢字辞典": "2333",
+     "新大字典": "3187",
+     "大字源": "1871",
+     "大漢語林": "2283"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "恚",
+   "recipes": [
+    "圭＋心"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "イ／いかる・うらむ",
+   "meaning": "いかる。うらむ。",
+   "words": "恚恨",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3556",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10566",
+     "日本語漢字辞典": "3485",
+     "新大字典": "4861",
+     "大字源": "2812",
+     "大漢語林": "3318"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "悁",
+   "recipes": [
+    "心＋肙"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "エン・ケン／いかる",
+   "meaning": "いかる。うれえる。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3568",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10534",
+     "日本語漢字辞典": "3540",
+     "新大字典": "4890",
+     "大字源": "2859",
+     "大漢語林": "3527"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "晅",
+   "recipes": [
+    "亘＋日"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "ケン",
+   "meaning": "日にさらして乾かす。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11670",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "13893",
+     "日本語漢字辞典": "4596",
+     "新大字典": "6458",
+     "大漢語林": "4497"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "桂",
+   "recipes": [
+    "圭＋木"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "ケイ／かつら",
+   "meaning": "カツラ。香りのよい木。",
+   "words": "桂馬・月桂",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2351",
+    "standard": "人名用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "14755",
+     "日本語漢字辞典": "5016",
+     "新大字典": "6966",
+     "大字源": "4182",
+     "大漢語林": "5081"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "桓",
+   "recipes": [
+    "亘＋木"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "カン",
+   "meaning": "宿場のしるしの柱。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2254",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "14774",
+     "日本語漢字辞典": "5005",
+     "新大字典": "6983",
+     "大字源": "4177",
+     "大漢語林": "5073"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "涓",
+   "recipes": [
+    "水＋肙"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "ケン／しずく",
+   "meaning": "細い流れ。しずく。",
+   "words": "涓滴",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4372",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17541",
+     "日本語漢字辞典": "6011",
+     "新大字典": "8469",
+     "大字源": "4967",
+     "大漢語林": "5967"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "烓",
+   "recipes": [
+    "圭＋火"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "ケイ・エイ",
+   "meaning": "持ち運べるかまど。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/16057",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "19004",
+     "日本語漢字辞典": "6609",
+     "新大字典": "9207",
+     "大漢語林": "6478"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "烜",
+   "recipes": [
+    "亘＋火"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "ケン・カン",
+   "meaning": "明るい。かわかす。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/16065",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "19018",
+     "日本語漢字辞典": "6611",
+     "新大字典": "9215",
+     "大字源": "5445",
+     "大漢語林": "6480"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "珡",
+   "recipes": [
+    "人＋玨"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "キン／こと",
+   "meaning": "弦楽器の琴。",
+   "words": "「琴」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiu/10169",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "20957",
+     "日本語漢字辞典": "7139",
+     "新大字典": "9852",
+     "大漢語林": "6939"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "珪",
+   "recipes": [
+    "圭＋王"
+   ],
+   "level": 2,
+   "strokes": 10,
+   "reading": "ケイ",
+   "meaning": "玉。元素の珪素。",
+   "words": "珪素・珪藻",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2352",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "20972",
+     "日本語漢字辞典": "7095",
+     "新大字典": "9858",
+     "大字源": "5859",
+     "大漢語林": "6941"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "唼",
+   "recipes": [
+    "口＋妾"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "ソウ・ショウ",
+   "meaning": "すする。ついばむ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/13384",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "3780",
+     "日本語漢字辞典": "1517",
+     "新大字典": "2038",
+     "大字源": "1244",
+     "大漢語林": "1483"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "培",
+   "recipes": [
+    "咅＋土"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "バイ／つちかう",
+   "meaning": "土をかけて育てる。",
+   "words": "栽培・培養",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjid/1856",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "5195",
+     "日本語漢字辞典": "1968",
+     "新大字典": "2670",
+     "大字源": "1579",
+     "大漢語林": "1926"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "淏",
+   "recipes": [
+    "昊＋水"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "コウ",
+   "meaning": "水が清らかなさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15626",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "17632",
+     "日本語漢字辞典": "6099",
+     "大漢語林": "6033"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "添",
+   "recipes": [
+    "忝＋水"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "テン／そえる・そう",
+   "meaning": "そえる。つき従う。",
+   "words": "介添え・口添え",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjic/1199",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "17698",
+     "日本語漢字辞典": "6136",
+     "新大字典": "8571",
+     "大字源": "5053",
+     "大漢語林": "6062"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "焆",
+   "recipes": [
+    "火＋肙"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "ケン・エツ",
+   "meaning": "煙が立ちのぼるさま。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/16094",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "19073",
+     "日本語漢字辞典": "6623",
+     "新大字典": "9233",
+     "大漢語林": "6491"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "畦",
+   "recipes": [
+    "圭＋田"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "ケイ／あぜ・うね",
+   "meaning": "田畑の境のあぜ。",
+   "words": "畦道",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjie/2353",
+    "standard": "JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "21842",
+     "日本語漢字辞典": "7387",
+     "新大字典": "10198",
+     "大字源": "6086",
+     "大漢語林": "7204"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "眭",
+   "recipes": [
+    "圭＋目"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "キ・スイ",
+   "meaning": "鋭い目で見る。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10541",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "23276",
+     "日本語漢字辞典": "7758",
+     "新大字典": "10707",
+     "大字源": "6418",
+     "大漢語林": "7547"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "硅",
+   "recipes": [
+    "圭＋石"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "ケイ",
+   "meaning": "元素の珪素。",
+   "words": "「珪」と同じ意味",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4659",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "24151",
+     "日本語漢字辞典": "7926",
+     "新大字典": "10971",
+     "大字源": "6574",
+     "大漢語林": "7712"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "脵",
+   "recipes": [
+    "吴＋月"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "また",
+   "meaning": "人名・地名に用いる字。",
+   "words": "猪脵（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11834",
+    "standard": "国字・JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "補508",
+     "日本語漢字辞典": "9516",
+     "大漢語林": "4768"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": false
+  },
+  {
+   "char": "𣷹",
+   "recipes": [
+    "水＋沗"
+   ],
+   "level": 2,
+   "strokes": 11,
+   "reading": "テン／そえる",
+   "meaning": "そえる。",
+   "words": "「添」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/27879",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "日本語漢字辞典": "6138"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "㮇",
+   "recipes": [
+    "忝＋木"
+   ],
+   "level": 2,
+   "strokes": 12,
+   "reading": "テン",
+   "meaning": "火かき棒。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12106",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "49170",
+     "日本語漢字辞典": "5199"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "堡",
+   "recipes": [
+    "保＋土"
+   ],
+   "level": 2,
+   "strokes": 12,
+   "reading": "ホウ／とりで",
+   "meaning": "とりで。",
+   "words": "堡塁",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3347",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5254",
+     "日本語漢字辞典": "2010",
+     "新大字典": "2701",
+     "大字源": "1610",
+     "大漢語林": "1962"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "椄",
+   "recipes": [
+    "妾＋木"
+   ],
+   "level": 2,
+   "strokes": 12,
+   "reading": "セツ・ショウ／つぐ",
+   "meaning": "接ぎ木をする。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4135",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "15008",
+     "日本語漢字辞典": "5184",
+     "新大字典": "7138",
+     "大字源": "4297",
+     "大漢語林": "5223"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "焙",
+   "recipes": [
+    "咅＋火"
+   ],
+   "level": 2,
+   "strokes": 12,
+   "reading": "ホウ・ハイ／あぶる・ほうじる",
+   "meaning": "火にかざして焼く。",
+   "words": "焙煎・焙炉",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4914",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "19099",
+     "日本語漢字辞典": "6660",
+     "新大字典": "9244",
+     "大字源": "5480",
+     "大漢語林": "6516"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "琹",
+   "recipes": [
+    "木＋玨"
+   ],
+   "level": 2,
+   "strokes": 12,
+   "reading": "キン／こと",
+   "meaning": "弦楽器の琴。",
+   "words": "「琴」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiu/10170",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "21078",
+     "日本語漢字辞典": "7140",
+     "大字源": "5889",
+     "大漢語林": "6985"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "嫐",
+   "recipes": [
+    "女＋娚"
+   ],
+   "level": 2,
+   "strokes": 13,
+   "reading": "ドウ／なぶる・うわなり",
+   "meaning": "なぶる。からかう。",
+   "words": "嫐（歌舞伎十八番）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjil/5707",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "6626",
+     "日本語漢字辞典": "2420",
+     "新大字典": "3302",
+     "大字源": "1945",
+     "大漢語林": "2380"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "碚",
+   "recipes": [
+    "咅＋石"
+   ],
+   "level": 2,
+   "strokes": 13,
+   "reading": "ハイ",
+   "meaning": "積み重なった石。",
+   "words": "碚磊",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjij/4660",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "24309",
+     "日本語漢字辞典": "7967",
+     "新大字典": "11030",
+     "大漢語林": "7748"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "誤",
+   "recipes": [
+    "吴＋言"
+   ],
+   "level": 2,
+   "strokes": 14,
+   "reading": "ゴ／あやまる",
+   "meaning": "まちがえる。",
+   "words": "誤り・過誤",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjib/866",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "35546",
+     "日本語漢字辞典": "11953",
+     "新大字典": "15781",
+     "大字源": "9348",
+     "大漢語林": "10711"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": false
+  },
+  {
+   "char": "噪",
+   "recipes": [
+    "喿＋口"
+   ],
+   "level": 2,
+   "strokes": 16,
+   "reading": "ソウ／さわぐ",
+   "meaning": "さわがしい。",
+   "words": "噪音",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3307",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "4380",
+     "日本語漢字辞典": "1729",
+     "新大字典": "2335",
+     "大字源": "1396",
+     "大漢語林": "1661"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "懆",
+   "recipes": [
+    "喿＋心"
+   ],
+   "level": 2,
+   "strokes": 16,
+   "reading": "ソウ／うれえる",
+   "meaning": "うれえて落ち着かない。",
+   "words": "懆懆",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjih/3629",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "11325",
+     "日本語漢字辞典": "3793",
+     "新大字典": "5217",
+     "大字源": "3107",
+     "大漢語林": "3697"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "澡",
+   "recipes": [
+    "喿＋水"
+   ],
+   "level": 2,
+   "strokes": 16,
+   "reading": "ソウ／あらう",
+   "meaning": "洗い清める。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4433",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "18379",
+     "日本語漢字辞典": "6454",
+     "新大字典": "8922",
+     "大字源": "5304",
+     "大漢語林": "6342"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "嬲",
+   "recipes": [
+    "娚＋男"
+   ],
+   "level": 2,
+   "strokes": 17,
+   "reading": "ジョウ／なぶる",
+   "meaning": "からかってもてあそぶ。",
+   "words": "嬲る",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3412",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "6831",
+     "日本語漢字辞典": "2471",
+     "新大字典": "3364",
+     "大字源": "1990",
+     "大漢語林": "2428"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "橾",
+   "recipes": [
+    "喿＋木"
+   ],
+   "level": 2,
+   "strokes": 17,
+   "reading": "ソウ・ショウ",
+   "meaning": "車輪の軸を通す穴。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12272",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "15628",
+     "日本語漢字辞典": "5530",
+     "新大字典": "7526",
+     "大漢語林": "5507"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "燥",
+   "recipes": [
+    "喿＋火"
+   ],
+   "level": 2,
+   "strokes": 17,
+   "reading": "ソウ／かわく",
+   "meaning": "かわく。",
+   "words": "乾燥・焦燥",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjic/1168",
+    "standard": "常用漢字・JIS第1水準",
+    "indexNumbers": {
+     "大漢和辞典": "19467",
+     "日本語漢字辞典": "6769",
+     "新大字典": "9399",
+     "大字源": "5569",
+     "大漢語林": "6589"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "璪",
+   "recipes": [
+    "喿＋王"
+   ],
+   "level": 2,
+   "strokes": 17,
+   "reading": "ソウ",
+   "meaning": "冠に垂らす玉飾り。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiu/10239",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "21273",
+     "日本語漢字辞典": "7233",
+     "新大字典": "9983",
+     "大漢語林": "7073"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "臊",
+   "recipes": [
+    "喿＋月"
+   ],
+   "level": 2,
+   "strokes": 17,
+   "reading": "ソウ",
+   "meaning": "脂のなまぐさいにおい。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11916",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "29955",
+     "日本語漢字辞典": "9712",
+     "新大字典": "13332",
+     "大字源": "8008",
+     "大漢語林": "4864"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "譟",
+   "recipes": [
+    "喿＋言"
+   ],
+   "level": 2,
+   "strokes": 20,
+   "reading": "ソウ／さわぐ",
+   "meaning": "大声でさわぐ。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjik/5010",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "35998",
+     "日本語漢字辞典": "1730",
+     "新大字典": "16011",
+     "大字源": "9507",
+     "大漢語林": "10876"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "俠",
+   "recipes": [
+    "人＋夾"
+   ],
+   "level": 3,
+   "strokes": 9,
+   "reading": "キョウ／おとこだて",
+   "meaning": "おとこぎ。",
+   "words": "俠骨・俠勇",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6430",
+    "standard": "人名用漢字・JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "706",
+     "日本語漢字辞典": "360",
+     "新大字典": "537",
+     "大字源": "270",
+     "大漢語林": "350"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": false
+  },
+  {
+   "char": "勑",
+   "recipes": [
+    "來＋力"
+   ],
+   "level": 3,
+   "strokes": 10,
+   "reading": "チョク・ライ",
+   "meaning": "ねぎらう。「勅」と同じ意味。",
+   "words": "「勅」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12856",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "2380",
+     "日本語漢字辞典": "1005",
+     "新大字典": "1335",
+     "大字源": "816",
+     "大漢語林": "995"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "峽",
+   "recipes": [
+    "夾＋山"
+   ],
+   "level": 3,
+   "strokes": 10,
+   "reading": "キョウ／はざま",
+   "meaning": "山と山の間の谷。",
+   "words": "「峡」の異体字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6081",
+    "standard": "人名用漢字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "8122",
+     "日本語漢字辞典": "2790",
+     "新大字典": "3871",
+     "大字源": "2254",
+     "大漢語林": "2745"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "浹",
+   "recipes": [
+    "夾＋水"
+   ],
+   "level": 3,
+   "strokes": 10,
+   "reading": "ショウ／あまねし",
+   "meaning": "広く行き渡る。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4373",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "17506",
+     "日本語漢字辞典": "6021",
+     "新大字典": "8446",
+     "大字源": "4976",
+     "大漢語林": "5975"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "徠",
+   "recipes": [
+    "人＋來"
+   ],
+   "level": 3,
+   "strokes": 11,
+   "reading": "ライ／くる・きたる",
+   "meaning": "くる。ねぎらう。",
+   "words": "荻生徂徠",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6181",
+    "standard": "人名用漢字・JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "10155",
+     "日本語漢字辞典": "3373",
+     "新大字典": "4683",
+     "大字源": "2710",
+     "大漢語林": "3260"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "梜",
+   "recipes": [
+    "夾＋木"
+   ],
+   "level": 3,
+   "strokes": 11,
+   "reading": "キョウ",
+   "meaning": "物をはさむ板。はし。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/12053",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "14857",
+     "日本語漢字辞典": "5073",
+     "新大字典": "7030",
+     "大字源": "4224",
+     "大漢語林": "5134"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "脞",
+   "recipes": [
+    "坐＋月"
+   ],
+   "level": 3,
+   "strokes": 11,
+   "reading": "サ",
+   "meaning": "こまごまとしている。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjix/11817",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "29508",
+     "日本語漢字辞典": "9592",
+     "新大字典": "13158",
+     "大字源": "7911",
+     "大漢語林": "4744"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "䀹",
+   "recipes": [
+    "夾＋目"
+   ],
+   "level": 3,
+   "strokes": 12,
+   "reading": "ショウ・コウ",
+   "meaning": "片目をつぶる。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10562",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "23381",
+     "日本語漢字辞典": "7776",
+     "新大字典": "10736",
+     "大字源": "6440",
+     "大漢語林": "7568"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "湗",
+   "recipes": [
+    "封＋水"
+   ],
+   "level": 3,
+   "strokes": 12,
+   "reading": "ホウ",
+   "meaning": "深い泥。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15694",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "17837",
+     "日本語漢字辞典": "6232",
+     "大漢語林": "6149"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "硤",
+   "recipes": [
+    "夾＋石"
+   ],
+   "level": 3,
+   "strokes": 12,
+   "reading": "コウ",
+   "meaning": "山あいの谷。",
+   "words": "硤合（名字）",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiv/10680",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "24216",
+     "日本語漢字辞典": "7936",
+     "新大字典": "10990",
+     "大字源": "6588",
+     "大漢語林": "7726"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "嗇",
+   "recipes": [
+    "回＋坐"
+   ],
+   "level": 3,
+   "strokes": 13,
+   "reading": "ショク／おしむ・やぶさか",
+   "meaning": "物惜しみする。",
+   "words": "吝嗇・慳嗇",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjig/3287",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "4053",
+     "日本語漢字辞典": "1630",
+     "新大字典": "2184",
+     "大字源": "1482",
+     "大漢語林": "1572"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "𠹤",
+   "recipes": [
+    "口＋恚"
+   ],
+   "level": 3,
+   "strokes": 13,
+   "reading": "イ",
+   "meaning": "怒る声。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/27792",
+    "standard": "JIS第4水準",
+    "indexNumbers": {
+     "大漢和辞典": "4115",
+     "日本語漢字辞典": "1606",
+     "新大字典": "2218"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "墻",
+   "recipes": [
+    "嗇＋土"
+   ],
+   "level": 4,
+   "strokes": 16,
+   "reading": "ショウ／かき",
+   "meaning": "かきね。土塀。",
+   "words": "胸墻",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjim/6136",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "5505",
+     "日本語漢字辞典": "6828",
+     "新大字典": "2819",
+     "大字源": "1684",
+     "大漢語林": "2046"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認",
+    "japaneseNames": true
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "嬙",
+   "recipes": [
+    "嗇＋女"
+   ],
+   "level": 4,
+   "strokes": 16,
+   "reading": "ショウ",
+   "meaning": "女官の名。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/14229",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "6777",
+     "日本語漢字辞典": "2462",
+     "新大字典": "3351",
+     "大字源": "1983",
+     "大漢語林": "2420"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "濇",
+   "recipes": [
+    "嗇＋水"
+   ],
+   "level": 4,
+   "strokes": 16,
+   "reading": "ショク・シキ",
+   "meaning": "とどこおる。しぶる。",
+   "words": "用例の少ない漢字",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjiy/15901",
+    "standard": "JIS第3水準",
+    "indexNumbers": {
+     "大漢和辞典": "18448",
+     "日本語漢字辞典": "6449",
+     "新大字典": "8957",
+     "大字源": "5300",
+     "大漢語林": "6337"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  },
+  {
+   "char": "檣",
+   "recipes": [
+    "嗇＋木"
+   ],
+   "level": 4,
+   "strokes": 17,
+   "reading": "ショウ／ほばしら",
+   "meaning": "帆を張る柱。",
+   "words": "檣頭",
+   "source": {
+    "url": "https://kanji.jitenon.jp/kanjii/4190",
+    "standard": "JIS第2水準",
+    "indexNumbers": {
+     "大漢和辞典": "15687",
+     "日本語漢字辞典": "5528",
+     "新大字典": "7561",
+     "大字源": "4538",
+     "大漢語林": "5504"
+    },
+    "confirmed": "日本語の音訓・意味の記載を確認"
+   },
+   "fromReferenceProposal": true
+  }
+ ],
+ "rejected": [
+  {
+   "char": "夫",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/601",
+   "candidates": [
+    "一＋大",
+    "二＋人"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "一＋大は既存の「天」を維持；二＋人は既存の「仁」を維持"
+  },
+  {
+   "char": "旦",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2056",
+   "candidates": [
+    "一＋日"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "一＋日は既存の「目」を維持"
+  },
+  {
+   "char": "未",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/616",
+   "candidates": [
+    "一＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "一＋木は既存の「本」を維持"
+  },
+  {
+   "char": "末",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/614",
+   "candidates": [
+    "一＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "一＋木は既存の「本」を維持"
+  },
+  {
+   "char": "束",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/558",
+   "candidates": [
+    "口＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "口＋木は既存の「困」を維持"
+  },
+  {
+   "char": "果",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanji/455",
+   "candidates": [
+    "日＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "日＋木は既存の「東」を維持"
+  },
+  {
+   "char": "吋",
+   "standard": "JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2625",
+   "candidates": [
+    "口＋寸"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "口＋寸は既存の「団」を維持"
+  },
+  {
+   "char": "呆",
+   "standard": "JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2688",
+   "candidates": [
+    "口＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "口＋木は既存の「困」を維持"
+  },
+  {
+   "char": "杏",
+   "standard": "人名用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2146",
+   "candidates": [
+    "口＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "口＋木は既存の「困」を維持"
+  },
+  {
+   "char": "汨",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjii/4327",
+   "candidates": [
+    "日＋水"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "日＋水は既存の「沓」を維持"
+  },
+  {
+   "char": "冐",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjim/6284",
+   "candidates": [
+    "日＋月"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "日＋月は既存の「明」を維持"
+  },
+  {
+   "char": "杲",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3904",
+   "candidates": [
+    "日＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "日＋木は既存の「東」を維持"
+  },
+  {
+   "char": "杳",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3914",
+   "candidates": [
+    "日＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "日＋木は既存の「東」を維持"
+  },
+  {
+   "char": "枷",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjii/4018",
+   "candidates": [
+    "加＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "加＋木は既存の「架」を維持"
+  },
+  {
+   "char": "柤",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjii/4019",
+   "candidates": [
+    "且＋木"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "且＋木は既存の「査」を維持"
+  },
+  {
+   "char": "潼",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjim/6243",
+   "candidates": [
+    "水＋童"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国の川の名（潼水・潼江）・関所の名（潼関）としての説明が中心で，日本の名字・地名の用例も確認できない"
+  },
+  {
+   "char": "吞",
+   "standard": "人名用漢字・JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjim/6433",
+   "candidates": [
+    "口＋天"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "口＋天は新規の「吴」を採用",
+   "decision": "口＋天は，常用の「誤」と人名用の「俣」へつながる「吴（呉の異体字）」を優先した（仕様書4.2の3）"
+  },
+  {
+   "char": "黑",
+   "standard": "人名用漢字・JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjim/6429",
+   "candidates": [
+    "火＋里"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "火＋里は既存の「黒」を維持"
+  },
+  {
+   "char": "㻚",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/20725",
+   "candidates": [
+    "朋＋王"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS第1～第4水準外で，日本語漢字辞典・新大字典・大字源・大漢語林の検字番号がない（大漢和辞典のみ）"
+  },
+  {
+   "char": "㽗",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiu/10317",
+   "candidates": [
+    "人＋田"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "人＋田は新規の「佃」を採用",
+   "decision": "人＋田は，人名用漢字の「佃」を優先した（同4.2の4）"
+  },
+  {
+   "char": "亖",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13031",
+   "candidates": [
+    "一＋三",
+    "二＋二"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "亗",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12887",
+   "candidates": [
+    "二＋山"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "亼",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12363",
+   "candidates": [
+    "一＋人"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "一＋人は既存の「大」を維持"
+  },
+  {
+   "char": "仚",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12371",
+   "candidates": [
+    "人＋山"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "人＋山は既存の「仙」を維持"
+  },
+  {
+   "char": "仨",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12372",
+   "candidates": [
+    "三＋人"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "意味は「三つ。三個。」だけで，中国語口語の「三つ・三人」の表記としての説明しか確認できない（仕様書の除外例）"
+  },
+  {
+   "char": "仼",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13042",
+   "candidates": [
+    "人＋王"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS第1～第4水準外で，日本語漢字辞典・新大字典・大字源・大漢語林の検字番号がない（大漢和辞典のみ）"
+  },
+  {
+   "char": "伈",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12389",
+   "candidates": [
+    "人＋心"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "伙",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12382",
+   "candidates": [
+    "人＋火"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "伹",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12414",
+   "candidates": [
+    "且＋人"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "且＋人は新規の「徂」を採用",
+   "decision": "且＋人は，第2水準の「徂」を優先した（同4.2の4）"
+  },
+  {
+   "char": "佪",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12435",
+   "candidates": [
+    "人＋回"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "人＋回は既存の「徊」を維持"
+  },
+  {
+   "char": "侞",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12451",
+   "candidates": [
+    "人＋如"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "侽",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiu/10298",
+   "candidates": [
+    "人＋男"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "倗",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12524",
+   "candidates": [
+    "人＋朋"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "倲",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12521",
+   "candidates": [
+    "人＋東"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "傠",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12393",
+   "candidates": [
+    "人＋討"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "傰",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12597",
+   "candidates": [
+    "人＋崩"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "另",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13218",
+   "candidates": [
+    "力＋口"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "呇",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13259",
+   "candidates": [
+    "口＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "咖",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/13300",
+   "candidates": [
+    "加＋口"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "「咖啡（コーヒー）」「咖喱（カレー）」という中国語の音訳にだけ用いる字として説明されている"
+  },
+  {
+   "char": "咻",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13320",
+   "candidates": [
+    "休＋口"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "啉",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13391",
+   "candidates": [
+    "口＋林"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "囝",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13603",
+   "candidates": [
+    "口＋子"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "囡",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13604",
+   "candidates": [
+    "口＋女"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "囦",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13608",
+   "candidates": [
+    "口＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "圁",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13621",
+   "candidates": [
+    "口＋言"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国の川の名（圁水）としての説明だけで，日本語での用法を確認できない"
+  },
+  {
+   "char": "坥",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13672",
+   "candidates": [
+    "且＋土"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "坧",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13673",
+   "candidates": [
+    "土＋石"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "垃",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13696",
+   "candidates": [
+    "土＋立"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "「垃圾（ごみ）」という現代中国語の語にだけ用いる字として説明されている"
+  },
+  {
+   "char": "埕",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13744",
+   "candidates": [
+    "呈＋土"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "夯",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13910",
+   "candidates": [
+    "力＋大"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "夳",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13912",
+   "candidates": [
+    "二＋大"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "夶",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12962",
+   "candidates": [
+    "大＋大"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "奣",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/23943",
+   "candidates": [
+    "天＋明"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "孞",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12482",
+   "candidates": [
+    "子＋心"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "屴",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14379",
+   "candidates": [
+    "力＋山"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "崽",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14494",
+   "candidates": [
+    "山＋思"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "子ども・人をののしる語という中国語方言の用法の説明だけで，日本語での用法を確認できない"
+  },
+  {
+   "char": "嵓",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/14510",
+   "candidates": [
+    "品＋山"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "品＋山は新規の「嵒」を採用",
+   "decision": "品＋山は，第2水準の「嵒」を優先した（同4.2の4）"
+  },
+  {
+   "char": "彺",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14770",
+   "candidates": [
+    "人＋王"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "徸",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/14790",
+   "candidates": [
+    "人＋童"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "人＋童は新規の「僮」を採用",
+   "decision": "人＋童は，第2水準の「僮」を優先した（同4.2の4）"
+  },
+  {
+   "char": "忈",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14797",
+   "candidates": [
+    "二＋心"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "怚",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiw/11049",
+   "candidates": [
+    "且＋心"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "悥",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiw/11007",
+   "candidates": [
+    "心＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "惏",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiw/11117",
+   "candidates": [
+    "心＋林"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "愔",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiw/11126",
+   "candidates": [
+    "心＋音"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "愢",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiw/11136",
+   "candidates": [
+    "心＋思"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "旵",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11623",
+   "candidates": [
+    "山＋日"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "昍",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11629",
+   "candidates": [
+    "日＋日"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "昱",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjix/11644",
+   "candidates": [
+    "日＋立"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "日＋立は既存の「音」を維持"
+  },
+  {
+   "char": "晿",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11696",
+   "candidates": [
+    "日＋昌"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "杍",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjix/11945",
+   "candidates": [
+    "子＋木"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "子＋木は新規の「李」を採用",
+   "decision": "子＋木は，仕様書4.4の「李」を優先した"
+  },
+  {
+   "char": "杕",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11949",
+   "candidates": [
+    "大＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "桯",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12068",
+   "candidates": [
+    "呈＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "梩",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12081",
+   "candidates": [
+    "木＋里"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "棪",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12084",
+   "candidates": [
+    "木＋炎"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "榀",
+   "standard": "国字・JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12159",
+   "candidates": [
+    "品＋木"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "品＋木は新規の「喿」を採用",
+   "decision": "品＋木は，燥・噪・澡・懆などへつながる「喿」を優先した（仕様書4.3）"
+  },
+  {
+   "char": "榯",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12183",
+   "candidates": [
+    "時＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "榸",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12194",
+   "candidates": [
+    "埋＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "氻",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15418",
+   "candidates": [
+    "力＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "汏",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15429",
+   "candidates": [
+    "大＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "沰",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15475",
+   "candidates": [
+    "水＋石"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "泍",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15487",
+   "candidates": [
+    "本＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "洇",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15517",
+   "candidates": [
+    "因＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "浧",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15568",
+   "candidates": [
+    "呈＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "涖",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15599",
+   "candidates": [
+    "位＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "涷",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15613",
+   "candidates": [
+    "東＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "淐",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/15627",
+   "candidates": [
+    "昌＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "意味が「川の名。」だけで，どの川か・日本語での用例を確認できない"
+  },
+  {
+   "char": "漰",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15815",
+   "candidates": [
+    "崩＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "燚",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/16226",
+   "candidates": [
+    "炎＋炎"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "珵",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiu/10158",
+   "candidates": [
+    "呈＋王"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "琩",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiu/10173",
+   "candidates": [
+    "昌＋王"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "眀",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10526",
+   "candidates": [
+    "月＋目"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "睏",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10560",
+   "candidates": [
+    "困＋目"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "眠る・いねむりという中国語口語の用法の説明だけで，日本語での用法を確認できない"
+  },
+  {
+   "char": "睒",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10572",
+   "candidates": [
+    "炎＋目"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "砵",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10657",
+   "candidates": [
+    "本＋石"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "胭",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11926",
+   "candidates": [
+    "因＋月"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "腅",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11849",
+   "candidates": [
+    "月＋炎"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "訔",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiq/8086",
+   "candidates": [
+    "山＋言"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "山＋言は新規の「訕」を採用",
+   "decision": "山＋言は，第3水準で「そしる」と意味を説明しやすい「訕」を優先した（同4.2の4・5）"
+  },
+  {
+   "char": "訫",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8098",
+   "candidates": [
+    "心＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "誩",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8143",
+   "candidates": [
+    "言＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "誯",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8159",
+   "candidates": [
+    "昌＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "誻",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8167",
+   "candidates": [
+    "沓＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "諃",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8165",
+   "candidates": [
+    "林＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "𠮷",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/27903",
+   "candidates": [
+    "口＋土"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "𡗗",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/27767",
+   "candidates": [
+    "三＋人"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "項目はあるが，日本語の読み・意味の記載がない"
+  },
+  {
+   "char": "𥄢",
+   "standard": "国字・JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/27931",
+   "candidates": [
+    "木＋目"
+   ],
+   "status": "既存式と競合して対象外",
+   "reason": "木＋目は既存の「相」を維持"
+  },
+  {
+   "char": "合",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanji/135",
+   "candidates": [
+    "亼＋口"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "亼＋口は中間字亼（未配置）が必要"
+  },
+  {
+   "char": "但",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjid/1809",
+   "candidates": [
+    "人＋旦"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "人＋旦は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "味",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanji/414",
+   "candidates": [
+    "口＋未"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "口＋未は中間字未（未配置）が必要"
+  },
+  {
+   "char": "妹",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanji/225",
+   "candidates": [
+    "女＋未"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "女＋未は中間字未（未配置）が必要"
+  },
+  {
+   "char": "舎",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/727",
+   "candidates": [
+    "人＋𠮷"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "人＋𠮷は中間字𠮷（保留）が必要"
+  },
+  {
+   "char": "勅",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjid/1821",
+   "candidates": [
+    "力＋束"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "力＋束は中間字束（未配置）が必要"
+  },
+  {
+   "char": "奏",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/930",
+   "candidates": [
+    "天＋𡗗"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "天＋𡗗は中間字𡗗（保留）が必要"
+  },
+  {
+   "char": "春",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanji/158",
+   "candidates": [
+    "日＋𡗗"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "日＋𡗗は中間字𡗗（保留）が必要"
+  },
+  {
+   "char": "昧",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2107",
+   "candidates": [
+    "日＋未"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "日＋未は中間字未（未配置）が必要"
+  },
+  {
+   "char": "胆",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjic/1497",
+   "candidates": [
+    "旦＋月"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "旦＋月は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "泰",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjid/1807",
+   "candidates": [
+    "水＋𡗗"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "水＋𡗗は中間字𡗗（保留）が必要"
+  },
+  {
+   "char": "量",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/626",
+   "candidates": [
+    "旦＋里"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "旦＋里は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "課",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanji/453",
+   "candidates": [
+    "果＋言"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "果＋言は中間字果（未配置）が必要"
+  },
+  {
+   "char": "坦",
+   "standard": "人名用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2710",
+   "candidates": [
+    "土＋旦"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "土＋旦は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "沫",
+   "standard": "人名用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2930",
+   "candidates": [
+    "末＋水"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "末＋水は中間字末（未配置）が必要"
+  },
+  {
+   "char": "耒",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjim/6016",
+   "candidates": [
+    "一＋未"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "一＋未は中間字未（未配置）が必要"
+  },
+  {
+   "char": "妲",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjig/3377",
+   "candidates": [
+    "女＋旦"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "女＋旦は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "怛",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3549",
+   "candidates": [
+    "心＋旦"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "心＋旦は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "畉",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjil/5954",
+   "candidates": [
+    "夫＋田"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "夫＋田は中間字夫（未配置）が必要"
+  },
+  {
+   "char": "悚",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3571",
+   "candidates": [
+    "心＋束"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "心＋束は中間字束（未配置）が必要"
+  },
+  {
+   "char": "眛",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjik/5151",
+   "candidates": [
+    "未＋目"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "未＋目は中間字未（未配置）が必要"
+  },
+  {
+   "char": "竦",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjil/5546",
+   "candidates": [
+    "束＋立"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "束＋立は中間字束（未配置）が必要"
+  },
+  {
+   "char": "黯",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3756",
+   "candidates": [
+    "音＋黑"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "音＋黑は中間字黑（未配置）が必要"
+  },
+  {
+   "char": "㝵",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/19298",
+   "candidates": [
+    "寸＋旦"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "寸＋旦は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "㤗",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiv/10964",
+   "candidates": [
+    "心＋𡗗"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "心＋𡗗は中間字𡗗（保留）が必要"
+  },
+  {
+   "char": "伕",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12403",
+   "candidates": [
+    "人＋夫"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "众",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12386",
+   "candidates": [
+    "人＋从"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "倮",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12525",
+   "candidates": [
+    "人＋果"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "人＋果は中間字果（未配置）が必要"
+  },
+  {
+   "char": "傡",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjin/6602",
+   "candidates": [
+    "人＋竝"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "僺",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12638",
+   "candidates": [
+    "人＋喿"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "劸",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12828",
+   "candidates": [
+    "力＋圭"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "勏",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12834",
+   "candidates": [
+    "力＋咅"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "嘿",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/13519",
+   "candidates": [
+    "口＋黑"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "口＋黑は中間字黑（未配置）が必要"
+  },
+  {
+   "char": "妋",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/13950",
+   "candidates": [
+    "夫＋女"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "夫＋女は中間字夫（未配置）が必要"
+  },
+  {
+   "char": "妺",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13981",
+   "candidates": [
+    "女＋末"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "婄",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14069",
+   "candidates": [
+    "咅＋女"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "婐",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14078",
+   "candidates": [
+    "女＋果"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "媬",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14153",
+   "candidates": [
+    "保＋女"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "徍",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/14775",
+   "candidates": [
+    "人＋圭"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "惈",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiw/11099",
+   "candidates": [
+    "心＋果"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "心＋果は中間字果（未配置）が必要"
+  },
+  {
+   "char": "昩",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11659",
+   "candidates": [
+    "日＋末"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "晆",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11669",
+   "candidates": [
+    "圭＋日"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "暜",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11701",
+   "candidates": [
+    "日＋竝"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "枎",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjix/11977",
+   "candidates": [
+    "夫＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "柦",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12004",
+   "candidates": [
+    "旦＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "柺",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/23997",
+   "candidates": [
+    "另＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "棓",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12118",
+   "candidates": [
+    "咅＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "棵",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12086",
+   "candidates": [
+    "木＋果"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "槑",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12043",
+   "candidates": [
+    "呆＋呆"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "呆＋呆は中間字呆（未配置）・呆（未配置）が必要"
+  },
+  {
+   "char": "沬",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15473",
+   "candidates": [
+    "未＋水"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "涑",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/15596",
+   "candidates": [
+    "束＋水"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国山西省の川の名（涑水）が中心で，日本の名字・地名の用例を確認できない"
+  },
+  {
+   "char": "涪",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/15603",
+   "candidates": [
+    "咅＋水"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国四川省の川の名が中心で，日本の名字・地名の用例を確認できない"
+  },
+  {
+   "char": "炟",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/16025",
+   "candidates": [
+    "旦＋火"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "旦＋火は中間字旦（未配置）が必要"
+  },
+  {
+   "char": "焸",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/16125",
+   "candidates": [
+    "昍＋火"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "煜",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/16149",
+   "candidates": [
+    "昱＋火"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "昱＋火は中間字昱（未配置）が必要"
+  },
+  {
+   "char": "玞",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiu/10126",
+   "candidates": [
+    "夫＋王"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "夫＋王は中間字夫（未配置）が必要"
+  },
+  {
+   "char": "琄",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiu/10153",
+   "candidates": [
+    "王＋肙"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "眜",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10538",
+   "candidates": [
+    "末＋目"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "睊",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10559",
+   "candidates": [
+    "目＋肙"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "砆",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiv/10646",
+   "candidates": [
+    "夫＋石"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "夫＋石は中間字夫（未配置）が必要"
+  },
+  {
+   "char": "肤",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjix/11899",
+   "candidates": [
+    "夫＋月"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "夫＋月は中間字夫（未配置）が必要"
+  },
+  {
+   "char": "詿",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8122",
+   "candidates": [
+    "圭＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "譶",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiq/8214",
+   "candidates": [
+    "言＋誩"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "言＋誩は中間字誩（保留）が必要"
+  },
+  {
+   "char": "𠎁",
+   "standard": "国字・JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/27788",
+   "candidates": [
+    "人＋黑"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "人＋黑は中間字黑（未配置）が必要"
+  },
+  {
+   "char": "得",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/584",
+   "candidates": [
+    "㝵＋人"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "㝵＋人は中間字㝵（未配置）が必要"
+  },
+  {
+   "char": "侠",
+   "standard": "JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2312",
+   "candidates": [
+    "人＋夾"
+   ],
+   "status": "新規候補間の競合で不採用",
+   "reason": "人＋夾は新規の「俠」を採用",
+   "decision": "人＋夾は，材料の形がそのまま一致し人名用漢字である「俠」を優先した（同4.2の4・5）"
+  },
+  {
+   "char": "姶",
+   "standard": "JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2194",
+   "candidates": [
+    "合＋女"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "合＋女は中間字合（未配置）が必要"
+  },
+  {
+   "char": "恰",
+   "standard": "人名用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2248",
+   "candidates": [
+    "合＋心"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "合＋心は中間字合（未配置）が必要"
+  },
+  {
+   "char": "湊",
+   "standard": "人名用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2660",
+   "candidates": [
+    "奏＋水"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "奏＋水は中間字奏（未配置）が必要"
+  },
+  {
+   "char": "椿",
+   "standard": "人名用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2746",
+   "candidates": [
+    "春＋木"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "春＋木は中間字春（未配置）が必要"
+  },
+  {
+   "char": "碍",
+   "standard": "JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjie/2235",
+   "candidates": [
+    "㝵＋石"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "㝵＋石は中間字㝵（未配置）が必要"
+  },
+  {
+   "char": "哈",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjig/3251",
+   "candidates": [
+    "口＋合"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "口＋合は中間字合（未配置）が必要"
+  },
+  {
+   "char": "峇",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjim/6080",
+   "candidates": [
+    "合＋山"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "合＋山は中間字合（未配置）が必要"
+  },
+  {
+   "char": "洽",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjii/4344",
+   "candidates": [
+    "合＋水"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "合＋水は中間字合（未配置）が必要"
+  },
+  {
+   "char": "惷",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3589",
+   "candidates": [
+    "心＋春"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "心＋春は中間字春（未配置）が必要"
+  },
+  {
+   "char": "耡",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjih/3937",
+   "candidates": [
+    "助＋耒"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "助＋耒は中間字耒（未配置）が必要"
+  },
+  {
+   "char": "誄",
+   "standard": "JIS第2水準",
+   "url": "https://kanji.jitenon.jp/kanjij/4960",
+   "candidates": [
+    "耒＋言"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "耒＋言は中間字耒（未配置）が必要"
+  },
+  {
+   "char": "佮",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12445",
+   "candidates": [
+    "人＋合"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "偆",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12536",
+   "candidates": [
+    "人＋春"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "人＋春は中間字春（未配置）が必要"
+  },
+  {
+   "char": "傣",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12576",
+   "candidates": [
+    "人＋泰"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国の少数民族名（傣族）にだけ用いる字として説明されている"
+  },
+  {
+   "char": "唻",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13383",
+   "candidates": [
+    "來＋口"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "媋",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/14126",
+   "candidates": [
+    "女＋春"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "女＋春は中間字春（未配置）が必要"
+  },
+  {
+   "char": "崍",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/14466",
+   "candidates": [
+    "來＋山"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国四川省の山の名（崍山・邛崍山）としての説明だけで，日本語での用法を確認できない"
+  },
+  {
+   "char": "暙",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjix/11706",
+   "candidates": [
+    "日＋春"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "日＋春は中間字春（未配置）が必要"
+  },
+  {
+   "char": "棏",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/12108",
+   "candidates": [
+    "㝵＋木"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "㝵＋木は中間字㝵（未配置）が必要"
+  },
+  {
+   "char": "棶",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12121",
+   "candidates": [
+    "來＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "楱",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/12150",
+   "candidates": [
+    "奏＋木"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "淂",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/15620",
+   "candidates": [
+    "㝵＋水"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "㝵＋水は中間字㝵（未配置）が必要"
+  },
+  {
+   "char": "淶",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/15647",
+   "candidates": [
+    "來＋水"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "中国河北省の川の名（淶水）としての説明だけで，日本語での用法を確認できない"
+  },
+  {
+   "char": "溙",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/15729",
+   "candidates": [
+    "水＋泰"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "瑃",
+   "standard": "JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiu/10190",
+   "candidates": [
+    "春＋王"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "春＋王は中間字春（未配置）が必要"
+  },
+  {
+   "char": "睞",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10576",
+   "candidates": [
+    "來＋目"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "睳",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiv/10579",
+   "candidates": [
+    "奎＋目"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "耔",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjis/9257",
+   "candidates": [
+    "子＋耒"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "子＋耒は中間字耒（未配置）が必要"
+  },
+  {
+   "char": "耝",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjis/9262",
+   "candidates": [
+    "且＋耒"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "耞",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjis/9260",
+   "candidates": [
+    "加＋耒"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "耠",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjis/9263",
+   "candidates": [
+    "合＋耒"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "腠",
+   "standard": "JIS第3水準",
+   "url": "https://kanji.jitenon.jp/kanjix/11865",
+   "candidates": [
+    "奏＋月"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "奏＋月は中間字奏（未配置）が必要"
+  },
+  {
+   "char": "詥",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiq/8127",
+   "candidates": [
+    "合＋言"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "懎",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiw/11192",
+   "candidates": [
+    "嗇＋心"
+   ],
+   "status": "日本語の根拠不足で保留",
+   "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "𢢫",
+   "standard": "国字・JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjiy/27836",
+   "candidates": [
+    "心＋椿"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "心＋椿は中間字椿（未配置）が必要"
+  }
+ ]
+}

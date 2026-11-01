@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { Vec2 } from 'planck';
 import { kanji, recipes, baseChars, recipeFor, chooseCandidates } from '../src/data';
 import { Game, glyphs, STAGE_Y, STAGE_WIDTH, GLYPH_SIZE, massForStrokes } from '../src/physics';
@@ -72,6 +73,34 @@ test('fixed recipes preserve existing branches and new multi-step discoveries',(
     }
     assert.equal(current.depth,steps.length);
   }
+});
+test('the published 107 characters and 89 recipes stay first and unchanged',()=>{
+  const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  assert.equal(hash(kanji.slice(0,107)),'2cae289136dd6ee4d4a8660effa87a085f8179afd132b3d174446bfc81903d5f');
+  assert.equal(hash(recipes.slice(0,89)),'52d6b070ed1253a1f2a5ab6f4a03f7d526547d6decdc7aacdd17819d10623ddf');
+  assert.equal(new Set(kanji.map(k=>k.char)).size,kanji.length);
+});
+test('Japanese kanji expansion: intermediate chains and alternative routes',()=>{
+  for(const [start,steps] of [
+    ['口',[['口','回'],['口','品'],['木','喿'],['火','燥']]],
+    ['土',[['土','圭'],['人','佳']]],
+    ['日',[['二','亘'],['心','恒']]],
+    ['立',[['口','咅'],['土','培']]],
+    ['人',[['人','从'],['土','坐']]],
+    ['口',[['天','吴'],['言','誤']]],
+  ] as const){
+    const g=new Game();let current=g.createTile(start,280,460);
+    for(const [ingredient,result] of steps){
+      current=g.merge(current,g.createTile(ingredient,280,400))!;
+      assert.equal(current.char,result);assert.ok(g.made.has(result));
+    }
+  }
+  for(const [a,b,result] of [['位','口','倍'],['休','口','保'],['沐','木','淋'],['水','林','淋'],['休','一','体'],['人','本','体'],['人','思','偲'],['日','火','炅'],['言','思','諰']]){
+    assert.equal(recipeFor(a,b)?.result,result);assert.equal(recipeFor(b,a)?.result,result);
+  }
+  assert.equal(kanji.filter(k=>k.char==='体').length,1);
+  assert.equal(recipes.filter(r=>r.result==='体').length,2);
+  assert.equal(recipes.filter(r=>r.result==='淋').length,2);
 });
 test('airborne excluded; game over excludes fallen and freezes stats while physics continues',()=>{
   const g=new Game();g.reset();const safe=g.createTile('口',200,STAGE_Y-40);safe.landed=true;

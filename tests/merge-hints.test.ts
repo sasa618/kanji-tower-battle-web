@@ -7,11 +7,11 @@ test('choosing a different candidate immediately changes all compatible targets'
   const game=new Game();game.reset();game.candidates=['木','日','女'];
   const wood=game.createTile('木',180,450),forest=game.createTile('林',260,450);
   const moon=game.createTile('月',340,450),stone=game.createTile('石',420,450);
-  assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[wood.id,forest.id]);
+  assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[wood.id,forest.id,stone.id]);
   game.select(1);
   assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[wood.id,moon.id]);
   game.select(2);
-  assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[stone.id]);
+  assert.deepEqual(mergeHintTargets(game).map(t=>t.id),[forest.id,stone.id]);
   game.candidates[2]='言';
   assert.deepEqual(mergeHintTargets(game),[]);
   assert.ok(!mergeHintTargets(game).includes(stone));

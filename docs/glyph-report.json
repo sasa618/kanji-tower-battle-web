@@ -640,5 +640,1295 @@
     "fixtures": 29,
     "vertices": 123,
     "area": 3366.69
+  },
+  {
+    "char": "仂",
+    "fixtures": 26,
+    "vertices": 110,
+    "area": 2073.41
+  },
+  {
+    "char": "从",
+    "fixtures": 28,
+    "vertices": 113,
+    "area": 1792.48
+  },
+  {
+    "char": "仔",
+    "fixtures": 23,
+    "vertices": 98,
+    "area": 1712.63
+  },
+  {
+    "char": "忇",
+    "fixtures": 29,
+    "vertices": 126,
+    "area": 2161.33
+  },
+  {
+    "char": "亘",
+    "fixtures": 11,
+    "vertices": 45,
+    "area": 2168.06
+  },
+  {
+    "char": "圭",
+    "fixtures": 14,
+    "vertices": 60,
+    "area": 1362.15
+  },
+  {
+    "char": "圸",
+    "fixtures": 15,
+    "vertices": 66,
+    "area": 2623.22
+  },
+  {
+    "char": "孖",
+    "fixtures": 32,
+    "vertices": 133,
+    "area": 1799.63
+  },
+  {
+    "char": "忖",
+    "fixtures": 19,
+    "vertices": 95,
+    "area": 1901.44
+  },
+  {
+    "char": "朸",
+    "fixtures": 31,
+    "vertices": 135,
+    "area": 2242.21
+  },
+  {
+    "char": "汕",
+    "fixtures": 20,
+    "vertices": 96,
+    "area": 2266.33
+  },
+  {
+    "char": "汝",
+    "fixtures": 28,
+    "vertices": 137,
+    "area": 2317.96
+  },
+  {
+    "char": "汢",
+    "fixtures": 20,
+    "vertices": 95,
+    "area": 1579.18
+  },
+  {
+    "char": "肋",
+    "fixtures": 33,
+    "vertices": 132,
+    "area": 2773.61
+  },
+  {
+    "char": "𡚴",
+    "fixtures": 22,
+    "vertices": 101,
+    "area": 2238.28
+  },
+  {
+    "char": "㫗",
+    "fixtures": 24,
+    "vertices": 94,
+    "area": 2106.59
+  },
+  {
+    "char": "伽",
+    "fixtures": 33,
+    "vertices": 133,
+    "area": 3128.87
+  },
+  {
+    "char": "佃",
+    "fixtures": 14,
+    "vertices": 63,
+    "area": 2522.15
+  },
+  {
+    "char": "佞",
+    "fixtures": 23,
+    "vertices": 109,
+    "area": 2312.18
+  },
+  {
+    "char": "劯",
+    "fixtures": 33,
+    "vertices": 135,
+    "area": 2552.9
+  },
+  {
+    "char": "吴",
+    "fixtures": 25,
+    "vertices": 105,
+    "area": 2217.09
+  },
+  {
+    "char": "妟",
+    "fixtures": 21,
+    "vertices": 92,
+    "area": 2739.83
+  },
+  {
+    "char": "旲",
+    "fixtures": 28,
+    "vertices": 109,
+    "area": 2499.65
+  },
+  {
+    "char": "李",
+    "fixtures": 31,
+    "vertices": 127,
+    "area": 1615.04
+  },
+  {
+    "char": "杜",
+    "fixtures": 19,
+    "vertices": 87,
+    "area": 1950.97
+  },
+  {
+    "char": "杣",
+    "fixtures": 16,
+    "vertices": 73,
+    "area": 2696.9
+  },
+  {
+    "char": "汪",
+    "fixtures": 21,
+    "vertices": 97,
+    "area": 1617.03
+  },
+  {
+    "char": "沁",
+    "fixtures": 32,
+    "vertices": 163,
+    "area": 1911.64
+  },
+  {
+    "char": "灶",
+    "fixtures": 23,
+    "vertices": 104,
+    "area": 1929.51
+  },
+  {
+    "char": "肙",
+    "fixtures": 17,
+    "vertices": 69,
+    "area": 2604.13
+  },
+  {
+    "char": "肚",
+    "fixtures": 21,
+    "vertices": 85,
+    "area": 2420.17
+  },
+  {
+    "char": "㚙",
+    "fixtures": 44,
+    "vertices": 168,
+    "area": 2239.96
+  },
+  {
+    "char": "佺",
+    "fixtures": 26,
+    "vertices": 115,
+    "area": 2000.6
+  },
+  {
+    "char": "咀",
+    "fixtures": 13,
+    "vertices": 51,
+    "area": 3599.97
+  },
+  {
+    "char": "咅",
+    "fixtures": 16,
+    "vertices": 74,
+    "area": 2080.61
+  },
+  {
+    "char": "咐",
+    "fixtures": 25,
+    "vertices": 109,
+    "area": 2613.87
+  },
+  {
+    "char": "坿",
+    "fixtures": 29,
+    "vertices": 124,
+    "area": 2301.81
+  },
+  {
+    "char": "妾",
+    "fixtures": 27,
+    "vertices": 123,
+    "area": 2088.01
+  },
+  {
+    "char": "姐",
+    "fixtures": 21,
+    "vertices": 91,
+    "area": 3407.98
+  },
+  {
+    "char": "岦",
+    "fixtures": 18,
+    "vertices": 82,
+    "area": 1628.97
+  },
+  {
+    "char": "岨",
+    "fixtures": 14,
+    "vertices": 59,
+    "area": 3453.49
+  },
+  {
+    "char": "徂",
+    "fixtures": 16,
+    "vertices": 66,
+    "area": 3218.62
+  },
+  {
+    "char": "忝",
+    "fixtures": 35,
+    "vertices": 156,
+    "area": 1875.98
+  },
+  {
+    "char": "昊",
+    "fixtures": 26,
+    "vertices": 106,
+    "area": 2338.23
+  },
+  {
+    "char": "杰",
+    "fixtures": 28,
+    "vertices": 137,
+    "area": 1821.79
+  },
+  {
+    "char": "枉",
+    "fixtures": 20,
+    "vertices": 89,
+    "area": 1972.82
+  },
+  {
+    "char": "沮",
+    "fixtures": 20,
+    "vertices": 93,
+    "area": 3198.3
+  },
+  {
+    "char": "沺",
+    "fixtures": 19,
+    "vertices": 93,
+    "area": 2355.83
+  },
+  {
+    "char": "泅",
+    "fixtures": 20,
+    "vertices": 90,
+    "area": 3609.53
+  },
+  {
+    "char": "泪",
+    "fixtures": 18,
+    "vertices": 89,
+    "area": 1952.02
+  },
+  {
+    "char": "泭",
+    "fixtures": 31,
+    "vertices": 144,
+    "area": 2242.68
+  },
+  {
+    "char": "炅",
+    "fixtures": 31,
+    "vertices": 128,
+    "area": 2432.2
+  },
+  {
+    "char": "炙",
+    "fixtures": 37,
+    "vertices": 157,
+    "area": 2086.11
+  },
+  {
+    "char": "玥",
+    "fixtures": 24,
+    "vertices": 102,
+    "area": 2752.37
+  },
+  {
+    "char": "玨",
+    "fixtures": 19,
+    "vertices": 80,
+    "area": 1740.62
+  },
+  {
+    "char": "俚",
+    "fixtures": 21,
+    "vertices": 90,
+    "area": 3019.87
+  },
+  {
+    "char": "保",
+    "fixtures": 28,
+    "vertices": 119,
+    "area": 2771.91
+  },
+  {
+    "char": "峙",
+    "fixtures": 29,
+    "vertices": 127,
+    "area": 2350.18
+  },
+  {
+    "char": "怤",
+    "fixtures": 36,
+    "vertices": 179,
+    "area": 2172.45
+  },
+  {
+    "char": "恃",
+    "fixtures": 29,
+    "vertices": 135,
+    "area": 2080.73
+  },
+  {
+    "char": "柆",
+    "fixtures": 25,
+    "vertices": 116,
+    "area": 1975.65
+  },
+  {
+    "char": "柎",
+    "fixtures": 29,
+    "vertices": 132,
+    "area": 2479.64
+  },
+  {
+    "char": "柘",
+    "fixtures": 23,
+    "vertices": 106,
+    "area": 2655.37
+  },
+  {
+    "char": "沗",
+    "fixtures": 37,
+    "vertices": 155,
+    "area": 1863.9
+  },
+  {
+    "char": "洄",
+    "fixtures": 20,
+    "vertices": 93,
+    "area": 3493.04
+  },
+  {
+    "char": "洤",
+    "fixtures": 34,
+    "vertices": 154,
+    "area": 1828.3
+  },
+  {
+    "char": "洳",
+    "fixtures": 32,
+    "vertices": 147,
+    "area": 3171.1
+  },
+  {
+    "char": "炻",
+    "fixtures": 26,
+    "vertices": 120,
+    "area": 2599.56
+  },
+  {
+    "char": "珈",
+    "fixtures": 34,
+    "vertices": 139,
+    "area": 2919.79
+  },
+  {
+    "char": "砅",
+    "fixtures": 36,
+    "vertices": 150,
+    "area": 2569.33
+  },
+  {
+    "char": "胕",
+    "fixtures": 31,
+    "vertices": 134,
+    "area": 2987.33
+  },
+  {
+    "char": "倍",
+    "fixtures": 23,
+    "vertices": 104,
+    "area": 2114.82
+  },
+  {
+    "char": "倓",
+    "fixtures": 49,
+    "vertices": 208,
+    "area": 2259.56
+  },
+  {
+    "char": "倡",
+    "fixtures": 20,
+    "vertices": 84,
+    "area": 2864.37
+  },
+  {
+    "char": "哩",
+    "fixtures": 19,
+    "vertices": 78,
+    "area": 3166.05
+  },
+  {
+    "char": "唁",
+    "fixtures": 21,
+    "vertices": 88,
+    "area": 2519.1
+  },
+  {
+    "char": "娌",
+    "fixtures": 25,
+    "vertices": 112,
+    "area": 3122.74
+  },
+  {
+    "char": "娚",
+    "fixtures": 40,
+    "vertices": 164,
+    "area": 3109.99
+  },
+  {
+    "char": "恕",
+    "fixtures": 38,
+    "vertices": 180,
+    "area": 2781.85
+  },
+  {
+    "char": "恷",
+    "fixtures": 41,
+    "vertices": 184,
+    "area": 2229.49
+  },
+  {
+    "char": "悃",
+    "fixtures": 14,
+    "vertices": 66,
+    "area": 3835.16
+  },
+  {
+    "char": "悝",
+    "fixtures": 23,
+    "vertices": 101,
+    "area": 2957.27
+  },
+  {
+    "char": "浬",
+    "fixtures": 24,
+    "vertices": 112,
+    "area": 2763.42
+  },
+  {
+    "char": "烋",
+    "fixtures": 36,
+    "vertices": 169,
+    "area": 2143.38
+  },
+  {
+    "char": "烟",
+    "fixtures": 22,
+    "vertices": 98,
+    "area": 3544.48
+  },
+  {
+    "char": "砠",
+    "fixtures": 17,
+    "vertices": 72,
+    "area": 3379.38
+  },
+  {
+    "char": "砬",
+    "fixtures": 23,
+    "vertices": 103,
+    "area": 2240.22
+  },
+  {
+    "char": "竝",
+    "fixtures": 26,
+    "vertices": 117,
+    "area": 1875
+  },
+  {
+    "char": "訕",
+    "fixtures": 22,
+    "vertices": 94,
+    "area": 2631.24
+  },
+  {
+    "char": "㖦",
+    "fixtures": 34,
+    "vertices": 136,
+    "area": 3061.91
+  },
+  {
+    "char": "㭷",
+    "fixtures": 35,
+    "vertices": 144,
+    "area": 3056.16
+  },
+  {
+    "char": "偣",
+    "fixtures": 24,
+    "vertices": 106,
+    "area": 2584.22
+  },
+  {
+    "char": "偲",
+    "fixtures": 32,
+    "vertices": 147,
+    "area": 3090.6
+  },
+  {
+    "char": "勖",
+    "fixtures": 28,
+    "vertices": 116,
+    "area": 3460.11
+  },
+  {
+    "char": "勗",
+    "fixtures": 31,
+    "vertices": 125,
+    "area": 3000.09
+  },
+  {
+    "char": "啖",
+    "fixtures": 49,
+    "vertices": 205,
+    "area": 2628.9
+  },
+  {
+    "char": "埜",
+    "fixtures": 33,
+    "vertices": 143,
+    "area": 2065.29
+  },
+  {
+    "char": "堋",
+    "fixtures": 34,
+    "vertices": 134,
+    "area": 3442.89
+  },
+  {
+    "char": "奛",
+    "fixtures": 33,
+    "vertices": 138,
+    "area": 2696.13
+  },
+  {
+    "char": "奟",
+    "fixtures": 43,
+    "vertices": 177,
+    "area": 2808.48
+  },
+  {
+    "char": "娼",
+    "fixtures": 27,
+    "vertices": 117,
+    "area": 3075.06
+  },
+  {
+    "char": "婪",
+    "fixtures": 41,
+    "vertices": 178,
+    "area": 2491.01
+  },
+  {
+    "char": "崠",
+    "fixtures": 30,
+    "vertices": 131,
+    "area": 3012.5
+  },
+  {
+    "char": "惔",
+    "fixtures": 49,
+    "vertices": 216,
+    "area": 2332.7
+  },
+  {
+    "char": "梱",
+    "fixtures": 16,
+    "vertices": 70,
+    "area": 3898.26
+  },
+  {
+    "char": "淋",
+    "fixtures": 39,
+    "vertices": 177,
+    "area": 2590.05
+  },
+  {
+    "char": "畤",
+    "fixtures": 28,
+    "vertices": 120,
+    "area": 2683.96
+  },
+  {
+    "char": "喑",
+    "fixtures": 24,
+    "vertices": 103,
+    "area": 2779.25
+  },
+  {
+    "char": "喟",
+    "fixtures": 19,
+    "vertices": 80,
+    "area": 3555.39
+  },
+  {
+    "char": "媢",
+    "fixtures": 31,
+    "vertices": 138,
+    "area": 2670.33
+  },
+  {
+    "char": "嵒",
+    "fixtures": 27,
+    "vertices": 110,
+    "area": 2508.17
+  },
+  {
+    "char": "椙",
+    "fixtures": 25,
+    "vertices": 106,
+    "area": 2283.72
+  },
+  {
+    "char": "渣",
+    "fixtures": 32,
+    "vertices": 146,
+    "area": 2850.07
+  },
+  {
+    "char": "渭",
+    "fixtures": 25,
+    "vertices": 119,
+    "area": 3166.35
+  },
+  {
+    "char": "湘",
+    "fixtures": 31,
+    "vertices": 141,
+    "area": 3275.89
+  },
+  {
+    "char": "焱",
+    "fixtures": 62,
+    "vertices": 263,
+    "area": 2155.71
+  },
+  {
+    "char": "琰",
+    "fixtures": 45,
+    "vertices": 198,
+    "area": 2225.58
+  },
+  {
+    "char": "琳",
+    "fixtures": 35,
+    "vertices": 154,
+    "area": 2736.98
+  },
+  {
+    "char": "詛",
+    "fixtures": 22,
+    "vertices": 89,
+    "area": 3230.29
+  },
+  {
+    "char": "𣇵",
+    "fixtures": 26,
+    "vertices": 105,
+    "area": 3224.11
+  },
+  {
+    "char": "喿",
+    "fixtures": 35,
+    "vertices": 142,
+    "area": 2596.07
+  },
+  {
+    "char": "塒",
+    "fixtures": 33,
+    "vertices": 139,
+    "area": 2923.19
+  },
+  {
+    "char": "楂",
+    "fixtures": 31,
+    "vertices": 133,
+    "area": 2981.53
+  },
+  {
+    "char": "煉",
+    "fixtures": 39,
+    "vertices": 170,
+    "area": 2933.16
+  },
+  {
+    "char": "瑁",
+    "fixtures": 18,
+    "vertices": 83,
+    "area": 3373.02
+  },
+  {
+    "char": "硼",
+    "fixtures": 36,
+    "vertices": 149,
+    "area": 3488.86
+  },
+  {
+    "char": "腮",
+    "fixtures": 38,
+    "vertices": 165,
+    "area": 3452.99
+  },
+  {
+    "char": "𥓙",
+    "fixtures": 41,
+    "vertices": 177,
+    "area": 2636.56
+  },
+  {
+    "char": "僮",
+    "fixtures": 31,
+    "vertices": 131,
+    "area": 3033.4
+  },
+  {
+    "char": "碞",
+    "fixtures": 29,
+    "vertices": 126,
+    "area": 2852.96
+  },
+  {
+    "char": "噇",
+    "fixtures": 34,
+    "vertices": 133,
+    "area": 3032.68
+  },
+  {
+    "char": "諌",
+    "fixtures": 40,
+    "vertices": 163,
+    "area": 2859.2
+  },
+  {
+    "char": "𣘸",
+    "fixtures": 33,
+    "vertices": 159,
+    "area": 3047.83
+  },
+  {
+    "char": "噫",
+    "fixtures": 40,
+    "vertices": 181,
+    "area": 3041.47
+  },
+  {
+    "char": "曈",
+    "fixtures": 31,
+    "vertices": 126,
+    "area": 3271.58
+  },
+  {
+    "char": "橦",
+    "fixtures": 36,
+    "vertices": 152,
+    "area": 2666.99
+  },
+  {
+    "char": "橸",
+    "fixtures": 30,
+    "vertices": 126,
+    "area": 3399.49
+  },
+  {
+    "char": "諰",
+    "fixtures": 40,
+    "vertices": 176,
+    "area": 2938.49
+  },
+  {
+    "char": "諳",
+    "fixtures": 34,
+    "vertices": 142,
+    "area": 2698.37
+  },
+  {
+    "char": "謂",
+    "fixtures": 27,
+    "vertices": 118,
+    "area": 3286.09
+  },
+  {
+    "char": "𧪄",
+    "fixtures": 36,
+    "vertices": 150,
+    "area": 2598.05
+  },
+  {
+    "char": "檍",
+    "fixtures": 44,
+    "vertices": 207,
+    "area": 2483.64
+  },
+  {
+    "char": "濹",
+    "fixtures": 38,
+    "vertices": 185,
+    "area": 2603.9
+  },
+  {
+    "char": "譩",
+    "fixtures": 49,
+    "vertices": 219,
+    "area": 2452.15
+  },
+  {
+    "char": "坐",
+    "fixtures": 24,
+    "vertices": 106,
+    "area": 1820.16
+  },
+  {
+    "char": "夾",
+    "fixtures": 38,
+    "vertices": 158,
+    "area": 1837.41
+  },
+  {
+    "char": "佳",
+    "fixtures": 21,
+    "vertices": 91,
+    "area": 2000.15
+  },
+  {
+    "char": "來",
+    "fixtures": 31,
+    "vertices": 134,
+    "area": 1971.51
+  },
+  {
+    "char": "俣",
+    "fixtures": 30,
+    "vertices": 128,
+    "area": 2487.9
+  },
+  {
+    "char": "咺",
+    "fixtures": 18,
+    "vertices": 72,
+    "area": 2875.47
+  },
+  {
+    "char": "哇",
+    "fixtures": 21,
+    "vertices": 85,
+    "area": 2262.27
+  },
+  {
+    "char": "垚",
+    "fixtures": 22,
+    "vertices": 93,
+    "area": 1687.84
+  },
+  {
+    "char": "垣",
+    "fixtures": 19,
+    "vertices": 78,
+    "area": 2491.04
+  },
+  {
+    "char": "奎",
+    "fixtures": 32,
+    "vertices": 133,
+    "area": 1800.5
+  },
+  {
+    "char": "姮",
+    "fixtures": 22,
+    "vertices": 104,
+    "area": 2341.33
+  },
+  {
+    "char": "娃",
+    "fixtures": 26,
+    "vertices": 118,
+    "area": 2330.72
+  },
+  {
+    "char": "孨",
+    "fixtures": 47,
+    "vertices": 187,
+    "area": 1750.3
+  },
+  {
+    "char": "封",
+    "fixtures": 26,
+    "vertices": 117,
+    "area": 2051.74
+  },
+  {
+    "char": "恒",
+    "fixtures": 20,
+    "vertices": 92,
+    "area": 2592.43
+  },
+  {
+    "char": "洹",
+    "fixtures": 23,
+    "vertices": 108,
+    "area": 1798.48
+  },
+  {
+    "char": "洼",
+    "fixtures": 27,
+    "vertices": 127,
+    "area": 1783.82
+  },
+  {
+    "char": "娟",
+    "fixtures": 30,
+    "vertices": 131,
+    "area": 3039.29
+  },
+  {
+    "char": "恚",
+    "fixtures": 38,
+    "vertices": 171,
+    "area": 1927.53
+  },
+  {
+    "char": "悁",
+    "fixtures": 24,
+    "vertices": 111,
+    "area": 2731.58
+  },
+  {
+    "char": "晅",
+    "fixtures": 18,
+    "vertices": 72,
+    "area": 2922.27
+  },
+  {
+    "char": "桂",
+    "fixtures": 25,
+    "vertices": 109,
+    "area": 2110.94
+  },
+  {
+    "char": "桓",
+    "fixtures": 22,
+    "vertices": 98,
+    "area": 2044.75
+  },
+  {
+    "char": "涓",
+    "fixtures": 28,
+    "vertices": 129,
+    "area": 2536.71
+  },
+  {
+    "char": "烓",
+    "fixtures": 30,
+    "vertices": 132,
+    "area": 2066.58
+  },
+  {
+    "char": "烜",
+    "fixtures": 28,
+    "vertices": 124,
+    "area": 2025.46
+  },
+  {
+    "char": "珡",
+    "fixtures": 36,
+    "vertices": 143,
+    "area": 1793.72
+  },
+  {
+    "char": "珪",
+    "fixtures": 24,
+    "vertices": 102,
+    "area": 1941.87
+  },
+  {
+    "char": "唼",
+    "fixtures": 28,
+    "vertices": 132,
+    "area": 2628.58
+  },
+  {
+    "char": "培",
+    "fixtures": 24,
+    "vertices": 107,
+    "area": 2434.17
+  },
+  {
+    "char": "淏",
+    "fixtures": 35,
+    "vertices": 159,
+    "area": 1987.87
+  },
+  {
+    "char": "添",
+    "fixtures": 44,
+    "vertices": 205,
+    "area": 2168.92
+  },
+  {
+    "char": "焆",
+    "fixtures": 32,
+    "vertices": 141,
+    "area": 2793.66
+  },
+  {
+    "char": "畦",
+    "fixtures": 21,
+    "vertices": 85,
+    "area": 2633.9
+  },
+  {
+    "char": "眭",
+    "fixtures": 21,
+    "vertices": 85,
+    "area": 2570.24
+  },
+  {
+    "char": "硅",
+    "fixtures": 26,
+    "vertices": 109,
+    "area": 2303.84
+  },
+  {
+    "char": "脵",
+    "fixtures": 38,
+    "vertices": 158,
+    "area": 2956.32
+  },
+  {
+    "char": "𣷹",
+    "fixtures": 56,
+    "vertices": 237,
+    "area": 2302.43
+  },
+  {
+    "char": "㮇",
+    "fixtures": 43,
+    "vertices": 191,
+    "area": 2440.57
+  },
+  {
+    "char": "堡",
+    "fixtures": 35,
+    "vertices": 146,
+    "area": 2378.1
+  },
+  {
+    "char": "椄",
+    "fixtures": 35,
+    "vertices": 161,
+    "area": 2551.07
+  },
+  {
+    "char": "焙",
+    "fixtures": 32,
+    "vertices": 146,
+    "area": 2185.76
+  },
+  {
+    "char": "琹",
+    "fixtures": 33,
+    "vertices": 137,
+    "area": 2055.35
+  },
+  {
+    "char": "嫐",
+    "fixtures": 45,
+    "vertices": 196,
+    "area": 3520.7
+  },
+  {
+    "char": "碚",
+    "fixtures": 28,
+    "vertices": 126,
+    "area": 2798.05
+  },
+  {
+    "char": "誤",
+    "fixtures": 37,
+    "vertices": 158,
+    "area": 2558.75
+  },
+  {
+    "char": "噪",
+    "fixtures": 43,
+    "vertices": 175,
+    "area": 2923.3
+  },
+  {
+    "char": "懆",
+    "fixtures": 44,
+    "vertices": 191,
+    "area": 2821.84
+  },
+  {
+    "char": "澡",
+    "fixtures": 45,
+    "vertices": 200,
+    "area": 2325.31
+  },
+  {
+    "char": "嬲",
+    "fixtures": 65,
+    "vertices": 256,
+    "area": 3421.21
+  },
+  {
+    "char": "橾",
+    "fixtures": 44,
+    "vertices": 188,
+    "area": 2990.7
+  },
+  {
+    "char": "燥",
+    "fixtures": 46,
+    "vertices": 198,
+    "area": 3214.11
+  },
+  {
+    "char": "璪",
+    "fixtures": 37,
+    "vertices": 157,
+    "area": 3001.88
+  },
+  {
+    "char": "臊",
+    "fixtures": 49,
+    "vertices": 197,
+    "area": 3236.74
+  },
+  {
+    "char": "譟",
+    "fixtures": 50,
+    "vertices": 199,
+    "area": 3006.59
+  },
+  {
+    "char": "俠",
+    "fixtures": 42,
+    "vertices": 177,
+    "area": 2299.7
+  },
+  {
+    "char": "勑",
+    "fixtures": 45,
+    "vertices": 196,
+    "area": 2573.22
+  },
+  {
+    "char": "峽",
+    "fixtures": 35,
+    "vertices": 151,
+    "area": 2763.94
+  },
+  {
+    "char": "浹",
+    "fixtures": 49,
+    "vertices": 211,
+    "area": 2112.83
+  },
+  {
+    "char": "徠",
+    "fixtures": 39,
+    "vertices": 168,
+    "area": 2475.21
+  },
+  {
+    "char": "梜",
+    "fixtures": 47,
+    "vertices": 191,
+    "area": 2424.38
+  },
+  {
+    "char": "脞",
+    "fixtures": 30,
+    "vertices": 133,
+    "area": 2872.53
+  },
+  {
+    "char": "䀹",
+    "fixtures": 39,
+    "vertices": 163,
+    "area": 2831.93
+  },
+  {
+    "char": "湗",
+    "fixtures": 42,
+    "vertices": 184,
+    "area": 2355.87
+  },
+  {
+    "char": "硤",
+    "fixtures": 42,
+    "vertices": 181,
+    "area": 2604.05
+  },
+  {
+    "char": "嗇",
+    "fixtures": 27,
+    "vertices": 118,
+    "area": 2791.22
+  },
+  {
+    "char": "𠹤",
+    "fixtures": 39,
+    "vertices": 177,
+    "area": 2622.98
+  },
+  {
+    "char": "墻",
+    "fixtures": 34,
+    "vertices": 146,
+    "area": 2925.07
+  },
+  {
+    "char": "嬙",
+    "fixtures": 38,
+    "vertices": 174,
+    "area": 3293.56
+  },
+  {
+    "char": "濇",
+    "fixtures": 45,
+    "vertices": 196,
+    "area": 2514.67
+  },
+  {
+    "char": "檣",
+    "fixtures": 41,
+    "vertices": 176,
+    "area": 2822.36
   }
 ]

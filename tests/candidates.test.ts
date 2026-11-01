@@ -16,15 +16,16 @@ test('without a tower partner all twenty characters remain balanced across long 
     assert.equal(Math.max(...counts)-Math.min(...counts),0);
   }
 });
-test('a lone child gets zero or one partner, without forcing a repeated pair',()=>{
-  const history=createCandidateHistory(),random=seeded(20261018);let pair=0,withPartner=0;
+test('a lone tile with one basic partner gets zero or one partner, without forcing any other character',()=>{
+  // 仁 merges only with 女 (仁＋女→佞); 子 now has several partners, including itself (子＋子→孖).
+  assert.deepEqual(baseChars.filter(char=>recipeFor(char,'仁')),['女']);
+  const history=createCandidateHistory(),random=seeded(20261018);let withPartner=0;
   for(let turn=0;turn<2000;turn++){
-    const hand=chooseCandidates(['子'],random,history);if(hand.includes('女'))withPartner++;
-    if(hand.includes('子'))pair++;
+    const hand=chooseCandidates(['仁'],random,history);if(hand.includes('女'))withPartner++;
   }
-  assert.ok(pair<250,`woman/child pair appeared in ${pair}/2000 hands`);
   assert.ok(withPartner>1400&&withPartner<1600);
   const other=baseChars.filter(char=>char!=='女').map(char=>history.shown.get(char)||0);
+  assert.ok(Math.max(...other)<250,`free slots repeated one character ${Math.max(...other)}/2000 times`);
   assert.ok(Math.max(...other)-Math.min(...other)<=1);
 });
 test('zero, one and two actionable choices all occur, with one most common',()=>{

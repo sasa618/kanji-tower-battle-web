@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-31T16:29:31.579Z",
+  "date": "2026-11-01T14:32:58.221Z",
   "stability": [
     {
       "char": "木",
@@ -2290,14 +2290,2618 @@
       "b": "目",
       "result": "瞳",
       "merged": true
+    },
+    {
+      "a": "人",
+      "b": "力",
+      "result": "仂",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "人",
+      "result": "仂",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "人",
+      "result": "从",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "人",
+      "result": "从",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "子",
+      "result": "仔",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "人",
+      "result": "仔",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "心",
+      "result": "忇",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "力",
+      "result": "忇",
+      "merged": true
+    },
+    {
+      "a": "二",
+      "b": "日",
+      "result": "亘",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "二",
+      "result": "亘",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "土",
+      "result": "圭",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "土",
+      "result": "圭",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "山",
+      "result": "圸",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "土",
+      "result": "圸",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "子",
+      "result": "孖",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "子",
+      "result": "孖",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "心",
+      "result": "忖",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "寸",
+      "result": "忖",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "木",
+      "result": "朸",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "力",
+      "result": "朸",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "水",
+      "result": "汕",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "山",
+      "result": "汕",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "水",
+      "result": "汝",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "女",
+      "result": "汝",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "水",
+      "result": "汢",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "土",
+      "result": "汢",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "月",
+      "result": "肋",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "力",
+      "result": "肋",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "山",
+      "result": "𡚴",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "女",
+      "result": "𡚴",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "日",
+      "result": "㫗",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "子",
+      "result": "㫗",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "加",
+      "result": "伽",
+      "merged": true
+    },
+    {
+      "a": "加",
+      "b": "人",
+      "result": "伽",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "田",
+      "result": "佃",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "人",
+      "result": "佃",
+      "merged": true
+    },
+    {
+      "a": "仁",
+      "b": "女",
+      "result": "佞",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "仁",
+      "result": "佞",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "石",
+      "result": "劯",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "力",
+      "result": "劯",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "天",
+      "result": "吴",
+      "merged": true
+    },
+    {
+      "a": "天",
+      "b": "口",
+      "result": "吴",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "日",
+      "result": "妟",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "女",
+      "result": "妟",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "日",
+      "result": "旲",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "大",
+      "result": "旲",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "子",
+      "result": "李",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "木",
+      "result": "李",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "土",
+      "result": "杜",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "木",
+      "result": "杜",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "木",
+      "result": "杣",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "山",
+      "result": "杣",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "王",
+      "result": "汪",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "水",
+      "result": "汪",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "水",
+      "result": "沁",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "心",
+      "result": "沁",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "火",
+      "result": "灶",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "土",
+      "result": "灶",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "月",
+      "result": "肙",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "口",
+      "result": "肙",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "土",
+      "result": "肚",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "月",
+      "result": "肚",
+      "merged": true
+    },
+    {
+      "a": "加",
+      "b": "大",
+      "result": "㚙",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "加",
+      "result": "㚙",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "全",
+      "result": "佺",
+      "merged": true
+    },
+    {
+      "a": "全",
+      "b": "人",
+      "result": "佺",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "口",
+      "result": "咀",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "且",
+      "result": "咀",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "口",
+      "result": "咅",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "立",
+      "result": "咅",
+      "merged": true
+    },
+    {
+      "a": "付",
+      "b": "口",
+      "result": "咐",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "付",
+      "result": "咐",
+      "merged": true
+    },
+    {
+      "a": "付",
+      "b": "土",
+      "result": "坿",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "付",
+      "result": "坿",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "女",
+      "result": "妾",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "立",
+      "result": "妾",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "女",
+      "result": "姐",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "且",
+      "result": "姐",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "立",
+      "result": "岦",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "山",
+      "result": "岦",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "山",
+      "result": "岨",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "且",
+      "result": "岨",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "人",
+      "result": "徂",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "且",
+      "result": "徂",
+      "merged": true
+    },
+    {
+      "a": "天",
+      "b": "心",
+      "result": "忝",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "天",
+      "result": "忝",
+      "merged": true
+    },
+    {
+      "a": "天",
+      "b": "日",
+      "result": "昊",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "天",
+      "result": "昊",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "火",
+      "result": "杰",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "木",
+      "result": "杰",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "王",
+      "result": "枉",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "木",
+      "result": "枉",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "水",
+      "result": "沮",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "且",
+      "result": "沮",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "田",
+      "result": "沺",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "水",
+      "result": "沺",
+      "merged": true
+    },
+    {
+      "a": "囚",
+      "b": "水",
+      "result": "泅",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "囚",
+      "result": "泅",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "目",
+      "result": "泪",
+      "merged": true
+    },
+    {
+      "a": "目",
+      "b": "水",
+      "result": "泪",
+      "merged": true
+    },
+    {
+      "a": "付",
+      "b": "水",
+      "result": "泭",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "付",
+      "result": "泭",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "火",
+      "result": "炅",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "日",
+      "result": "炅",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "火",
+      "result": "炙",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "月",
+      "result": "炙",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "王",
+      "result": "玥",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "月",
+      "result": "玥",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "王",
+      "result": "玨",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "王",
+      "result": "玨",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "里",
+      "result": "俚",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "人",
+      "result": "俚",
+      "merged": true
+    },
+    {
+      "a": "休",
+      "b": "口",
+      "result": "保",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "休",
+      "result": "保",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "寺",
+      "result": "峙",
+      "merged": true
+    },
+    {
+      "a": "寺",
+      "b": "山",
+      "result": "峙",
+      "merged": true
+    },
+    {
+      "a": "付",
+      "b": "心",
+      "result": "怤",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "付",
+      "result": "怤",
+      "merged": true
+    },
+    {
+      "a": "寺",
+      "b": "心",
+      "result": "恃",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "寺",
+      "result": "恃",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "立",
+      "result": "柆",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "木",
+      "result": "柆",
+      "merged": true
+    },
+    {
+      "a": "付",
+      "b": "木",
+      "result": "柎",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "付",
+      "result": "柎",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "石",
+      "result": "柘",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "木",
+      "result": "柘",
+      "merged": true
+    },
+    {
+      "a": "天",
+      "b": "水",
+      "result": "沗",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "天",
+      "result": "沗",
+      "merged": true
+    },
+    {
+      "a": "回",
+      "b": "水",
+      "result": "洄",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "回",
+      "result": "洄",
+      "merged": true
+    },
+    {
+      "a": "全",
+      "b": "水",
+      "result": "洤",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "全",
+      "result": "洤",
+      "merged": true
+    },
+    {
+      "a": "如",
+      "b": "水",
+      "result": "洳",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "如",
+      "result": "洳",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "石",
+      "result": "炻",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "火",
+      "result": "炻",
+      "merged": true
+    },
+    {
+      "a": "加",
+      "b": "王",
+      "result": "珈",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "加",
+      "result": "珈",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "石",
+      "result": "砅",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "水",
+      "result": "砅",
+      "merged": true
+    },
+    {
+      "a": "付",
+      "b": "月",
+      "result": "胕",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "付",
+      "result": "胕",
+      "merged": true
+    },
+    {
+      "a": "位",
+      "b": "口",
+      "result": "倍",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "位",
+      "result": "倍",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "炎",
+      "result": "倓",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "人",
+      "result": "倓",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "昌",
+      "result": "倡",
+      "merged": true
+    },
+    {
+      "a": "昌",
+      "b": "人",
+      "result": "倡",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "里",
+      "result": "哩",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "口",
+      "result": "哩",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "言",
+      "result": "唁",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "口",
+      "result": "唁",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "里",
+      "result": "娌",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "女",
+      "result": "娌",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "男",
+      "result": "娚",
+      "merged": true
+    },
+    {
+      "a": "男",
+      "b": "女",
+      "result": "娚",
+      "merged": true
+    },
+    {
+      "a": "如",
+      "b": "心",
+      "result": "恕",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "如",
+      "result": "恕",
+      "merged": true
+    },
+    {
+      "a": "休",
+      "b": "心",
+      "result": "恷",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "休",
+      "result": "恷",
+      "merged": true
+    },
+    {
+      "a": "困",
+      "b": "心",
+      "result": "悃",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "困",
+      "result": "悃",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "里",
+      "result": "悝",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "心",
+      "result": "悝",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "里",
+      "result": "浬",
+      "merged": true
+    },
+    {
+      "a": "里",
+      "b": "水",
+      "result": "浬",
+      "merged": true
+    },
+    {
+      "a": "休",
+      "b": "火",
+      "result": "烋",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "休",
+      "result": "烋",
+      "merged": true
+    },
+    {
+      "a": "因",
+      "b": "火",
+      "result": "烟",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "因",
+      "result": "烟",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "石",
+      "result": "砠",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "且",
+      "result": "砠",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "立",
+      "result": "砬",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "石",
+      "result": "砬",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "立",
+      "result": "竝",
+      "merged": true
+    },
+    {
+      "a": "立",
+      "b": "立",
+      "result": "竝",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "言",
+      "result": "訕",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "山",
+      "result": "訕",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "東",
+      "result": "㖦",
+      "merged": true
+    },
+    {
+      "a": "東",
+      "b": "口",
+      "result": "㖦",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "男",
+      "result": "㭷",
+      "merged": true
+    },
+    {
+      "a": "男",
+      "b": "木",
+      "result": "㭷",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "音",
+      "result": "偣",
+      "merged": true
+    },
+    {
+      "a": "音",
+      "b": "人",
+      "result": "偣",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "思",
+      "result": "偲",
+      "merged": true
+    },
+    {
+      "a": "思",
+      "b": "人",
+      "result": "偲",
+      "merged": true
+    },
+    {
+      "a": "冒",
+      "b": "力",
+      "result": "勖",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "冒",
+      "result": "勖",
+      "merged": true
+    },
+    {
+      "a": "助",
+      "b": "日",
+      "result": "勗",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "助",
+      "result": "勗",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "炎",
+      "result": "啖",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "口",
+      "result": "啖",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "林",
+      "result": "埜",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "土",
+      "result": "埜",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "朋",
+      "result": "堋",
+      "merged": true
+    },
+    {
+      "a": "朋",
+      "b": "土",
+      "result": "堋",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "明",
+      "result": "奛",
+      "merged": true
+    },
+    {
+      "a": "明",
+      "b": "大",
+      "result": "奛",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "朋",
+      "result": "奟",
+      "merged": true
+    },
+    {
+      "a": "朋",
+      "b": "大",
+      "result": "奟",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "昌",
+      "result": "娼",
+      "merged": true
+    },
+    {
+      "a": "昌",
+      "b": "女",
+      "result": "娼",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "林",
+      "result": "婪",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "女",
+      "result": "婪",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "東",
+      "result": "崠",
+      "merged": true
+    },
+    {
+      "a": "東",
+      "b": "山",
+      "result": "崠",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "炎",
+      "result": "惔",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "心",
+      "result": "惔",
+      "merged": true
+    },
+    {
+      "a": "困",
+      "b": "木",
+      "result": "梱",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "困",
+      "result": "梱",
+      "merged": true
+    },
+    {
+      "a": "沐",
+      "b": "木",
+      "result": "淋",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "沐",
+      "result": "淋",
+      "merged": true
+    },
+    {
+      "a": "寺",
+      "b": "田",
+      "result": "畤",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "寺",
+      "result": "畤",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "音",
+      "result": "喑",
+      "merged": true
+    },
+    {
+      "a": "音",
+      "b": "口",
+      "result": "喑",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "胃",
+      "result": "喟",
+      "merged": true
+    },
+    {
+      "a": "胃",
+      "b": "口",
+      "result": "喟",
+      "merged": true
+    },
+    {
+      "a": "冒",
+      "b": "女",
+      "result": "媢",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "冒",
+      "result": "媢",
+      "merged": true
+    },
+    {
+      "a": "品",
+      "b": "山",
+      "result": "嵒",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "品",
+      "result": "嵒",
+      "merged": true
+    },
+    {
+      "a": "昌",
+      "b": "木",
+      "result": "椙",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "昌",
+      "result": "椙",
+      "merged": true
+    },
+    {
+      "a": "査",
+      "b": "水",
+      "result": "渣",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "査",
+      "result": "渣",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "胃",
+      "result": "渭",
+      "merged": true
+    },
+    {
+      "a": "胃",
+      "b": "水",
+      "result": "渭",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "相",
+      "result": "湘",
+      "merged": true
+    },
+    {
+      "a": "相",
+      "b": "水",
+      "result": "湘",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "炎",
+      "result": "焱",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "火",
+      "result": "焱",
+      "merged": true
+    },
+    {
+      "a": "炎",
+      "b": "王",
+      "result": "琰",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "炎",
+      "result": "琰",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "王",
+      "result": "琳",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "林",
+      "result": "琳",
+      "merged": true
+    },
+    {
+      "a": "且",
+      "b": "言",
+      "result": "詛",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "且",
+      "result": "詛",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "明",
+      "result": "𣇵",
+      "merged": true
+    },
+    {
+      "a": "明",
+      "b": "日",
+      "result": "𣇵",
+      "merged": true
+    },
+    {
+      "a": "品",
+      "b": "木",
+      "result": "喿",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "品",
+      "result": "喿",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "時",
+      "result": "塒",
+      "merged": true
+    },
+    {
+      "a": "時",
+      "b": "土",
+      "result": "塒",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "査",
+      "result": "楂",
+      "merged": true
+    },
+    {
+      "a": "査",
+      "b": "木",
+      "result": "楂",
+      "merged": true
+    },
+    {
+      "a": "東",
+      "b": "火",
+      "result": "煉",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "東",
+      "result": "煉",
+      "merged": true
+    },
+    {
+      "a": "冒",
+      "b": "王",
+      "result": "瑁",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "冒",
+      "result": "瑁",
+      "merged": true
+    },
+    {
+      "a": "朋",
+      "b": "石",
+      "result": "硼",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "朋",
+      "result": "硼",
+      "merged": true
+    },
+    {
+      "a": "思",
+      "b": "月",
+      "result": "腮",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "思",
+      "result": "腮",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "石",
+      "result": "𥓙",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "林",
+      "result": "𥓙",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "童",
+      "result": "僮",
+      "merged": true
+    },
+    {
+      "a": "童",
+      "b": "人",
+      "result": "僮",
+      "merged": true
+    },
+    {
+      "a": "品",
+      "b": "石",
+      "result": "碞",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "品",
+      "result": "碞",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "童",
+      "result": "噇",
+      "merged": true
+    },
+    {
+      "a": "童",
+      "b": "口",
+      "result": "噇",
+      "merged": true
+    },
+    {
+      "a": "東",
+      "b": "言",
+      "result": "諌",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "東",
+      "result": "諌",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "黒",
+      "result": "𣘸",
+      "merged": true
+    },
+    {
+      "a": "黒",
+      "b": "木",
+      "result": "𣘸",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "意",
+      "result": "噫",
+      "merged": true
+    },
+    {
+      "a": "意",
+      "b": "口",
+      "result": "噫",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "童",
+      "result": "曈",
+      "merged": true
+    },
+    {
+      "a": "童",
+      "b": "日",
+      "result": "曈",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "童",
+      "result": "橦",
+      "merged": true
+    },
+    {
+      "a": "童",
+      "b": "木",
+      "result": "橦",
+      "merged": true
+    },
+    {
+      "a": "晶",
+      "b": "木",
+      "result": "橸",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "晶",
+      "result": "橸",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "思",
+      "result": "諰",
+      "merged": true
+    },
+    {
+      "a": "思",
+      "b": "言",
+      "result": "諰",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "音",
+      "result": "諳",
+      "merged": true
+    },
+    {
+      "a": "音",
+      "b": "言",
+      "result": "諳",
+      "merged": true
+    },
+    {
+      "a": "胃",
+      "b": "言",
+      "result": "謂",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "胃",
+      "result": "謂",
+      "merged": true
+    },
+    {
+      "a": "信",
+      "b": "言",
+      "result": "𧪄",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "信",
+      "result": "𧪄",
+      "merged": true
+    },
+    {
+      "a": "意",
+      "b": "木",
+      "result": "檍",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "意",
+      "result": "檍",
+      "merged": true
+    },
+    {
+      "a": "墨",
+      "b": "水",
+      "result": "濹",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "墨",
+      "result": "濹",
+      "merged": true
+    },
+    {
+      "a": "意",
+      "b": "言",
+      "result": "譩",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "意",
+      "result": "譩",
+      "merged": true
+    },
+    {
+      "a": "从",
+      "b": "土",
+      "result": "坐",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "从",
+      "result": "坐",
+      "merged": true
+    },
+    {
+      "a": "从",
+      "b": "大",
+      "result": "夾",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "从",
+      "result": "夾",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "人",
+      "result": "佳",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "圭",
+      "result": "佳",
+      "merged": true
+    },
+    {
+      "a": "从",
+      "b": "木",
+      "result": "來",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "从",
+      "result": "來",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "吴",
+      "result": "俣",
+      "merged": true
+    },
+    {
+      "a": "吴",
+      "b": "人",
+      "result": "俣",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "口",
+      "result": "咺",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "亘",
+      "result": "咺",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "圭",
+      "result": "哇",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "口",
+      "result": "哇",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "圭",
+      "result": "垚",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "土",
+      "result": "垚",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "土",
+      "result": "垣",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "亘",
+      "result": "垣",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "大",
+      "result": "奎",
+      "merged": true
+    },
+    {
+      "a": "大",
+      "b": "圭",
+      "result": "奎",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "女",
+      "result": "姮",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "亘",
+      "result": "姮",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "女",
+      "result": "娃",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "圭",
+      "result": "娃",
+      "merged": true
+    },
+    {
+      "a": "子",
+      "b": "孖",
+      "result": "孨",
+      "merged": true
+    },
+    {
+      "a": "孖",
+      "b": "子",
+      "result": "孨",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "寸",
+      "result": "封",
+      "merged": true
+    },
+    {
+      "a": "寸",
+      "b": "圭",
+      "result": "封",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "心",
+      "result": "恒",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "亘",
+      "result": "恒",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "水",
+      "result": "洹",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "亘",
+      "result": "洹",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "水",
+      "result": "洼",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "圭",
+      "result": "洼",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "肙",
+      "result": "娟",
+      "merged": true
+    },
+    {
+      "a": "肙",
+      "b": "女",
+      "result": "娟",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "心",
+      "result": "恚",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "圭",
+      "result": "恚",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "肙",
+      "result": "悁",
+      "merged": true
+    },
+    {
+      "a": "肙",
+      "b": "心",
+      "result": "悁",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "日",
+      "result": "晅",
+      "merged": true
+    },
+    {
+      "a": "日",
+      "b": "亘",
+      "result": "晅",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "木",
+      "result": "桂",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "圭",
+      "result": "桂",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "木",
+      "result": "桓",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "亘",
+      "result": "桓",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "肙",
+      "result": "涓",
+      "merged": true
+    },
+    {
+      "a": "肙",
+      "b": "水",
+      "result": "涓",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "火",
+      "result": "烓",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "圭",
+      "result": "烓",
+      "merged": true
+    },
+    {
+      "a": "亘",
+      "b": "火",
+      "result": "烜",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "亘",
+      "result": "烜",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "玨",
+      "result": "珡",
+      "merged": true
+    },
+    {
+      "a": "玨",
+      "b": "人",
+      "result": "珡",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "王",
+      "result": "珪",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "圭",
+      "result": "珪",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "妾",
+      "result": "唼",
+      "merged": true
+    },
+    {
+      "a": "妾",
+      "b": "口",
+      "result": "唼",
+      "merged": true
+    },
+    {
+      "a": "咅",
+      "b": "土",
+      "result": "培",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "咅",
+      "result": "培",
+      "merged": true
+    },
+    {
+      "a": "昊",
+      "b": "水",
+      "result": "淏",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "昊",
+      "result": "淏",
+      "merged": true
+    },
+    {
+      "a": "忝",
+      "b": "水",
+      "result": "添",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "忝",
+      "result": "添",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "肙",
+      "result": "焆",
+      "merged": true
+    },
+    {
+      "a": "肙",
+      "b": "火",
+      "result": "焆",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "田",
+      "result": "畦",
+      "merged": true
+    },
+    {
+      "a": "田",
+      "b": "圭",
+      "result": "畦",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "目",
+      "result": "眭",
+      "merged": true
+    },
+    {
+      "a": "目",
+      "b": "圭",
+      "result": "眭",
+      "merged": true
+    },
+    {
+      "a": "圭",
+      "b": "石",
+      "result": "硅",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "圭",
+      "result": "硅",
+      "merged": true
+    },
+    {
+      "a": "吴",
+      "b": "月",
+      "result": "脵",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "吴",
+      "result": "脵",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "沗",
+      "result": "𣷹",
+      "merged": true
+    },
+    {
+      "a": "沗",
+      "b": "水",
+      "result": "𣷹",
+      "merged": true
+    },
+    {
+      "a": "忝",
+      "b": "木",
+      "result": "㮇",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "忝",
+      "result": "㮇",
+      "merged": true
+    },
+    {
+      "a": "保",
+      "b": "土",
+      "result": "堡",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "保",
+      "result": "堡",
+      "merged": true
+    },
+    {
+      "a": "妾",
+      "b": "木",
+      "result": "椄",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "妾",
+      "result": "椄",
+      "merged": true
+    },
+    {
+      "a": "咅",
+      "b": "火",
+      "result": "焙",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "咅",
+      "result": "焙",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "玨",
+      "result": "琹",
+      "merged": true
+    },
+    {
+      "a": "玨",
+      "b": "木",
+      "result": "琹",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "娚",
+      "result": "嫐",
+      "merged": true
+    },
+    {
+      "a": "娚",
+      "b": "女",
+      "result": "嫐",
+      "merged": true
+    },
+    {
+      "a": "咅",
+      "b": "石",
+      "result": "碚",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "咅",
+      "result": "碚",
+      "merged": true
+    },
+    {
+      "a": "吴",
+      "b": "言",
+      "result": "誤",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "吴",
+      "result": "誤",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "口",
+      "result": "噪",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "喿",
+      "result": "噪",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "心",
+      "result": "懆",
+      "merged": true
+    },
+    {
+      "a": "心",
+      "b": "喿",
+      "result": "懆",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "水",
+      "result": "澡",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "喿",
+      "result": "澡",
+      "merged": true
+    },
+    {
+      "a": "娚",
+      "b": "男",
+      "result": "嬲",
+      "merged": true
+    },
+    {
+      "a": "男",
+      "b": "娚",
+      "result": "嬲",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "木",
+      "result": "橾",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "喿",
+      "result": "橾",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "火",
+      "result": "燥",
+      "merged": true
+    },
+    {
+      "a": "火",
+      "b": "喿",
+      "result": "燥",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "王",
+      "result": "璪",
+      "merged": true
+    },
+    {
+      "a": "王",
+      "b": "喿",
+      "result": "璪",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "月",
+      "result": "臊",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "喿",
+      "result": "臊",
+      "merged": true
+    },
+    {
+      "a": "喿",
+      "b": "言",
+      "result": "譟",
+      "merged": true
+    },
+    {
+      "a": "言",
+      "b": "喿",
+      "result": "譟",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "夾",
+      "result": "俠",
+      "merged": true
+    },
+    {
+      "a": "夾",
+      "b": "人",
+      "result": "俠",
+      "merged": true
+    },
+    {
+      "a": "來",
+      "b": "力",
+      "result": "勑",
+      "merged": true
+    },
+    {
+      "a": "力",
+      "b": "來",
+      "result": "勑",
+      "merged": true
+    },
+    {
+      "a": "夾",
+      "b": "山",
+      "result": "峽",
+      "merged": true
+    },
+    {
+      "a": "山",
+      "b": "夾",
+      "result": "峽",
+      "merged": true
+    },
+    {
+      "a": "夾",
+      "b": "水",
+      "result": "浹",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "夾",
+      "result": "浹",
+      "merged": true
+    },
+    {
+      "a": "人",
+      "b": "來",
+      "result": "徠",
+      "merged": true
+    },
+    {
+      "a": "來",
+      "b": "人",
+      "result": "徠",
+      "merged": true
+    },
+    {
+      "a": "夾",
+      "b": "木",
+      "result": "梜",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "夾",
+      "result": "梜",
+      "merged": true
+    },
+    {
+      "a": "坐",
+      "b": "月",
+      "result": "脞",
+      "merged": true
+    },
+    {
+      "a": "月",
+      "b": "坐",
+      "result": "脞",
+      "merged": true
+    },
+    {
+      "a": "夾",
+      "b": "目",
+      "result": "䀹",
+      "merged": true
+    },
+    {
+      "a": "目",
+      "b": "夾",
+      "result": "䀹",
+      "merged": true
+    },
+    {
+      "a": "封",
+      "b": "水",
+      "result": "湗",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "封",
+      "result": "湗",
+      "merged": true
+    },
+    {
+      "a": "夾",
+      "b": "石",
+      "result": "硤",
+      "merged": true
+    },
+    {
+      "a": "石",
+      "b": "夾",
+      "result": "硤",
+      "merged": true
+    },
+    {
+      "a": "回",
+      "b": "坐",
+      "result": "嗇",
+      "merged": true
+    },
+    {
+      "a": "坐",
+      "b": "回",
+      "result": "嗇",
+      "merged": true
+    },
+    {
+      "a": "口",
+      "b": "恚",
+      "result": "𠹤",
+      "merged": true
+    },
+    {
+      "a": "恚",
+      "b": "口",
+      "result": "𠹤",
+      "merged": true
+    },
+    {
+      "a": "嗇",
+      "b": "土",
+      "result": "墻",
+      "merged": true
+    },
+    {
+      "a": "土",
+      "b": "嗇",
+      "result": "墻",
+      "merged": true
+    },
+    {
+      "a": "嗇",
+      "b": "女",
+      "result": "嬙",
+      "merged": true
+    },
+    {
+      "a": "女",
+      "b": "嗇",
+      "result": "嬙",
+      "merged": true
+    },
+    {
+      "a": "嗇",
+      "b": "水",
+      "result": "濇",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "嗇",
+      "result": "濇",
+      "merged": true
+    },
+    {
+      "a": "嗇",
+      "b": "木",
+      "result": "檣",
+      "merged": true
+    },
+    {
+      "a": "木",
+      "b": "嗇",
+      "result": "檣",
+      "merged": true
+    },
+    {
+      "a": "水",
+      "b": "林",
+      "result": "淋",
+      "merged": true
+    },
+    {
+      "a": "林",
+      "b": "水",
+      "result": "淋",
+      "merged": true
+    },
+    {
+      "a": "休",
+      "b": "一",
+      "result": "体",
+      "merged": true
+    },
+    {
+      "a": "一",
+      "b": "休",
+      "result": "体",
+      "merged": true
     }
   ],
   "stacks": [
     {
       "count": 15,
       "characters": "口",
-      "activeP95ms": 0.255,
-      "settledP95ms": 0.005,
+      "activeP95ms": 0.199,
+      "settledP95ms": 0.004,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -2306,8 +4910,8 @@
     {
       "count": 15,
       "characters": "目日田回",
-      "activeP95ms": 0.247,
-      "settledP95ms": 0.01,
+      "activeP95ms": 0.288,
+      "settledP95ms": 0.007,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -2316,8 +4920,8 @@
     {
       "count": 15,
       "characters": "森詩想晶",
-      "activeP95ms": 3.348,
-      "settledP95ms": 0.051,
+      "activeP95ms": 1.65,
+      "settledP95ms": 0.042,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -2326,8 +4930,8 @@
     {
       "count": 30,
       "characters": "口",
-      "activeP95ms": 0.954,
-      "settledP95ms": 0.012,
+      "activeP95ms": 0.379,
+      "settledP95ms": 0.009,
       "asleep": 30,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -2336,8 +4940,8 @@
     {
       "count": 30,
       "characters": "目日田回",
-      "activeP95ms": 1.044,
-      "settledP95ms": 0.023,
+      "activeP95ms": 0.694,
+      "settledP95ms": 0.015,
       "asleep": 30,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -2346,8 +4950,8 @@
     {
       "count": 30,
       "characters": "森詩想晶",
-      "activeP95ms": 10.634,
-      "settledP95ms": 10.665,
+      "activeP95ms": 7.196,
+      "settledP95ms": 6.006,
       "asleep": 0,
       "maxSpeedPx": 890.8975816588052,
       "fallen": 16,

@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import worker,{jstDay} from '../server/worker';
 import { validateSubmission } from '../server/validation';
 import { MAX_SHARE_BYTES } from '../server/shares';
+import { kanji, recipes } from '../src/data';
 import type { Env } from '../server/worker';
 const payload={session:crypto.randomUUID(),name:'木のひと',score:13,height:1,count:1,duration:6,moves:3};
 const GAME='https://sasa618.github.io/kanji-tower-battle-web/',ORIGIN='https://sasa618.github.io';
@@ -12,12 +13,21 @@ test('ranking rejects impossible scores, timings, names and counts',()=>{
   assert.equal(validateSubmission(payload).name,'木のひと');
   for(const patch of [{score:99999},{height:NaN},{duration:0},{duration:2,moves:100},{name:'<script>'},{name:'死ね'},{name:'1234567890'},{name:'あ'.repeat(13)},{count:2,score:1},{count:0,score:1}])assert.throws(()=>validateSubmission({...payload,...patch}));
 });
-test('ranking accepts new 17-stroke characters and still bounds points per tile',()=>{
-  assert.equal(validateSubmission({...payload,score:17}).score,17);
-  assert.throws(()=>validateSubmission({...payload,score:18}));
-  const fullTower={...payload,score:2720,count:160,moves:1000,duration:500};
-  assert.equal(validateSubmission(fullTower).score,2720);
-  assert.throws(()=>validateSubmission({...fullTower,score:2721}));
+test('ranking accepts new 20-stroke characters and still bounds points per tile',()=>{
+  assert.equal(Math.max(...kanji.map(k=>k.strokes)),20);
+  assert.equal(validateSubmission({...payload,score:20}).score,20);
+  assert.throws(()=>validateSubmission({...payload,score:21}));
+  const fullTower={...payload,score:3200,count:160,moves:1000,duration:500};
+  assert.equal(validateSubmission(fullTower).score,3200);
+  assert.throws(()=>validateSubmission({...fullTower,score:3201}));
+});
+test('no character earns more than eight points per drop, so honest towers pass the drop bound',()=>{
+  const drops=new Map(kanji.filter(k=>k.base).map(k=>[k.char,1]));
+  for(let pass=0;pass<kanji.length;pass++)for(const r of recipes){
+    const a=drops.get(r.a),b=drops.get(r.b);
+    if(a&&b&&(!drops.has(r.result)||drops.get(r.result)!>a+b))drops.set(r.result,a+b);
+  }
+  for(const k of kanji)assert.ok(k.strokes<=8*drops.get(k.char)!,k.char);
 });
 // Tests apply the real migration files in order, exactly as wrangler does for a new or existing database.
 export function env(extra:Partial<Env>={}):Env{
