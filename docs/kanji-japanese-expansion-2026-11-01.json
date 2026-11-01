@@ -2,11 +2,11 @@
  "date": "2026-11-01",
  "baseCommit": "a5276d1f0a4d489b66d7c24e0ee3272b583e60af",
  "totals": {
-  "addedCharacters": 215,
-  "addedRecipes": 217,
-  "characters": 322,
-  "recipes": 306,
-  "mergeResults": 304,
+  "addedCharacters": 211,
+  "addedRecipes": 213,
+  "characters": 318,
+  "recipes": 302,
+  "mergeResults": 300,
   "baseCharacters": 20
  },
  "adopted": [
@@ -479,31 +479,6 @@
     "confirmed": "日本語の音訓・意味の記載を確認"
    },
    "fromReferenceProposal": true
-  },
-  {
-   "char": "吴",
-   "recipes": [
-    "口＋天"
-   ],
-   "level": 1,
-   "strokes": 7,
-   "reading": "ゴ／くれ",
-   "meaning": "中国古代の国名。くれ。",
-   "words": "「呉」の異体字",
-   "source": {
-    "url": "https://kanji.jitenon.jp/kanjiy/13250",
-    "standard": "JIS外",
-    "indexNumbers": {
-     "大漢和辞典": "3366",
-     "日本語漢字辞典": "1333",
-     "新大字典": "1814",
-     "大字源": "1097",
-     "大漢語林": "1295"
-    },
-    "confirmed": "日本語の音訓・意味の記載を確認",
-    "japaneseNames": true
-   },
-   "fromReferenceProposal": false
   },
   {
    "char": "妟",
@@ -3524,31 +3499,6 @@
    "fromReferenceProposal": true
   },
   {
-   "char": "俣",
-   "recipes": [
-    "人＋吴"
-   ],
-   "level": 2,
-   "strokes": 9,
-   "reading": "また",
-   "meaning": "川や道が分かれる所。",
-   "words": "水俣病・川俣",
-   "source": {
-    "url": "https://kanji.jitenon.jp/kanjif/2929",
-    "standard": "人名用漢字・国字・JIS第1水準",
-    "indexNumbers": {
-     "大漢和辞典": "718",
-     "日本語漢字辞典": "390",
-     "新大字典": "539",
-     "大字源": "307",
-     "大漢語林": "395"
-    },
-    "confirmed": "日本語の音訓・意味の記載を確認",
-    "japaneseNames": true
-   },
-   "fromReferenceProposal": false
-  },
-  {
    "char": "咺",
    "recipes": [
     "亘＋口"
@@ -4292,29 +4242,6 @@
    "fromReferenceProposal": true
   },
   {
-   "char": "脵",
-   "recipes": [
-    "吴＋月"
-   ],
-   "level": 2,
-   "strokes": 11,
-   "reading": "また",
-   "meaning": "人名・地名に用いる字。",
-   "words": "猪脵（名字）",
-   "source": {
-    "url": "https://kanji.jitenon.jp/kanjix/11834",
-    "standard": "国字・JIS第4水準",
-    "indexNumbers": {
-     "大漢和辞典": "補508",
-     "日本語漢字辞典": "9516",
-     "大漢語林": "4768"
-    },
-    "confirmed": "日本語の音訓・意味の記載を確認",
-    "japaneseNames": true
-   },
-   "fromReferenceProposal": false
-  },
-  {
    "char": "𣷹",
    "recipes": [
     "水＋沗"
@@ -4496,30 +4423,6 @@
     "confirmed": "日本語の音訓・意味の記載を確認"
    },
    "fromReferenceProposal": true
-  },
-  {
-   "char": "誤",
-   "recipes": [
-    "吴＋言"
-   ],
-   "level": 2,
-   "strokes": 14,
-   "reading": "ゴ／あやまる",
-   "meaning": "まちがえる。",
-   "words": "誤り・過誤",
-   "source": {
-    "url": "https://kanji.jitenon.jp/kanjib/866",
-    "standard": "常用漢字・JIS第1水準",
-    "indexNumbers": {
-     "大漢和辞典": "35546",
-     "日本語漢字辞典": "11953",
-     "新大字典": "15781",
-     "大字源": "9348",
-     "大漢語林": "10711"
-    },
-    "confirmed": "日本語の音訓・意味の記載を確認"
-   },
-   "fromReferenceProposal": false
   },
   {
    "char": "噪",
@@ -5289,9 +5192,8 @@
    "candidates": [
     "口＋天"
    ],
-   "status": "新規候補間の競合で不採用",
-   "reason": "口＋天は新規の「吴」を採用",
-   "decision": "口＋天は，常用の「誤」と人名用の「俣」へつながる「吴（呉の異体字）」を優先した（仕様書4.2の3）"
+   "status": "中国語専用等のため対象外",
+   "reason": "口＋天で組んだ形は康熙字典体の「吞」であり，日本で通常使う字体は「呑」（夭＋口）．中国字形の分解を日本語の字へ流用しないという仕様書4.5の考え方に合わせて不採用"
   },
   {
    "char": "黑",
@@ -5495,6 +5397,16 @@
    ],
    "status": "日本語の根拠不足で保留",
    "reason": "JIS X 0208・0213の外で，日本の漢和辞典への掲載以外に，日本語での使用を示す資料（国字・日本の名字・地名の用例）を確認できない"
+  },
+  {
+   "char": "吴",
+   "standard": "JIS外",
+   "url": "https://kanji.jitenon.jp/kanjiy/13250",
+   "candidates": [
+    "口＋天"
+   ],
+   "status": "中国語専用等のため対象外",
+   "reason": "口＋天で組んだ形は中国の字体「吴」であり，日本で通常使う字体は「呉」．仕様書4.5により，吴を呉として扱わない"
   },
   {
    "char": "呇",
@@ -6302,6 +6214,16 @@
    "reason": "旦＋里は中間字旦（未配置）が必要"
   },
   {
+   "char": "誤",
+   "standard": "常用漢字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjib/866",
+   "candidates": [
+    "吴＋言"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "吴＋言は中間字吴（対象外）が必要"
+  },
+  {
    "char": "課",
    "standard": "常用漢字・JIS第1水準",
    "url": "https://kanji.jitenon.jp/kanji/453",
@@ -6330,6 +6252,16 @@
    ],
    "status": "材料が採用されず到達不能",
    "reason": "末＋水は中間字末（未配置）が必要"
+  },
+  {
+   "char": "俣",
+   "standard": "人名用漢字・国字・JIS第1水準",
+   "url": "https://kanji.jitenon.jp/kanjif/2929",
+   "candidates": [
+    "人＋吴"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "人＋吴は中間字吴（対象外）が必要"
   },
   {
    "char": "耒",
@@ -6790,6 +6722,16 @@
    ],
    "status": "材料が採用されず到達不能",
    "reason": "夫＋月は中間字夫（未配置）が必要"
+  },
+  {
+   "char": "脵",
+   "standard": "国字・JIS第4水準",
+   "url": "https://kanji.jitenon.jp/kanjix/11834",
+   "candidates": [
+    "吴＋月"
+   ],
+   "status": "材料が採用されず到達不能",
+   "reason": "吴＋月は中間字吴（対象外）が必要"
   },
   {
    "char": "詿",

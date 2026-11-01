@@ -87,7 +87,7 @@ test('Japanese kanji expansion: intermediate chains and alternative routes',()=>
     ['日',[['二','亘'],['心','恒']]],
     ['立',[['口','咅'],['土','培']]],
     ['人',[['人','从'],['土','坐']]],
-    ['口',[['天','吴'],['言','誤']]],
+    ['人',[['人','从'],['大','夾'],['人','俠']]],
   ] as const){
     const g=new Game();let current=g.createTile(start,280,460);
     for(const [ingredient,result] of steps){
@@ -101,6 +101,9 @@ test('Japanese kanji expansion: intermediate chains and alternative routes',()=>
   assert.equal(kanji.filter(k=>k.char==='体').length,1);
   assert.equal(recipes.filter(r=>r.result==='体').length,2);
   assert.equal(recipes.filter(r=>r.result==='淋').length,2);
+  // Chinese glyph decompositions are not reused for Japanese characters (spec 4.5): 誤 is 言＋呉, not 言＋吴.
+  for(const char of ['吴','誤','俣','脵','吞'])assert.ok(!kanji.some(k=>k.char===char),char);
+  assert.equal(recipeFor('口','天'),undefined);
 });
 test('airborne excluded; game over excludes fallen and freezes stats while physics continues',()=>{
   const g=new Game();g.reset();const safe=g.createTile('口',200,STAGE_Y-40);safe.landed=true;

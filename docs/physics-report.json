@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-01T14:32:58.221Z",
+  "date": "2026-11-01T15:22:38.815Z",
   "stability": [
     {
       "char": "木",
@@ -2532,18 +2532,6 @@
       "merged": true
     },
     {
-      "a": "口",
-      "b": "天",
-      "result": "吴",
-      "merged": true
-    },
-    {
-      "a": "天",
-      "b": "口",
-      "result": "吴",
-      "merged": true
-    },
-    {
       "a": "女",
       "b": "日",
       "result": "妟",
@@ -4068,18 +4056,6 @@
       "merged": true
     },
     {
-      "a": "人",
-      "b": "吴",
-      "result": "俣",
-      "merged": true
-    },
-    {
-      "a": "吴",
-      "b": "人",
-      "result": "俣",
-      "merged": true
-    },
-    {
       "a": "亘",
       "b": "口",
       "result": "咺",
@@ -4452,18 +4428,6 @@
       "merged": true
     },
     {
-      "a": "吴",
-      "b": "月",
-      "result": "脵",
-      "merged": true
-    },
-    {
-      "a": "月",
-      "b": "吴",
-      "result": "脵",
-      "merged": true
-    },
-    {
       "a": "水",
       "b": "沗",
       "result": "𣷹",
@@ -4557,18 +4521,6 @@
       "a": "石",
       "b": "咅",
       "result": "碚",
-      "merged": true
-    },
-    {
-      "a": "吴",
-      "b": "言",
-      "result": "誤",
-      "merged": true
-    },
-    {
-      "a": "言",
-      "b": "吴",
-      "result": "誤",
       "merged": true
     },
     {
@@ -4900,8 +4852,8 @@
     {
       "count": 15,
       "characters": "口",
-      "activeP95ms": 0.199,
-      "settledP95ms": 0.004,
+      "activeP95ms": 0.183,
+      "settledP95ms": 0.003,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -4910,7 +4862,7 @@
     {
       "count": 15,
       "characters": "目日田回",
-      "activeP95ms": 0.288,
+      "activeP95ms": 0.231,
       "settledP95ms": 0.007,
       "asleep": 15,
       "maxSpeedPx": 0,
@@ -4920,8 +4872,8 @@
     {
       "count": 15,
       "characters": "森詩想晶",
-      "activeP95ms": 1.65,
-      "settledP95ms": 0.042,
+      "activeP95ms": 1.272,
+      "settledP95ms": 0.049,
       "asleep": 15,
       "maxSpeedPx": 0,
       "fallen": 0,
@@ -4930,7 +4882,7 @@
     {
       "count": 30,
       "characters": "口",
-      "activeP95ms": 0.379,
+      "activeP95ms": 0.679,
       "settledP95ms": 0.009,
       "asleep": 30,
       "maxSpeedPx": 0,
@@ -4940,7 +4892,7 @@
     {
       "count": 30,
       "characters": "目日田回",
-      "activeP95ms": 0.694,
+      "activeP95ms": 0.702,
       "settledP95ms": 0.015,
       "asleep": 30,
       "maxSpeedPx": 0,
@@ -4950,8 +4902,8 @@
     {
       "count": 30,
       "characters": "森詩想晶",
-      "activeP95ms": 7.196,
-      "settledP95ms": 6.006,
+      "activeP95ms": 6.366,
+      "settledP95ms": 6.261,
       "asleep": 0,
       "maxSpeedPx": 890.8975816588052,
       "fallen": 16,

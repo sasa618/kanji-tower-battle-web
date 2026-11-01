@@ -762,12 +762,6 @@
     "area": 2552.9
   },
   {
-    "char": "吴",
-    "fixtures": 25,
-    "vertices": 105,
-    "area": 2217.09
-  },
-  {
     "char": "妟",
     "fixtures": 21,
     "vertices": 92,
@@ -1530,12 +1524,6 @@
     "area": 1971.51
   },
   {
-    "char": "俣",
-    "fixtures": 30,
-    "vertices": 128,
-    "area": 2487.9
-  },
-  {
     "char": "咺",
     "fixtures": 18,
     "vertices": 72,
@@ -1722,12 +1710,6 @@
     "area": 2303.84
   },
   {
-    "char": "脵",
-    "fixtures": 38,
-    "vertices": 158,
-    "area": 2956.32
-  },
-  {
     "char": "𣷹",
     "fixtures": 56,
     "vertices": 237,
@@ -1774,12 +1756,6 @@
     "fixtures": 28,
     "vertices": 126,
     "area": 2798.05
-  },
-  {
-    "char": "誤",
-    "fixtures": 37,
-    "vertices": 158,
-    "area": 2558.75
   },
   {
     "char": "噪",

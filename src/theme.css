@@ -1,5 +1,5 @@
 /* White space, brilliant color, and the contrast of the Mincho letterforms. */
-@font-face{font-family:TowerDisplay;src:url('/fonts/KanjiTowerDisplay.woff2?v=d9dbfd3d02b2') format('woff2');font-weight:400 900;font-display:swap}
+@font-face{font-family:TowerDisplay;src:url('/fonts/KanjiTowerDisplay.woff2?v=a899f7482900') format('woff2');font-weight:400 900;font-display:swap}
 @font-face{font-family:TowerImpact;src:url('/fonts/KanjiTowerImpact.woff2') format('woff2');font-weight:400 900;font-display:swap}
 :root {
   color:#202a40;background:#fffefa;font-weight:500;

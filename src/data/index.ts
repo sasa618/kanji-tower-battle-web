@@ -14,7 +14,9 @@ export const recipeFor = (a: string, b: string) => recipeMap.get(key(a, b));
 // Interpolate in linear RGB for any future stroke tiers between the palette anchors.
 // Use the same sRGB value for DOM, canvas and exported images.
 const minStrokes=Math.min(...kanji.map(k=>k.strokes));
-const maxStrokes=Math.max(...kanji.map(k=>k.strokes));
+// The palette was tuned on the original 1-13 stroke range. Denser characters share the near-black end,
+// so the colors players learned do not shift whenever heavier kanji are added.
+const maxStrokes=13;
 const strokePalette=[
   '#ff9a00','#ff681a','#ff3048','#ff6500','#4ab800','#00b896',
   '#009bff','#244bff','#5318ef','#7300d6','#6500b0','#440070','#18141b',
