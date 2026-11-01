@@ -31,6 +31,15 @@ export async function reportGame(session:string,duration:number,moves:number){
   try{const response=await fetch(API+'/events',{...post({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});if(isOutageStatus(response.status))outage.fail();}
   catch{outage.fail();/* statistics never affect play */}
 }
+export type RankingSnapshot={at:number;scores:Record<RankingMetric,OnlineScore[]>};
+// A daily copy published with the game itself (tools/fetch-ranking-snapshot.mjs), readable while the Worker is over its free-tier limit.
+export async function loadRankingSnapshot():Promise<RankingSnapshot|null>{
+  try{
+    const response=await fetch(`${import.meta.env?.BASE_URL||'./'}ranking-snapshot.json`,{cache:'no-cache'});
+    if(!response.ok)return null;
+    const data=await response.json();return Number.isFinite(data?.at)&&data?.scores?data:null;
+  }catch{return null;}
+}
 // Uploads carry about 200KB, so a slow mobile connection gets more time than a ranking read.
 export const createResultShare=(result:RecordEntry,image:string)=>call<{url:string}>('/shares',{client:clientId(),record:result.id,score:result.score,height:result.height,count:result.count,image},20000);
 // Links issued by another server (for example a LAN preview) are not reused against the public API.

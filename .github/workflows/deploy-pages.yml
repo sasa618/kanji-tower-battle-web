@@ -28,6 +28,11 @@ jobs:
       - run: npm test
       - id: pages
         uses: actions/configure-pages@v5
+      # 通信できないときに表示する写し（3 種目の上位 100 件）．Worker が応答しなければ公開中の写しを引き継ぐ．
+      - run: node tools/fetch-ranking-snapshot.mjs
+        env:
+          RANKING_API: ${{ vars.RANKING_API }}
+          PUBLIC_URL: ${{ vars.PUBLIC_URL || format('{0}/', steps.pages.outputs.base_url) }}
       - run: npm run build
         env:
           VITE_RANKING_API: ${{ vars.RANKING_API }}

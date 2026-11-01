@@ -1,23 +1,46 @@
-import { beginSession, getScores, onlineEnabled, reportGame, submitScore, type OnlineScore } from './online';
+import { beginSession, getScores, loadRankingSnapshot, onlineEnabled, reportGame, submitScore, type OnlineScore, type RankingSnapshot } from './online';
 import type { RecordEntry } from './storage';
 import { MetricRankings } from './ranking-cache';
 import {metricLabels,metricUnits,metricValue,rankLabel,rankingMetrics,type RankingMetric} from './ranking';
 const esc=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
-const nameKey='kanji-tower-ranking-name';
+const nameKey='kanji-tower-ranking-name',cacheKey='kanji-tower-ranking-cache';
 function savedName(){try{return (localStorage.getItem(nameKey)||'').slice(0,24);}catch{return '';}}
-const services={enabled:onlineEnabled,beginSession,getScores,reportGame,submitScore};
+// The last list each metric showed stays on the device, so an outage (or the Worker's daily limit) still leaves something to read.
+type Kept={scores:OnlineScore[];at:number};
+const validScore=(r:unknown):r is OnlineScore=>!!r&&typeof (r as OnlineScore).name==='string'&&Number.isFinite((r as OnlineScore).score)&&Number.isFinite((r as OnlineScore).height)&&Number.isFinite((r as OnlineScore).count);
+function keptScores():Partial<Record<RankingMetric,Kept>>{
+  try{const raw=JSON.parse(localStorage.getItem(cacheKey)||'{}'),out:Partial<Record<RankingMetric,Kept>>={};
+    for(const metric of rankingMetrics){const k=raw?.[metric];if(k&&Number.isFinite(k.at)&&Array.isArray(k.scores))out[metric]={at:k.at,scores:k.scores.filter(validScore).slice(0,100)};}
+    return out;}catch{return {};}
+}
+function keepScores(metric:RankingMetric,scores:OnlineScore[]){try{const all=keptScores();all[metric]={scores:scores.slice(0,100),at:Date.now()};localStorage.setItem(cacheKey,JSON.stringify(all));}catch{}}
+export const fetchedAt=(at:number)=>new Date(at).toLocaleString('ja-JP',{month:'numeric',day:'numeric',hour:'numeric',minute:'2-digit'});
+type Services={enabled:boolean;beginSession:typeof beginSession;getScores:typeof getScores;reportGame:typeof reportGame;submitScore:typeof submitScore;loadSnapshot?:()=>Promise<RankingSnapshot|null>};
+const services:Services={enabled:onlineEnabled,beginSession,getScores,reportGame,submitScore,loadSnapshot:loadRankingSnapshot};
 export class OnlineUI {
   run=0;moves=0;session:string|null=null;result:RecordEntry|null=null;pending=false;sending=false;rank=0;ranks:Partial<Record<RankingMetric,number>>={};error='';name=savedName();
   private latestRanks:Partial<Record<RankingMetric,number>>={};
   private rankings:MetricRankings<{scores:OnlineScore[]}>;
-  constructor(public changed:()=>void,private api=services){this.rankings=new MetricRankings(api.getScores,()=>this.changed());}
+  private snapshot:RankingSnapshot|null|undefined;
+  constructor(public changed:()=>void,private api:Services=services){this.rankings=new MetricRankings(async metric=>{const r=await api.getScores(metric);keepScores(metric,r.scores);return r;},()=>this.changed());}
   get metric(){return this.rankings.metric;}
   selectMetric(metric:RankingMetric){this.rankings.metric=metric;this.changed();void this.load();}
   reset(){this.run++;this.moves=0;this.session=null;this.result=null;this.rank=0;this.ranks={};this.error='';this.pending=false;this.sending=false;}
   start(){this.reset();const id=this.run;this.pending=this.api.enabled;
     void this.api.beginSession().then(session=>{if(id!==this.run)return;this.session=session;this.pending=false;if(session&&this.result)void this.api.reportGame(session,this.result.duration,this.moves);this.changed();});}
   finish(result:RecordEntry){this.result=result;if(this.session)void this.api.reportGame(this.session,result.duration,this.moves);}
-  async load(force=false){if(this.api.enabled)await this.rankings.load(force);}
+  async load(force=false){
+    if(!this.api.enabled)return;
+    await this.rankings.load(force);
+    // The published daily copy is read once, and only after the live list could not be fetched.
+    if(this.rankings.current.failed&&this.snapshot===undefined&&this.api.loadSnapshot){this.snapshot=await this.api.loadSnapshot().catch(()=>null);this.changed();}
+  }
+  /** The fresher of the device's last list and the published daily copy, for display while the Worker is unreachable. */
+  fallbackFor(metric:RankingMetric):Kept|undefined{
+    const kept=keptScores()[metric],published=this.snapshot?.scores?.[metric];
+    const candidates=[kept,published?{scores:published.filter(validScore).slice(0,100),at:this.snapshot!.at}:undefined].filter((k):k is Kept=>!!k&&k.scores.length>0);
+    return candidates.sort((a,b)=>b.at-a.at)[0];
+  }
   async submit(){
     if(!this.session||!this.result||this.sending||this.rank)return;
     const run=this.run,name=this.name;this.sending=true;this.error='';this.changed();
@@ -39,8 +62,14 @@ export class OnlineUI {
     const {value,loading,failed}=this.rankings.current,scores:OnlineScore[]=value?.scores||[],metric=this.metric;
     const own=this.latestRanks[metric],ownHTML=own?`<p class="result-rank">あなたの直近の送信時：${metricLabels[metric]} ${rankLabel(own)}</p>`:'';
     if(loading)return ownHTML+'<div class="empty" role="status">記録を読み込んでいます…</div>';
-    if(failed)return ownHTML+'<div class="empty"><p>通信できませんでした。しばらく待ってからお試しください。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>';
+    const table=(rows:OnlineScore[])=>`<table class="ranking"><thead><tr><th>順位</th><th>名前</th><th>${metricLabels[metric]}</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.name)}</td><td class="ranking-value">${metricValue(r,metric)}<small>${metricUnits[metric]}</small></td></tr>`).join('')}</tbody></table>`;
+    const refresh='<button class="small-btn" data-action="online-refresh" aria-label="全国ランキングを更新">↻</button>';
+    if(failed){
+      const old=this.fallbackFor(metric);
+      if(old)return `${ownHTML}<div class="ranking-caption"><p class="ranking-stale">通信できないため、${fetchedAt(old.at)}に取得した一覧を表示しています。<br><small>最近90日間 · 上位100件</small></p>${refresh}</div>${table(old.scores)}`;
+      return ownHTML+'<div class="empty"><p>通信できませんでした。しばらく待ってからお試しください。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>';
+    }
     if(!scores.length)return ownHTML+(own?'<div class="empty"><p>送信した記録は数分以内に一覧へ反映されます。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>':'<div class="empty"><b>最初の記録をつくろう。</b><p>プレイ終了後に名前を入力して参加できます。</p></div>');
-    return `${ownHTML}<div class="ranking-caption"><p>最近90日間 · 上位100件<br><small>一覧への反映には数分かかる場合があります。</small></p><button class="small-btn" data-action="online-refresh" aria-label="全国ランキングを更新">↻</button></div><table class="ranking"><thead><tr><th>順位</th><th>名前</th><th>${metricLabels[metric]}</th></tr></thead><tbody>${scores.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.name)}</td><td class="ranking-value">${metricValue(r,metric)}<small>${metricUnits[metric]}</small></td></tr>`).join('')}</tbody></table>`;
+    return `${ownHTML}<div class="ranking-caption"><p>最近90日間 · 上位100件<br><small>一覧への反映には数分かかる場合があります。</small></p>${refresh}</div>${table(scores)}`;
   }
 }
