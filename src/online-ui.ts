@@ -14,7 +14,6 @@ function keptScores():Partial<Record<RankingMetric,Kept>>{
     return out;}catch{return {};}
 }
 function keepScores(metric:RankingMetric,scores:OnlineScore[]){try{const all=keptScores();all[metric]={scores:scores.slice(0,100),at:Date.now()};localStorage.setItem(cacheKey,JSON.stringify(all));}catch{}}
-export const fetchedAt=(at:number)=>new Date(at).toLocaleString('ja-JP',{month:'numeric',day:'numeric',hour:'numeric',minute:'2-digit'});
 type Services={enabled:boolean;beginSession:typeof beginSession;getScores:typeof getScores;reportGame:typeof reportGame;submitScore:typeof submitScore;loadSnapshot?:()=>Promise<RankingSnapshot|null>};
 const services:Services={enabled:onlineEnabled,beginSession,getScores,reportGame,submitScore,loadSnapshot:loadRankingSnapshot};
 export class OnlineUI {
@@ -66,7 +65,7 @@ export class OnlineUI {
     const refresh='<button class="small-btn" data-action="online-refresh" aria-label="全国ランキングを更新">↻</button>';
     if(failed){
       const old=this.fallbackFor(metric);
-      if(old)return `${ownHTML}<div class="ranking-caption"><p class="ranking-stale">通信できないため、${fetchedAt(old.at)}に取得した一覧を表示しています。<br><small>最近90日間 · 上位100件</small></p>${refresh}</div>${table(old.scores)}`;
+      if(old)return `${ownHTML}<div class="ranking-caption"><p class="ranking-stale"><small>以前に取得した一覧です。最近90日間 · 上位100件</small></p>${refresh}</div>${table(old.scores)}`;
       return ownHTML+'<div class="empty"><p>通信できませんでした。しばらく待ってからお試しください。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>';
     }
     if(!scores.length)return ownHTML+(own?'<div class="empty"><p>送信した記録は数分以内に一覧へ反映されます。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>':'<div class="empty"><b>最初の記録をつくろう。</b><p>プレイ終了後に名前を入力して参加できます。</p></div>');

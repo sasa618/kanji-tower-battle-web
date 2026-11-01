@@ -11,11 +11,11 @@ function withStorage(run:(saved:Map<string,string>)=>Promise<void>){
 }
 const base=()=>({enabled:true,beginSession:async()=>'session',reportGame:async()=>{},submitScore:async()=>({rank:1,ranks:{score:1,height:1,count:1}})});
 
-test('while the Worker is unreachable, the published daily copy is shown with its time',()=>withStorage(async()=>{
+test('while the Worker is unreachable, the published daily copy is shown with a small note',()=>withStorage(async()=>{
   let snapshotReads=0;
   const ui=new OnlineUI(()=>{},{...base(),getScores:async()=>{throw Error('通信できませんでした。');},loadSnapshot:async()=>{snapshotReads++;return {at:Date.UTC(2026,10,2,0,30),scores:{score:[row('昨日の一位',40)],height:[row('高さの一位',5)],count:[]}};}});
   await ui.load();
-  assert.match(ui.rankingHTML(),/に取得した一覧を表示しています/);assert.match(ui.rankingHTML(),/昨日の一位/);
+  assert.match(ui.rankingHTML(),/<small>以前に取得した一覧です。/);assert.doesNotMatch(ui.rankingHTML(),/11\/2|2026/,'no fetch time is shown');assert.match(ui.rankingHTML(),/昨日の一位/);
   // selectMetric starts its own load; let that settle before reading the HTML.
   const settle=()=>new Promise(resolve=>setTimeout(resolve,0));
   ui.selectMetric('height');await settle();assert.match(ui.rankingHTML(),/高さの一位/);
@@ -28,7 +28,7 @@ test('a list the device fetched earlier is kept and preferred when it is newer t
   const first=new OnlineUI(()=>{},api);await first.load();assert.match(first.rankingHTML(),/さっきの一位/);
   assert.ok(saved.get('kanji-tower-ranking-cache')?.includes('さっきの一位'));
   live=false;const second=new OnlineUI(()=>{},api);await second.load();
-  assert.match(second.rankingHTML(),/に取得した一覧/);assert.match(second.rankingHTML(),/さっきの一位/);assert.doesNotMatch(second.rankingHTML(),/古い写し/);
+  assert.match(second.rankingHTML(),/以前に取得した一覧/);assert.match(second.rankingHTML(),/さっきの一位/);assert.doesNotMatch(second.rankingHTML(),/古い写し/);
   assert.match(second.rankingHTML(),/data-action="online-refresh"/);
 }));
 test('corrupt device data and a missing copy fall back to the plain failure message',()=>withStorage(async saved=>{
