@@ -1,6 +1,6 @@
 import type { D1Database } from '@cloudflare/workers-types';
 import { validateSubmission } from './validation';
-import {isRankingMetric,rankingMetrics,type RankingMetric} from '../src/ranking';
+import {isRankingMetric,rankingMetrics,RANK_LIMIT,type RankingMetric} from '../src/ranking';
 import {MAX_SHARE_BYTES,saveShare,serveShare,shareUsage} from './shares';
 import {Snapshot} from './snapshot';
 export interface Env {DB:D1Database;ALLOWED_ORIGINS:string;GAME_URL?:string;SHARE_STORAGE_LIMIT_BYTES?:string}
@@ -13,8 +13,9 @@ export const jstDay=(ms:number)=>new Date(ms+9*3600000).toISOString().slice(0,10
 export const orderBy=(metric:RankingMetric)=>metricOrder[metric].map(c=>`${c} DESC`).join(',')+',created ASC';
 export async function rankOf(db:D1Database,metric:RankingMetric,row:{score:number;height:number;count:number;created:number},since:number){
   const [a,b,c]=metricOrder[metric],v=(name:string)=>row[name as 'score'|'height'|'count'];
-  const result=await db.prepare(`SELECT COUNT(*)+1 AS rank FROM scores WHERE created>? AND (${a}>? OR (${a}=? AND ${b}>?) OR (${a}=? AND ${b}=? AND ${c}>?) OR (${a}=? AND ${b}=? AND ${c}=? AND created<?))`)
-    .bind(since,v(a),v(a),v(b),v(a),v(b),v(c),v(a),v(b),v(c),row.created).first<{rank:number}>();
+  // Counting stops at RANK_LIMIT rows, so a submission reads at most that many rows; RANK_LIMIT+1 means "below".
+  const result=await db.prepare(`SELECT COUNT(*)+1 AS rank FROM (SELECT 1 FROM scores WHERE created>? AND (${a}>? OR (${a}=? AND ${b}>?) OR (${a}=? AND ${b}=? AND ${c}>?) OR (${a}=? AND ${b}=? AND ${c}=? AND created<?)) LIMIT ?)`)
+    .bind(since,v(a),v(a),v(b),v(a),v(b),v(c),v(a),v(b),v(c),row.created,RANK_LIMIT).first<{rank:number}>();
   return result?.rank||1;
 }
 export default {
@@ -64,7 +65,8 @@ export default {
         return new Response(body,{headers});
       }
       if(request.method!=='POST'||!origin)return json({error:'この操作は利用できません。'},405);
-      if(!request.headers.get('Content-Type')?.startsWith('application/json'))return json({error:'JSON形式で送信してください。'},415);
+      // text/plain is accepted so that the game can post JSON without a CORS preflight; the Origin check above still applies.
+      if(!/^(application\/json|text\/plain)\b/.test(request.headers.get('Content-Type')||''))return json({error:'JSON形式で送信してください。'},415);
       // Bound the stream as well as Content-Length; clients can omit the latter.
       const bodyLimit=path==='/shares'?MAX_SHARE_BYTES+1024:4096;
       if(Number(request.headers.get('Content-Length')||0)>bodyLimit)return json({error:'送信内容が大きすぎます。'},413);
@@ -119,6 +121,6 @@ export default {
         return json({rank:ranks.score,ranks},201);
       }
       return json({error:'見つかりません。'},404);
-    }catch{headers['Cache-Control']='no-store';return json({error:'全国ランキングは一時的に利用できません。端末の記録は残っています。'},503);}
+    }catch{headers['Cache-Control']='no-store';headers['Retry-After']='15';return json({error:'全国ランキングは一時的に利用できません。端末の記録は残っています。'},503);}
   }
 };

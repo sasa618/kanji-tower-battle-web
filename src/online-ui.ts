@@ -1,7 +1,7 @@
 import { beginSession, getScores, onlineEnabled, reportGame, submitScore, type OnlineScore } from './online';
 import type { RecordEntry } from './storage';
 import { MetricRankings } from './ranking-cache';
-import {metricLabels,metricUnits,metricValue,rankingMetrics,type RankingMetric} from './ranking';
+import {metricLabels,metricUnits,metricValue,rankLabel,rankingMetrics,type RankingMetric} from './ranking';
 const esc=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const nameKey='kanji-tower-ranking-name';
 function savedName(){try{return (localStorage.getItem(nameKey)||'').slice(0,24);}catch{return '';}}
@@ -32,12 +32,12 @@ export class OnlineUI {
   resultHTML(){if(!this.api.enabled)return '<p>全国ランキングは接続準備中です。</p>';
     if(this.pending)return '<p>全国ランキングの接続を確認しています…</p>';
     if(!this.session)return '<p>今回は全国ランキングに接続できませんでした。端末の記録は保存されています。</p>';
-    if(this.rank)return `<p class="result-rank">全国ランキングに登録しました！<br>${rankingMetrics.filter(m=>this.ranks[m]).map(m=>`${metricLabels[m]} 第${this.ranks[m]}位`).join('・')}</p><button class="secondary" data-action="ranking">全国ランキングで比べる</button>`;
+    if(this.rank)return `<p class="result-rank">全国ランキングに登録しました！<br>${rankingMetrics.filter(m=>this.ranks[m]).map(m=>`${metricLabels[m]} ${rankLabel(this.ranks[m]!)}`).join('・')}</p><button class="secondary" data-action="ranking">全国ランキングで比べる</button>`;
     return `<div class="online-entry"><label for="ranking-name">全国ランキングに記録する</label><input id="ranking-name" maxlength="24" placeholder="名前（1〜12文字）" value="${esc(this.name)}" autocomplete="nickname" aria-label="ランキングに載せる名前"><p>名前・得点・高さ・字数・日時を90日間公開します。本名や連絡先は入力しないでください。送信した名前は次回も使えます。</p><button class="secondary" data-action="online-submit" ${this.sending?'disabled':''}>${this.sending?'送信中…':this.error?'もう一度送信する':'この名前で送信する'}</button>${this.error?`<p class="notice" role="status">${esc(this.error)} 同じ記録をもう一度送信できます。</p>`:''}</div>`;
   }
   rankingHTML(){if(!this.api.enabled)return '<div class="empty"><b>全国ランキングは接続準備中です</b></div>';
     const {value,loading,failed}=this.rankings.current,scores:OnlineScore[]=value?.scores||[],metric=this.metric;
-    const own=this.latestRanks[metric],ownHTML=own?`<p class="result-rank">あなたの直近の送信時：${metricLabels[metric]} 第${own}位</p>`:'';
+    const own=this.latestRanks[metric],ownHTML=own?`<p class="result-rank">あなたの直近の送信時：${metricLabels[metric]} ${rankLabel(own)}</p>`:'';
     if(loading)return ownHTML+'<div class="empty" role="status">記録を読み込んでいます…</div>';
     if(failed)return ownHTML+'<div class="empty"><p>通信できませんでした。しばらく待ってからお試しください。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>';
     if(!scores.length)return ownHTML+(own?'<div class="empty"><p>送信した記録は数分以内に一覧へ反映されます。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>':'<div class="empty"><b>最初の記録をつくろう。</b><p>プレイ終了後に名前を入力して参加できます。</p></div>');

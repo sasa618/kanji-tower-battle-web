@@ -1,14 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { DatabaseSync } from 'node:sqlite';
 import fs from 'node:fs';
 import worker,{jstDay} from '../server/worker';
+import {env,GAME,ORIGIN} from './d1-env';
 import { validateSubmission } from '../server/validation';
 import { MAX_SHARE_BYTES } from '../server/shares';
 import { kanji, recipes } from '../src/data';
 import type { Env } from '../server/worker';
 const payload={session:crypto.randomUUID(),name:'木のひと',score:13,height:1,count:1,duration:6,moves:3};
-const GAME='https://sasa618.github.io/kanji-tower-battle-web/',ORIGIN='https://sasa618.github.io';
 test('ranking rejects impossible scores, timings, names and counts',()=>{
   assert.equal(validateSubmission(payload).name,'木のひと');
   for(const patch of [{score:99999},{height:NaN},{duration:0},{duration:2,moves:100},{name:'<script>'},{name:'死ね'},{name:'1234567890'},{name:'あ'.repeat(13)},{count:2,score:1},{count:0,score:1}])assert.throws(()=>validateSubmission({...payload,...patch}));
@@ -29,15 +28,8 @@ test('no character earns more than eight points per drop, so honest towers pass 
   }
   for(const k of kanji)assert.ok(k.strokes<=8*drops.get(k.char)!,k.char);
 });
-// Tests apply the real migration files in order, exactly as wrangler does for a new or existing database.
-export function env(extra:Partial<Env>={}):Env{
-  const sqlite=new DatabaseSync(':memory:');
-  for(const file of fs.readdirSync('server/migrations').filter(f=>f.endsWith('.sql')).sort())sqlite.exec(fs.readFileSync(`server/migrations/${file}`,'utf8'));
-  // Like D1, hand BLOB columns back as plain number arrays rather than typed arrays.
-  const row=(r:unknown)=>r&&Object.fromEntries(Object.entries(r as Record<string,unknown>).map(([k,v])=>[k,v instanceof Uint8Array?Array.from(v):v]));
-  const db={prepare(sql:string){let values:unknown[]=[];const self={bind(...args:unknown[]){values=args.map(v=>v instanceof ArrayBuffer?new Uint8Array(v):v);return self;},async first(){return row(sqlite.prepare(sql).get(...values as never[]))||null;},async all(){return {results:sqlite.prepare(sql).all(...values as never[]).map(row)};},async run(){const info=sqlite.prepare(sql).run(...values as never[]);return {meta:{changes:Number(info.changes)}};}};return self;}};
-  return {DB:db as unknown as Env['DB'],ALLOWED_ORIGINS:ORIGIN,GAME_URL:GAME,...extra};
-}
+// The in-memory D1 stand-in lives in d1-env.ts so other test files can share it without re-running these tests.
+export {env} from './d1-env';
 const req=(path:string,body?:unknown,origin=ORIGIN)=>new Request(`https://example.invalid${path}`,{method:body?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
 const insertScore=(e:Env,id:string,score:number,height:number,count:number,created:number)=>e.DB.prepare('INSERT INTO scores(id,session_id,name,score,height,count,duration,created) VALUES(?,?,?,?,?,?,?,?)').bind(id,id,id,score,height,count,30,created).run();
 test('API issues sessions, limits starts, stores one result and sorts leaderboard',async()=>{

@@ -1,16 +1,24 @@
 import type { RecordEntry } from './storage';
 import { newId } from './id';
 import type { RankingMetric } from './ranking';
+import { Backoff, isOutageStatus } from './backoff';
 export type OnlineScore={name:string;score:number;height:number;count:number;created:number};
 export type SubmitResult={rank:number;ranks?:Partial<Record<RankingMetric,number>>};
 const API=(import.meta.env?.VITE_RANKING_API as string|undefined)?.replace(/\/$/,'')||'';
 export const onlineEnabled=!!API,apiOrigin=API;
 export function clientId(){try{let id=localStorage.getItem('kanji-tower-client');if(!id){id=newId();localStorage.setItem('kanji-tower-client',id);}return id;}catch{return newId();}}
+// One gate for every request: after an outage the whole client pauses, from 15 seconds up to 10 minutes.
+export const outage=new Backoff();
+const waitMessage=()=>`通信できませんでした。${Math.ceil(outage.wait()/1000)}秒ほど待ってからお試しください。`;
+// JSON travels as text/plain, a CORS-safelisted type, so browsers send no preflight request.
+const post=(body:unknown)=>({method:'POST',body:JSON.stringify(body)});
 async function call<T>(path:string,body?:unknown,timeout=6000):Promise<T>{
   if(!API)throw Error('全国ランキングは接続準備中です。');
+  if(outage.wait()>0)throw Error(waitMessage());
   let response:Response;
-  try{response=await fetch(API+path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(timeout)});}
-  catch(e){throw Error(e instanceof Error&&e.name==='TimeoutError'?'通信に時間がかかりすぎました。電波の良い場所でもう一度お試しください。':'通信できませんでした。');}
+  try{response=await fetch(API+path,{...(body?post(body):{method:'GET'}),signal:AbortSignal.timeout(timeout)});}
+  catch(e){outage.fail();throw Error(e instanceof Error&&e.name==='TimeoutError'?'通信に時間がかかりすぎました。電波の良い場所でもう一度お試しください。':'通信できませんでした。');}
+  if(isOutageStatus(response.status))outage.fail(Number(response.headers.get('Retry-After'))||undefined);else outage.succeed();
   let result:{error?:string}&T;try{result=await response.json();}catch{throw Error(response.ok?'応答を読み取れませんでした。':'通信できませんでした。');}
   if(!response.ok)throw Error(result.error||'通信できませんでした。');return result;
 }
@@ -19,8 +27,9 @@ export const getScores=(metric:RankingMetric='score')=>call<{scores:OnlineScore[
 export const submitScore=(session:string,name:string,result:RecordEntry,moves:number)=>call<SubmitResult>('/scores',{session,name,score:result.score,height:result.height,count:result.count,duration:result.duration,moves});
 // One anonymous usage report per play: session, play seconds and drops. No name, score or device ID.
 export async function reportGame(session:string,duration:number,moves:number){
-  if(!API)return;
-  try{await fetch(API+'/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});}catch{/* statistics never affect play */}
+  if(!API||outage.wait()>0)return;
+  try{const response=await fetch(API+'/events',{...post({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});if(isOutageStatus(response.status))outage.fail();}
+  catch{outage.fail();/* statistics never affect play */}
 }
 // Uploads carry about 200KB, so a slow mobile connection gets more time than a ranking read.
 export const createResultShare=(result:RecordEntry,image:string)=>call<{url:string}>('/shares',{client:clientId(),record:result.id,score:result.score,height:result.height,count:result.count,image},20000);

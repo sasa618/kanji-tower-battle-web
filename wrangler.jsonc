@@ -21,7 +21,8 @@
     "database_id": "857a6159-1624-416d-8f0c-d3bb422e9b05",
     "migrations_dir": "server/migrations"
   }],
-  "observability": { "enabled": false },
+  // Workers Logs（無料枠 1 日 20 万件，保存 3 日）．1 割だけ記録して，要求の内訳を調べられるようにする．
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 },
   "env": {
     "dev": {
       "vars": {
