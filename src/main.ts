@@ -15,7 +15,8 @@ import {discoveryShareURL} from './discovery-sharing';
 import { isRankingMetric,metricLabels,metricUnits,metricValue,rankingMetrics } from './ranking';
 import { newId } from './id';
 import {drawResultImage,RESULT_IMAGE_WIDTH,RESULT_IMAGE_HEIGHT} from './result-image';
-import { discoveryText, resultText, tweetLink } from './sharing';
+import { discoveryText, resultText, tweetLink, gameLink } from './sharing';
+import {prepareShareIntent,tryOpenShare} from './share-intent';
 import {createResultShare,onlineEnabled,ownShareLink} from './online';
 import {drawShareImage,SHARE_IMAGE_WIDTH,SHARE_IMAGE_HEIGHT} from './result-image';
 
@@ -29,8 +30,8 @@ const online=new OnlineUI(()=>{if(modal==='result'||modal==='ranking')renderModa
 let screen:'home'|'game'|'lab'='home',modal='',returnMode=game.mode,collectionIndex=collectionOrder[0];
 let lastTower:TowerSnapshot|null=null;
 let lastResult:RecordEntry|null=null,lastFocus:HTMLElement|null=null,candidateSignature='',lastHud=0;
-let shareBusy=false,shareMessage='',shareFallbackURL='',discoveryShareMessage='';
-const shareFeedback=()=>`<p class="share-status" role="status">${shareBusy?'共有画像を用意しています…':shareMessage}${shareFallbackURL?` <a class="action-button x-share" href="${shareFallbackURL.replaceAll('&','&amp;').replaceAll('"','&quot;')}" target="_blank" rel="noopener noreferrer">${actionIcon('share')}<span>Xの投稿画面を開く</span></a>`:''}</p>`;
+let shareBusy=false,shareMessage='',shareFallbackURL='',discoveryShareMessage='',discoveryShareURLFallback='';
+const shareFeedback=()=>`<p class="share-status" role="status">${shareBusy?'共有画像を用意しています…':shareMessage}${shareFallbackURL?` <a class="action-button x-share" href="${shareFallbackURL.replaceAll('&','&amp;').replaceAll('"','&quot;')}" target="_blank" rel="noopener noreferrer">${actionIcon('share')}<span>${shareBusy?'画像を待たずに得点をシェア':'Xの投稿画面を開く'}</span></a>`:''}</p>`;
 const letter=(char:string,cls='')=>`<span class="kanji ${cls}" style="color:${color(char)}">${char}</span>`;
 function persist(){if(!save(saved)&&!document.querySelector('.storage-warning')){const el=document.createElement('div');el.className='storage-warning';el.textContent='このブラウザでは記録を保存できません。今回のプレイは続けられます。';document.body.append(el);}}
 function header(){return `<header class="header"><button class="brand" data-action="home" aria-label="タイトルに戻る"><span class="brand-mark"><img src="${import.meta.env.BASE_URL}icon.svg?v=wood-forest" alt="" width="44" height="44"></span><span class="brand-name"><span class="brand-prefix">合体！</span><span>漢字タワーバトル</span></span></button><nav class="nav" aria-label="メニュー"><button data-action="help" class="nav-help" aria-label="遊び方" title="遊び方">${icon('help')}</button><button data-action="collection">図鑑</button><button data-action="ranking">記録</button><button data-action="settings" class="icon-btn" aria-label="音と設定">${icon('settings')}</button></nav></header>`;}
@@ -85,7 +86,7 @@ function modalContent():string {
   if(modal==='restart'||modal==='leave')return `<p>今のプレイは終了します。見つけた漢字の記録は残ります。</p><button class="primary" data-action="${modal==='restart'?'start':'home-confirm'}">${modal==='restart'?'最初から遊ぶ':'タイトルへ戻る'}</button><button class="secondary" data-action="close" style="width:100%;margin-top:15px">続きを遊ぶ</button>`;
   if(modal==='help')return helpHTML();
   if(modal==='settings')return `<div class="settings-row"><span>音</span><button class="secondary" data-action="mute">${saved.muted?'オフ（タップでオン）':'オン（タップでオフ）'}</button></div><label class="settings-row">BGM<input type="range" min="0" max="1" step=".05" value="${saved.music}" data-volume="music" aria-label="BGMの音量"></label><label class="settings-row">効果音<input type="range" min="0" max="1" step=".05" value="${saved.effects}" data-volume="effects" aria-label="効果音の音量"></label><div class="settings-row"><span>当たり判定を重ねて表示</span><button class="secondary" data-action="debug">${renderer?.debug?'表示中':'表示する'}</button></div><p>音の設定と図鑑・自己記録は、このブラウザに保存されます。</p>`;
-  if(modal==='collection')return collectionHTML(saved,collectionIndex)+(discoveryShareMessage?`<p class="share-status" role="status">${discoveryShareMessage}</p>`:'');
+  if(modal==='collection')return collectionHTML(saved,collectionIndex)+(discoveryShareMessage?`<p class="share-status" role="status">${discoveryShareMessage}${discoveryShareURLFallback?` <a href="${discoveryShareURLFallback.replaceAll('&','&amp;').replaceAll('"','&quot;')}" target="_blank" rel="noopener noreferrer">Xの投稿画面を開く</a>`:''}</p>`:'');
   if(modal==='ranking'){const metric=online.metric,best=saved.bests[metric];return `<div class="tabs ranking-tabs" role="group" aria-label="ランキングの種目">${rankingMetrics.map(m=>`<button data-action="rank-metric" data-metric="${m}" aria-pressed="${metric===m}" class="${metric===m?'active':''}">${metricLabels[m]}</button>`).join('')}</div><div class="personal-best"><span>自己ベスト</span><strong>${best?metricValue(best,metric):'—'}<small>${metricUnits[metric]}</small></strong>${best?`<button class="best-share action-button x-share" data-action="share-best" aria-label="この自己ベストをXでシェア">${actionIcon('share')}<span>X</span></button>`:''}</div>${shareFeedback()}${online.rankingHTML()}`;}
   if(modal==='result'&&lastResult)return `<div class="result"><div class="eyebrow">YOUR KANJI TOWER</div><div class="result-score">${lastResult.score}<small>画</small></div><div class="result-stats"><span>高さ ${lastResult.height.toFixed(1)}字分</span><span>${lastResult.count}文字</span></div><p class="result-rank">${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).length?`${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).map(m=>metricLabels[m]).join('・')} 自己ベスト！`:`自己ベスト ${saved.bests.score?.score||0}画`}</p><p>${lastResult.made.length?`作った漢字：${lastResult.made.join(' ')}`:'次は、合体にも挑戦してみよう。'}</p><button class="primary" data-action="start">もう一度遊ぶ <small>R</small></button><div class="result-buttons"><button class="secondary action-button x-share" data-action="share">${actionIcon('share')}<span>Xでシェア</span></button><button class="secondary action-button" data-action="image">${actionIcon('download')}<span>結果画像を保存</span></button></div>${shareFeedback()}${online.resultHTML()}</div>`;
   return `<p>合体！漢字タワーバトル<br>ゲームのコードはAI（ChatGPT）が制作しています。</p><p>合体の表と図鑑の説明は，Windows版でAI（Claude）が作成したデータを元にしています。合体の式はゲームのルールであり，字源の説明ではありません。</p><p>物理演算：Planck.js（MIT）<br>字形：Noto Serif JP Bold（SIL OFL）<br>UI：Dela Gothic One（SIL OFL）<br>タイトルの「合体！」：Mochiy Pop One（SIL OFL）<br>フォント解析：opentype.js（MIT）<br>輪郭分割：earcut（ISC）</p>${onlineEnabled?'<p>全国ランキングと画像付きのX共有はCloudflare Workers・D1で動いています。公開する項目と保存期間は結果画面の案内のとおりです。ゲーム終了時にプレイ時間と落下数だけを匿名で集計しています。</p>':'<p>このビルドは全国ランキングと画像付き共有に接続していません。ゲーム・図鑑・端末内の自己記録・結果画像の保存は使えます。</p>'}`;
@@ -93,32 +94,38 @@ function modalContent():string {
 function start(activateSound=true){closeModal(true);lastResult=null;lastTower=null;shareMessage='';shareFallbackURL='';game.reset();online.reset();moveHint.reset();screen='game';if(activateSound)sound.activate();render();}
 async function share(r:RecordEntry){
   if(shareBusy)return;
-  shareMessage='';shareFallbackURL='';
-  const text=resultText(r);
-  if(ownShareLink(r.shareURL)){window.open(tweetLink(text,r.shareURL),'_blank','noopener,noreferrer');return;}
-  if(!onlineEnabled){shareMessage='画像付きの共有リンクは公開準備中です。結果画像は保存できます。';renderModal();return;}
-  if(!r.tower&&r.count>0){shareMessage='以前の記録には塔の画像が残っていません。新しいプレイから画像付きで共有できます。';renderModal();return;}
-  // Reserve a tab during the tap, before the image upload (mobile popup rules).
-  const popup=window.open('about:blank','_blank');if(popup)popup.opener=null;
-  shareBusy=true;renderModal();
-  try{
+  const text=resultText(r),playURL=gameLink(location.href,import.meta.env.VITE_PUBLIC_URL);
+  shareFallbackURL=tweetLink(text,playURL);
+  if(ownShareLink(r.shareURL)){
+    shareFallbackURL=tweetLink(text,r.shareURL);shareMessage='投稿画面が開かない場合は、下のリンクを押してください。';
+    tryOpenShare(shareFallbackURL);renderModal();return;
+  }
+  if(!onlineEnabled||(!r.tower&&r.count>0)){
+    shareMessage='得点とゲームURLを共有できます。塔の画像は今回の共有に含まれません。';
+    tryOpenShare(shareFallbackURL);renderModal();return;
+  }
+  shareMessage='';shareBusy=true;renderModal();
+  const prepared=await prepareShareIntent(text,playURL,async()=>{
     await Promise.all([document.fonts.load('400 34px TowerDisplay'),document.fonts.load('400 48px TowerImpact'),document.fonts.load('700 28px Biz')]);
     const canvas=document.createElement('canvas');canvas.width=SHARE_IMAGE_WIDTH;canvas.height=SHARE_IMAGE_HEIGHT;
     drawShareImage(canvas.getContext('2d')!,r,r.tower||null);
     const {url}=await createResultShare(r,canvas.toDataURL('image/png').split(',')[1]);
+    if(!ownShareLink(url))throw Error('Invalid share link');
     r.shareURL=url;
     for(const entry of [...saved.records,...Object.values(saved.bests)])if(entry.id===r.id)entry.shareURL=url;
-    persist();const intent=tweetLink(text,url);
-    if(popup&&!popup.closed)popup.location.replace(intent);else shareFallbackURL=intent;
-    shareMessage='共有リンクを用意しました。';
-  }catch(e){popup?.close();shareMessage=e instanceof Error?e.message:'共有画像を用意できませんでした。';}
-  finally{shareBusy=false;if(modal==='result'||modal==='ranking')renderModal();}
+    persist();return url;
+  });
+  shareFallbackURL=prepared.intent;
+  shareMessage=prepared.image?'画像付きの共有を用意しました。下のリンクから投稿画面を開いてください。':'画像付き共有を現在利用できません。得点とゲームURLは下のリンクから共有できます。';
+  shareBusy=false;if(modal==='result'||modal==='ranking')renderModal();
 }
 function shareKanji(){
   const char=kanji[collectionIndex]?.char;if(!char||(saved.collection[char]?.made||0)<=0)return;
   const url=discoveryShareURL(char,location.href,import.meta.env.VITE_PUBLIC_URL);
   if(!url){discoveryShareMessage='画像付きの共有は公開版から利用できます。';renderModal();return;}
-  discoveryShareMessage='';window.open(tweetLink(discoveryText(char),url),'_blank','noopener,noreferrer');
+  discoveryShareURLFallback=tweetLink(discoveryText(char),url);
+  discoveryShareMessage='投稿画面が開かない場合は、下のリンクを押してください。';
+  tryOpenShare(discoveryShareURLFallback);renderModal();
 }
 async function resultImage(){
   if(!lastResult)return;
@@ -129,7 +136,7 @@ async function resultImage(){
   c.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='合体！漢字タワーバトル.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'image/png');
 }
 document.addEventListener('click',e=>{const b=(e.target as HTMLElement).closest<HTMLButtonElement>('[data-action]');if(!b||b.disabled)return;const a=b.dataset.action;if(a&&['select','rotate','left','right','drop'].includes(a))noteInteraction();sound.activate();sound.play('button');
-  switch(a){case 'start':start();break;case 'home':if(screen==='game'&&['playing','paused'].includes(game.mode))openModal('leave');else{closeModal(true);screen='home';game.mode='title';render();}break;case 'home-confirm':closeModal(true);screen='home';game.mode='title';render();break;case 'select':game.select(Number(b.dataset.index));break;case 'left':game.move(-8);break;case 'right':game.move(8);break;case 'rotate':game.rotate();break;case 'drop':game.drop();break;case 'pause':if(game.mode==='over')openModal('result');else openModal('pause');break;case 'restart':openModal('restart');break;case 'close':closeModal();break;case 'entry':collectionIndex=Number(b.dataset.index);renderModal(true);break;case 'rank-metric':if(isRankingMetric(b.dataset.metric))online.selectMetric(b.dataset.metric);break;case 'online-refresh':void online.load(true);break;case 'online-submit':void online.submit();break;case 'mute':saved.muted=!saved.muted;sound.muted=saved.muted;if(saved.muted)sound.silence();persist();renderModal();break;case 'debug':if(renderer)renderer.debug=!renderer.debug;renderModal();break;case 'share-kanji':shareKanji();break;case 'share-best':{const best=saved.bests[online.metric];if(best)share(best);break;}case 'share':if(lastResult)share(lastResult);break;case 'image':void resultImage();break;case 'lab':closeModal(true);screen='lab';game.mode='title';render();break;default:if(a)openModal(a);}
+  switch(a){case 'start':start();break;case 'home':if(screen==='game'&&['playing','paused'].includes(game.mode))openModal('leave');else{closeModal(true);screen='home';game.mode='title';render();}break;case 'home-confirm':closeModal(true);screen='home';game.mode='title';render();break;case 'select':game.select(Number(b.dataset.index));break;case 'left':game.move(-8);break;case 'right':game.move(8);break;case 'rotate':game.rotate();break;case 'drop':game.drop();break;case 'pause':if(game.mode==='over')openModal('result');else openModal('pause');break;case 'restart':openModal('restart');break;case 'close':closeModal();break;case 'entry':discoveryShareMessage='';discoveryShareURLFallback='';collectionIndex=Number(b.dataset.index);renderModal(true);break;case 'rank-metric':if(isRankingMetric(b.dataset.metric))online.selectMetric(b.dataset.metric);break;case 'online-refresh':void online.load(true);break;case 'online-submit':void online.submit();break;case 'mute':saved.muted=!saved.muted;sound.muted=saved.muted;if(saved.muted)sound.silence();persist();renderModal();break;case 'debug':if(renderer)renderer.debug=!renderer.debug;renderModal();break;case 'share-kanji':shareKanji();break;case 'share-best':{const best=saved.bests[online.metric];if(best)share(best);break;}case 'share':if(lastResult)share(lastResult);break;case 'image':void resultImage();break;case 'lab':closeModal(true);screen='lab';game.mode='title';render();break;default:if(a)openModal(a);}
   updateHud();
 });
 document.addEventListener('input',e=>{const input=e.target as HTMLInputElement;if(input.id==='ranking-name'){online.name=input.value;return;}const key=input.dataset.volume as 'music'|'effects'|undefined;if(key){saved[key]=Number(input.value);sound[key]=saved[key];persist();}});
@@ -137,7 +144,7 @@ document.addEventListener('keydown',e=>{
   if(modal&&e.key==='Tab'){const focusable=[...document.querySelectorAll<HTMLElement>('.dialog button:not(:disabled),.dialog input,.dialog a,.dialog summary')];const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}return;}
   if((e.target as HTMLElement).matches('input,textarea'))return;
   if(e.key==='Escape'){if(modal)closeModal();else if(screen==='game'&&game.mode==='playing')openModal('pause');return;}
-  if(modal==='collection'&&e.key.startsWith('Arrow')){e.preventDefault();const grid=document.querySelector<HTMLElement>('.collection-grid')!;const cols=getComputedStyle(grid).gridTemplateColumns.split(' ').length;collectionIndex=moveCollectionIndex(collectionIndex,{ArrowRight:1,ArrowLeft:-1,ArrowDown:cols,ArrowUp:-cols}[e.key]||0);renderModal(true,true);return;}
+  if(modal==='collection'&&e.key.startsWith('Arrow')){e.preventDefault();discoveryShareMessage='';discoveryShareURLFallback='';const grid=document.querySelector<HTMLElement>('.collection-grid')!;const cols=getComputedStyle(grid).gridTemplateColumns.split(' ').length;collectionIndex=moveCollectionIndex(collectionIndex,{ArrowRight:1,ArrowLeft:-1,ArrowDown:cols,ArrowUp:-cols}[e.key]||0);renderModal(true,true);return;}
   if(e.key.toLowerCase()==='b'){e.preventDefault();modal==='collection'?closeModal():openModal('collection');return;}
   if(e.key.toLowerCase()==='l'){e.preventDefault();modal==='ranking'?closeModal():openModal('ranking');return;}
   if(e.key.toLowerCase()==='r'){e.preventDefault();start();return;}
