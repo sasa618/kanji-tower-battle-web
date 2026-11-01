@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {applyMeasurement,applyPublicURL,normalizePublicURL} from '../tools/public-meta';
+import {applyMeasurement,applyPublicURL,normalizePublicURL,normalizeBeaconToken} from '../tools/public-meta';
+import {inspectAnalytics} from '../tools/analytics';
 test('public URL is normalized to https with a trailing slash and rejects local or invalid values',()=>{
   assert.equal(normalizePublicURL('https://example.github.io/game?x=1#y'),'https://example.github.io/game/');
   assert.equal(normalizePublicURL('https://example.github.io/game/'),'https://example.github.io/game/');
@@ -26,5 +27,21 @@ test('measurement tags appear only for well-formed public tokens',()=>{
   assert.match(tagged,/<meta name="google-site-verification" content="AbC-123_xyz" \/>\n/);
   assert.match(tagged,/static\.cloudflareinsights\.com\/beacon\.min\.js" data-cf-beacon='\{"token": "0123456789abcdef0123456789abcdef"\}'><\/script>\n\s*<\/head>/);
   assert.equal(applyMeasurement(html,{}),html);
-  assert.equal(applyMeasurement(html,{beaconToken:'"><script>alert(1)</script>',googleVerification:'<x>'}),html);
+  assert.throws(()=>applyMeasurement(html,{beaconToken:'"><script>alert(1)</script>',googleVerification:'<x>'}),/token/);
+});
+
+test('analytics configuration fails visibly on a malformed token and normalizes pasted whitespace',()=>{
+  assert.equal(normalizeBeaconToken(' ABCDEF0123456789ABCDEF0123456789\n'),'abcdef0123456789abcdef0123456789');
+  assert.equal(normalizeBeaconToken('  '),'');
+  assert.throws(()=>normalizeBeaconToken('not-a-beacon-token'),/32桁/);
+});
+
+test('analytics verification detects missing, wrong and duplicate tracking without counting a visit',()=>{
+  const token='0123456789abcdef0123456789abcdef',html='<html><head>\n</head><body></body></html>';
+  assert.deepEqual(inspectAnalytics(html),{enabled:false});
+  assert.throws(()=>inspectAnalytics(html,token),/反映されていません/);
+  const tagged=applyMeasurement(html,{beaconToken:token});
+  assert.deepEqual(inspectAnalytics(tagged,token),{enabled:true});
+  assert.throws(()=>inspectAnalytics(tagged,'11111111111111111111111111111111'),/異なります/);
+  assert.throws(()=>inspectAnalytics(tagged+tagged),/重複/);
 });

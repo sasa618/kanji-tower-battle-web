@@ -34,6 +34,10 @@ jobs:
           VITE_PUBLIC_URL: ${{ vars.PUBLIC_URL || format('{0}/', steps.pages.outputs.base_url) }}
           VITE_CF_BEACON_TOKEN: ${{ vars.CF_BEACON_TOKEN }}
           VITE_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
+      - name: Verify access analytics
+        run: npm run check:analytics -- --file dist/index.html --optional
+        env:
+          VITE_CF_BEACON_TOKEN: ${{ vars.CF_BEACON_TOKEN }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

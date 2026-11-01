@@ -14,11 +14,17 @@ export function applyPublicURL(html:string,value:string|undefined):string{
   return html.replace(/^[ \t]*<meta\b[^\n]*(__PUBLIC_URL__|og:image:)[^\n]*\n/gm,'');
 }
 export type Measurement={beaconToken?:string;googleVerification?:string};
+export function normalizeBeaconToken(value:string|undefined):string{
+  const token=value?.trim().toLowerCase()||'';
+  if(token&&!/^[0-9a-f]{32}$/.test(token))throw Error('Cloudflare Web Analyticsのtokenは32桁の16進数です。CF_BEACON_TOKENの値を確認してください。');
+  return token;
+}
 export function applyMeasurement(html:string,{beaconToken,googleVerification}:Measurement):string{
   const tags:string[]=[];
+  const token=normalizeBeaconToken(beaconToken);
   // Google Search Console ownership tag (URL-prefix property for the public game URL).
   if(googleVerification&&/^[A-Za-z0-9_-]{8,128}$/.test(googleVerification))tags.push(`  <meta name="google-site-verification" content="${googleVerification}" />`);
   // Cloudflare Web Analytics beacon: cookie-free page views and visits, works on GitHub Pages.
-  if(beaconToken&&/^[0-9a-f]{32}$/.test(beaconToken))tags.push(`  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${beaconToken}"}'></script>`);
+  if(token)tags.push(`  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${token}"}'></script>`);
   return tags.length?html.replace(/^([ \t]*)<\/head>/m,`${tags.join('\n')}\n$1</head>`):html;
 }

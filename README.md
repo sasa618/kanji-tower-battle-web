@@ -136,7 +136,7 @@ PNGは `tools/build-discovery-cards.ts` で生成し，`public/kanji-cards/` に
 
 ## 利用状況の集計
 
-- **アクセス回数**：Cloudflare Web Analytics を使う．cookieを使わず，GitHub Pagesでも動く．ダッシュボードでサイト（ホスト名 `sasa618.github.io`）を追加して得たスニペットの token を `VITE_CF_BEACON_TOKEN`（Actionsの変数は `CF_BEACON_TOKEN`）に設定すると，ビルド時に計測スクリプトが `index.html` に入る．未設定なら入らない．
+- **アクセス回数**：Cloudflare Web Analytics を使う．cookieを使わず，GitHub Pagesでも動く．ダッシュボードでサイト（ホスト名 `sasa618.github.io`）を追加して得たスニペットの token を `VITE_CF_BEACON_TOKEN`（Actionsの変数は `CF_BEACON_TOKEN`）に設定すると，ビルド時に計測スクリプトが `index.html` に入る．未設定なら入らない． 設定・閲覧・公開確認の手順は [docs/access-analytics.md](docs/access-analytics.md) を参照する．
 - **検索での表示回数・クリック数**：Google Search Console にURLプレフィックス プロパティとして公開ゲームURLを登録する．HTMLタグ方式の所有確認コードを `VITE_GOOGLE_SITE_VERIFICATION`（変数は `GOOGLE_SITE_VERIFICATION`）に設定すると，確認用のメタタグが入る．
 - **プレイ回数と遊んだ時間**：ゲーム終了時に，セッションID・プレイ秒数・落下数だけを `POST /events` に1回送る．名前・得点・端末識別子は送らない．サーバーは1セッションにつき1回だけ，日本時間の日付ごとに終了したプレイ数・合計秒数・落下数を `daily_stats` に足し込む．`GET /stats` が最近30日の日別値と累計を返す．ランキングに接続していないビルドや，セッション作成に失敗したプレイは数えない．
 

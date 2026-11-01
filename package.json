@@ -13,7 +13,9 @@
     "test": "tsx --test tests/*.test.ts",
     "verify:physics": "tsx tools/verify-physics.ts",
     "deploy:worker": "node tools/deploy-worker.mjs",
-    "check:release": "node tools/check-release.mjs"
+    "check:release": "node tools/check-release.mjs",
+    "setup:analytics": "tsx tools/analytics.ts --setup",
+    "check:analytics": "tsx tools/analytics.ts"
   },
   "dependencies": {
     "planck": "1.4.2"
