@@ -24,7 +24,8 @@ async function call<T>(path:string,body?:unknown,timeout=6000):Promise<T>{
 }
 export async function beginSession(){try{return (await call<{session:string}>('/sessions',{client:clientId()})).session;}catch{return null;}}
 export const getScores=(metric:RankingMetric='score')=>call<{scores:OnlineScore[]}>(`/scores?metric=${metric}`);
-export const submitScore=(session:string,name:string,result:RecordEntry,moves:number)=>call<SubmitResult>('/scores',{session,name,score:result.score,height:result.height,count:result.count,duration:result.duration,moves});
+// late: a result kept on the device from a play that had no session (the ranking was unavailable at the time).
+export const submitScore=(session:string,name:string,result:RecordEntry,moves:number,late=false)=>call<SubmitResult>('/scores',{session,name,score:result.score,height:result.height,count:result.count,duration:result.duration,moves,...(late?{late:true}:{})});
 // One anonymous usage report per play: session, play seconds and drops. No name, score or device ID.
 export async function reportGame(session:string,duration:number,moves:number){
   if(!API||outage.wait()>0)return;

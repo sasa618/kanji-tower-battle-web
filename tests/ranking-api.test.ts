@@ -29,6 +29,16 @@ test(`a submission counts at most ${RANK_LIMIT} better rows, and the client word
   ui.session='s';ui.result=result;ui.name='木のひと';await ui.submit();
   assert.match(ui.resultHTML(),new RegExp(`総画数 ${RANK_LIMIT}位より下・高さ 第3位・字数 ${RANK_LIMIT}位より下`));
 });
+test('a best kept on the device can be sent later with a fresh session when marked late',async()=>{
+  const e=env(),client=crypto.randomUUID();
+  const {session}=await (await worker.fetch(post('/sessions',{client},'text/plain'),e)).json() as {session:string};
+  const record={session,name:'あとから',score:40,height:3.5,count:6,duration:95,moves:9};
+  const normal=await worker.fetch(post('/scores',record,'text/plain'),e);assert.equal(normal.status,400,'a 95 s play cannot belong to a session created just now');
+  const late=await worker.fetch(post('/scores',{...record,late:true},'text/plain'),e);assert.equal(late.status,201);
+  assert.deepEqual(await late.json(),{rank:1,ranks:{score:1,height:1,count:1}});
+  const again=await worker.fetch(post('/scores',{...record,late:true},'text/plain'),e);assert.equal(again.status,200,'the same late record is idempotent');
+  const bogus=await worker.fetch(post('/scores',{...record,late:true,score:9999},'text/plain'),e);assert.equal(bogus.status,400,'late records still pass the value checks');
+});
 test('a database failure answers 503 with Retry-After so clients pause instead of retrying at once',async()=>{
   const broken=env({DB:{prepare(){throw Error('D1 unavailable');}} as unknown as ReturnType<typeof env>['DB']});
   const response=await worker.fetch(new Request('https://example.invalid/health',{headers:{Origin:ORIGIN}}),broken);

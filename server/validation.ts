@@ -1,6 +1,7 @@
 import kanji from '../src/data/kanji.json';
 const maxStrokes=Math.max(...kanji.map(k=>k.strokes));
-export type Submission={session:string;name:string;score:number;height:number;count:number;duration:number;moves:number};
+// late: sent after the play, from a device that could not reach the ranking at the time; timing is not checked against the session.
+export type Submission={session:string;name:string;score:number;height:number;count:number;duration:number;moves:number;late?:boolean};
 export function validateSubmission(input:unknown):Submission {
   if(!input||typeof input!=='object')throw Error('記録の形式を確認してください。');
   const v=input as Submission;
@@ -12,5 +13,5 @@ export function validateSubmission(input:unknown):Submission {
   if(!Number.isFinite(v.height)||v.height<0||v.height>v.count*1.5+.5||!Number.isFinite(v.duration)||v.duration<.3||v.duration>86400)throw Error('高さまたはプレイ時間を確認できません。');
   if(v.score<v.count||v.score>v.count*maxStrokes||v.count>v.moves||v.score>v.moves*8||v.duration<Math.max(.3,(v.moves-1)*.25))throw Error('得点とプレイ内容が一致しません。');
   if(v.count===0&&(v.score!==0||v.height!==0))throw Error('空の塔の記録が一致しません。');
-  return {...v,name};
+  return {session:v.session,name,score:v.score,height:v.height,count:v.count,duration:v.duration,moves:v.moves,late:v.late===true};
 }

@@ -101,7 +101,8 @@ export default {
         let score;try{score=validateSubmission(data);}catch(e){return json({error:(e as Error).message},400);}
         const session=await env.DB.prepare('SELECT created,client FROM sessions WHERE id=?').bind(score.session).first<{created:number;client:string}>();
         if(!session||now-session.created>DAY)return json({error:'プレイ情報の期限が切れました。もう一度遊んでください。'},400);
-        if(score.duration>(now-session.created)/1000+5||now-session.created<300)return json({error:'プレイ時間を確認できません。'},400);
+        // A late submission has a fresh session, so its duration cannot be compared with the session age; the per-device limits still apply.
+        if(!score.late&&(score.duration>(now-session.created)/1000+5||now-session.created<300))return json({error:'プレイ時間を確認できません。'},400);
         const id=crypto.randomUUID();
         // UNIQUE(session_id) blocks double submission; the per-minute limit sits in the same statement so parallel requests cannot pass it.
         const inserted=await env.DB.prepare(`INSERT OR IGNORE INTO scores(id,session_id,name,score,height,count,duration,created)

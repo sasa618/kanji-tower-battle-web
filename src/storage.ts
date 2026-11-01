@@ -1,7 +1,8 @@
 import type { Stats,TowerSnapshot } from './physics';
 import {compareMetric,rankingMetrics,type RankingMetric} from './ranking';
 export type Entry = { drop:number; made:number };
-export type RecordEntry = Stats & { id:string; date:string; made:string[]; duration:number; tower?:TowerSnapshot; shareURL?:string };
+// moves: drops in that play (for late ranking submissions); submitted: already on the national ranking.
+export type RecordEntry = Stats & { id:string; date:string; made:string[]; duration:number; tower?:TowerSnapshot; shareURL?:string; moves?:number; submitted?:boolean };
 export type Saved = { version:1; collection:Record<string,Entry>; records:RecordEntry[]; bests:Partial<Record<RankingMetric,RecordEntry>>; muted:boolean; music:number; effects:number };
 const KEY='kanji-tower-v1';
 const defaults=():Saved=>({version:1,collection:{},records:[],bests:{},muted:false,music:.15,effects:.45});
