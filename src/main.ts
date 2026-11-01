@@ -6,7 +6,7 @@ import { kanji, byChar, recipes, color, recipeFor } from './data';
 import { load, save, recordResult, type RecordEntry } from './storage';
 import { Sound } from './audio';
 import { OnlineUI } from './online-ui';
-import { bindCanvasInput } from './input';
+import { bindCanvasInput, nearBoardButtons } from './input';
 import { icon, actionIcon, swipeCue } from './icons';
 import { helpHTML } from './help';
 import { MoveHint } from './move-hint';
@@ -51,7 +51,7 @@ function updateHud(){if(screen!=='game')return;const s=game.stats();const score=
   if(signature!==candidateSignature){candidateSignature=signature;document.querySelector('#choices')!.innerHTML=game.candidates.map((char,i)=>{const match=game.tiles.some(t=>recipeFor(char,t.char));return `<button class="choice ${i===game.selected?'selected':''}" data-action="select" data-index="${i}" aria-pressed="${i===game.selected}" aria-label="${i+1}、${char}、${byChar.get(char)!.strokes}画" ${!ready?'disabled':''}><span class="key">${i+1}</span>${letter(char)}<span class="stroke">${byChar.get(char)!.strokes}画</span>${match?`<span class="match" aria-label="合体可能">${icon('merge')}</span>`:''}</button>`;}).join('');}
 }
 function noteInteraction(){if(game.mode!=='playing'||!game.ready)return;moveHint.interact(performance.now());const cue=document.querySelector<HTMLElement>('#gesture-cue');if(cue)cue.hidden=true;}
-function wireCanvas(){bindCanvasInput(document.querySelector<HTMLCanvasElement>('#game-canvas')!,{ready:()=>game.ready&&game.mode==='playing',move:x=>game.moveTo(x),drop:()=>game.drop(),activate:()=>sound.activate(),interact:noteInteraction,dragging:active=>{moveHint.dragging=active;}});}
+function wireCanvas(){bindCanvasInput(document.querySelector<HTMLCanvasElement>('#game-canvas')!,{ready:()=>game.ready&&game.mode==='playing',move:x=>game.moveTo(x),drop:()=>game.drop(),activate:()=>sound.activate(),interact:noteInteraction,dragging:active=>{moveHint.dragging=active;},guard:e=>nearBoardButtons(e,document.querySelector('.board-actions')?.getBoundingClientRect())});}
 function events(){for(const e of game.events.splice(0)){
   sound.play(e.type);
   if(e.type==='drop'&&e.char){if(online.moves===0)online.start();online.moves++;saved.collection[e.char]??={drop:0,made:0};saved.collection[e.char].drop++;persist();}
