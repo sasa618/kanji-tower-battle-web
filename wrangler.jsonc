@@ -4,6 +4,7 @@
   "main": "server/worker.ts",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
+  "triggers": { "crons": ["0 * * * *"] },
   // 本番の値．ALLOWED_ORIGINS はゲームを配信するオリジンだけ（リポジトリのパスは含めない）．
   // GAME_URL は共有ページから遊びに行く先で，HTTPS の完全な URL にする．
   // SHARE_STORAGE_LIMIT_BYTES は共有画像の累積容量の上限（D1 Free は 1 データベース 500MB）．

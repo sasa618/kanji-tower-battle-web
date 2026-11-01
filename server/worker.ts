@@ -2,8 +2,10 @@ import type { D1Database } from '@cloudflare/workers-types';
 import { validateSubmission } from './validation';
 import {isRankingMetric,rankingMetrics,type RankingMetric} from '../src/ranking';
 import {MAX_SHARE_BYTES,saveShare,serveShare,shareUsage} from './shares';
+import {Snapshot} from './snapshot';
 export interface Env {DB:D1Database;ALLOWED_ORIGINS:string;GAME_URL?:string;SHARE_STORAGE_LIMIT_BYTES?:string}
 const DAY=86400000,RANKING_DAYS=90;
+const snapshots=new WeakMap<D1Database,Map<RankingMetric,Snapshot<string>>>();
 // The same order decides the published list, its ties, and the rank returned right after a submission.
 const metricOrder:Record<RankingMetric,[string,string,string]>={score:['score','height','count'],height:['height','score','count'],count:['count','score','height']};
 // Usage statistics are grouped by the Japanese calendar day (UTC+9).
@@ -16,6 +18,12 @@ export async function rankOf(db:D1Database,metric:RankingMetric,row:{score:numbe
   return result?.rank||1;
 }
 export default {
+  async scheduled(_event:unknown,env:Env){
+    const now=Date.now();
+    // Indexed retention runs hourly, never on the path that saves a player's result.
+    await env.DB.prepare('DELETE FROM sessions WHERE created<?').bind(now-DAY*2).run();
+    await env.DB.prepare('DELETE FROM scores WHERE created<?').bind(now-DAY*RANKING_DAYS).run();
+  },
   async fetch(request:Request,env:Env):Promise<Response>{
     const origin=request.headers.get('Origin')||'',allowed=env.ALLOWED_ORIGINS.split(',').map(s=>s.trim()).filter(Boolean);
     const headers:Record<string,string>={'Content-Type':'application/json; charset=utf-8','Vary':'Origin','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
@@ -37,15 +45,22 @@ export default {
       if(path==='/scores'&&request.method==='GET'){
         const metric=url.searchParams.get('metric')||'score';
         if(!isRankingMetric(metric))return json({error:'ランキングの種類を確認してください。'},400);
-        // One snapshot per metric and edge location; CORS is applied per response. The cache is a no-op on workers.dev.
-        const cache=(globalThis.caches as (CacheStorage & {default?:Cache})|undefined)?.default;
-        const key=new Request(new URL(`/__ranking-snapshot-v2/${metric}`,request.url));
-        const cached=await cache?.match(key);
-        headers['Cache-Control']='public, max-age=300';
-        if(cached)return new Response(cached.body,{headers});
-        const result=await env.DB.prepare(`SELECT name,score,height,count,created FROM scores WHERE created>? ORDER BY ${orderBy(metric)} LIMIT 100`).bind(since).all();
-        const body=JSON.stringify({scores:result.results});
-        if(cache)await cache.put(key,new Response(body,{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=60'}}));
+        let metrics=snapshots.get(env.DB);
+        if(!metrics){metrics=new Map();snapshots.set(env.DB,metrics);}
+        let snapshot=metrics.get(metric);
+        if(!snapshot){snapshot=new Snapshot(async()=>{
+          const cache=(globalThis.caches as (CacheStorage & {default?:Cache})|undefined)?.default;
+          const key=new Request(new URL(`/__ranking-snapshot-v3/${metric}`,request.url));
+          // A cache failure must never turn a working database into a failed ranking.
+          try{const cached=await cache?.match(key);if(cached)return await cached.text();}catch{}
+          const result=await env.DB.prepare(`SELECT name,score,height,count,created FROM scores WHERE created>? ORDER BY ${orderBy(metric)} LIMIT 100`).bind(Date.now()-DAY*RANKING_DAYS).all();
+          const body=JSON.stringify({scores:result.results});
+          try{await cache?.put(key,new Response(body,{headers:{'Content-Type':'application/json','Cache-Control':'public, max-age=60'}}));}catch{}
+          return body;
+        });metrics.set(metric,snapshot);}
+        const body=await snapshot.get();
+        // Browsers retain their own one-minute snapshot; intermediary caches are not required.
+        headers['Cache-Control']='no-store';
         return new Response(body,{headers});
       }
       if(request.method!=='POST'||!origin)return json({error:'この操作は利用できません。'},405);
@@ -78,7 +93,6 @@ export default {
           SELECT ?,?,? WHERE (SELECT COUNT(*) FROM sessions WHERE client=? AND created>?)<100
           AND NOT EXISTS(SELECT 1 FROM sessions WHERE client=? AND created>?)`).bind(id,tag,now,tag,now-DAY,tag,now-3000).run();
         if(!inserted.meta.changes)return json({error:'少し待ってからもう一度遊んでください。'},429);
-        await env.DB.prepare('DELETE FROM sessions WHERE created<?').bind(now-DAY*2).run();
         return json({session:id},201);
       }
       if(path==='/scores'){
@@ -92,12 +106,16 @@ export default {
           SELECT ?,?,?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM scores JOIN sessions ON scores.session_id=sessions.id WHERE sessions.client=? AND scores.created>?)<6`)
           .bind(id,score.session,score.name,score.score,score.height,score.count,score.duration,now,session.client,now-60000).run();
         if(!inserted.meta.changes){
-          const previous=await env.DB.prepare('SELECT id FROM scores WHERE session_id=?').bind(score.session).first();
-          return json({error:previous?'この記録は送信済みです。':'送信回数の上限です。1分ほど待ってください。'},previous?409:429);
+          const previous=await env.DB.prepare('SELECT name,score,height,count,duration,created FROM scores WHERE session_id=?').bind(score.session).first<typeof score & {created:number}>();
+          if(previous&&(['name','score','height','count','duration'] as const).every(key=>previous[key]===score[key])){
+            const ranks={} as Record<RankingMetric,number>;
+            for(const metric of rankingMetrics)ranks[metric]=await rankOf(env.DB,metric,previous,since);
+            return json({rank:ranks.score,ranks},200);
+          }
+          return json({error:previous?'このプレイの記録は別の内容で送信済みです。':'送信回数の上限です。1分ほど待ってください。'},previous?409:429);
         }
         const ranks={} as Record<RankingMetric,number>;
         for(const metric of rankingMetrics)ranks[metric]=await rankOf(env.DB,metric,{...score,created:now},since);
-        await env.DB.prepare('DELETE FROM scores WHERE created<?').bind(since).run();
         return json({rank:ranks.score,ranks},201);
       }
       return json({error:'見つかりません。'},404);

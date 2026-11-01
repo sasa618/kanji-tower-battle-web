@@ -48,3 +48,12 @@ test('one failing metric is cooled down without blocking another metric',async()
   board.metric='height';await board.load();assert.equal(board.current.value,'ok');assert.equal(board.current.failed,false);
   board.metric='score';await board.load();assert.equal(board.current.failed,true);assert.deepEqual(calls,['score','height']);
 });
+
+test('manual refresh really retries but rapid clicks and in-flight reads are coalesced',async()=>{
+  let now=1000,calls=0,offline=true;
+  const board=new MetricRankings(async()=>{calls++;if(offline)throw Error('offline');return 'rows';},()=>{},()=>now);
+  await board.load();await board.load(true);assert.equal(calls,1);assert.equal(board.current.failed,true);
+  now+=5000;offline=false;await board.load(true);assert.equal(calls,2);assert.equal(board.current.value,'rows');
+  await board.load(true);assert.equal(calls,2);
+  now+=60000;await board.load();assert.equal(calls,3);
+});

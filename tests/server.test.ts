@@ -36,7 +36,7 @@ test('API issues sessions, limits starts, stores one result and sorts leaderboar
   await e.DB.prepare('UPDATE sessions SET created=? WHERE id=?').bind(Date.now()-10000,session).run();
   const sent=await worker.fetch(req('/scores',{...payload,session}),e);assert.equal(sent.status,201);
   assert.deepEqual(await sent.json(),{rank:1,ranks:{score:1,height:1,count:1}});
-  assert.equal((await worker.fetch(req('/scores',{...payload,session}),e)).status,409);
+  assert.equal((await worker.fetch(req('/scores',{...payload,session}),e)).status,200);
   const scores=await (await worker.fetch(req('/scores'),e)).json() as {scores:unknown[]};assert.equal(scores.scores.length,1);
   assert.equal((await worker.fetch(req('/scores',payload,'https://evil.invalid'),e)).status,403);
   assert.equal((await worker.fetch(req('/sessions',{client:crypto.randomUUID()},'https://evil.invalid'),e)).status,403);
@@ -81,7 +81,7 @@ test('edge snapshot avoids repeat database reads and keeps allowed origins separ
     assert.equal(queries,1);
     assert.equal(first.headers.get('Access-Control-Allow-Origin'),ORIGIN);
     assert.equal(second.headers.get('Access-Control-Allow-Origin'),'https://second.example');
-    assert.equal(second.headers.get('Cache-Control'),'public, max-age=300');
+    assert.equal(second.headers.get('Cache-Control'),'no-store');
     assert.deepEqual(await second.json(),{scores:[]});
   }finally{if(original)Object.defineProperty(globalThis,'caches',original);else Reflect.deleteProperty(globalThis,'caches');}
 });
@@ -173,4 +173,45 @@ test('anonymous usage is counted once per session into Japanese-day aggregates a
 });
 test('Japanese day boundary is nine hours ahead of UTC',()=>{
   assert.equal(jstDay(Date.UTC(2026,9,21,14,59)),'2026-10-21');assert.equal(jstDay(Date.UTC(2026,9,21,15,0)),'2026-10-22');
+});
+
+test('retry after a lost submission response returns ranks without a second score',async()=>{
+  const e=env(),session=crypto.randomUUID();
+  await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(session,'retry',Date.now()-10000).run();
+  const first=await worker.fetch(req('/scores',{...payload,session}),e);
+  const retry=await worker.fetch(req('/scores',{...payload,session}),e);
+  assert.equal(first.status,201);assert.equal(retry.status,200);assert.deepEqual(await retry.json(),await first.json());
+  assert.equal((await e.DB.prepare('SELECT COUNT(*) AS n FROM scores').first<{n:number}>())?.n,1);
+  assert.equal((await worker.fetch(req('/scores',{...payload,session,name:'別の名前'}),e)).status,409);
+});
+
+test('cleanup is scheduled and cannot make session or score creation fail',async()=>{
+  const e=env(),now=Date.now();
+  await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind('expired','old',now-3*86400000).run();
+  await insertScore(e,'expired',100,2,5,now-91*86400000);
+  const prepare=e.DB.prepare.bind(e.DB);
+  e.DB.prepare=((sql:string)=>{assert.doesNotMatch(sql,/DELETE/);return prepare(sql);}) as Env['DB']['prepare'];
+  const {session}=await (await worker.fetch(req('/sessions',{client:crypto.randomUUID()}),e)).json() as {session:string};
+  await prepare('UPDATE sessions SET created=? WHERE id=?').bind(now-10000,session).run();
+  assert.equal((await worker.fetch(req('/scores',{...payload,session}),e)).status,201);
+  e.DB.prepare=prepare;
+  assert.equal((await prepare('SELECT COUNT(*) AS n FROM sessions').first<{n:number}>())?.n,2);
+  await worker.scheduled({},e);
+  assert.equal((await prepare('SELECT COUNT(*) AS n FROM sessions').first<{n:number}>())?.n,1);
+  assert.equal((await prepare('SELECT COUNT(*) AS n FROM scores').first<{n:number}>())?.n,1);
+});
+
+test('server shares simultaneous ranking reads even if the edge cache is unavailable',async()=>{
+  const original=Object.getOwnPropertyDescriptor(globalThis,'caches');
+  Object.defineProperty(globalThis,'caches',{configurable:true,value:{default:{
+    async match(){throw Error('unavailable');},async put(){throw Error('unavailable');}
+  }}});
+  try{
+    const e=env(),prepare=e.DB.prepare.bind(e.DB);let reads=0;
+    e.DB.prepare=((sql:string)=>{reads++;return prepare(sql);}) as Env['DB']['prepare'];
+    const responses=await Promise.all(Array.from({length:100},()=>worker.fetch(req('/scores'),e)));
+    assert.ok(responses.every(r=>r.status===200));assert.equal(reads,1);
+    await worker.fetch(req('/scores'),e);assert.equal(reads,1);
+    await worker.fetch(req('/scores?metric=height'),e);assert.equal(reads,2);
+  }finally{if(original)Object.defineProperty(globalThis,'caches',original);else Reflect.deleteProperty(globalThis,'caches');}
 });

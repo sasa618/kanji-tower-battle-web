@@ -27,10 +27,10 @@ test('result text lists created characters and stays within the X limit beside a
   const intent=new URL(tweetLink(text,'https://ranking.example/s/ab351954-867d-489e-88c3-4126e15e32d6'));
   assert.equal(intent.searchParams.get('text'),text);
 });
-test('ranking openings, concurrent requests, and empty results reuse one fetch for five minutes',async()=>{
+test('ranking openings, concurrent requests, and empty results reuse one fetch for one minute',async()=>{
   let calls=0,now=1000;const cache=new RankingCache(async()=>{calls++;return {scores:[]};},()=>now);
   await Promise.all([cache.get(),cache.get(),cache.get()]);
-  now+=299999;await cache.get();assert.equal(calls,1);
+  now+=59999;await cache.get();assert.equal(calls,1);
   now++;await cache.get();assert.equal(calls,2);
 });
 test('ranking failures do not trigger automatic retry storms',async()=>{
