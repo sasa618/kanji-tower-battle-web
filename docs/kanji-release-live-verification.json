@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-31T17:22:13.090Z",
+  "commit": "b8cda6f69ca5b50d128fadbb204053f764cf2809",
+  "results": [
+    {
+      "check": "Public game data",
+      "characters": 107,
+      "recipes": 89,
+      "mainScript": "assets/index-CUrWBbOr.js"
+    },
+    {
+      "check": "Published discovery images and pages",
+      "passed": 89,
+      "total": 89
+    },
+    {
+      "check": "Published subset fonts",
+      "passed": 2
+    }
+  ]
+}
