@@ -1,6 +1,6 @@
 import { World, Vec2, Box, Polygon, type Body } from 'planck';
 import glyphData from './data/glyphs.json';
-import { byChar, chooseCandidates, createCandidateHistory, recipeFor } from './data';
+import { byChar, chooseCandidates, createCandidateHistory, recipeFor, WILD, wildChance } from './data';
 
 export type Point = [number, number];
 export type Glyph = { commands: Array<Record<string, string | number>>; parts: Point[][]; bounds: { minX:number; minY:number; maxX:number; maxY:number }; area:number };
@@ -29,6 +29,8 @@ export class Game {
   ready = true; dropping: Tile | null = null; wait = 0; elapsed = 0; merges = 0;
   final: Stats | null = null; nextId = 1; events: GameEvent[] = []; made = new Set<string>();
   private candidateHistory=createCandidateHistory();
+  // Candidate refreshes since the bonus block last appeared; drives its rising chance.
+  turnsSinceWild=0;
   peakTower:TowerSnapshot|null=null;
   private boundsCache=new WeakMap<Body,{x:number;y:number;angle:number;bounds:TowerBounds}>();
   constructor(public random = Math.random) { this.reset(false); }
@@ -40,7 +42,7 @@ export class Game {
     this.peakTower=null;this.boundsCache=new WeakMap();
     this.mode = play ? 'playing' : 'title'; this.ready = true; this.dropping = null;
     this.wait = 0; this.elapsed = 0; this.merges = 0; this.made.clear(); this.x = 280; this.angle = 0; this.selected = 0;
-    this.candidateHistory=createCandidateHistory();
+    this.candidateHistory=createCandidateHistory();this.turnsSinceWild=0;
     this.candidates = chooseCandidates([], this.random, this.candidateHistory);
     this.world.on('begin-contact', contact => {
       for (const body of [contact.getFixtureA().getBody(), contact.getFixtureB().getBody()]) {
@@ -138,7 +140,10 @@ export class Game {
     if(!this.ready){
       this.wait+=1/60;
       if(this.dropping?.landed&&(this.wait>=2||this.tiles.every(t=>t.restFrames>=40))){
-        this.ready=true;this.dropping=null;this.candidates=chooseCandidates(this.tiles.map(t=>t.char),this.random,this.candidateHistory);this.selected=0;this.angle=0;this.x=280;
+        this.ready=true;this.dropping=null;this.turnsSinceWild++;
+        this.candidates=chooseCandidates(this.tiles.map(t=>t.char),this.random,this.candidateHistory,wildChance(this.turnsSinceWild));
+        if(this.candidates.includes(WILD))this.turnsSinceWild=0;
+        this.selected=0;this.angle=0;this.x=280;
       }
     }
   }

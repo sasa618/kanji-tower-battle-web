@@ -6,27 +6,29 @@ import {env,GAME,ORIGIN} from './d1-env';
 import { validateSubmission } from '../server/validation';
 import { MAX_SHARE_BYTES } from '../server/shares';
 import { kanji, recipes } from '../src/data';
+const maxStrokes=Math.max(...kanji.map(k=>k.strokes));
 import type { Env } from '../server/worker';
 const payload={session:crypto.randomUUID(),name:'木のひと',score:13,height:1,count:1,duration:6,moves:3};
 test('ranking rejects impossible scores, timings, names and counts',()=>{
   assert.equal(validateSubmission(payload).name,'木のひと');
-  for(const patch of [{score:99999},{height:NaN},{duration:0},{duration:2,moves:100},{name:'<script>'},{name:'死ね'},{name:'1234567890'},{name:'あ'.repeat(13)},{count:2,score:1},{count:0,score:1}])assert.throws(()=>validateSubmission({...payload,...patch}));
+  for(const patch of [{score:99999},{height:NaN},{duration:0},{duration:2,moves:100},{name:'<script>'},{name:'死ね'},{name:'1234567890'},{name:'あ'.repeat(13)},{count:2,moves:1},{count:0,score:1}])assert.throws(()=>validateSubmission({...payload,...patch}));
 });
-test('ranking accepts new 20-stroke characters and still bounds points per tile',()=>{
-  assert.equal(Math.max(...kanji.map(k=>k.strokes)),20);
-  assert.equal(validateSubmission({...payload,score:20}).score,20);
-  assert.throws(()=>validateSubmission({...payload,score:21}));
-  const fullTower={...payload,score:3200,count:160,moves:1000,duration:500};
-  assert.equal(validateSubmission(fullTower).score,3200);
-  assert.throws(()=>validateSubmission({...fullTower,score:3201}));
+test('ranking accepts the heaviest character (龖, 32 strokes) and still bounds points per tile',()=>{
+  assert.equal(maxStrokes,32);
+  assert.equal(validateSubmission({...payload,score:maxStrokes}).score,maxStrokes);
+  assert.throws(()=>validateSubmission({...payload,score:maxStrokes+1}));
+  const fullTower={...payload,score:160*maxStrokes,count:160,moves:1000,duration:500};
+  assert.equal(validateSubmission(fullTower).score,160*maxStrokes);
+  assert.throws(()=>validateSubmission({...fullTower,score:160*maxStrokes+1}));
 });
-test('no character earns more than eight points per drop, so honest towers pass the drop bound',()=>{
-  const drops=new Map(kanji.filter(k=>k.base).map(k=>[k.char,1]));
+test('no character earns more than twelve points per drop, so honest towers pass the drop bound',()=>{
+  // The bonus block is dropped like a base character; it adds no strokes itself but can add over 20 in one merge.
+  const drops=new Map(kanji.filter(k=>k.base||k.wild).map(k=>[k.char,1]));
   for(let pass=0;pass<kanji.length;pass++)for(const r of recipes){
     const a=drops.get(r.a),b=drops.get(r.b);
     if(a&&b&&(!drops.has(r.result)||drops.get(r.result)!>a+b))drops.set(r.result,a+b);
   }
-  for(const k of kanji)assert.ok(k.strokes<=8*drops.get(k.char)!,k.char);
+  for(const k of kanji)assert.ok(k.strokes<=12*drops.get(k.char)!,k.char);
 });
 // The in-memory D1 stand-in lives in d1-env.ts so other test files can share it without re-running these tests.
 export {env} from './d1-env';

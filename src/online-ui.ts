@@ -1,4 +1,4 @@
-import { beginSession, getScores, loadRankingSnapshot, onlineEnabled, reportGame, submitScore, type OnlineScore, type RankingSnapshot } from './online';
+import { beginSession, getScores, lastOutage, LIMIT_MESSAGE, loadRankingSnapshot, onlineEnabled, reportGame, submitScore, type OnlineScore, type OutageKind, type RankingSnapshot } from './online';
 import type { RecordEntry } from './storage';
 import { MetricRankings } from './ranking-cache';
 import {metricLabels,metricUnits,metricValue,rankLabel,rankingMetrics,type RankingMetric} from './ranking';
@@ -14,8 +14,8 @@ function keptScores():Partial<Record<RankingMetric,Kept>>{
     return out;}catch{return {};}
 }
 function keepScores(metric:RankingMetric,scores:OnlineScore[]){try{const all=keptScores();all[metric]={scores:scores.slice(0,100),at:Date.now()};localStorage.setItem(cacheKey,JSON.stringify(all));}catch{}}
-type Services={enabled:boolean;beginSession:typeof beginSession;getScores:typeof getScores;reportGame:typeof reportGame;submitScore:typeof submitScore;loadSnapshot?:()=>Promise<RankingSnapshot|null>};
-const services:Services={enabled:onlineEnabled,beginSession,getScores,reportGame,submitScore,loadSnapshot:loadRankingSnapshot};
+type Services={enabled:boolean;beginSession:typeof beginSession;getScores:typeof getScores;reportGame:typeof reportGame;submitScore:typeof submitScore;loadSnapshot?:()=>Promise<RankingSnapshot|null>;lastOutage?:()=>OutageKind};
+const services:Services={enabled:onlineEnabled,beginSession,getScores,reportGame,submitScore,loadSnapshot:loadRankingSnapshot,lastOutage};
 export class OnlineUI {
   run=0;moves=0;session:string|null=null;result:RecordEntry|null=null;pending=false;sending=false;rank=0;ranks:Partial<Record<RankingMetric,number>>={};error='';name=savedName();
   private latestRanks:Partial<Record<RankingMetric,number>>={};
@@ -24,6 +24,8 @@ export class OnlineUI {
   lateSending=false;lateError='';
   constructor(public changed:()=>void,private api:Services=services,private submitted:(r:RecordEntry)=>void=()=>{}){this.rankings=new MetricRankings(async metric=>{const r=await api.getScores(metric);keepScores(metric,r.scores);return r;},()=>this.changed());}
   get metric(){return this.rankings.metric;}
+  /** True while the last failure looked like the Worker's access limit rather than this device's connection. */
+  get limited(){return this.api.lastOutage?.()==='limit';}
   selectMetric(metric:RankingMetric){this.rankings.metric=metric;this.changed();void this.load();}
   reset(){this.run++;this.moves=0;this.session=null;this.result=null;this.rank=0;this.ranks={};this.error='';this.pending=false;this.sending=false;}
   start(){this.reset();const id=this.run;this.pending=this.api.enabled;
@@ -73,7 +75,7 @@ export class OnlineUI {
   }
   resultHTML(){if(!this.api.enabled)return '<p>全国ランキングは接続準備中です。</p>';
     if(this.pending)return '<p>全国ランキングの接続を確認しています…</p>';
-    if(!this.session)return '<p>今回は全国ランキングに接続できませんでした。端末の記録は保存されています。自己ベストなら、あとで「記録」の画面から送れます。</p>';
+    if(!this.session)return `<p>${this.limited?LIMIT_MESSAGE:'今回は全国ランキングに接続できませんでした。'}端末の記録は保存されています。自己ベストなら、あとで「記録」の画面から送れます。</p>`;
     if(this.rank)return `<p class="result-rank">全国ランキングに登録しました！<br>${rankingMetrics.filter(m=>this.ranks[m]).map(m=>`${metricLabels[m]} ${rankLabel(this.ranks[m]!)}`).join('・')}</p><button class="secondary" data-action="ranking">全国ランキングで比べる</button>`;
     return `<div class="online-entry"><label for="ranking-name">全国ランキングに記録する</label><input id="ranking-name" maxlength="24" placeholder="名前（1〜12文字）" value="${esc(this.name)}" autocomplete="nickname" aria-label="ランキングに載せる名前"><p>名前・得点・高さ・字数・日時を90日間公開します。本名や連絡先は入力しないでください。送信した名前は次回も使えます。</p><button class="secondary" data-action="online-submit" ${this.sending?'disabled':''}>${this.sending?'送信中…':this.error?'もう一度送信する':'この名前で送信する'}</button>${this.error?`<p class="notice" role="status">${esc(this.error)} 同じ記録をもう一度送信できます。</p>`:''}</div>`;
   }
@@ -84,9 +86,9 @@ export class OnlineUI {
     const table=(rows:OnlineScore[])=>`<table class="ranking"><thead><tr><th>順位</th><th>名前</th><th>${metricLabels[metric]}</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.name)}</td><td class="ranking-value">${metricValue(r,metric)}<small>${metricUnits[metric]}</small></td></tr>`).join('')}</tbody></table>`;
     const refresh='<button class="small-btn" data-action="online-refresh" aria-label="全国ランキングを更新">↻</button>';
     if(failed){
-      const old=this.fallbackFor(metric);
-      if(old)return `${ownHTML}<div class="ranking-caption"><p class="ranking-stale"><small>以前に取得した一覧です。最近90日間 · 上位100件</small></p>${refresh}</div>${table(old.scores)}`;
-      return ownHTML+'<div class="empty"><p>通信できませんでした。しばらく待ってからお試しください。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>';
+      const old=this.fallbackFor(metric),paused=this.limited?`<p class="ranking-paused" role="status">${LIMIT_MESSAGE}</p>`:'';
+      if(old)return `${ownHTML}${paused}<div class="ranking-caption"><p class="ranking-stale"><small>以前に取得した一覧です。最近90日間 · 上位100件</small></p>${refresh}</div>${table(old.scores)}`;
+      return ownHTML+`<div class="empty"><p>${this.limited?LIMIT_MESSAGE:'通信できませんでした。しばらく待ってからお試しください。'}</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>`;
     }
     if(!scores.length)return ownHTML+(own?'<div class="empty"><p>送信した記録は数分以内に一覧へ反映されます。</p><button class="secondary" data-action="online-refresh">もう一度読み込む</button></div>':'<div class="empty"><b>最初の記録をつくろう。</b><p>プレイ終了後に名前を入力して参加できます。</p></div>');
     return `${ownHTML}<div class="ranking-caption"><p>最近90日間 · 上位100件<br><small>一覧への反映には数分かかる場合があります。</small></p>${refresh}</div>${table(scores)}`;

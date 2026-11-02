@@ -1,3 +1,4 @@
+import {rarityLabels,rarityOf} from './data';
 export function gameLink(current:string,configured?:string):string|null {
   const url=new URL(configured||current);
   const local=/^(127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.)/.test(url.hostname)||['localhost','[::1]'].includes(url.hostname)||url.hostname.endsWith('.local');
@@ -10,7 +11,8 @@ export function tweetLink(text:string,playURL:string|null):string {
   if(playURL)url.searchParams.set('url',playURL);
   return url.href;
 }
-export const discoveryText=(char:string)=>`合体！漢字タワーバトルで「${char}」を作った！\n#漢字タワーバトル`;
+// Rare and legend characters announce their tier before the character.
+export const discoveryText=(char:string)=>{const rarity=rarityOf(char);return `合体！漢字タワーバトルで${rarity?`【${rarityLabels[rarity]}】`:''}「${char}」を作った！\n#漢字タワーバトル`;};
 // X counts most CJK characters as two and every URL as 23. Trim the created-character list before anything else.
 export const X_TEXT_LIMIT=280,X_URL_WEIGHT=23;
 export function xLength(text:string){let n=0;for(const ch of text)n+=ch.codePointAt(0)!<=0x10ff?1:2;return n;}

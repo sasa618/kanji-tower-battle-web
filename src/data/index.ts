@@ -1,14 +1,31 @@
 import kanjiData from './kanji.json';
 import recipeData from './recipes.json';
-export type Kanji = { char: string; strokes: number; base?: boolean; hue: number; reading: string; meaning: string; words: string };
+export type Rarity = 'rare' | 'legend';
+export type Kanji = { char: string; strokes: number; base?: boolean; wild?: boolean; rarity?: Rarity; hue: number; reading: string; meaning: string; words: string };
 export type Recipe = { a: string; b: string; result: string; radical?: string; kind?: string };
-export const kanji: Kanji[] = kanjiData;
+// Copies, so the imported JSON stays as published while the runtime adds the rarity of a few characters below.
+export const kanji: Kanji[] = (kanjiData as Kanji[]).map(k => ({ ...k }));
 export const recipes: Recipe[] = recipeData;
+// Published characters keep their data unchanged; the ones that take three merges to reach are rare here,
+// and the two that take four are legend. New characters carry their rarity in kanji.json.
+const chainRarity: Record<string, Rarity> = Object.fromEntries([...'待億憶臆恩憧瞳咽姻栓詮垣恒'].map(c => [c, 'rare' as Rarity]).concat([...'添燥'].map(c => [c, 'legend' as Rarity])));
+for (const k of kanji) if (chainRarity[k.char]) k.rarity = chainRarity[k.char];
 export const byChar = new Map(kanji.map((k, i) => [k.char, { ...k, no: i + 1 }]));
 export const baseChars = kanji.filter(k => k.base).map(k => k.char);
+// The bonus block ("ボーナスはてな"): a 0-stroke square that turns specific characters into rare or legend ones.
+export const WILD = kanji.find(k => k.wild)!.char;
+export const collectionKanji = kanji.filter(k => !k.wild);
+export const rarityOf = (char: string): Rarity | undefined => byChar.get(char)?.rarity;
+export const rarityLabels: Record<Rarity, string> = { rare: 'レア漢字', legend: 'レジェンド漢字' };
 const key = (a: string, b: string) => [a, b].sort().join('|');
 const recipeMap = new Map(recipes.map(r => [key(r.a, r.b), r]));
 export const recipeFor = (a: string, b: string) => recipeMap.get(key(a, b));
+// The bonus block never appears in the first turns after a start or a previous block, then its chance rises every turn.
+export const WILD_CHANCE = { quietTurns: 2, start: .03, step: .02, max: .3 };
+export function wildChance(turnsSinceWild: number) {
+  if (turnsSinceWild <= WILD_CHANCE.quietTurns) return 0;
+  return Math.min(WILD_CHANCE.max, WILD_CHANCE.start + WILD_CHANCE.step * (turnsSinceWild - WILD_CHANCE.quietTurns - 1));
+}
 // Saturated warm colors, green, blue, navy and purple, ending in near black.
 // Keep early tiers vivid; reserve navy, purple and near black for dense characters.
 // Interpolate in linear RGB for any future stroke tiers between the palette anchors.
@@ -45,8 +62,11 @@ export type CandidateHistory = { shown:Map<string,number>; previous:string[] };
 export const createCandidateHistory=():CandidateHistory=>({shown:new Map(),previous:[]});
 /** Vary actionable choices between zero, one and two (25/50/25 percent).
  * Balance appearances within each pool; never force a candidate's own partner. */
-export function chooseCandidates(tower:string[],random=Math.random,history=createCandidateHistory()):string[] {
+export function chooseCandidates(tower:string[],random=Math.random,history=createCandidateHistory(),wildOdds=0):string[] {
   const chosen:string[]=[];
+  // The block takes one slot only when the tower holds a partner for it, and never two turns in a row.
+  if(wildOdds>0&&!history.previous.includes(WILD)&&tower.some(b=>recipeFor(WILD,b))&&random()<wildOdds)chosen.push(WILD);
+  const slots=3-chosen.length;
   const pick=(pool:string[])=>{
     const available=pool.filter(char=>!chosen.includes(char));
     const count=(char:string)=>history.shown.get(char)||0;
@@ -59,9 +79,9 @@ export function chooseCandidates(tower:string[],random=Math.random,history=creat
   };
   const partners=baseChars.filter(a=>tower.some(b=>recipeFor(a,b)));
   const others=baseChars.filter(char=>!partners.includes(char));
-  const roll=random(),wanted=roll<.25?0:roll<.75?1:2;
+  const roll=random(),wanted=Math.min(slots,roll<.25?0:roll<.75?1:2);
   // Some towers have fewer partners, or too few non-partners for three choices.
-  const matches=Math.min(partners.length,Math.max(3-others.length,wanted));
+  const matches=Math.min(partners.length,Math.max(slots-others.length,wanted));
   for(let i=0;i<matches;i++)pick(partners);
   while(chosen.length<3)pick(others);
   history.previous=[...chosen];

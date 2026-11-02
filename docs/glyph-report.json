@@ -1906,5 +1906,365 @@
     "fixtures": 41,
     "vertices": 176,
     "area": 2822.36
+  },
+  {
+    "char": "？",
+    "fixtures": 1,
+    "vertices": 4,
+    "area": 5184
+  },
+  {
+    "char": "百",
+    "fixtures": 9,
+    "vertices": 40,
+    "area": 2684.06
+  },
+  {
+    "char": "入",
+    "fixtures": 19,
+    "vertices": 76,
+    "area": 965.13
+  },
+  {
+    "char": "勝",
+    "fixtures": 49,
+    "vertices": 205,
+    "area": 2975.97
+  },
+  {
+    "char": "器",
+    "fixtures": 39,
+    "vertices": 161,
+    "area": 2994.3
+  },
+  {
+    "char": "塵",
+    "fixtures": 42,
+    "vertices": 175,
+    "area": 2881.53
+  },
+  {
+    "char": "嬢",
+    "fixtures": 58,
+    "vertices": 240,
+    "area": 2956.95
+  },
+  {
+    "char": "學",
+    "fixtures": 46,
+    "vertices": 192,
+    "area": 1952.19
+  },
+  {
+    "char": "導",
+    "fixtures": 40,
+    "vertices": 184,
+    "area": 2583.13
+  },
+  {
+    "char": "幽",
+    "fixtures": 17,
+    "vertices": 73,
+    "area": 3728.88
+  },
+  {
+    "char": "恋",
+    "fixtures": 43,
+    "vertices": 202,
+    "area": 2190.58
+  },
+  {
+    "char": "曇",
+    "fixtures": 36,
+    "vertices": 166,
+    "area": 2564.37
+  },
+  {
+    "char": "朝",
+    "fixtures": 31,
+    "vertices": 126,
+    "area": 3228.29
+  },
+  {
+    "char": "樹",
+    "fixtures": 47,
+    "vertices": 204,
+    "area": 2761.56
+  },
+  {
+    "char": "氷",
+    "fixtures": 27,
+    "vertices": 120,
+    "area": 1790.53
+  },
+  {
+    "char": "煩",
+    "fixtures": 33,
+    "vertices": 154,
+    "area": 2272.72
+  },
+  {
+    "char": "雷",
+    "fixtures": 27,
+    "vertices": 119,
+    "area": 2647.12
+  },
+  {
+    "char": "瞬",
+    "fixtures": 39,
+    "vertices": 172,
+    "area": 3337.81
+  },
+  {
+    "char": "礎",
+    "fixtures": 55,
+    "vertices": 231,
+    "area": 2934.13
+  },
+  {
+    "char": "龍",
+    "fixtures": 44,
+    "vertices": 191,
+    "area": 2967.14
+  },
+  {
+    "char": "謎",
+    "fixtures": 46,
+    "vertices": 211,
+    "area": 2652.69
+  },
+  {
+    "char": "鬱",
+    "fixtures": 68,
+    "vertices": 289,
+    "area": 3297.49
+  },
+  {
+    "char": "鵬",
+    "fixtures": 54,
+    "vertices": 227,
+    "area": 3518.4
+  },
+  {
+    "char": "疊",
+    "fixtures": 32,
+    "vertices": 135,
+    "area": 3128.91
+  },
+  {
+    "char": "響",
+    "fixtures": 55,
+    "vertices": 236,
+    "area": 3099.19
+  },
+  {
+    "char": "鐘",
+    "fixtures": 47,
+    "vertices": 199,
+    "area": 2738.57
+  },
+  {
+    "char": "臨",
+    "fixtures": 35,
+    "vertices": 151,
+    "area": 3255.5
+  },
+  {
+    "char": "聳",
+    "fixtures": 49,
+    "vertices": 208,
+    "area": 2818.67
+  },
+  {
+    "char": "萌",
+    "fixtures": 33,
+    "vertices": 132,
+    "area": 2902.02
+  },
+  {
+    "char": "踏",
+    "fixtures": 42,
+    "vertices": 175,
+    "area": 2739.36
+  },
+  {
+    "char": "蚕",
+    "fixtures": 29,
+    "vertices": 122,
+    "area": 2674.23
+  },
+  {
+    "char": "犬",
+    "fixtures": 24,
+    "vertices": 101,
+    "area": 1407.09
+  },
+  {
+    "char": "皇",
+    "fixtures": 18,
+    "vertices": 73,
+    "area": 2273.74
+  },
+  {
+    "char": "末",
+    "fixtures": 19,
+    "vertices": 83,
+    "area": 1634.02
+  },
+  {
+    "char": "腐",
+    "fixtures": 46,
+    "vertices": 188,
+    "area": 2909.54
+  },
+  {
+    "char": "帽",
+    "fixtures": 18,
+    "vertices": 85,
+    "area": 3328.17
+  },
+  {
+    "char": "賀",
+    "fixtures": 33,
+    "vertices": 138,
+    "area": 3018.33
+  },
+  {
+    "char": "慮",
+    "fixtures": 46,
+    "vertices": 213,
+    "area": 2840.66
+  },
+  {
+    "char": "凍",
+    "fixtures": 37,
+    "vertices": 160,
+    "area": 2304.91
+  },
+  {
+    "char": "霜",
+    "fixtures": 40,
+    "vertices": 173,
+    "area": 2734.86
+  },
+  {
+    "char": "裏",
+    "fixtures": 33,
+    "vertices": 137,
+    "area": 2690.64
+  },
+  {
+    "char": "黛",
+    "fixtures": 44,
+    "vertices": 208,
+    "area": 3008.17
+  },
+  {
+    "char": "薔",
+    "fixtures": 36,
+    "vertices": 150,
+    "area": 2957.82
+  },
+  {
+    "char": "街",
+    "fixtures": 35,
+    "vertices": 149,
+    "area": 2345.87
+  },
+  {
+    "char": "頬",
+    "fixtures": 40,
+    "vertices": 182,
+    "area": 2877.65
+  },
+  {
+    "char": "筋",
+    "fixtures": 46,
+    "vertices": 198,
+    "area": 2634.99
+  },
+  {
+    "char": "宴",
+    "fixtures": 32,
+    "vertices": 143,
+    "area": 2535.86
+  },
+  {
+    "char": "聖",
+    "fixtures": 21,
+    "vertices": 89,
+    "area": 2575.78
+  },
+  {
+    "char": "凰",
+    "fixtures": 32,
+    "vertices": 136,
+    "area": 2736.83
+  },
+  {
+    "char": "蕾",
+    "fixtures": 35,
+    "vertices": 154,
+    "area": 2589.13
+  },
+  {
+    "char": "瀧",
+    "fixtures": 51,
+    "vertices": 232,
+    "area": 3060.74
+  },
+  {
+    "char": "朧",
+    "fixtures": 55,
+    "vertices": 237,
+    "area": 3380.71
+  },
+  {
+    "char": "煌",
+    "fixtures": 34,
+    "vertices": 143,
+    "area": 2171.93
+  },
+  {
+    "char": "潮",
+    "fixtures": 35,
+    "vertices": 152,
+    "area": 3349.03
+  },
+  {
+    "char": "嘲",
+    "fixtures": 30,
+    "vertices": 126,
+    "area": 3630.82
+  },
+  {
+    "char": "黙",
+    "fixtures": 42,
+    "vertices": 204,
+    "area": 2750.13
+  },
+  {
+    "char": "沫",
+    "fixtures": 36,
+    "vertices": 153,
+    "area": 1978.92
+  },
+  {
+    "char": "龖",
+    "fixtures": 70,
+    "vertices": 303,
+    "area": 3852.69
+  },
+  {
+    "char": "燚",
+    "fixtures": 61,
+    "vertices": 282,
+    "area": 2490.95
+  },
+  {
+    "char": "黯",
+    "fixtures": 37,
+    "vertices": 173,
+    "area": 2818.6
   }
 ]

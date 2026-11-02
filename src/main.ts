@@ -31,8 +31,14 @@ let screen:'home'|'game'|'lab'='home',modal='',returnMode=game.mode,collectionIn
 let lastTower:TowerSnapshot|null=null;
 let lastResult:RecordEntry|null=null,lastFocus:HTMLElement|null=null,candidateSignature='',lastHud=0;
 let shareBusy=false,shareMessage='',shareFallbackURL='',discoveryShareMessage='',discoveryShareURLFallback='';
-const shareFeedback=()=>`<p class="share-status" role="status">${shareBusy?'共有画像を用意しています…':shareMessage}${shareFallbackURL?` <a class="action-button x-share" href="${shareFallbackURL.replaceAll('&','&amp;').replaceAll('"','&quot;')}" target="_blank" rel="noopener noreferrer">${actionIcon('share')}<span>${shareBusy?'画像を待たずに得点をシェア':'Xの投稿画面を開く'}</span></a>`:''}</p>`;
-const letter=(char:string,cls='')=>`<span class="kanji ${cls}" style="color:${color(char)}">${char}</span>`;
+const shareFeedback=()=>`<p class="share-status" role="status">${shareBusy?'共有の準備をしています…':shareMessage}</p>`;
+// The same control opens the post: a button until the post is prepared, then a plain link that no popup blocker stops.
+const shareControl=(action:string,classes:string,label:string,aria='')=>shareFallbackURL&&!shareBusy
+  ?`<a class="${classes}" href="${shareFallbackURL.replaceAll('&','&amp;').replaceAll('"','&quot;')}" target="_blank" rel="noopener noreferrer"${aria}>${actionIcon('share')}<span>${label}</span></a>`
+  :`<button class="${classes}" data-action="${action}"${aria}${shareBusy?' disabled':''}>${actionIcon('share')}<span>${label}</span></button>`;
+const letter=(char:string,cls='')=>{const k=byChar.get(char)!;if(k.wild)return `<span class="kanji wild-chip ${cls}" role="img" aria-label="ボーナスはてな">？</span>`;return `<span class="kanji${k.rarity?` metal metal-${k.rarity}`:''} ${cls}" style="color:${color(char)}">${char}</span>`;};
+const strokeLabel=(char:string)=>byChar.get(char)!.wild?'ボーナス':`${byChar.get(char)!.strokes}画`;
+const candidateName=(char:string)=>byChar.get(char)!.wild?'ボーナスはてな':`${char}、${strokeLabel(char)}`;
 function persist(){if(!save(saved)&&!document.querySelector('.storage-warning')){const el=document.createElement('div');el.className='storage-warning';el.textContent='このブラウザでは記録を保存できません。今回のプレイは続けられます。';document.body.append(el);}}
 function header(){return `<header class="header"><button class="brand" data-action="home" aria-label="タイトルに戻る"><span class="brand-mark"><img src="${import.meta.env.BASE_URL}icon.svg?v=wood-forest" alt="" width="44" height="44"></span><span class="brand-name"><span class="brand-prefix">合体！</span><span>漢字タワーバトル</span></span></button><nav class="nav" aria-label="メニュー"><button data-action="help" class="nav-help" aria-label="遊び方" title="遊び方">${icon('help')}</button><button data-action="collection">図鑑</button><button data-action="ranking">記録</button><button data-action="settings" class="icon-btn" aria-label="音と設定">${icon('settings')}</button></nav></header>`;}
 function home(){return `<main class="home"><section class="hero-copy"><div class="title-tag">合体！</div><h1>漢字<span>タワーバトル</span></h1><button class="primary play-start" data-action="start">遊ぶ<span class="arrow">→</span></button><div class="home-actions"><button class="secondary" data-action="help">遊び方</button><button class="secondary soon" disabled>対戦 <span class="pill">準備中</span></button></div></section><section class="hero-art" aria-label="漢字の塔"><span class="art-glyph ki" style="color:${color('木')}">木</span><span class="art-glyph mori" style="color:${color('森')}">森</span><span class="art-glyph nichi" style="color:${color('日')}">日</span><span class="art-glyph tsuki" style="color:${color('月')}">月</span><div class="art-stage"></div></section></main><footer class="footer"><button data-action="about">このゲームについて</button></footer>`;}
@@ -48,7 +54,7 @@ function updateHud(){if(screen!=='game')return;const s=game.stats();const score=
   const ready=game.mode==='playing'&&game.ready;const cue=document.querySelector<HTMLElement>('#gesture-cue');if(cue)cue.hidden=!moveHint.visible(performance.now(),ready);document.querySelector('#status')!.textContent=game.mode==='over'?'':game.mode==='paused'?'一時停止':'';
   document.querySelectorAll<HTMLButtonElement>('.rotate-candidate').forEach(b=>b.disabled=!ready);
   const signature=game.candidates.join('')+game.selected+ready+game.tiles.length;
-  if(signature!==candidateSignature){candidateSignature=signature;document.querySelector('#choices')!.innerHTML=game.candidates.map((char,i)=>{const match=game.tiles.some(t=>recipeFor(char,t.char));return `<button class="choice ${i===game.selected?'selected':''}" data-action="select" data-index="${i}" aria-pressed="${i===game.selected}" aria-label="${i+1}、${char}、${byChar.get(char)!.strokes}画" ${!ready?'disabled':''}><span class="key">${i+1}</span>${letter(char)}<span class="stroke">${byChar.get(char)!.strokes}画</span>${match?`<span class="match" aria-label="合体可能">${icon('merge')}</span>`:''}</button>`;}).join('');}
+  if(signature!==candidateSignature){candidateSignature=signature;document.querySelector('#choices')!.innerHTML=game.candidates.map((char,i)=>{const match=game.tiles.some(t=>recipeFor(char,t.char));return `<button class="choice ${i===game.selected?'selected':''}${byChar.get(char)!.wild?' wild':''}" data-action="select" data-index="${i}" aria-pressed="${i===game.selected}" aria-label="${i+1}、${candidateName(char)}" ${!ready?'disabled':''}><span class="key">${i+1}</span>${letter(char)}<span class="stroke${byChar.get(char)!.wild?' bonus':''}">${strokeLabel(char)}</span>${match?`<span class="match" aria-label="合体可能">${icon('merge')}</span>`:''}</button>`;}).join('');}
 }
 function noteInteraction(){if(game.mode!=='playing'||!game.ready)return;moveHint.interact(performance.now());const cue=document.querySelector<HTMLElement>('#gesture-cue');if(cue)cue.hidden=true;}
 function wireCanvas(){bindCanvasInput(document.querySelector<HTMLCanvasElement>('#game-canvas')!,{ready:()=>game.ready&&game.mode==='playing',move:x=>game.moveTo(x),drop:()=>game.drop(),activate:()=>sound.activate(),interact:noteInteraction,dragging:active=>{moveHint.dragging=active;},guard:e=>nearBoardButtons(e,document.querySelector('.board-actions')?.getBoundingClientRect())});}
@@ -69,7 +75,7 @@ function closeModal(navigate=false){
   if(game.mode==='paused')game.mode=returnMode;lastFocus?.focus();updateHud();
 }
 function renderModal(focusEntry=false,revealEntry=false){
-  const oldGrid=document.querySelector<HTMLElement>('.collection-dialog .collection-grid'),scroll=oldGrid?.scrollTop||0;
+  const oldGrid=document.querySelector<HTMLElement>('.collection-dialog .collection-scroll'),scroll=oldGrid?.scrollTop||0;
   const focused=document.activeElement as HTMLElement|null;
   const keepMetric=modal==='ranking'&&focused?.dataset.action==='rank-metric'?focused.dataset.metric:undefined;
   document.querySelector('.dialog-backdrop')?.remove();const wrap=document.createElement('div');wrap.className='dialog-backdrop';
@@ -86,9 +92,9 @@ function modalContent():string {
   if(modal==='restart'||modal==='leave')return `<p>今のプレイは終了します。見つけた漢字の記録は残ります。</p><button class="primary" data-action="${modal==='restart'?'start':'home-confirm'}">${modal==='restart'?'最初から遊ぶ':'タイトルへ戻る'}</button><button class="secondary" data-action="close" style="width:100%;margin-top:15px">続きを遊ぶ</button>`;
   if(modal==='help')return helpHTML();
   if(modal==='settings')return `<div class="settings-row"><span>音</span><button class="secondary" data-action="mute">${saved.muted?'オフ（タップでオン）':'オン（タップでオフ）'}</button></div><label class="settings-row">BGM<input type="range" min="0" max="1" step=".05" value="${saved.music}" data-volume="music" aria-label="BGMの音量"></label><label class="settings-row">効果音<input type="range" min="0" max="1" step=".05" value="${saved.effects}" data-volume="effects" aria-label="効果音の音量"></label><div class="settings-row"><span>当たり判定を重ねて表示</span><button class="secondary" data-action="debug">${renderer?.debug?'表示中':'表示する'}</button></div><p>音の設定と図鑑・自己記録は、このブラウザに保存されます。</p>`;
-  if(modal==='collection')return collectionHTML(saved,collectionIndex)+(discoveryShareMessage?`<p class="share-status" role="status">${discoveryShareMessage}${discoveryShareURLFallback?` <a href="${discoveryShareURLFallback.replaceAll('&','&amp;').replaceAll('"','&quot;')}" target="_blank" rel="noopener noreferrer">Xの投稿画面を開く</a>`:''}</p>`:'');
-  if(modal==='ranking'){const metric=online.metric,best=saved.bests[metric];return `<div class="tabs ranking-tabs" role="group" aria-label="ランキングの種目">${rankingMetrics.map(m=>`<button data-action="rank-metric" data-metric="${m}" aria-pressed="${metric===m}" class="${metric===m?'active':''}">${metricLabels[m]}</button>`).join('')}</div><div class="personal-best"><span>自己ベスト</span><strong>${best?metricValue(best,metric):'—'}<small>${metricUnits[metric]}</small></strong>${best?`<button class="best-share action-button x-share" data-action="share-best" aria-label="この自己ベストをXでシェア">${actionIcon('share')}<span>X</span></button>`:''}</div>${online.lateEntryHTML(best)}${shareFeedback()}${online.rankingHTML()}`;}
-  if(modal==='result'&&lastResult)return `<div class="result"><div class="eyebrow">YOUR KANJI TOWER</div><div class="result-score">${lastResult.score}<small>画</small></div><div class="result-stats"><span>高さ ${lastResult.height.toFixed(1)}字分</span><span>${lastResult.count}文字</span></div><p class="result-rank">${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).length?`${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).map(m=>metricLabels[m]).join('・')} 自己ベスト！`:`自己ベスト ${saved.bests.score?.score||0}画`}</p><p>${lastResult.made.length?`作った漢字：${lastResult.made.join(' ')}`:'次は、合体にも挑戦してみよう。'}</p><button class="primary" data-action="start">もう一度遊ぶ <small>R</small></button><div class="result-buttons"><button class="secondary action-button x-share" data-action="share">${actionIcon('share')}<span>Xでシェア</span></button><button class="secondary action-button" data-action="image">${actionIcon('download')}<span>結果画像を保存</span></button></div>${shareFeedback()}${online.resultHTML()}</div>`;
+  if(modal==='collection')return collectionHTML(saved,collectionIndex)+(discoveryShareMessage?`<p class="share-status" role="status">${discoveryShareMessage}</p>`:'');
+  if(modal==='ranking'){const metric=online.metric,best=saved.bests[metric];return `<div class="tabs ranking-tabs" role="group" aria-label="ランキングの種目">${rankingMetrics.map(m=>`<button data-action="rank-metric" data-metric="${m}" aria-pressed="${metric===m}" class="${metric===m?'active':''}">${metricLabels[m]}</button>`).join('')}</div><div class="personal-best"><span>自己ベスト</span><strong>${best?metricValue(best,metric):'—'}<small>${metricUnits[metric]}</small></strong>${best?shareControl('share-best','best-share action-button x-share','X',' aria-label="この自己ベストをXでシェア"'):''}</div>${online.lateEntryHTML(best)}${shareFeedback()}${online.rankingHTML()}`;}
+  if(modal==='result'&&lastResult)return `<div class="result"><div class="eyebrow">YOUR KANJI TOWER</div><div class="result-score">${lastResult.score}<small>画</small></div><div class="result-stats"><span>高さ ${lastResult.height.toFixed(1)}字分</span><span>${lastResult.count}文字</span></div><p class="result-rank">${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).length?`${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).map(m=>metricLabels[m]).join('・')} 自己ベスト！`:`自己ベスト ${saved.bests.score?.score||0}画`}</p><p>${lastResult.made.length?`作った漢字：${lastResult.made.map(c=>letter(c)).join(' ')}`:'次は、合体にも挑戦してみよう。'}</p><button class="primary" data-action="start">もう一度遊ぶ <small>R</small></button><div class="result-buttons">${shareControl('share','secondary action-button x-share','Xでシェア')}<button class="secondary action-button" data-action="image">${actionIcon('download')}<span>結果画像を保存</span></button></div>${shareFeedback()}${online.resultHTML()}</div>`;
   return `<p>合体！漢字タワーバトル<br>ゲームのコードはAI（ChatGPT）が制作しています。</p><p>合体の表と図鑑の説明は，Windows版でAI（Claude）が作成したデータを元にしています。合体の式はゲームのルールであり，字源の説明ではありません。</p><p>物理演算：Planck.js（MIT）<br>字形：Noto Serif JP Bold（SIL OFL）<br>UI：Dela Gothic One（SIL OFL）<br>タイトルの「合体！」：Mochiy Pop One（SIL OFL）<br>フォント解析：opentype.js（MIT）<br>輪郭分割：earcut（ISC）</p>${onlineEnabled?'<p>全国ランキングと画像付きのX共有はCloudflare Workers・D1で動いています。公開する項目と保存期間は結果画面の案内のとおりです。ゲーム終了時にプレイ時間と落下数だけを匿名で集計しています。</p>':'<p>このビルドは全国ランキングと画像付き共有に接続していません。ゲーム・図鑑・端末内の自己記録・結果画像の保存は使えます。</p>'}`;
 }
 function start(activateSound=true){closeModal(true);lastResult=null;lastTower=null;shareMessage='';shareFallbackURL='';game.reset();online.reset();moveHint.reset();screen='game';if(activateSound)sound.activate();render();}
@@ -97,13 +103,15 @@ async function share(r:RecordEntry){
   const text=resultText(r),playURL=gameLink(location.href,import.meta.env.VITE_PUBLIC_URL);
   shareFallbackURL=tweetLink(text,playURL);
   if(ownShareLink(r.shareURL)){
-    shareFallbackURL=tweetLink(text,r.shareURL);shareMessage='投稿画面が開かない場合は、下のリンクを押してください。';
+    shareFallbackURL=tweetLink(text,r.shareURL);shareMessage=REOPEN_HINT;
     tryOpenShare(shareFallbackURL);renderModal();return;
   }
   if(!onlineEnabled||(!r.tower&&r.count>0)){
-    shareMessage='得点とゲームURLを共有できます。塔の画像は今回の共有に含まれません。';
+    shareMessage=REOPEN_HINT;
     tryOpenShare(shareFallbackURL);renderModal();return;
   }
+  // The window opens inside the click, so the browser allows it; it navigates once the post is ready.
+  const popup=openPendingShare();
   shareMessage='';shareBusy=true;renderModal();
   const prepared=await prepareShareIntent(text,playURL,async()=>{
     await Promise.all([document.fonts.load('400 34px TowerDisplay'),document.fonts.load('400 48px TowerImpact'),document.fonts.load('700 28px Biz')]);
@@ -116,15 +124,24 @@ async function share(r:RecordEntry){
     persist();return url;
   });
   shareFallbackURL=prepared.intent;
-  shareMessage=prepared.image?'画像付きの共有を用意しました。下のリンクから投稿画面を開いてください。':'画像付き共有を現在利用できません。得点とゲームURLは下のリンクから共有できます。';
+  if(popup&&!popup.closed){try{popup.location.href=prepared.intent;shareMessage=REOPEN_HINT;}catch{shareMessage=OPEN_HINT;}}
+  else shareMessage=OPEN_HINT;
   shareBusy=false;if(modal==='result'||modal==='ranking')renderModal();
+}
+const REOPEN_HINT='投稿画面が開かない場合は、もう一度「Xでシェア」を押してください。',OPEN_HINT='準備ができました。「Xでシェア」を押すと投稿画面が開きます。';
+function openPendingShare(){
+  try{
+    const w=window.open('','_blank');if(!w)return null;
+    w.opener=null;w.document.title='X';w.document.body.innerHTML='<p style="font-family:sans-serif;color:#555;padding:24px">投稿画面を用意しています…</p>';
+    return w;
+  }catch{return null;}
 }
 function shareKanji(){
   const char=kanji[collectionIndex]?.char;if(!char||(saved.collection[char]?.made||0)<=0)return;
   const url=discoveryShareURL(char,location.href,import.meta.env.VITE_PUBLIC_URL);
   if(!url){discoveryShareMessage='画像付きの共有は公開版から利用できます。';renderModal();return;}
   discoveryShareURLFallback=tweetLink(discoveryText(char),url);
-  discoveryShareMessage='投稿画面が開かない場合は、下のリンクを押してください。';
+  discoveryShareMessage=REOPEN_HINT;
   tryOpenShare(discoveryShareURLFallback);renderModal();
 }
 async function resultImage(){

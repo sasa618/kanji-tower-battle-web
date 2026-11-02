@@ -52,3 +52,5 @@
 - 2026-10-21に本人がCloudflareへログインし，`npm run deploy:worker` でD1の作成・移行・Workerの配布を行った．本人の了承で公開リポジトリ sasa618/kanji-tower-battle-web を作成し，GitHub Pagesで `https://sasa618.github.io/kanji-tower-battle-web/` に公開した．公開先での疎通確認（ゲーム配信13件，Worker14件，公開オリジンからのセッション・スコア・集計送信）は成功した．状態の区別と残件はdocs/release-record.mdにある．
 - 匿名の利用状況（終了したプレイ数・合計プレイ秒数・落下数の日別集計）を `POST /events`・`GET /stats` で追加した．Cloudflare Web AnalyticsとSearch Consoleのタグは公開値の設定待ちである．
 - 図鑑全項目の辞書照合，iPhone Safari・Android Chromeでの実機検証，公開URLのXリンクカード表示は公開前の残件である．
+- 2026-11-02：ボーナスはてな（虹色の0画ブロック）とレア・レジェンド漢字を実装した（ブランチ claude/bonus-hatena-20261102，本番未反映）．新しい字59，合体59，カード画像は新規59と区分の付いた既存15を生成．`npm run check`・`npm test`（118件）・`npm run build` が通り，Playwright でスマホ幅の遊び方・図鑑・ゲーム画面を確認した．詳細は docs/bonus-hatena-2026-11-02.md．
+- 2026-11-02 テストプレイ後の修正：銀・金の字の縁を外側だけに，X共有の操作を1つに，Worker不達時は「アクセス数の制限により一時停止中」と表示（bonus-hatena-2026-11-02.md の末尾）．

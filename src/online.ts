@@ -9,7 +9,15 @@ export const onlineEnabled=!!API,apiOrigin=API;
 export function clientId(){try{let id=localStorage.getItem('kanji-tower-client');if(!id){id=newId();localStorage.setItem('kanji-tower-client',id);}return id;}catch{return newId();}}
 // One gate for every request: after an outage the whole client pauses, from 15 seconds up to 10 minutes.
 export const outage=new Backoff();
-const waitMessage=()=>`通信できませんでした。${Math.ceil(outage.wait()/1000)}秒ほど待ってからお試しください。`;
+// Why the last request failed. Cloudflare answers its daily limit with a 429 that carries no CORS headers, so the
+// browser reports it as a network error; one that happens while the device is online is treated as the limit.
+export type OutageKind='limit'|'network'|'';
+let outageKind:OutageKind='';
+// Cleared by the next answer from the Worker, so the pause stays visible for longer than one backoff window.
+export const lastOutage=()=>outageKind;
+export const LIMIT_MESSAGE='全国ランキングはアクセス数の制限により一時停止中です。';
+const networkKind=(e:unknown):OutageKind=>e instanceof Error&&e.name==='TimeoutError'?'network':navigator.onLine===false?'network':'limit';
+const waitMessage=()=>outageKind==='limit'?LIMIT_MESSAGE:`通信できませんでした。${Math.ceil(outage.wait()/1000)}秒ほど待ってからお試しください。`;
 // JSON travels as text/plain, a CORS-safelisted type, so browsers send no preflight request.
 const post=(body:unknown)=>({method:'POST',body:JSON.stringify(body)});
 async function call<T>(path:string,body?:unknown,timeout=6000):Promise<T>{
@@ -17,8 +25,8 @@ async function call<T>(path:string,body?:unknown,timeout=6000):Promise<T>{
   if(outage.wait()>0)throw Error(waitMessage());
   let response:Response;
   try{response=await fetch(API+path,{...(body?post(body):{method:'GET'}),signal:AbortSignal.timeout(timeout)});}
-  catch(e){outage.fail();throw Error(e instanceof Error&&e.name==='TimeoutError'?'通信に時間がかかりすぎました。電波の良い場所でもう一度お試しください。':'通信できませんでした。');}
-  if(isOutageStatus(response.status))outage.fail(Number(response.headers.get('Retry-After'))||undefined);else outage.succeed();
+  catch(e){outageKind=networkKind(e);outage.fail();throw Error(outageKind==='limit'?LIMIT_MESSAGE:e instanceof Error&&e.name==='TimeoutError'?'通信に時間がかかりすぎました。電波の良い場所でもう一度お試しください。':'通信できませんでした。');}
+  if(isOutageStatus(response.status)){outageKind=response.status===429?'limit':'network';outage.fail(Number(response.headers.get('Retry-After'))||undefined);}else{outageKind='';outage.succeed();}
   let result:{error?:string}&T;try{result=await response.json();}catch{throw Error(response.ok?'応答を読み取れませんでした。':'通信できませんでした。');}
   if(!response.ok)throw Error(result.error||'通信できませんでした。');return result;
 }
@@ -29,8 +37,8 @@ export const submitScore=(session:string,name:string,result:RecordEntry,moves:nu
 // One anonymous usage report per play: session, play seconds and drops. No name, score or device ID.
 export async function reportGame(session:string,duration:number,moves:number){
   if(!API||outage.wait()>0)return;
-  try{const response=await fetch(API+'/events',{...post({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});if(isOutageStatus(response.status))outage.fail();}
-  catch{outage.fail();/* statistics never affect play */}
+  try{const response=await fetch(API+'/events',{...post({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});if(isOutageStatus(response.status)){outageKind=response.status===429?'limit':'network';outage.fail();}}
+  catch(e){outageKind=networkKind(e);outage.fail();/* statistics never affect play */}
 }
 export type RankingSnapshot={at:number;scores:Record<RankingMetric,OnlineScore[]>};
 // A daily copy published with the game itself (tools/fetch-ranking-snapshot.mjs), readable while the Worker is over its free-tier limit.

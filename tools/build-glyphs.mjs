@@ -48,7 +48,13 @@ function join(a,b) {
   }return null;
 }
 const glyphs={};
-for(const {char} of data){
+for(const {char,wild} of data){
+  if(wild){
+    // The bonus block is a plain square, not a font outline: 72 of the 80 px em, centered.
+    const h=36,square=[[-h,-h],[h,-h],[h,h],[-h,h]];
+    glyphs[char]={commands:[{type:'M',x:-h,y:-h},{type:'L',x:h,y:-h},{type:'L',x:h,y:h},{type:'L',x:-h,y:h},{type:'Z'}],parts:[square],bounds:{minX:-h,minY:-h,maxX:h,maxY:h},area:4*h*h,contours:1};
+    continue;
+  }
   const glyph=font.charToGlyph(char);if(!glyph.index)throw Error(`Missing glyph: ${char}`);
   const p=glyph.getPath(0,0,80),bounds=p.getBoundingBox();const ox=(bounds.x1+bounds.x2)/2,oy=(bounds.y1+bounds.y2)/2;
   let contours=[],current=[],cursor=[0,0];

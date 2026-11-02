@@ -44,7 +44,7 @@ test('zero, one and two actionable choices all occur, with one most common',()=>
 test('changing towers respect the requested match count whenever enough choices exist',()=>{
   const history=createCandidateHistory(),random=seeded(73);
   for(let turn=0;turn<1000;turn++){
-    const tower=[kanji[turn%kanji.length].char],desired=turn%3;
+    const pieces=kanji.filter(k=>!k.wild),tower=[pieces[turn%pieces.length].char],desired=turn%3;
     let calls=0;const hand=chooseCandidates(tower,()=>calls++===0?[.1,.5,.9][desired]:random(),history);
     assert.equal(new Set(hand).size,3);assert.ok(hand.every(char=>baseChars.includes(char)));
     const available=baseChars.filter(char=>recipeFor(char,tower[0])).length;

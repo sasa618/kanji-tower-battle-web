@@ -3,14 +3,16 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { Vec2 } from 'planck';
 import { kanji, recipes, baseChars, recipeFor, chooseCandidates } from '../src/data';
+import kanjiData from '../src/data/kanji.json';
 import { Game, glyphs, STAGE_Y, STAGE_WIDTH, GLYPH_SIZE, massForStrokes } from '../src/physics';
 import { compareRecords } from '../src/storage';
 
 test('all characters reachable; no isolated base; no ambiguous recipe',()=>{
-  const reachable=new Set(baseChars),keys=new Set();
+  // The bonus block is dropped like a base character, so bonus results count as reachable.
+  const reachable=new Set([...baseChars,...kanji.filter(k=>k.wild).map(k=>k.char)]),keys=new Set();
   for(const r of recipes){const key=[r.a,r.b].sort().join('|');assert.ok(!keys.has(key),key);keys.add(key);assert.equal(recipeFor(r.b,r.a)?.result,r.result);}
   for(let pass=0;pass<kanji.length;pass++)for(const r of recipes)if(reachable.has(r.a)&&reachable.has(r.b))reachable.add(r.result);
-  for(const k of kanji)assert.ok(reachable.has(k.char),k.char);
+  for(const k of kanji)if(!k.wild)assert.ok(reachable.has(k.char),k.char);
   for(const char of baseChars)assert.ok(recipes.some(r=>r.a===char||r.b===char),char);
 });
 test('floor width is exactly four enlarged 96-pixel character cells',()=>{
@@ -76,7 +78,8 @@ test('fixed recipes preserve existing branches and new multi-step discoveries',(
 });
 test('the published 107 characters and 89 recipes stay first and unchanged',()=>{
   const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(hash(kanji.slice(0,107)),'2cae289136dd6ee4d4a8660effa87a085f8179afd132b3d174446bfc81903d5f');
+  // Hash the file itself: the runtime adds a rarity to a few published characters without touching the data.
+  assert.equal(hash(kanjiData.slice(0,107)),'2cae289136dd6ee4d4a8660effa87a085f8179afd132b3d174446bfc81903d5f');
   assert.equal(hash(recipes.slice(0,89)),'52d6b070ed1253a1f2a5ab6f4a03f7d526547d6decdc7aacdd17819d10623ddf');
   assert.equal(new Set(kanji.map(k=>k.char)).size,kanji.length);
 });
