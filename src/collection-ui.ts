@@ -17,11 +17,13 @@ export const glyph=(char:string)=>{
 // Keep the data indexes stable for selections; only the visible order/number changes.
 export const collectionSections=(['joyo','nonJoyo','rare','legend'] as SectionKey[]).map(key=>({
   key,tier:(key==='joyo'||key==='nonJoyo'?'normal':key) as Tier,
-  title:{joyo:'常用漢字',nonJoyo:'常用外漢字',rare:'レア漢字',legend:'レジェンド漢字'}[key],prefix:{joyo:'',nonJoyo:'外',rare:'R',legend:'L'}[key],
+  title:{joyo:'常用漢字',nonJoyo:'常用外漢字',rare:'レア漢字',legend:'レジェンド漢字'}[key],prefix:{joyo:'',nonJoyo:'',rare:'R',legend:'L'}[key],
   indexes:kanji.map((_,index)=>index).filter(index=>!kanji[index].wild&&sectionOf(index)===key).sort((a,b)=>kanji[a].strokes-kanji[b].strokes||a-b),
 }));
 export const collectionOrder=collectionSections.flatMap(section=>section.indexes);
-const collectionNumbers=new Map(collectionSections.flatMap(section=>section.indexes.map((index,position)=>[index,section.prefix+String(position+1).padStart(2,'0')] as const)));
+// Ordinary characters are numbered straight through 常用 and 常用外 (01…303); rare and legend ones restart with R and L.
+const collectionNumbers=new Map<number,string>();
+{let position=0;for(const section of collectionSections){if(section.prefix)position=0;for(const index of section.indexes)collectionNumbers.set(index,section.prefix+String(++position).padStart(2,'0'));}}
 export function moveCollectionIndex(index:number,offset:number){
   const position=collectionOrder.indexOf(index),length=collectionOrder.length;
   return collectionOrder[((position+offset)%length+length)%length];

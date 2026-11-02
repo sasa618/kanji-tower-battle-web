@@ -2,23 +2,25 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {kanji,collectionKanji} from '../src/data';
 import {load} from '../src/storage';
-import {collectionHTML,collectionOrder,moveCollectionIndex} from '../src/collection-ui';
+import {collectionHTML,collectionOrder,collectionSections,moveCollectionIndex} from '../src/collection-ui';
 
 test('dictionary lists every character in ascending stroke order with sequential display numbers',()=>{
   const saved=load();
   for(const k of kanji)saved.collection[k.char]={drop:1,made:0};
   const html=collectionHTML(saved,collectionOrder[0]);
-  const cells=[...html.matchAll(/data-action="entry" data-index="(\d+)"[^>]*aria-label="No\.([外RL]?)(\d+) ([^"]+)"/g)];
+  const cells=[...html.matchAll(/data-action="entry" data-index="(\d+)"[^>]*aria-label="No\.([RL]?)(\d+) ([^"]+)"/g)];
   // The bonus block is not collectable; 常用, 常用外, rare and legend characters each form a stroke-ordered section.
   assert.equal(cells.length,collectionKanji.length);
   assert.equal(new Set(cells.map(cell=>cell[1])).size,collectionKanji.length);
-  let previous=0,prefix='',position=0;
-  for(const cell of cells){
+  let previous=0,prefix='',position=0,section=0;
+  for(const [n,cell] of cells.entries()){
     const k=kanji[Number(cell[1])];
-    if(cell[2]!==prefix){prefix=cell[2];previous=0;position=0;}
+    // Stroke order restarts at each section; numbers restart only where the prefix changes (常用外 continues after 常用).
+    if(n===collectionSections.slice(0,section+1).reduce((sum,s)=>sum+s.indexes.length,0)){section++;previous=0;}
+    if(cell[2]!==prefix){prefix=cell[2];position=0;}
     assert.ok(k.strokes>=previous,k.char);previous=k.strokes;
     assert.equal(Number(cell[3]),++position);assert.equal(cell[4],k.char);
-    assert.equal(k.rarity||'',{'':'','外':'',R:'rare',L:'legend'}[prefix]);
+    assert.equal(k.rarity||'',{'':'',R:'rare',L:'legend'}[prefix]);
   }
   assert.equal(cells[0][4],'一');
 });
