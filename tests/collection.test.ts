@@ -8,8 +8,8 @@ test('dictionary lists every character in ascending stroke order with sequential
   const saved=load();
   for(const k of kanji)saved.collection[k.char]={drop:1,made:0};
   const html=collectionHTML(saved,collectionOrder[0]);
-  const cells=[...html.matchAll(/data-action="entry" data-index="(\d+)"[^>]*aria-label="No\.([RL]?)(\d+) ([^"]+)"/g)];
-  // The bonus block is not collectable; ordinary, rare and legend characters each form a stroke-ordered section.
+  const cells=[...html.matchAll(/data-action="entry" data-index="(\d+)"[^>]*aria-label="No\.([外RL]?)(\d+) ([^"]+)"/g)];
+  // The bonus block is not collectable; 常用, 常用外, rare and legend characters each form a stroke-ordered section.
   assert.equal(cells.length,collectionKanji.length);
   assert.equal(new Set(cells.map(cell=>cell[1])).size,collectionKanji.length);
   let previous=0,prefix='',position=0;
@@ -18,7 +18,7 @@ test('dictionary lists every character in ascending stroke order with sequential
     if(cell[2]!==prefix){prefix=cell[2];previous=0;position=0;}
     assert.ok(k.strokes>=previous,k.char);previous=k.strokes;
     assert.equal(Number(cell[3]),++position);assert.equal(cell[4],k.char);
-    assert.equal(k.rarity||'',{'':'',R:'rare',L:'legend'}[prefix]);
+    assert.equal(k.rarity||'',{'':'','外':'',R:'rare',L:'legend'}[prefix]);
   }
   assert.equal(cells[0][4],'一');
 });

@@ -14,3 +14,6 @@ public/ranking-snapshot.json
 
 # 元フォントとサブセットの TTF(配布元と生成方法は assets/fonts/README.md。配信用 woff2 は public/fonts に追跡する)
 assets/fonts/*.ttf
+
+# wrangler dev の秘密（SESSION_SECRET）
+.dev.vars

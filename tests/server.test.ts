@@ -2,7 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import worker,{jstDay} from '../server/worker';
-import {env,GAME,ORIGIN} from './d1-env';
+import {env,GAME,ORIGIN,SECRET} from './d1-env';
+import {issueSession,verifySession} from '../server/session';
+// A session that started `age` milliseconds ago, exactly as the Worker would have issued it.
+const sessionFor=(client:string,age:number)=>issueSession(SECRET,client,Date.now()-age);
 import { validateSubmission } from '../server/validation';
 import { MAX_SHARE_BYTES } from '../server/shares';
 import { kanji, recipes } from '../src/data';
@@ -34,10 +37,14 @@ test('no character earns more than twelve points per drop, so honest towers pass
 export {env} from './d1-env';
 const req=(path:string,body?:unknown,origin=ORIGIN)=>new Request(`https://example.invalid${path}`,{method:body?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
 const insertScore=(e:Env,id:string,score:number,height:number,count:number,created:number)=>e.DB.prepare('INSERT INTO scores(id,session_id,name,score,height,count,duration,created) VALUES(?,?,?,?,?,?,?,?)').bind(id,id,id,score,height,count,30,created).run();
-test('API issues sessions, limits starts, stores one result and sorts leaderboard',async()=>{
-  const e=env(),client=crypto.randomUUID();const response=await worker.fetch(req('/sessions',{client}),e);assert.equal(response.status,201);const {session}=await response.json() as {session:string};
-  assert.equal((await worker.fetch(req('/sessions',{client}),e)).status,429);
-  await e.DB.prepare('UPDATE sessions SET created=? WHERE id=?').bind(Date.now()-10000,session).run();
+test('API issues signed sessions without writing, stores one result and sorts leaderboard',async()=>{
+  const e=env(),client=crypto.randomUUID();
+  const prepare=e.DB.prepare.bind(e.DB);e.DB.prepare=((sql:string)=>{assert.doesNotMatch(sql,/sessions/);return prepare(sql);}) as Env['DB']['prepare'];
+  const response=await worker.fetch(req('/sessions',{client}),e);assert.equal(response.status,201);const {session:fresh}=await response.json() as {session:string};
+  const inside=await verifySession(SECRET,fresh);assert.ok(inside&&Date.now()-inside.created<5000);assert.doesNotMatch(fresh,new RegExp(client),'the device id itself never leaves the server in clear');
+  assert.equal(await verifySession('other-secret',fresh),null);assert.equal(await verifySession(SECRET,fresh.slice(0,-1)+'0'),null);
+  assert.equal((await worker.fetch(req('/scores',{...payload,session:fresh}),e)).status,400,'a session created just now cannot carry a finished play');
+  const session=await sessionFor(client,10000);
   const sent=await worker.fetch(req('/scores',{...payload,session}),e);assert.equal(sent.status,201);
   assert.deepEqual(await sent.json(),{rank:1,ranks:{score:1,height:1,count:1}});
   assert.equal((await worker.fetch(req('/scores',{...payload,session}),e)).status,200);
@@ -49,15 +56,15 @@ test('the rank returned after a submission follows the 90-day window and the lis
   const e=env(),now=Date.now();
   await insertScore(e,'expired',999,50,60,now-91*86400000);
   await insertScore(e,'A',100,2,5,now-3000);await insertScore(e,'B',50,5,4,now-2000);await insertScore(e,'C',50,3,20,now-1000);
-  const session=crypto.randomUUID();await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(session,'tag',now-10000).run();
+  const session=await sessionFor('tag',10000);
   const sent=await worker.fetch(req('/scores',{session,name:'D',score:50,height:5,count:4,duration:6,moves:7}),e);assert.equal(sent.status,201);
   assert.deepEqual(await sent.json(),{rank:3,ranks:{score:3,height:2,count:4}});
   const list=await (await worker.fetch(req('/scores?metric=score'),e)).json() as {scores:{name:string}[]};
   assert.deepEqual(list.scores.map(s=>s.name),['A','B','D','C']);
 });
 test('six submissions per minute and client are enforced inside the insert statement',async()=>{
-  const e=env(),now=Date.now(),sessions=Array.from({length:7},()=>crypto.randomUUID());
-  for(const [i,id] of sessions.entries())await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(id,'same-device',now-20000-i*4000).run();
+  const e=env(),sessions:string[]=[];
+  for(let i=0;i<7;i++)sessions.push(await sessionFor('same-device',20000+i*4000));
   const statuses=[];for(const session of sessions)statuses.push((await worker.fetch(req('/scores',{...payload,session}),e)).status);
   assert.deepEqual(statuses,[201,201,201,201,201,201,429]);
 });
@@ -163,12 +170,14 @@ test('cumulative share storage is tracked without scanning images and stops new 
 test('anonymous usage is counted once per session into Japanese-day aggregates and exposed without names',async()=>{
   const e=env(),client=crypto.randomUUID();
   const {session}=await (await worker.fetch(req('/sessions',{client}),e)).json() as {session:string};
+  let writes=0;const prepare=e.DB.prepare.bind(e.DB);e.DB.prepare=((sql:string)=>{if(/INSERT|UPDATE/.test(sql))writes++;return prepare(sql);}) as Env['DB']['prepare'];
   assert.equal((await worker.fetch(req('/events',{session,duration:42.5,moves:9}),e)).status,204);
-  assert.equal((await worker.fetch(req('/events',{session,duration:42.5,moves:9}),e)).status,409);
-  assert.equal((await worker.fetch(req('/events',{session:crypto.randomUUID(),duration:10,moves:1}),e)).status,409);
+  assert.equal(writes,1,'one play costs one aggregate write');
+  assert.equal((await worker.fetch(req('/events',{session:crypto.randomUUID(),duration:10,moves:1}),e)).status,400,'a made-up session is not counted');
+  assert.equal((await worker.fetch(req('/events',{session:await issueSession('wrong-secret',client,Date.now()),duration:10,moves:1}),e)).status,400);
   assert.equal((await worker.fetch(req('/events',{session,duration:-1,moves:1}),e)).status,400);
   assert.equal((await worker.fetch(req('/events',{session,duration:5,moves:1},'https://evil.invalid'),e)).status,403);
-  const other=crypto.randomUUID();await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(other,'x',Date.now()).run();
+  const other=await sessionFor('x',0);
   assert.equal((await worker.fetch(req('/events',{session:other,duration:7.5,moves:2}),e)).status,204);
   const stats=await (await worker.fetch(req('/stats'),e)).json() as {days:{day:string;games:number;seconds:number;drops:number}[];total:{days:number;games:number;seconds:number;drops:number}};
   assert.equal(stats.days.length,1);assert.deepEqual(stats.days[0],{day:jstDay(Date.now()),games:2,seconds:50,drops:11});
@@ -180,8 +189,7 @@ test('Japanese day boundary is nine hours ahead of UTC',()=>{
 });
 
 test('retry after a lost submission response returns ranks without a second score',async()=>{
-  const e=env(),session=crypto.randomUUID();
-  await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(session,'retry',Date.now()-10000).run();
+  const e=env(),session=await sessionFor('retry',10000);
   const first=await worker.fetch(req('/scores',{...payload,session}),e);
   const retry=await worker.fetch(req('/scores',{...payload,session}),e);
   assert.equal(first.status,201);assert.equal(retry.status,200);assert.deepEqual(await retry.json(),await first.json());
@@ -191,18 +199,18 @@ test('retry after a lost submission response returns ranks without a second scor
 
 test('cleanup is scheduled and cannot make session or score creation fail',async()=>{
   const e=env(),now=Date.now();
-  await e.DB.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind('expired','old',now-3*86400000).run();
   await insertScore(e,'expired',100,2,5,now-91*86400000);
   const prepare=e.DB.prepare.bind(e.DB);
   e.DB.prepare=((sql:string)=>{assert.doesNotMatch(sql,/DELETE/);return prepare(sql);}) as Env['DB']['prepare'];
-  const {session}=await (await worker.fetch(req('/sessions',{client:crypto.randomUUID()}),e)).json() as {session:string};
-  await prepare('UPDATE sessions SET created=? WHERE id=?').bind(now-10000,session).run();
+  assert.equal((await worker.fetch(req('/sessions',{client:crypto.randomUUID()}),e)).status,201);
+  const session=await sessionFor(crypto.randomUUID(),10000);
   assert.equal((await worker.fetch(req('/scores',{...payload,session}),e)).status,201);
+  assert.equal((await worker.fetch(req('/scores',{...payload,session:await sessionFor('old',3*86400000)}),e)).status,400,'a session older than a day has expired');
   e.DB.prepare=prepare;
-  assert.equal((await prepare('SELECT COUNT(*) AS n FROM sessions').first<{n:number}>())?.n,2);
+  assert.equal((await prepare('SELECT COUNT(*) AS n FROM sessions').first<{n:number}>())?.n,0,'sessions are tokens, never rows');
+  assert.equal((await prepare('SELECT COUNT(*) AS n FROM scores').first<{n:number}>())?.n,2);
   await worker.scheduled({},e);
-  assert.equal((await prepare('SELECT COUNT(*) AS n FROM sessions').first<{n:number}>())?.n,1);
-  assert.equal((await prepare('SELECT COUNT(*) AS n FROM scores').first<{n:number}>())?.n,1);
+  assert.equal((await prepare('SELECT COUNT(*) AS n FROM scores').first<{n:number}>())?.n,1,'only records older than the ranking window are removed');
 });
 
 test('server shares simultaneous ranking reads even if the edge cache is unavailable',async()=>{

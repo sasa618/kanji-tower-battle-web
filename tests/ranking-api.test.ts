@@ -17,7 +17,6 @@ test('JSON posted as text/plain is accepted (no CORS preflight), other types are
 });
 test(`a submission counts at most ${RANK_LIMIT} better rows, and the client words the overflow`,async()=>{
   const e=env(),db=e.DB,now=Date.now();
-  for(let i=0;i<RANK_LIMIT+5;i++)await db.prepare('INSERT INTO sessions(id,client,created) VALUES(?,?,?)').bind(`s${i}`,'c',now).run();
   for(let i=0;i<RANK_LIMIT+5;i++)await db.prepare('INSERT INTO scores(id,session_id,name,score,height,count,duration,created) VALUES(?,?,?,?,?,?,?,?)').bind(`r${i}`,`s${i}`,'n',100+i,1,1,10,now-1000).run();
   assert.equal(await rankOf(db,'score',{score:99,height:1,count:1,created:now},0),RANK_LIMIT+1);
   assert.equal(await rankOf(db,'score',{score:100+RANK_LIMIT+5,height:1,count:1,created:now},0),1);

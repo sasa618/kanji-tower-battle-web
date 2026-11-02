@@ -12,6 +12,7 @@ import { helpHTML } from './help';
 import { MoveHint } from './move-hint';
 import { collectionHTML, collectionOrder, moveCollectionIndex } from './collection-ui';
 import {discoveryShareURL} from './discovery-sharing';
+import {awardTitles,type Title} from './titles';
 import { isRankingMetric,metricLabels,metricUnits,metricValue,rankingMetrics } from './ranking';
 import { newId } from './id';
 import {drawResultImage,RESULT_IMAGE_WIDTH,RESULT_IMAGE_HEIGHT} from './result-image';
@@ -62,7 +63,7 @@ function events(){for(const e of game.events.splice(0)){
   sound.play(e.type);
   if(e.type==='drop'&&e.char){if(online.moves===0)online.start();online.moves++;saved.collection[e.char]??={drop:0,made:0};saved.collection[e.char].drop++;persist();}
   if(e.type==='merge'&&e.char){saved.collection[e.char]??={drop:0,made:0};saved.collection[e.char].made++;persist();}
-  if(e.type==='over'){lastTower=game.peakTower;lastResult={...game.stats(),id:newId(),date:new Date().toISOString(),made:[...game.made],duration:game.elapsed,moves:online.moves,tower:lastTower||undefined};recordResult(saved,lastResult);online.finish(lastResult);persist();openModal('result');}
+  if(e.type==='over'){lastTower=game.peakTower;lastResult={...game.stats(),id:newId(),date:new Date().toISOString(),made:[...game.made],duration:game.elapsed,moves:online.moves,tower:lastTower||undefined};recordResult(saved,lastResult);online.finish(lastResult);persist();checkTitles(()=>openModal('result'));}
 }}
 function openModal(name:string){lastFocus=document.activeElement as HTMLElement;if(!modal){returnMode=game.mode;if(game.mode==='playing')game.mode='paused';}modal=name;app.inert=true;renderModal();if(name==='ranking')void online.load();updateHud();}
 function closeModal(navigate=false){
@@ -79,11 +80,11 @@ function renderModal(focusEntry=false,revealEntry=false){
   const focused=document.activeElement as HTMLElement|null;
   const keepMetric=modal==='ranking'&&focused?.dataset.action==='rank-metric'?focused.dataset.metric:undefined;
   document.querySelector('.dialog-backdrop')?.remove();const wrap=document.createElement('div');wrap.className='dialog-backdrop';
-  const result=modal==='result';
-  const heading=result?'':`<div class="dialog-head"><h2 id="modal-title">${{help:'遊び方',pause:'ひとやすみ',collection:'漢字図鑑',ranking:'全国ランキング',settings:'音と設定',about:'このゲームについて',restart:'最初から遊びますか？',leave:'タイトルへ戻りますか？'}[modal]}</h2><button data-action="close" aria-label="閉じる">×</button></div>`;
-  wrap.innerHTML=`<section class="dialog ${modal==='collection'?'wide collection-dialog':modal==='help'?'wide help-dialog':result?'result-dialog':''}" role="dialog" aria-modal="true" ${result?'aria-label="プレイ結果"':'aria-labelledby="modal-title"'}>${heading}${modalContent()}</section>`;
+  const result=modal==='result',bare=result||modal==='title';
+  const heading=bare?'':`<div class="dialog-head"><h2 id="modal-title">${{help:'遊び方',pause:'ひとやすみ',collection:'漢字図鑑',ranking:'全国ランキング',settings:'音と設定',about:'このゲームについて',restart:'最初から遊びますか？',leave:'タイトルへ戻りますか？'}[modal]}</h2><button data-action="close" aria-label="閉じる">×</button></div>`;
+  wrap.innerHTML=`<section class="dialog ${modal==='collection'?'wide collection-dialog':modal==='help'?'wide help-dialog':result?'result-dialog':''}" role="dialog" aria-modal="true" ${result?'aria-label="プレイ結果"':modal==='title'?'aria-label="称号の獲得"':'aria-labelledby="modal-title"'}>${heading}${modalContent()}</section>`;
   document.body.append(wrap);
-  const grid=wrap.querySelector<HTMLElement>('.collection-grid'),entry=grid?.querySelector<HTMLButtonElement>('.active');
+  const grid=wrap.querySelector<HTMLElement>('.collection-scroll'),entry=grid?.querySelector<HTMLButtonElement>('.active');
   if(grid){grid.scrollTop=scroll;if(revealEntry&&entry){const top=entry.offsetTop,bottom=top+entry.offsetHeight;if(top<grid.scrollTop)grid.scrollTop=top;else if(bottom>grid.scrollTop+grid.clientHeight)grid.scrollTop=bottom-grid.clientHeight;}}
   const target=focusEntry?entry:keepMetric?wrap.querySelector<HTMLButtonElement>(`[data-metric="${keepMetric}"]`):wrap.querySelector<HTMLButtonElement>('button');target?.focus({preventScroll:true});
 }
@@ -92,10 +93,25 @@ function modalContent():string {
   if(modal==='restart'||modal==='leave')return `<p>今のプレイは終了します。見つけた漢字の記録は残ります。</p><button class="primary" data-action="${modal==='restart'?'start':'home-confirm'}">${modal==='restart'?'最初から遊ぶ':'タイトルへ戻る'}</button><button class="secondary" data-action="close" style="width:100%;margin-top:15px">続きを遊ぶ</button>`;
   if(modal==='help')return helpHTML();
   if(modal==='settings')return `<div class="settings-row"><span>音</span><button class="secondary" data-action="mute">${saved.muted?'オフ（タップでオン）':'オン（タップでオフ）'}</button></div><label class="settings-row">BGM<input type="range" min="0" max="1" step=".05" value="${saved.music}" data-volume="music" aria-label="BGMの音量"></label><label class="settings-row">効果音<input type="range" min="0" max="1" step=".05" value="${saved.effects}" data-volume="effects" aria-label="効果音の音量"></label><div class="settings-row"><span>当たり判定を重ねて表示</span><button class="secondary" data-action="debug">${renderer?.debug?'表示中':'表示する'}</button></div><p>音の設定と図鑑・自己記録は、このブラウザに保存されます。</p>`;
+  if(modal==='title'){const t=titleQueue[0];if(!t)return '';const date=new Date(saved.titles[t.id]||Date.now());
+    return `<div class="ceremony rank-${t.rank}"><div class="ceremony-sparks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="eyebrow">称号獲得</div><div class="ceremony-badge"><span>${t.name}</span></div><p class="ceremony-condition">${t.condition}</p><p class="ceremony-date">${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</p><button class="primary" data-action="title-next">${titleQueue.length>1?`次の称号へ（あと${titleQueue.length-1}）`:'受け取る'}</button></div>`;}
   if(modal==='collection')return collectionHTML(saved,collectionIndex)+(discoveryShareMessage?`<p class="share-status" role="status">${discoveryShareMessage}</p>`:'');
   if(modal==='ranking'){const metric=online.metric,best=saved.bests[metric];return `<div class="tabs ranking-tabs" role="group" aria-label="ランキングの種目">${rankingMetrics.map(m=>`<button data-action="rank-metric" data-metric="${m}" aria-pressed="${metric===m}" class="${metric===m?'active':''}">${metricLabels[m]}</button>`).join('')}</div><div class="personal-best"><span>自己ベスト</span><strong>${best?metricValue(best,metric):'—'}<small>${metricUnits[metric]}</small></strong>${best?shareControl('share-best','best-share action-button x-share','X',' aria-label="この自己ベストをXでシェア"'):''}</div>${online.lateEntryHTML(best)}${shareFeedback()}${online.rankingHTML()}`;}
   if(modal==='result'&&lastResult)return `<div class="result"><div class="eyebrow">YOUR KANJI TOWER</div><div class="result-score">${lastResult.score}<small>画</small></div><div class="result-stats"><span>高さ ${lastResult.height.toFixed(1)}字分</span><span>${lastResult.count}文字</span></div><p class="result-rank">${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).length?`${rankingMetrics.filter(m=>saved.bests[m]?.id===lastResult!.id).map(m=>metricLabels[m]).join('・')} 自己ベスト！`:`自己ベスト ${saved.bests.score?.score||0}画`}</p><p>${lastResult.made.length?`作った漢字：${lastResult.made.map(c=>letter(c)).join(' ')}`:'次は、合体にも挑戦してみよう。'}</p><button class="primary" data-action="start">もう一度遊ぶ <small>R</small></button><div class="result-buttons">${shareControl('share','secondary action-button x-share','Xでシェア')}<button class="secondary action-button" data-action="image">${actionIcon('download')}<span>結果画像を保存</span></button></div>${shareFeedback()}${online.resultHTML()}</div>`;
   return `<p>合体！漢字タワーバトル<br>ゲームのコードはAI（ChatGPT）が制作しています。</p><p>合体の表と図鑑の説明は，Windows版でAI（Claude）が作成したデータを元にしています。合体の式はゲームのルールであり，字源の説明ではありません。</p><p>物理演算：Planck.js（MIT）<br>字形：Noto Serif JP Bold（SIL OFL）<br>UI：Dela Gothic One（SIL OFL）<br>タイトルの「合体！」：Mochiy Pop One（SIL OFL）<br>フォント解析：opentype.js（MIT）<br>輪郭分割：earcut（ISC）</p>${onlineEnabled?'<p>全国ランキングと画像付きのX共有はCloudflare Workers・D1で動いています。公開する項目と保存期間は結果画面の案内のとおりです。ゲーム終了時にプレイ時間と落下数だけを匿名で集計しています。</p>':'<p>このビルドは全国ランキングと画像付き共有に接続していません。ゲーム・図鑑・端末内の自己記録・結果画像の保存は使えます。</p>'}`;
+}
+// Titles are checked when a play ends and when the game opens, so a dictionary completed earlier is honoured too.
+let titleQueue:Title[]=[],afterTitles:(()=>void)|null=null;
+function checkTitles(next?:()=>void){
+  const earned=awardTitles(saved);if(earned.length)persist();
+  titleQueue.push(...earned);
+  if(!titleQueue.length){next?.();return;}
+  afterTitles=next||null;sound.play('merge');openModal('title');
+}
+function nextTitle(){
+  titleQueue.shift();
+  if(titleQueue.length){sound.play('merge');renderModal();return;}
+  const next=afterTitles;afterTitles=null;closeModal(true);next?.();
 }
 function start(activateSound=true){closeModal(true);lastResult=null;lastTower=null;shareMessage='';shareFallbackURL='';game.reset();online.reset();moveHint.reset();screen='game';if(activateSound)sound.activate();render();}
 async function share(r:RecordEntry){
@@ -153,7 +169,7 @@ async function resultImage(){
   c.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='合体！漢字タワーバトル.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'image/png');
 }
 document.addEventListener('click',e=>{const b=(e.target as HTMLElement).closest<HTMLButtonElement>('[data-action]');if(!b||b.disabled)return;const a=b.dataset.action;if(a&&['select','rotate','left','right','drop'].includes(a))noteInteraction();sound.activate();sound.play('button');
-  switch(a){case 'start':start();break;case 'home':if(screen==='game'&&['playing','paused'].includes(game.mode))openModal('leave');else{closeModal(true);screen='home';game.mode='title';render();}break;case 'home-confirm':closeModal(true);screen='home';game.mode='title';render();break;case 'select':game.select(Number(b.dataset.index));break;case 'left':game.move(-8);break;case 'right':game.move(8);break;case 'rotate':game.rotate();break;case 'drop':game.drop();break;case 'pause':if(game.mode==='over')openModal('result');else openModal('pause');break;case 'restart':openModal('restart');break;case 'close':closeModal();break;case 'entry':discoveryShareMessage='';discoveryShareURLFallback='';collectionIndex=Number(b.dataset.index);renderModal(true);break;case 'rank-metric':if(isRankingMetric(b.dataset.metric))online.selectMetric(b.dataset.metric);break;case 'online-refresh':void online.load(true);break;case 'online-submit':void online.submit();break;case 'online-submit-best':{const best=saved.bests[online.metric];if(best)void online.submitLate(best);break;}case 'mute':saved.muted=!saved.muted;sound.muted=saved.muted;if(saved.muted)sound.silence();persist();renderModal();break;case 'debug':if(renderer)renderer.debug=!renderer.debug;renderModal();break;case 'share-kanji':shareKanji();break;case 'share-best':{const best=saved.bests[online.metric];if(best)share(best);break;}case 'share':if(lastResult)share(lastResult);break;case 'image':void resultImage();break;case 'lab':closeModal(true);screen='lab';game.mode='title';render();break;default:if(a)openModal(a);}
+  switch(a){case 'start':start();break;case 'home':if(screen==='game'&&['playing','paused'].includes(game.mode))openModal('leave');else{closeModal(true);screen='home';game.mode='title';render();}break;case 'home-confirm':closeModal(true);screen='home';game.mode='title';render();break;case 'select':game.select(Number(b.dataset.index));break;case 'left':game.move(-8);break;case 'right':game.move(8);break;case 'rotate':game.rotate();break;case 'drop':game.drop();break;case 'pause':if(game.mode==='over')openModal('result');else openModal('pause');break;case 'restart':openModal('restart');break;case 'close':closeModal();break;case 'entry':discoveryShareMessage='';discoveryShareURLFallback='';collectionIndex=Number(b.dataset.index);renderModal(true);break;case 'rank-metric':if(isRankingMetric(b.dataset.metric))online.selectMetric(b.dataset.metric);break;case 'online-refresh':void online.load(true);break;case 'online-submit':void online.submit();break;case 'online-submit-best':{const best=saved.bests[online.metric];if(best)void online.submitLate(best);break;}case 'mute':saved.muted=!saved.muted;sound.muted=saved.muted;if(saved.muted)sound.silence();persist();renderModal();break;case 'debug':if(renderer)renderer.debug=!renderer.debug;renderModal();break;case 'share-kanji':shareKanji();break;case 'title-next':nextTitle();break;case 'share-best':{const best=saved.bests[online.metric];if(best)share(best);break;}case 'share':if(lastResult)share(lastResult);break;case 'image':void resultImage();break;case 'lab':closeModal(true);screen='lab';game.mode='title';render();break;default:if(a)openModal(a);}
   updateHud();
 });
 document.addEventListener('input',e=>{const input=e.target as HTMLInputElement;if(input.id==='ranking-name'){online.name=input.value;return;}const key=input.dataset.volume as 'music'|'effects'|undefined;if(key){saved[key]=Number(input.value);sound[key]=saved[key];persist();}});
@@ -173,4 +189,4 @@ addEventListener('resize',()=>renderer?.resize());
 document.addEventListener('visibilitychange',()=>{if(document.hidden){sound.silence();if(game.mode==='playing'&&!modal)openModal('pause');}});
 let previous=performance.now(),accumulator=0;
 function frame(now:number){const dt=Math.min(.1,(now-previous)/1000);previous=now;if(screen==='game'&&!document.hidden){accumulator=Math.min(.1,accumulator+dt);while(accumulator>=1/60){game.step();accumulator-=1/60;}events();renderer?.draw(dt);if(now-lastHud>100){updateHud();lastHud=now;}}else accumulator=0;sound.tick(screen==='game'&&game.mode==='playing'&&!document.hidden);requestAnimationFrame(frame);}
-start(false);requestAnimationFrame(frame);
+start(false);checkTitles();requestAnimationFrame(frame);

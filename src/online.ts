@@ -26,7 +26,8 @@ async function call<T>(path:string,body?:unknown,timeout=6000):Promise<T>{
   let response:Response;
   try{response=await fetch(API+path,{...(body?post(body):{method:'GET'}),signal:AbortSignal.timeout(timeout)});}
   catch(e){outageKind=networkKind(e);outage.fail();throw Error(outageKind==='limit'?LIMIT_MESSAGE:e instanceof Error&&e.name==='TimeoutError'?'通信に時間がかかりすぎました。電波の良い場所でもう一度お試しください。':'通信できませんでした。');}
-  if(isOutageStatus(response.status)){outageKind=response.status===429?'limit':'network';outage.fail(Number(response.headers.get('Retry-After'))||undefined);}else{outageKind='';outage.succeed();}
+  // 429 is the Worker's own limit; 503 is what it answers when D1 has reached its daily allowance.
+  if(isOutageStatus(response.status)){outageKind=response.status===429||response.status===503?'limit':'network';outage.fail(Number(response.headers.get('Retry-After'))||undefined);}else{outageKind='';outage.succeed();}
   let result:{error?:string}&T;try{result=await response.json();}catch{throw Error(response.ok?'応答を読み取れませんでした。':'通信できませんでした。');}
   if(!response.ok)throw Error(result.error||'通信できませんでした。');return result;
 }
@@ -37,7 +38,7 @@ export const submitScore=(session:string,name:string,result:RecordEntry,moves:nu
 // One anonymous usage report per play: session, play seconds and drops. No name, score or device ID.
 export async function reportGame(session:string,duration:number,moves:number){
   if(!API||outage.wait()>0)return;
-  try{const response=await fetch(API+'/events',{...post({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});if(isOutageStatus(response.status)){outageKind=response.status===429?'limit':'network';outage.fail();}}
+  try{const response=await fetch(API+'/events',{...post({session,duration:Math.round(duration*10)/10,moves}),keepalive:true});if(isOutageStatus(response.status)){outageKind=response.status===429||response.status===503?'limit':'network';outage.fail();}}
   catch(e){outageKind=networkKind(e);outage.fail();/* statistics never affect play */}
 }
 export type RankingSnapshot={at:number;scores:Record<RankingMetric,OnlineScore[]>};

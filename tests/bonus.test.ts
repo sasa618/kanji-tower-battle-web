@@ -31,8 +31,8 @@ test('every entry except the block has strokes and the collection hides the bloc
   for(const k of kanji)if(!k.wild)assert.ok(k.strokes>0,k.char);
   assert.ok(!collectionOrder.includes(kanji.findIndex(k=>k.wild)));
   assert.equal(collectionOrder.length,kanji.length-1);
-  assert.deepEqual(collectionSections.map(s=>s.tier),['normal','rare','legend']);
-  assert.ok(collectionSections[2].indexes.every(i=>kanji[i].rarity==='legend'));
+  assert.deepEqual(collectionSections.map(s=>s.tier),['normal','normal','rare','legend']);
+  assert.ok(collectionSections[3].indexes.every(i=>kanji[i].rarity==='legend'));
 });
 
 test('the block chance stays zero at first, then rises each turn up to the cap',()=>{

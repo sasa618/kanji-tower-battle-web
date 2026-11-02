@@ -4,6 +4,7 @@
 // 既存の D1 は削除せず，未適用の移行だけを適用する．wrangler.jsonc の database_id と GAME_URL/ALLOWED_ORIGINS を書き換える．
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 const args=process.argv.slice(2);
 const option=name=>{const i=args.indexOf(name);return i>=0?args[i+1]:undefined;};
 const gameURL=option('--game-url'),dryRun=args.includes('--dry-run');
@@ -42,9 +43,19 @@ if(gameURL){
   config=config.replace(/("GAME_URL":\s*")[^"]*"/g,`$1${u.href}"`).replace(/("ALLOWED_ORIGINS":\s*")[^"]*"/,`$1${u.origin}"`);
   fs.writeFileSync(configPath,config);console.log(`GAME_URL を ${u.href}，本番の ALLOWED_ORIGINS を ${u.origin} にした．`);
 }
-// 5. 未適用の移行だけを適用する（対話端末では確認を求められる）
+// 5. セッションの署名に使う秘密（Worker の secret）．無ければ乱数で作る．値は表示しない．
+if(!dryRun){
+  const list=run('npx wrangler secret list',{capture:true});
+  if(!/"name":\s*"SESSION_SECRET"/.test(list)){
+    const value=crypto.randomBytes(32).toString('hex');
+    const r=spawnSync('npx wrangler secret put SESSION_SECRET',{shell:true,encoding:'utf8',input:value,stdio:['pipe','inherit','inherit']});
+    if(r.status!==0){console.error('SESSION_SECRET を設定できなかった．');process.exit(r.status||1);}
+    console.log('SESSION_SECRET を新しく設定した．');
+  }else console.log('SESSION_SECRET は設定済み．');
+}
+// 6. 未適用の移行だけを適用する（対話端末では確認を求められる）
 run(`npx wrangler d1 migrations apply ${name} --remote`);
-// 6. 配布
+// 7. 配布
 if(dryRun){run('npx wrangler deploy --dry-run --outdir dist-worker');console.log('\n--dry-run のため配布はしていない．');process.exit(0);}
 const out=run('npx wrangler deploy',{capture:true});process.stdout.write(out);
 const url=/https:\/\/[a-z0-9.-]+\.workers\.dev/i.exec(out)?.[0];

@@ -1,5 +1,5 @@
 /* White space, brilliant color, and the contrast of the Mincho letterforms. */
-@font-face{font-family:TowerDisplay;src:url('/fonts/KanjiTowerDisplay.woff2?v=a899f7482900') format('woff2');font-weight:400 900;font-display:swap}
+@font-face{font-family:TowerDisplay;src:url('/fonts/KanjiTowerDisplay.woff2?v=345a060886d7') format('woff2');font-weight:400 900;font-display:swap}
 @font-face{font-family:TowerImpact;src:url('/fonts/KanjiTowerImpact.woff2') format('woff2');font-weight:400 900;font-display:swap}
 :root {
   color:#202a40;background:#fffefa;font-weight:500;
@@ -376,6 +376,34 @@ button:active:not(:disabled){transform:translateY(1px)}
 .metal-rare{background-image:linear-gradient(160deg,#ffffff 0%,#dde4ee 30%,#a9b5c8 58%,#f0f3f8 100%);filter:drop-shadow(0 0 .6px #6b7a95) drop-shadow(0 0 .6px #6b7a95)}
 .metal-legend{background-image:linear-gradient(160deg,#fff6c4 0%,#f8cf45 30%,#cf9a22 60%,#ffe9a0 100%);filter:drop-shadow(0 0 .6px #7d5a14) drop-shadow(0 0 .6px #7d5a14)}
 .collection-progress .progress-tier{display:inline-block;margin-right:14px}
+.collection-dialog .collection-top{flex:none}
+.collection-dialog .collection-top .collection-progress{margin-bottom:6px}
+.title-row{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+.title-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;line-height:1.3;padding:3px 8px;border-radius:999px;border:1px solid #dfe4ee;background:#f4f6fb;color:#9aa6bd}
+.title-badge small{font-size:10px;font-weight:700;color:#aab3c6}
+.title-badge.held{color:#4a3600;border-color:#d9a30c;background:linear-gradient(135deg,#fff3c4,#f3c84a 55%,#ffe9a0);box-shadow:0 1px 4px #d9a30c33}
+.title-badge.held.rank-1{color:#334160;border-color:#9eabc0;background:linear-gradient(135deg,#f3f5f9,#c3ccdb 55%,#edf0f5)}
+.title-badge.held.rank-4{color:#fff;border-color:#7a2bd8;background:linear-gradient(135deg,#ff4d6d,#ffb13a,#39c977,#2fb4ff,#b45cff);text-shadow:0 1px 2px #00000055}
+/* The title ceremony: a badge that swings in with sparks around it. */
+.ceremony{position:relative;text-align:center;padding:14px 4px 4px;overflow:hidden}
+.ceremony .eyebrow{letter-spacing:.3em;color:#8190ac;font-weight:700;font-size:13px;margin-bottom:14px}
+.ceremony-badge{display:inline-block;margin:0 auto 14px;padding:18px 26px;border-radius:18px;font-family:TowerDisplay,system-ui,sans-serif;font-weight:900;font-size:26px;line-height:1.3;color:#4a3600;background:linear-gradient(135deg,#fff3c4,#f3c84a 55%,#ffe9a0);border:2px solid #d9a30c;box-shadow:0 12px 36px -10px #d9a30c99;animation:ceremony-in .9s cubic-bezier(.2,1.4,.4,1) both}
+.ceremony.rank-1 .ceremony-badge{color:#334160;background:linear-gradient(135deg,#f3f5f9,#c3ccdb 55%,#edf0f5);border-color:#9eabc0;box-shadow:0 12px 36px -10px #6b7a9599}
+.ceremony.rank-4 .ceremony-badge{color:#fff;background:linear-gradient(135deg,#ff4d6d,#ffb13a,#39c977,#2fb4ff,#b45cff);border-color:#7a2bd8;text-shadow:0 2px 4px #00000066;box-shadow:0 12px 40px -8px #b45cff99}
+.ceremony-condition{margin:0 0 4px;color:#485675;font-weight:700}
+.ceremony-date{margin:0 0 18px;color:#8190ac;font-size:13px}
+.ceremony .primary{width:100%}
+.ceremony-sparks{position:absolute;inset:0;pointer-events:none}
+.ceremony-sparks i{position:absolute;width:10px;height:10px;border-radius:50%;background:#ffd23a;opacity:0;animation:spark 1.6s ease-out infinite}
+.ceremony-sparks i:nth-child(1){left:12%;top:30%;animation-delay:0s}
+.ceremony-sparks i:nth-child(2){left:84%;top:26%;animation-delay:.25s;background:#ff8f2e}
+.ceremony-sparks i:nth-child(3){left:22%;top:62%;animation-delay:.5s;background:#2fb4ff}
+.ceremony-sparks i:nth-child(4){left:76%;top:58%;animation-delay:.75s;background:#39c977}
+.ceremony-sparks i:nth-child(5){left:50%;top:12%;animation-delay:1s;background:#b45cff}
+.ceremony-sparks i:nth-child(6){left:40%;top:70%;animation-delay:1.25s;background:#ff4d6d}
+@keyframes ceremony-in{0%{transform:scale(.3) rotate(-12deg);opacity:0}100%{transform:none;opacity:1}}
+@keyframes spark{0%{transform:scale(.2) translateY(6px);opacity:0}30%{opacity:1}100%{transform:scale(1.4) translateY(-26px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.ceremony-badge,.ceremony-sparks i{animation:none}.ceremony-sparks i{opacity:.6}}
 .collection-section{margin:12px 2px 8px;font-family:TowerDisplay,system-ui,sans-serif;font-weight:400;font-size:14px;color:#59677f;letter-spacing:.04em}
 .collection-section:first-child{margin-top:0}
 .collection-cell.tier-rare{border:2px solid transparent;background:linear-gradient(#f7f9ff,#f7f9ff) padding-box,linear-gradient(160deg,#f3f5f9,#b9c3d3 45%,#e8ecf3) border-box}

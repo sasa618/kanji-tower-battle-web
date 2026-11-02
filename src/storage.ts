@@ -3,9 +3,10 @@ import {compareMetric,rankingMetrics,type RankingMetric} from './ranking';
 export type Entry = { drop:number; made:number };
 // moves: drops in that play (for late ranking submissions); submitted: already on the national ranking.
 export type RecordEntry = Stats & { id:string; date:string; made:string[]; duration:number; tower?:TowerSnapshot; shareURL?:string; moves?:number; submitted?:boolean };
-export type Saved = { version:1; collection:Record<string,Entry>; records:RecordEntry[]; bests:Partial<Record<RankingMetric,RecordEntry>>; muted:boolean; music:number; effects:number };
+// titles: id of each earned title and the ISO date it was first met.
+export type Saved = { version:1; collection:Record<string,Entry>; records:RecordEntry[]; bests:Partial<Record<RankingMetric,RecordEntry>>; muted:boolean; music:number; effects:number; titles:Record<string,string> };
 const KEY='kanji-tower-v1';
-const defaults=():Saved=>({version:1,collection:{},records:[],bests:{},muted:false,music:.15,effects:.45});
+const defaults=():Saved=>({version:1,collection:{},records:[],bests:{},muted:false,music:.15,effects:.45,titles:{}});
 const validRecord=(r:RecordEntry)=>r&&typeof r.id==='string'&&typeof r.date==='string'&&Number.isFinite(r.score)&&r.score>=0&&Number.isFinite(r.height)&&r.height>=0&&Number.isInteger(r.count)&&r.count>=0&&Array.isArray(r.made);
 function keepBests(saved:Saved,entry:RecordEntry){for(const metric of rankingMetrics){const best=saved.bests[metric];if(!best||compareMetric(entry,best,metric)<0)saved.bests[metric]=entry;}}
 export function load():Saved {
@@ -16,6 +17,7 @@ export function load():Saved {
     if(Array.isArray(raw.records))for(const entry of raw.records.filter(validRecord)){keepBests(out,entry);out.records.push(entry);}
     out.records.sort(compareRecords).splice(10);
     if(raw.bests&&typeof raw.bests==='object')for(const metric of rankingMetrics){const entry=raw.bests[metric];if(validRecord(entry))keepBests(out,entry);}
+    if(raw.titles&&typeof raw.titles==='object')for(const [id,date] of Object.entries(raw.titles))if(typeof date==='string'&&/^\d{4}-\d{2}-\d{2}T/.test(date))out.titles[id]=date;
     return out;
   }catch{return defaults();}
 }
