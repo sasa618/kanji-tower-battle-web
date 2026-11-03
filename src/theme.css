@@ -247,7 +247,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-dialog .collection-cell{min-height:66px}
 /* On wide screens the cells were wide rectangles; seven narrower columns bring them closer to square while the RARE/LEGEND tags still fit beside the number. */
 @media(min-width:800px){.collection-dialog .collection-grid{grid-template-columns:repeat(7,1fr);gap:7px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .collection-cell .kanji{font-size:30px}}
-.collection-dialog .detail{position:relative;display:flex;flex-direction:column;flex:0 0 222px;gap:6px;margin-top:10px;padding:12px 14px;min-width:0}
+.collection-dialog .detail{position:relative;display:flex;flex-direction:column;flex:0 0 244px;gap:6px;margin-top:10px;padding:12px 14px;min-width:0}
 /* Text column and the character side by side; the character is centred in whatever width the text leaves. An unfound one is only a blurred grey shape. */
 .detail-row{display:flex;flex-direction:row;gap:8px;flex:1;width:100%;min-height:0}
 .detail-main{display:flex;flex-direction:column;gap:3px;flex:0 1 auto;max-width:calc(100% - 148px);min-width:0}
@@ -283,7 +283,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 .ranking{table-layout:fixed}.ranking th:first-child{width:48px}.ranking th:last-child{width:100px}
 .ranking td:nth-child(2){overflow-wrap:anywhere;color:#52617f;font-size:14px}
 .ranking-value{text-align:right;white-space:nowrap;font-weight:800;color:#d83257}.ranking th:last-child{text-align:right}
-@media(max-width:799px){.collection-dialog{padding:16px}.collection-dialog .detail{flex-basis:222px;padding:12px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .dialog-head h2{font-size:23px}}
+@media(max-width:799px){.collection-dialog{padding:16px}.collection-dialog .detail{flex-basis:244px;padding:12px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .dialog-head h2{font-size:23px}}
 @media(max-height:540px) and (min-width:550px){
   .collection-dialog{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(60px,1fr);gap:8px 16px;padding:14px}
   .collection-dialog .dialog-head{grid-column:1 / -1;margin:0}
