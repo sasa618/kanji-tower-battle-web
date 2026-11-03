@@ -245,19 +245,19 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-progress span{color:#8190ac;font-weight:600}
 .collection-dialog .collection-scroll{position:relative;flex:1;min-height:60px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:2px 4px 4px 2px}
 .collection-dialog .collection-cell{min-height:66px}
-.collection-dialog .detail{display:flex;flex-direction:column;flex:0 0 290px;gap:6px;margin-top:12px;padding:16px;min-width:0}
-.detail-heading{display:flex;align-items:center;gap:14px;min-height:70px;flex:none}
-.detail-heading>.kanji{font-size:58px;line-height:1.1;flex:none;width:60px;text-align:center}
+.collection-dialog .detail{display:flex;flex-direction:column;flex:0 0 236px;gap:4px;margin-top:10px;padding:12px 14px;min-width:0}
+.detail-heading{display:flex;align-items:center;gap:12px;min-height:56px;flex:none}
+.detail-heading>.kanji{font-size:48px;line-height:1.1;flex:none;width:50px;text-align:center}
 .detail-heading>div{min-width:0}
-.collection-dialog .detail h3{margin:0 0 3px;font-size:21px;line-height:1.4}
-.detail h3 .tag{margin-left:12px;font-size:12px;white-space:nowrap}
-.collection-dialog .detail p{margin:0;line-height:1.55;font-size:15px;overflow-wrap:anywhere}
-.collection-dialog .detail .detail-reading{font-size:14px}
+.collection-dialog .detail h3{margin:0 0 2px;font-size:18px;line-height:1.4}
+.detail h3 .tag{margin-left:10px;font-size:11px;white-space:nowrap}
+.collection-dialog .detail p{margin:0;line-height:1.5;font-size:13px;overflow-wrap:anywhere}
+.collection-dialog .detail .detail-reading{font-size:12px}
 .collection-dialog .detail .detail-words{color:#8290a6}
 .collection-dialog .detail-recipes{font-weight:750;color:#425b91}
-.detail-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;min-height:44px}
+.detail-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;min-height:40px}
 .detail-actions .made-count,.detail-actions .share-hint{font-size:12px;color:#6b7e98}
-.detail .detail-actions .discovery-share{width:auto;margin:0;min-height:44px;padding:8px 14px;font-size:14px;line-height:1.4}
+.detail .detail-actions .discovery-share{width:auto;margin:0;min-height:40px;padding:7px 12px;font-size:13px;line-height:1.4}
 .detail-unfound{display:flex;flex:1;align-items:center;justify-content:center;flex-direction:column;gap:16px;text-align:center}
 .detail-unfound .unknown{font-size:60px}
 .collection-dialog .detail-unfound h3{font-size:17px;color:#7486a2}
@@ -275,15 +275,15 @@ button:active:not(:disabled){transform:translateY(1px)}
 .ranking{table-layout:fixed}.ranking th:first-child{width:48px}.ranking th:last-child{width:100px}
 .ranking td:nth-child(2){overflow-wrap:anywhere;color:#52617f;font-size:14px}
 .ranking-value{text-align:right;white-space:nowrap;font-weight:800;color:#d83257}.ranking th:last-child{text-align:right}
-@media(max-width:799px){.collection-dialog{padding:16px}.collection-dialog .detail{flex-basis:290px;padding:14px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .dialog-head h2{font-size:23px}}
+@media(max-width:799px){.collection-dialog{padding:16px}.collection-dialog .detail{flex-basis:236px;padding:12px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .dialog-head h2{font-size:23px}}
 @media(max-height:540px) and (min-width:550px){
   .collection-dialog{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(60px,1fr);gap:8px 16px;padding:14px}
   .collection-dialog .dialog-head{grid-column:1 / -1;margin:0}
   .collection-dialog .collection-progress{grid-column:1;margin:0}
   .collection-dialog .collection-grid{grid-column:1;grid-row:3;grid-template-columns:repeat(4,1fr)}
   .collection-dialog .detail{grid-column:2;grid-row:2 / 4;margin:0;padding:10px;gap:4px;min-height:0}
-  .detail-heading{min-height:58px}.detail-heading>.kanji{font-size:48px;width:48px}
-  .collection-dialog .detail p{font-size:14px}.detail-actions{min-height:40px}
+  .detail-heading{min-height:52px}.detail-heading>.kanji{font-size:44px;width:46px}
+  .collection-dialog .detail p{font-size:13px}.detail-actions{min-height:40px}
 }
 
 .brand-prefix,.title-tag{font-family:TowerImpact,TowerDisplay,sans-serif;font-weight:400;-webkit-text-stroke:.075em currentColor;paint-order:stroke fill;letter-spacing:.04em}

@@ -58,6 +58,13 @@ export function drawShareImage(c:CanvasRenderingContext2D,result:RecordEntry,tow
   c.save();c.translate(frame.x,frame.y);c.scale(frame.scale,frame.scale);drawStage(c);
   for(const tile of tower?.tiles||[])drawGlyph(c,tile.char,tile.x,tile.y,tile.angle);c.restore();
 }
+const ROW_HEIGHT=58,ROW_MAX=18,ROWS_MAX=5;
+/** Created characters in rows of up to 18, balanced so the last row is not nearly empty; beyond 5 rows the rows just get denser. */
+export function madeRows(made:string[]){
+  if(!made.length)return [];
+  const count=Math.min(ROWS_MAX,Math.ceil(made.length/ROW_MAX)),perRow=Math.ceil(made.length/count);
+  return Array.from({length:count},(_,i)=>made.slice(i*perRow,(i+1)*perRow)).filter(row=>row.length);
+}
 export function drawResultImage(ctx:CanvasRenderingContext2D,result:RecordEntry,tower:TowerSnapshot|null){
   const c=ctx;c.fillStyle='#fff';c.fillRect(0,0,1080,1350);
   c.strokeStyle='#e5eaf6';c.lineWidth=1;c.strokeRect(28,28,1024,1294);
@@ -75,14 +82,19 @@ export function drawResultImage(ctx:CanvasRenderingContext2D,result:RecordEntry,
   const heightWidth=c.measureText(heightText).width,metricsLeft=540-(heightWidth+40+c.measureText(countText).width)/2;
   c.fillStyle='#3451ff';c.fillText(heightText,metricsLeft,302);
   c.fillStyle='#00a56c';c.fillText(countText,metricsLeft+heightWidth+40,302);
-  c.save();c.beginPath();c.roundRect(58,340,964,790,28);c.clip();
-  c.fillStyle='#fafafa';c.fillRect(58,340,964,790);
+  // Every created character gets a place: extra rows take their height from the tower box.
+  const rows=madeRows(result.made),boxHeight=790-(rows.length-1)*ROW_HEIGHT,boxBottom=340+boxHeight;
+  c.save();c.beginPath();c.roundRect(58,340,964,boxHeight,28);c.clip();
+  c.fillStyle='#fafafa';c.fillRect(58,340,964,boxHeight);
   text(tower?`最高到達時　${tower.stats.height.toFixed(1)}字分`:'今回のタワー',391,25,'#5d7596','Biz');
-  const frame=towerFrame(tower,{x:96,y:424,width:888,height:670});
+  const frame=towerFrame(tower,{x:96,y:424,width:888,height:boxHeight-120});
   c.translate(frame.x,frame.y);c.scale(frame.scale,frame.scale);
   drawStage(c);for(const tile of tower?.tiles||[])drawGlyph(c,tile.char,tile.x,tile.y,tile.angle);
   c.restore();
-  const chars=result.made.slice(0,16);
-  if(chars.length){text('つくった漢字',1178,22,'#70819c','Biz');const gap=Math.min(65,896/chars.length),start=540-(chars.length-1)*gap/2;chars.forEach((char,i)=>drawGlyph(c,char,start+i*gap,1225,0,.62));}
+  if(rows.length){
+    text('つくった漢字',boxBottom+48,22,'#70819c','Biz');
+    const scale=rows.length>1?.55:.62;
+    rows.forEach((chars,row)=>{const gap=Math.min(65,950/chars.length),start=540-(chars.length-1)*gap/2;chars.forEach((char,i)=>drawGlyph(c,char,start+i*gap,boxBottom+95+row*ROW_HEIGHT,0,scale));});
+  }
   text('#漢字タワーバトル',1294,24,'#536482','Biz');
 }

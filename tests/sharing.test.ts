@@ -23,7 +23,8 @@ test('result text lists created characters and stays within the X limit beside a
   const many={score:1500,height:40,count:150,made:Array.from({length:120},(_,i)=>'想晶森詩'[i%4])};
   const text=resultText(many);
   assert.ok(xLength(text)+X_URL_WEIGHT+1<=X_TEXT_LIMIT,`weighted length ${xLength(text)}`);
-  assert.match(text,/作った字：想 晶 森 詩 .* ほか\d+字\n#漢字タワーバトル$/);
+  assert.match(text,/作った字：想 詩 想 詩 .* ほか\d+字\n#漢字タワーバトル$/);
+  assert.equal(resultText({score:30,height:2,count:5,made:['一','森','口']}),'合体！漢字タワーバトルで総画数30（高さ2.0字分・5字）！ 作った字：森 口 一\n#漢字タワーバトル');
   const intent=new URL(tweetLink(text,'https://ranking.example/s/ab351954-867d-489e-88c3-4126e15e32d6'));
   assert.equal(intent.searchParams.get('text'),text);
 });

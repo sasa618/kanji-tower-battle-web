@@ -2,7 +2,7 @@ import {kanji,recipes,color,byChar,rarityLabels,WILD,type Rarity} from './data';
 import {isJoyo} from './data/joyo';
 import type {Saved} from './storage';
 import {actionIcon} from './icons';
-import {titles,titleMet,titleProgress} from './titles';
+import {titles,titleMet} from './titles';
 type Tier='normal'|Rarity;
 type SectionKey='joyo'|'nonJoyo'|Rarity;
 const tierOf=(index:number):Tier=>kanji[index].rarity||'normal';
@@ -29,12 +29,11 @@ export function moveCollectionIndex(index:number,offset:number){
   return collectionOrder[((position+offset)%length+length)%length];
 }
 const part=(char:string)=>char===WILD?wildChip('small'):char;
-/** Every title as a badge: held ones lit, the rest grey with how far along they are. */
+/** Only the titles the player holds, as badges; the others stay a secret until they are earned. */
 export function titleBadgesHTML(saved:Saved){
-  return `<div class="title-row" aria-label="称号">${titles.map(t=>{
-    const held=!!saved.titles[t.id]||titleMet(saved,t);
-    return `<span class="title-badge rank-${t.rank}${held?' held':''}" title="${t.condition}">${t.name}${held?'':`<small>${titleProgress(saved,t)}/${t.chars.length}</small>`}</span>`;
-  }).join('')}</div>`;
+  const held=titles.filter(t=>!!saved.titles[t.id]||titleMet(saved,t));
+  if(!held.length)return '';
+  return `<div class="title-row" aria-label="称号">${held.map(t=>`<span class="title-badge held rank-${t.rank}" title="${t.condition}">${t.name}</span>`).join('')}</div>`;
 }
 export function collectionHTML(saved:Saved,index:number){
   const found=(char:string)=>!!saved.collection[char]&&(saved.collection[char].drop>0||saved.collection[char].made>0);
