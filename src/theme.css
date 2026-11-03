@@ -245,6 +245,8 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-progress span{color:#8190ac;font-weight:600}
 .collection-dialog .collection-scroll{position:relative;flex:1;min-height:60px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:2px 4px 4px 2px}
 .collection-dialog .collection-cell{min-height:66px}
+/* On wide screens the cells were wide rectangles; seven narrower columns bring them closer to square while the RARE/LEGEND tags still fit beside the number. */
+@media(min-width:800px){.collection-dialog .collection-grid{grid-template-columns:repeat(7,1fr);gap:7px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .collection-cell .kanji{font-size:30px}}
 .collection-dialog .detail{position:relative;display:flex;flex-direction:column;flex:0 0 204px;gap:6px;margin-top:10px;padding:12px 14px;min-width:0}
 /* Text column and the character side by side; the character is centred in whatever width the text leaves. An unfound one is only a blurred grey shape. */
 .detail-row{display:flex;flex-direction:row;gap:8px;flex:1;width:100%;min-height:0}
