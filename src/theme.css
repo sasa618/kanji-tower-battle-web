@@ -239,7 +239,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* The selected entry stays put while only the dictionary grid scrolls. */
-.collection-dialog{height:min(820px,calc(100dvh - 48px));max-height:calc(100dvh - 48px);display:flex;flex-direction:column;overflow:hidden}
+.collection-dialog{height:min(760px,calc(100dvh - 80px));max-height:calc(100dvh - 80px);display:flex;flex-direction:column;overflow:hidden}
 .collection-dialog .dialog-head{flex:none;margin-bottom:8px}
 .collection-dialog .collection-progress{flex:none;margin:0 0 10px;font-weight:800;color:var(--ui-violet);line-height:1.4}
 .collection-progress span{color:#8190ac;font-weight:600}
@@ -254,7 +254,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 .detail-heading{display:flex;align-items:center;gap:12px;min-height:44px;flex:none}
 .detail-heading>div{min-width:0}
 /* Fixed spot: vertically at the panel's centre, whatever the text beside it. */
-.detail-glyph{position:absolute;right:48px;top:50%;transform:translateY(-50%);display:flex;pointer-events:none}
+.detail-glyph{position:absolute;right:40px;top:calc(50% - 6px);transform:translateY(-50%);display:flex;pointer-events:none}
 /* Every character gets the same 1em box, so found and unfound ones sit in exactly the same place. */
 .detail-glyph .kanji{font-size:100px;line-height:1;width:1em;height:1em;text-align:center}
 .detail-glyph.silhouette .kanji{color:#b4bccb;filter:blur(5px)}
