@@ -261,7 +261,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-dialog .detail .detail-reading{font-size:13px}
 .collection-dialog .detail .detail-words{color:#8290a6}
 .collection-dialog .detail-recipes{font-weight:750;color:#425b91}
-.detail-actions{display:flex;align-items:center;justify-content:flex-start;gap:12px;margin-top:auto;min-height:40px;flex:none}
+.detail-actions{display:flex;align-items:center;justify-content:flex-start;gap:12px;margin-top:auto;height:50px;flex:none}
 .detail-actions .made-count,.detail-actions .share-hint{font-size:12px;color:#6b7e98}
 /* A fixed-width count keeps the share button in the same place whatever the number. */
 .detail-actions .made-count{flex:none;min-width:84px;font-variant-numeric:tabular-nums}
@@ -288,7 +288,7 @@ button:active:not(:disabled){transform:translateY(1px)}
   .collection-dialog .collection-grid{grid-column:1;grid-row:3;grid-template-columns:repeat(4,1fr)}
   .collection-dialog .detail{grid-column:2;grid-row:2 / 4;margin:0;padding:10px;gap:6px;min-height:0}
   .detail-heading{min-height:44px}
-  .collection-dialog .detail p{font-size:13px}.detail-actions{min-height:40px}
+  .collection-dialog .detail p{font-size:13px}
 }
 
 .brand-prefix,.title-tag{font-family:TowerImpact,TowerDisplay,sans-serif;font-weight:400;-webkit-text-stroke:.075em currentColor;paint-order:stroke fill;letter-spacing:.04em}
