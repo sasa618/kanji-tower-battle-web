@@ -251,7 +251,7 @@ button:active:not(:disabled){transform:translateY(1px)}
 .detail-main{display:flex;flex-direction:column;gap:3px;flex:0 1 auto;max-width:66%;min-width:0}
 .detail-heading{display:flex;align-items:center;gap:12px;min-height:44px;flex:none}
 .detail-heading>div{min-width:0}
-.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:flex-end;padding-right:22px;min-width:110px;pointer-events:none}
+.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:flex-end;padding:14px 34px 0 0;min-width:110px;pointer-events:none}
 /* Every character gets the same 1em box, so found and unfound ones sit in exactly the same place. */
 .detail-glyph .kanji{font-size:100px;line-height:1;width:1em;height:1em;text-align:center}
 .detail-glyph.silhouette .kanji{color:#b4bccb;filter:blur(5px)}
