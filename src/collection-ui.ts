@@ -42,9 +42,11 @@ export function collectionHTML(saved:Saved,index:number){
   return `<div class="collection-top"><p class="collection-progress">${collectionSections.map(s=>`<span class="progress-tier tier-${s.tier}">${s.title} ${s.indexes.filter(i=>found(kanji[i].char)).length}<span> / ${s.indexes.length}</span></span>`).join('')}</p>${titleBadgesHTML(saved)}</div>
     <div class="collection-scroll">${collectionSections.map(s=>`<h4 class="collection-section tier-${s.tier}">${s.title}</h4><div class="collection-grid" role="group" aria-label="${s.title}（画数順）">${s.indexes.map(cell).join('')}</div>`).join('')}</div>
     <section class="detail" aria-label="選んだ漢字の説明" aria-live="polite">${isFound?`
-      <div class="detail-heading">${glyph(k.char)}<div><h3>${k.char}<span class="tag">${k.strokes}画 · No.${collectionNumbers.get(index)}</span>${k.rarity?`<span class="rarity-tag tier-${k.rarity}">${rarityLabels[k.rarity]}</span>`:''}</h3><p class="detail-reading">${k.reading}</p></div></div>
+      <div class="detail-heading"><div><h3>${k.char}<span class="tag">${k.strokes}画 · No.${collectionNumbers.get(index)}</span>${k.rarity?`<span class="rarity-tag tier-${k.rarity}">${rarityLabels[k.rarity]}</span>`:''}</h3><p class="detail-reading">${k.reading}</p></div></div>
       <p>${k.meaning}</p><p class="detail-words">${k.words}</p>
       <p class="detail-recipes">${rs.length?rs.map(r=>`${part(r.a)} ＋ ${part(r.b)} → ${r.result}${r.radical?`（${r.radical}）`:''}`).join(' ／ '):'基本の字'}</p>
       <div class="detail-actions">${rs.length?`<span class="made-count">合体 ${made}回</span>${made?`<button class="secondary discovery-share action-button x-share" data-action="share-kanji">${actionIcon('share')}<span>Xでシェア</span></button>`:'<span class="share-hint">作るとシェアできます</span>'}`:''}</div>
-      `:`<div class="detail-unfound"><span class="kanji unknown">？</span><h3>まだ見つかっていない漢字</h3></div>`}</section>`;
+      <span class="detail-glyph" aria-hidden="true">${glyph(k.char)}</span>
+      `:`<div class="detail-heading"><div><h3>？<span class="tag">${k.strokes}画 · No.${collectionNumbers.get(index)}</span></h3><p class="detail-reading">まだ見つかっていない漢字</p></div></div>
+      <span class="detail-glyph silhouette" aria-hidden="true"><span class="kanji">${k.char}</span></span>`}</section>`;
 }
