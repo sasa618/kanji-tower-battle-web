@@ -247,11 +247,11 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-dialog .collection-cell{min-height:66px}
 .collection-dialog .detail{display:flex;flex-direction:column;flex:0 0 204px;gap:6px;margin-top:10px;padding:12px 14px;min-width:0}
 /* Text column and the character side by side; the character is centred in whatever width the text leaves. An unfound one is only a blurred grey shape. */
-.detail-row{display:flex;flex-direction:row;gap:8px;flex:1;min-height:0}
+.detail-row{display:flex;flex-direction:row;gap:8px;flex:1;width:100%;min-height:0}
 .detail-main{display:flex;flex-direction:column;gap:3px;flex:0 1 auto;max-width:66%;min-width:0}
 .detail-heading{display:flex;align-items:center;gap:12px;min-height:44px;flex:none}
 .detail-heading>div{min-width:0}
-.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:center;min-width:110px;pointer-events:none}
+.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;min-width:110px;pointer-events:none}
 .detail-glyph .kanji{font-size:100px;line-height:1}
 .detail-glyph.silhouette .kanji{color:#b4bccb;filter:blur(5px)}
 .collection-dialog .detail h3{margin:0;font-size:19px;line-height:1.35}
@@ -260,8 +260,10 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-dialog .detail .detail-reading{font-size:13px}
 .collection-dialog .detail .detail-words{color:#8290a6}
 .collection-dialog .detail-recipes{font-weight:750;color:#425b91}
-.detail-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;min-height:36px;flex:none}
+.detail-actions{display:flex;align-items:center;justify-content:flex-start;gap:12px;margin-top:auto;min-height:36px;flex:none}
 .detail-actions .made-count,.detail-actions .share-hint{font-size:12px;color:#6b7e98}
+/* A fixed-width count keeps the share button in the same place whatever the number. */
+.detail-actions .made-count{flex:none;min-width:84px;font-variant-numeric:tabular-nums}
 .detail .detail-actions .discovery-share{width:auto;margin:0;min-height:40px;padding:7px 12px;font-size:13px;line-height:1.4}
 .ranking-tabs{margin-bottom:12px}.ranking-tabs button{font-family:TowerDisplay,system-ui,sans-serif;padding:12px 5px}
 .ranking-tabs button[data-metric="height"].active{color:#3451ff}
