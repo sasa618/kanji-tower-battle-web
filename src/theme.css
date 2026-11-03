@@ -239,11 +239,11 @@ button:active:not(:disabled){transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* The selected entry stays put while only the dictionary grid scrolls. */
-.collection-dialog{height:min(860px,calc(100dvh - 28px));max-height:calc(100dvh - 28px);display:flex;flex-direction:column;overflow:hidden}
+.collection-dialog{height:min(820px,calc(100dvh - 48px));max-height:calc(100dvh - 48px);display:flex;flex-direction:column;overflow:hidden}
 .collection-dialog .dialog-head{flex:none;margin-bottom:8px}
 .collection-dialog .collection-progress{flex:none;margin:0 0 10px;font-weight:800;color:var(--ui-violet);line-height:1.4}
 .collection-progress span{color:#8190ac;font-weight:600}
-.collection-dialog .collection-scroll{position:relative;flex:1;min-height:60px;overflow-y:auto;overscroll-behavior:contain;padding:2px 4px 4px 2px}
+.collection-dialog .collection-scroll{position:relative;flex:1;min-height:60px;overflow-y:auto;overscroll-behavior:contain;margin:8px 0 10px;padding:2px 4px 4px 2px}
 .collection-dialog .collection-cell{min-height:66px}
 /* On wide screens the cells were wide rectangles; seven narrower columns bring them closer to square while the RARE/LEGEND tags still fit beside the number. */
 @media(min-width:800px){.collection-dialog .collection-grid{grid-template-columns:repeat(7,1fr);gap:7px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .collection-cell .kanji{font-size:30px}}
