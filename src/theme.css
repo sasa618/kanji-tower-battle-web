@@ -239,7 +239,9 @@ button:active:not(:disabled){transform:translateY(1px)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* The selected entry stays put while only the dictionary grid scrolls. */
-.collection-dialog{height:min(680px,calc(100dvh - 120px));max-height:calc(100dvh - 120px);display:flex;flex-direction:column;overflow:hidden}
+.collection-dialog{height:min(718px,calc(100dvh - 100px));max-height:calc(100dvh - 100px);display:flex;flex-direction:column;overflow:hidden}
+/* The list shows about three and a half rows of cells on both widths. */
+@media(min-width:800px){.collection-dialog{height:min(690px,calc(100dvh - 100px))}}
 .collection-dialog .dialog-head{flex:none;margin-bottom:8px}
 .collection-dialog .collection-progress{flex:none;margin:0 0 10px;font-weight:800;color:var(--ui-violet);line-height:1.4}
 .collection-progress span{color:#8190ac;font-weight:600}
