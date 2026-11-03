@@ -9,10 +9,10 @@ export function drawDiscoveryImage(c:CanvasRenderingContext2D,char:string){
   const entry=byChar.get(char),recipe=recipes.find(r=>r.result===char);
   if(!entry||!recipe)throw Error('合体できる漢字を指定してください。');
   c.save();c.fillStyle='#fffefa';c.fillRect(0,0,SHARE_IMAGE_WIDTH,SHARE_IMAGE_HEIGHT);
-  c.fillStyle='#fff';c.beginPath();c.roundRect(490,24,686,582,32);c.fill();
+  c.fillStyle='#fff';c.beginPath();c.roundRect(430,24,746,582,32);c.fill();
   c.fillStyle='#df3655';c.beginPath();c.roundRect(40,35,208,73,12);c.fill();
   c.textAlign='left';c.font='48px TowerImpact';c.fillStyle=c.strokeStyle='#fff';c.lineWidth=3;c.strokeText('合体！',54,89);c.fillText('合体！',54,89);
-  c.fillStyle='#293757';c.font='34px TowerDisplay';c.fillText('漢字タワーバトル',40,161,420);
+  c.fillStyle='#293757';c.font='34px TowerDisplay';c.fillText('漢字タワーバトル',40,161,360);
   if(entry.rarity){
     // Silver band for rare, gold band for legend, each with an outline so it reads on the white card.
     const label=rarityLabels[entry.rarity],legend=entry.rarity==='legend';
@@ -22,11 +22,12 @@ export function drawDiscoveryImage(c:CanvasRenderingContext2D,char:string){
     c.strokeStyle=legend?'#b7850f':'#8e9bb2';c.lineWidth=2;c.stroke();
     c.fillStyle=legend?'#4a3600':'#2b3550';c.fillText(label,58,227);
   }
-  c.fillStyle='#293757';c.font='700 38px Biz';c.fillText(`「${char}」を作った！`,40,293,420);
-  c.font='700 24px Biz';c.fillStyle='#607394';c.fillText(entry.reading,42,352,420);
-  c.font='700 22px Biz';c.fillStyle='#8390a8';c.fillText('漢字を積んで、くっつけて、',42,418,420);c.fillText('新しい字を発見しよう。',42,452,420);
-  drawGlyph(c,char,833,300,0,4.8);
-  c.textAlign='center';c.font='700 28px Biz';c.fillStyle='#607394';c.fillText(`${entry.strokes}画`,833,550);
+  c.fillStyle='#293757';c.font='700 46px Biz';c.fillText(`「${char}」を作った！`,40,298,370);
+  c.font='700 28px Biz';c.fillStyle='#607394';c.fillText(entry.reading,42,360,370);
+  c.font='700 25px Biz';c.fillStyle='#8390a8';c.fillText('漢字を積んで、くっつけて、',42,430,370);c.fillText('新しい字を発見しよう。',42,468,370);
+  // The character fills the card: a larger outline, closer to the text, with the stroke count big beneath it.
+  drawGlyph(c,char,803,290,0,5.15);
+  c.textAlign='center';c.font='700 46px Biz';c.fillStyle='#4a5f85';c.fillText(`${entry.strokes}画`,803,578);
   c.textAlign='left';c.font='700 22px Biz';c.fillText('#漢字タワーバトル',42,558);c.restore();
 }
 export function towerFrame(tower:TowerSnapshot|null,box:{x:number;y:number;width:number;height:number}){

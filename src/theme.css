@@ -245,13 +245,13 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-progress span{color:#8190ac;font-weight:600}
 .collection-dialog .collection-scroll{position:relative;flex:1;min-height:60px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:2px 4px 4px 2px}
 .collection-dialog .collection-cell{min-height:66px}
-.collection-dialog .detail{position:relative;display:flex;flex-direction:column;flex:0 0 236px;gap:4px;margin-top:10px;padding:12px 14px;min-width:0}
-.collection-dialog .detail>*:not(.detail-actions):not(.detail-glyph){padding-right:124px}
+.collection-dialog .detail{display:flex;flex-direction:row;flex:0 0 236px;gap:8px;margin-top:10px;padding:12px 14px;min-width:0}
+.detail-main{display:flex;flex-direction:column;gap:4px;flex:0 1 auto;max-width:66%;min-width:0}
 .detail-heading{display:flex;align-items:center;gap:12px;min-height:48px;flex:none}
 .detail-heading>div{min-width:0}
-/* The character itself sits large on the right; an unfound one is only a blurred grey shape. */
-.detail-glyph{position:absolute;top:10px;right:14px;width:116px;height:124px;display:flex;align-items:center;justify-content:center;pointer-events:none}
-.detail-glyph .kanji{font-size:104px;line-height:1}
+/* The character itself sits large beside the text, centred in whatever width the text leaves; an unfound one is only a blurred grey shape. */
+.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:center;min-width:120px;pointer-events:none}
+.detail-glyph .kanji{font-size:108px;line-height:1}
 .detail-glyph.silhouette .kanji{color:#b4bccb;filter:blur(5px)}
 .collection-dialog .detail h3{margin:0 0 2px;font-size:18px;line-height:1.4}
 .detail h3 .tag{margin-left:10px;font-size:11px;white-space:nowrap}
@@ -282,7 +282,7 @@ button:active:not(:disabled){transform:translateY(1px)}
   .collection-dialog .dialog-head{grid-column:1 / -1;margin:0}
   .collection-dialog .collection-progress{grid-column:1;margin:0}
   .collection-dialog .collection-grid{grid-column:1;grid-row:3;grid-template-columns:repeat(4,1fr)}
-  .collection-dialog .detail{grid-column:2;grid-row:2 / 4;margin:0;padding:10px;gap:4px;min-height:0}
+  .collection-dialog .detail{grid-column:2;grid-row:2 / 4;margin:0;padding:10px;gap:8px;min-height:0}
   .detail-heading{min-height:48px}
   .collection-dialog .detail p{font-size:13px}.detail-actions{min-height:40px}
 }
