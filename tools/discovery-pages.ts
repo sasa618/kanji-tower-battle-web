@@ -14,7 +14,7 @@ export function discoveryPages(publicURL?:string){
     const image=new URL(discoveryImagePath(card.slug),game).href;
     const title=`「${card.char}」を作った！ 合体！漢字タワーバトル`;
     const description='漢字を積んで、くっつけて、新しい字を発見。タップして新しいゲームを始めよう。';
-    const alt=`完成した漢字「${card.char}」（${card.strokes}画）と、その合体の組み合わせ`;
+    const alt=`完成した漢字「${card.char}」（${card.strokes}画）`;
     const html=`<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title>
 <link rel="canonical" href="${esc(page)}"><meta name="description" content="${esc(description)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(title)}"><meta name="twitter:description" content="${esc(description)}"><meta name="twitter:image" content="${esc(image)}"><meta name="twitter:image:alt" content="${esc(alt)}">

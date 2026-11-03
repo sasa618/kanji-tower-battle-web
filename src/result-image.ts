@@ -4,7 +4,7 @@ import type {RecordEntry} from './storage';
 import {byChar,recipes,rarityLabels} from './data';
 export const RESULT_IMAGE_WIDTH=1080,RESULT_IMAGE_HEIGHT=1350;
 export const SHARE_IMAGE_WIDTH=1200,SHARE_IMAGE_HEIGHT=630;
-/** A completed character is the focus of the discovery card, with its actual game outline. */
+/** A completed character is the focus of the discovery card, with its actual game outline. The recipe stays a secret. */
 export function drawDiscoveryImage(c:CanvasRenderingContext2D,char:string){
   const entry=byChar.get(char),recipe=recipes.find(r=>r.result===char);
   if(!entry||!recipe)throw Error('合体できる漢字を指定してください。');
@@ -23,11 +23,8 @@ export function drawDiscoveryImage(c:CanvasRenderingContext2D,char:string){
     c.fillStyle=legend?'#4a3600':'#2b3550';c.fillText(label,58,227);
   }
   c.fillStyle='#293757';c.font='700 38px Biz';c.fillText(`「${char}」を作った！`,40,293,420);
-  c.font='700 22px Biz';c.fillStyle='#607394';c.fillText('合体した組み合わせ',42,359);
-  drawGlyph(c,recipe.a,83,427,0,.86);drawGlyph(c,recipe.b,227,427,0,.86);drawGlyph(c,char,371,427,0,.86);
-  c.strokeStyle='#8390a8';c.lineWidth=2.8;c.lineCap='round';c.lineJoin='round';c.beginPath();
-  c.moveTo(147,427);c.lineTo(163,427);c.moveTo(155,419);c.lineTo(155,435);
-  c.moveTo(288,427);c.lineTo(310,427);c.moveTo(302,420);c.lineTo(310,427);c.lineTo(302,434);c.stroke();
+  c.font='700 24px Biz';c.fillStyle='#607394';c.fillText(entry.reading,42,352,420);
+  c.font='700 22px Biz';c.fillStyle='#8390a8';c.fillText('漢字を積んで、くっつけて、',42,418,420);c.fillText('新しい字を発見しよう。',42,452,420);
   drawGlyph(c,char,833,300,0,4.8);
   c.textAlign='center';c.font='700 28px Biz';c.fillStyle='#607394';c.fillText(`${entry.strokes}画`,833,550);
   c.textAlign='left';c.font='700 22px Biz';c.fillText('#漢字タワーバトル',42,558);c.restore();
