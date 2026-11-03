@@ -13,6 +13,8 @@ const metricOrder:Record<RankingMetric,[string,string,string]>={score:['score','
 // Usage statistics are grouped by the Japanese calendar day (UTC+9).
 export const jstDay=(ms:number)=>new Date(ms+9*3600000).toISOString().slice(0,10);
 export const orderBy=(metric:RankingMetric)=>metricOrder[metric].map(c=>`${c} DESC`).join(',')+',created ASC';
+/** Strictly better in the total-stroke ranking order: score, then height, then count. Equal is not better, so the earlier record stays. */
+export const betterThan=(a:{score:number;height:number;count:number},b:{score:number;height:number;count:number})=>a.score>b.score||(a.score===b.score&&(a.height>b.height||(a.height===b.height&&a.count>b.count)));
 export async function rankOf(db:D1Database,metric:RankingMetric,row:{score:number;height:number;count:number;created:number},since:number){
   const [a,b,c]=metricOrder[metric],v=(name:string)=>row[name as 'score'|'height'|'count'];
   // Counting stops at RANK_LIMIT rows, so a submission reads at most that many rows; RANK_LIMIT+1 means "below".
@@ -100,22 +102,30 @@ export default {
         if(!session||now-session.created>DAY||session.created>now+60000)return json({error:'プレイ情報の期限が切れました。もう一度遊んでください。'},400);
         // A late submission has a fresh session, so its duration cannot be compared with the session age; the per-device limits still apply.
         if(!score.late&&(score.duration>(now-session.created)/1000+5||now-session.created<300))return json({error:'プレイ時間を確認できません。'},400);
-        const id=crypto.randomUUID();
-        // UNIQUE(session_id) blocks double submission; the per-minute limit sits in the same statement so parallel requests cannot pass it.
-        const inserted=await env.DB.prepare(`INSERT OR IGNORE INTO scores(id,session_id,name,score,height,count,duration,created,client)
-          SELECT ?,?,?,?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM scores WHERE client=? AND created>?)<6`)
-          .bind(id,session.id,score.name,score.score,score.height,score.count,score.duration,now,session.client,session.client,now-60000).run();
-        if(!inserted.meta.changes){
-          const previous=await env.DB.prepare('SELECT name,score,height,count,duration,created FROM scores WHERE session_id=?').bind(session.id).first<typeof score & {created:number}>();
-          if(previous&&(['name','score','height','count','duration'] as const).every(key=>previous[key]===score[key])){
-            const ranks={} as Record<RankingMetric,number>;
-            for(const metric of rankingMetrics)ranks[metric]=await rankOf(env.DB,metric,previous,since);
-            return json({rank:ranks.score,ranks},200);
-          }
-          return json({error:previous?'このプレイの記録は別の内容で送信済みです。':'送信回数の上限です。1分ほど待ってください。'},previous?409:429);
+        const ranksOf=async(row:{score:number;height:number;count:number;created:number})=>{
+          const ranks={} as Record<RankingMetric,number>;
+          for(const metric of rankingMetrics)ranks[metric]=await rankOf(env.DB,metric,row,since);
+          return ranks;
+        };
+        // The same play sent again (a retry) gets the same answer; a different result for the same play is refused.
+        const previous=await env.DB.prepare('SELECT name,score,height,count,duration,created FROM scores WHERE session_id=?').bind(session.id).first<typeof score & {created:number}>();
+        if(previous){
+          if((['name','score','height','count','duration'] as const).every(key=>previous[key]===score[key])){const ranks=await ranksOf(previous);return json({rank:ranks.score,ranks},200);}
+          return json({error:'このプレイの記録は別の内容で送信済みです。'},409);
         }
-        const ranks={} as Record<RankingMetric,number>;
-        for(const metric of rankingMetrics)ranks[metric]=await rankOf(env.DB,metric,{...score,created:now},since);
+        // One record per device: the better play (by the total-stroke order) stays, so a weaker later play never pushes a best off the list.
+        const existing=await env.DB.prepare('SELECT score,height,count,created FROM scores WHERE client=?').bind(session.client).first<{score:number;height:number;count:number;created:number}>();
+        if(existing){
+          if(now-existing.created<10000)return json({error:'送信回数の上限です。少し待ってください。'},429);
+          if(!betterThan(score,existing)){const ranks=await ranksOf(existing);return json({rank:ranks.score,ranks,kept:true},200);}
+        }
+        // Delete and insert in one batch (a transaction in D1), under the unique index on client.
+        await env.DB.batch([
+          env.DB.prepare('DELETE FROM scores WHERE client=?').bind(session.client),
+          env.DB.prepare('INSERT INTO scores(id,session_id,name,score,height,count,duration,created,client) VALUES(?,?,?,?,?,?,?,?,?)')
+            .bind(crypto.randomUUID(),session.id,score.name,score.score,score.height,score.count,score.duration,now,session.client),
+        ]);
+        const ranks=await ranksOf({...score,created:now});
         return json({rank:ranks.score,ranks},201);
       }
       return json({error:'見つかりません。'},404);

@@ -62,11 +62,33 @@ test('the rank returned after a submission follows the 90-day window and the lis
   const list=await (await worker.fetch(req('/scores?metric=score'),e)).json() as {scores:{name:string}[]};
   assert.deepEqual(list.scores.map(s=>s.name),['A','B','D','C']);
 });
-test('six submissions per minute and client are enforced inside the insert statement',async()=>{
-  const e=env(),sessions:string[]=[];
-  for(let i=0;i<7;i++)sessions.push(await sessionFor('same-device',20000+i*4000));
-  const statuses=[];for(const session of sessions)statuses.push((await worker.fetch(req('/scores',{...payload,session}),e)).status);
-  assert.deepEqual(statuses,[201,201,201,201,201,201,429]);
+test('one record per device: a better play replaces the old row, a weaker one keeps it, and two in ten seconds are refused',async()=>{
+  const e=env();
+  const first=await worker.fetch(req('/scores',{...payload,session:await sessionFor('same-device',20000),name:'old',score:80,count:3,moves:10}),e);assert.equal(first.status,201);
+  const quick=await worker.fetch(req('/scores',{...payload,session:await sessionFor('same-device',24000),score:90,count:3,moves:10}),e);assert.equal(quick.status,429);
+  // Back-date the stored row so the next plays are not treated as rapid fire.
+  await e.DB.prepare('UPDATE scores SET created=created-20000').run();
+  const weaker=await worker.fetch(req('/scores',{...payload,session:await sessionFor('same-device',28000),name:'weak',score:70,count:3,moves:10}),e);assert.equal(weaker.status,200);
+  assert.deepEqual(await weaker.json(),{rank:1,ranks:{score:1,height:1,count:1},kept:true});
+  const better=await worker.fetch(req('/scores',{...payload,session:await sessionFor('same-device',32000),name:'new',score:90,count:3,moves:10}),e);assert.equal(better.status,201);
+  const list=await (await worker.fetch(req('/scores?metric=score'),e)).json() as {scores:{name:string;score:number}[]};
+  assert.deepEqual(list.scores.map(s=>[s.name,s.score]),[['new',90]]);
+  const other=await worker.fetch(req('/scores',{...payload,session:await sessionFor('other-device',20000),name:'other',score:50,count:3,moves:10}),e);assert.equal(other.status,201);
+  // The score list was cached a moment ago, so read another metric's list to see both devices.
+  assert.equal(((await (await worker.fetch(req('/scores?metric=count'),e)).json()) as {scores:unknown[]}).scores.length,2);
+});
+test('migration 0006 keeps only the best row of each known device and leaves rows without a device alone',async()=>{
+  const e=env();const now=Date.now();
+  const insert=(id:string,client:string,score:number,created:number)=>e.DB.prepare('INSERT INTO scores(id,session_id,name,score,height,count,duration,created,client) VALUES(?,?,?,?,?,?,?,?,?)').bind(id,id,id,score,1,1,30,created,client).run();
+  // The unique index already exists in a fresh database, so the dedupe is exercised by re-running the migration's DELETE on rows inserted around it.
+  await e.DB.prepare('DROP INDEX scores_client_unique').run();
+  await insert('a1','dev-a',50,now-3000);await insert('a2','dev-a',90,now-2000);await insert('a3','dev-a',90,now-1000);
+  await insert('n1','',40,now-3000);await insert('n2','',40,now-2000);
+  const sql=fs.readFileSync('server/migrations/0006_one_score_per_client.sql','utf8');
+  const statements=sql.split('\n').filter(line=>!line.startsWith('--')).join('\n').split(';').map(s=>s.trim()).filter(Boolean);
+  for(const statement of statements)await e.DB.prepare(statement).run();
+  const rows=await e.DB.prepare('SELECT id FROM scores ORDER BY id').all<{id:string}>();
+  assert.deepEqual(rows.results.map(r=>r.id),['a2','n1','n2']);
 });
 test('API rejects future-duration, missing session and oversized bodies',async()=>{
   const e=env();assert.equal((await worker.fetch(req('/scores',payload),e)).status,400);
@@ -201,7 +223,8 @@ test('cleanup is scheduled and cannot make session or score creation fail',async
   const e=env(),now=Date.now();
   await insertScore(e,'expired',100,2,5,now-91*86400000);
   const prepare=e.DB.prepare.bind(e.DB);
-  e.DB.prepare=((sql:string)=>{assert.doesNotMatch(sql,/DELETE/);return prepare(sql);}) as Env['DB']['prepare'];
+  // Only the retention delete (by age) must stay off this path; replacing a device's own row is part of saving.
+  e.DB.prepare=((sql:string)=>{assert.doesNotMatch(sql,/DELETE FROM scores WHERE created/);return prepare(sql);}) as Env['DB']['prepare'];
   assert.equal((await worker.fetch(req('/sessions',{client:crypto.randomUUID()}),e)).status,201);
   const session=await sessionFor(crypto.randomUUID(),10000);
   assert.equal((await worker.fetch(req('/scores',{...payload,session}),e)).status,201);
