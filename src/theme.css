@@ -245,21 +245,22 @@ button:active:not(:disabled){transform:translateY(1px)}
 .collection-progress span{color:#8190ac;font-weight:600}
 .collection-dialog .collection-scroll{position:relative;flex:1;min-height:60px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:2px 4px 4px 2px}
 .collection-dialog .collection-cell{min-height:66px}
-.collection-dialog .detail{display:flex;flex-direction:row;flex:0 0 236px;gap:8px;margin-top:10px;padding:12px 14px;min-width:0}
-.detail-main{display:flex;flex-direction:column;gap:4px;flex:0 1 auto;max-width:66%;min-width:0}
-.detail-heading{display:flex;align-items:center;gap:12px;min-height:48px;flex:none}
+.collection-dialog .detail{display:flex;flex-direction:column;flex:0 0 204px;gap:6px;margin-top:10px;padding:12px 14px;min-width:0}
+/* Text column and the character side by side; the character is centred in whatever width the text leaves. An unfound one is only a blurred grey shape. */
+.detail-row{display:flex;flex-direction:row;gap:8px;flex:1;min-height:0}
+.detail-main{display:flex;flex-direction:column;gap:3px;flex:0 1 auto;max-width:66%;min-width:0}
+.detail-heading{display:flex;align-items:center;gap:12px;min-height:44px;flex:none}
 .detail-heading>div{min-width:0}
-/* The character itself sits large beside the text, centred in whatever width the text leaves; an unfound one is only a blurred grey shape. */
-.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:center;min-width:120px;pointer-events:none}
-.detail-glyph .kanji{font-size:108px;line-height:1}
+.detail-glyph{flex:1;align-self:stretch;display:flex;align-items:center;justify-content:center;min-width:110px;pointer-events:none}
+.detail-glyph .kanji{font-size:100px;line-height:1}
 .detail-glyph.silhouette .kanji{color:#b4bccb;filter:blur(5px)}
-.collection-dialog .detail h3{margin:0 0 2px;font-size:18px;line-height:1.4}
+.collection-dialog .detail h3{margin:0;font-size:19px;line-height:1.35}
 .detail h3 .tag{margin-left:10px;font-size:11px;white-space:nowrap}
-.collection-dialog .detail p{margin:0;line-height:1.5;font-size:13px;overflow-wrap:anywhere}
-.collection-dialog .detail .detail-reading{font-size:12px}
+.collection-dialog .detail p{margin:0;line-height:1.45;font-size:14px;overflow-wrap:anywhere}
+.collection-dialog .detail .detail-reading{font-size:13px}
 .collection-dialog .detail .detail-words{color:#8290a6}
 .collection-dialog .detail-recipes{font-weight:750;color:#425b91}
-.detail-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;min-height:40px}
+.detail-actions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;min-height:36px;flex:none}
 .detail-actions .made-count,.detail-actions .share-hint{font-size:12px;color:#6b7e98}
 .detail .detail-actions .discovery-share{width:auto;margin:0;min-height:40px;padding:7px 12px;font-size:13px;line-height:1.4}
 .ranking-tabs{margin-bottom:12px}.ranking-tabs button{font-family:TowerDisplay,system-ui,sans-serif;padding:12px 5px}
@@ -276,15 +277,15 @@ button:active:not(:disabled){transform:translateY(1px)}
 .ranking{table-layout:fixed}.ranking th:first-child{width:48px}.ranking th:last-child{width:100px}
 .ranking td:nth-child(2){overflow-wrap:anywhere;color:#52617f;font-size:14px}
 .ranking-value{text-align:right;white-space:nowrap;font-weight:800;color:#d83257}.ranking th:last-child{text-align:right}
-@media(max-width:799px){.collection-dialog{padding:16px}.collection-dialog .detail{flex-basis:236px;padding:12px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .dialog-head h2{font-size:23px}}
+@media(max-width:799px){.collection-dialog{padding:16px}.collection-dialog .detail{flex-basis:204px;padding:12px}.collection-dialog .collection-cell{min-height:60px}.collection-dialog .dialog-head h2{font-size:23px}}
 @media(max-height:540px) and (min-width:550px){
   .collection-dialog{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(60px,1fr);gap:8px 16px;padding:14px}
   .collection-dialog .dialog-head{grid-column:1 / -1;margin:0}
   .collection-dialog .collection-progress{grid-column:1;margin:0}
   .collection-dialog .collection-grid{grid-column:1;grid-row:3;grid-template-columns:repeat(4,1fr)}
-  .collection-dialog .detail{grid-column:2;grid-row:2 / 4;margin:0;padding:10px;gap:8px;min-height:0}
-  .detail-heading{min-height:48px}
-  .collection-dialog .detail p{font-size:13px}.detail-actions{min-height:40px}
+  .collection-dialog .detail{grid-column:2;grid-row:2 / 4;margin:0;padding:10px;gap:6px;min-height:0}
+  .detail-heading{min-height:44px}
+  .collection-dialog .detail p{font-size:13px}.detail-actions{min-height:36px}
 }
 
 .brand-prefix,.title-tag{font-family:TowerImpact,TowerDisplay,sans-serif;font-weight:400;-webkit-text-stroke:.075em currentColor;paint-order:stroke fill;letter-spacing:.04em}
