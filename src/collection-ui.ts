@@ -48,5 +48,6 @@ export function collectionHTML(saved:Saved,index:number){
       <span class="detail-glyph" aria-hidden="true">${glyph(k.char)}</span></div>
       <div class="detail-actions">${rs.length?`<span class="made-count">合体 ${made}回</span>${made?`<button class="secondary discovery-share action-button x-share" data-action="share-kanji">${actionIcon('share')}<span>Xでシェア</span></button>`:'<span class="share-hint">作るとシェアできます</span>'}`:''}</div>
       `:`<div class="detail-row"><div class="detail-main"><div class="detail-heading"><div><h3>？<span class="tag">${k.strokes}画 · No.${collectionNumbers.get(index)}</span></h3><p class="detail-reading">まだ見つかっていない漢字</p></div></div></div>
-      <span class="detail-glyph silhouette" aria-hidden="true"><span class="kanji">${k.char}</span></span></div>`}</section>`;
+      <span class="detail-glyph silhouette" aria-hidden="true"><span class="kanji">${k.char}</span></span></div>
+      <div class="detail-actions"></div>`}</section>`;
 }
