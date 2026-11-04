@@ -60,30 +60,26 @@ export function shuffled<T>(items: T[], random = Math.random) {
 }
 export type CandidateHistory = { shown:Map<string,number>; previous:string[] };
 export const createCandidateHistory=():CandidateHistory=>({shown:new Map(),previous:[]});
-/** Vary actionable choices between zero, one and two (25/50/25 percent).
- * Balance appearances within each pool; never force a candidate's own partner. */
+/** Balance the whole base alphabet first. Among equally due characters, mildly
+ * favor a merge partner; never reserve slots for a potentially tiny pool. */
 export function chooseCandidates(tower:string[],random=Math.random,history=createCandidateHistory(),wildOdds=0):string[] {
   const chosen:string[]=[];
   // The block takes one slot only when the tower holds a partner for it, and never two turns in a row.
   if(wildOdds>0&&!history.previous.includes(WILD)&&tower.some(b=>recipeFor(WILD,b))&&random()<wildOdds)chosen.push(WILD);
-  const slots=3-chosen.length;
-  const pick=(pool:string[])=>{
-    const available=pool.filter(char=>!chosen.includes(char));
+  const partners=new Set(baseChars.filter(a=>tower.some(b=>recipeFor(a,b))));
+  const pick=()=>{
+    const available=baseChars.filter(char=>!chosen.includes(char));
     const count=(char:string)=>history.shown.get(char)||0;
     const minimum=Math.min(...available.map(count));
     const leastShown=available.filter(char=>count(char)===minimum);
     const fresh=leastShown.filter(char=>!history.previous.includes(char));
     const options=fresh.length?fresh:leastShown;
-    const char=options[Math.floor(random()*options.length)];
+    const weight=(char:string)=>partners.has(char)?1.5:1;
+    let ticket=random()*options.reduce((sum,char)=>sum+weight(char),0);
+    const char=options.find(char=>(ticket-=weight(char))<0)||options[options.length-1];
     chosen.push(char);history.shown.set(char,count(char)+1);
   };
-  const partners=baseChars.filter(a=>tower.some(b=>recipeFor(a,b)));
-  const others=baseChars.filter(char=>!partners.includes(char));
-  const roll=random(),wanted=Math.min(slots,roll<.25?0:roll<.75?1:2);
-  // Some towers have fewer partners, or too few non-partners for three choices.
-  const matches=Math.min(partners.length,Math.max(slots-others.length,wanted));
-  for(let i=0;i<matches;i++)pick(partners);
-  while(chosen.length<3)pick(others);
+  while(chosen.length<3)pick();
   history.previous=[...chosen];
   return shuffled(chosen,random);
 }
