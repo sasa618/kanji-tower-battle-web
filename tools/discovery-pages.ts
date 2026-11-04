@@ -1,4 +1,4 @@
-import {discoveryCards,discoveryImagePath,discoveryShareURL} from '../src/discovery-sharing';
+import {discoveryCardVersion,discoveryCards,discoveryImagePath,discoveryShareURL} from '../src/discovery-sharing';
 import {normalizePublicURL} from './public-meta';
 import {gameLink} from '../src/sharing';
 const esc=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -11,7 +11,7 @@ export function discoveryPages(publicURL?:string){
   if(!game.pathname.endsWith('/'))game.pathname+='/';
   return discoveryCards.map(card=>{
     const page=discoveryShareURL(card.char,game.href)!;
-    const image=new URL(discoveryImagePath(card.slug),game).href;
+    const image=new URL(`${discoveryImagePath(card.slug)}?v=${discoveryCardVersion}`,game).href;
     const title=`「${card.char}」を作った！ 合体！漢字タワーバトル`;
     const description='漢字を積んで、くっつけて、新しい字を発見。タップして新しいゲームを始めよう。';
     const alt=`完成した漢字「${card.char}」（${card.strokes}画）`;
